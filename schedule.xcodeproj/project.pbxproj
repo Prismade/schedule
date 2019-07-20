@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2412DD7922E317E400865EB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DD7822E317E400865EB7 /* AppDelegate.swift */; };
-		2412DD7B22E317E400865EB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DD7A22E317E400865EB7 /* ViewController.swift */; };
+		2412DD7B22E317E400865EB7 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412DD7A22E317E400865EB7 /* ScheduleTableViewController.swift */; };
 		2412DD7E22E317E400865EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412DD7C22E317E400865EB7 /* Main.storyboard */; };
 		2412DD8022E317E500865EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2412DD7F22E317E500865EB7 /* Assets.xcassets */; };
 		2412DD8322E317E500865EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412DD8122E317E500865EB7 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		2412DD7522E317E400865EB7 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2412DD7822E317E400865EB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2412DD7A22E317E400865EB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2412DD7A22E317E400865EB7 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		2412DD7D22E317E400865EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2412DD7F22E317E500865EB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2412DD8222E317E500865EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				2412DD7822E317E400865EB7 /* AppDelegate.swift */,
-				2412DD7A22E317E400865EB7 /* ViewController.swift */,
+				2412DD7A22E317E400865EB7 /* ScheduleTableViewController.swift */,
 				2412DD7C22E317E400865EB7 /* Main.storyboard */,
 				2412DD7F22E317E500865EB7 /* Assets.xcassets */,
 				2412DD8122E317E500865EB7 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2412DD7B22E317E400865EB7 /* ViewController.swift in Sources */,
+				2412DD7B22E317E400865EB7 /* ScheduleTableViewController.swift in Sources */,
 				2412DD7922E317E400865EB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.prismade.schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.prismade.schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
