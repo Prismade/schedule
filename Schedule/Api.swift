@@ -56,20 +56,13 @@ final class Api {
 
     private func createTimeStamp(for weekOffset: Int) -> String {
         let date = Date()
-        let calendar = Calendar(identifier: .gregorian)
-        let time = Int(date.timeIntervalSince1970)
-        let day = calendar.component(.weekday, from: date) - 1
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        let second = calendar.component(.second, from: date)
-
-        var currentWeekStart = time + 86400000 - 86400000 * day
-        currentWeekStart *= 1000 // because JavaScript is awesome!
-        currentWeekStart = (currentWeekStart - (-180 * 60000)) - (3600 * hour + 60 * minute + (1 * second)) * 1000
-
-        currentWeekStart = 1 * currentWeekStart + 604800000 * weekOffset
-
-        return String(currentWeekStart)
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.firstWeekday = 2
+        var components = calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: date)
+        components.weekday = 2
+        let monday = calendar.date(from: components)!
+        let mondayWithOffset = Int(monday.timeIntervalSince1970) + weekOffset * 604800
+        return String(mondayWithOffset * 1000)
     }
 
 
