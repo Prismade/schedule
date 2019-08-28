@@ -21,22 +21,38 @@ final class ScheduleTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configure(with lesson: Lesson) {
-        number.text = String(lesson.number)
-        subject.text = lesson.subject
-        if lesson.special != "" {
-            special.text = "(\(lesson.special))"
-        } else {
-            special.isHidden = true
-        }
-        type.text = "(\(lesson.type))"
-        if lesson.employeeName != "" {
-            teacher.text = lesson.employeeName
-        } else {
-            teacher.isHidden = true
-        }
+    func configure(with lesson: Lesson?) {
+        if let lesson = lesson {
+            number.text = String(lesson.number)
+            subject.text = lesson.subject
 
-        location.text = lesson.location
+            if lesson.special != "" {
+                special.isHidden = false
+                special.text = "(\(lesson.special))"
+            } else {
+                special.isHidden = true
+            }
+
+            type.isHidden = false
+            type.text = "(\(lesson.type))"
+
+            if lesson.employeeName != "" {
+                teacher.isHidden = false
+                teacher.text = lesson.employeeName
+            } else {
+                teacher.isHidden = true
+            }
+
+            location.isHidden = false
+            location.text = lesson.location
+        } else {
+            number.text = " "
+            subject.text = "Пар нет"
+            special.isHidden = true
+            type.isHidden = true
+            teacher.isHidden = true
+            location.isHidden = true
+        }
     }
 
 

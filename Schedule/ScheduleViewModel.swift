@@ -67,9 +67,13 @@ final class ScheduleViewModel: NSObject {
         }
     }
 
-    func lesson(at position: (day: Int, number: Int)) -> Lesson {
+    func lesson(at position: (day: Int, number: Int)) -> Lesson? {
         let (day, number) = position
-        return schedule[day].lessons[number]
+        if number >= schedule[day].lessons.count {
+            return nil
+        } else {
+            return schedule[day].lessons[number]
+        }
     }
 
     func scheduleDay(at day: Int) -> ScheduleDay {
@@ -106,7 +110,12 @@ extension ScheduleViewModel: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return scheduleDay(at: section).rowsNumber
+        let number = scheduleDay(at: section).rowsNumber
+        if number == 0 {
+            return 1 // for a cell, that tells there are no lessons
+        } else {
+            return number
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
