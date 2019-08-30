@@ -14,10 +14,6 @@ class CourseViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
 
-    // MARK: - Public Properties
-
-    var division: Division?
-
     // MARK: - Private Properties
 
     private let refreshControl = UIRefreshControl()
@@ -47,7 +43,10 @@ class CourseViewController: UIViewController {
     }
 
     func loadData() {
-        Api.shared.getCourses(for: division!.id) { response in
+        let defaults = UserDefaults.standard
+        let division = defaults.integer(forKey: "division")
+
+        Api.shared.getCourses(for: division) { response in
             switch response.result {
             case .success(let data): self.courseList = data
             case .failure(let error): print(error)
@@ -58,11 +57,9 @@ class CourseViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationView = segue.destination as? GroupViewController{
-            if let indexPath = table.indexPathForSelectedRow {
-                destinationView.division = division
-                destinationView.course = courseList[indexPath.row]
-            }
+        if let indexPath = table.indexPathForSelectedRow {
+            let defaults = UserDefaults.standard
+            defaults.set(courseList[indexPath.row].course, forKey: "course")
         }
     }
 

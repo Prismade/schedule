@@ -37,10 +37,6 @@ final class ScheduleViewController: UIViewController {
         performSegue(withIdentifier: "backToStart", sender: nil)
     }
 
-    // MARK: - Public Properties
-
-    var group: Group?
-
     // MARK: - Private Properties
 
     private let viewModel = ScheduleViewModel()
@@ -59,13 +55,12 @@ final class ScheduleViewController: UIViewController {
         table.refreshControl = refreshControl
 
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        refreshControl.beginRefreshing()
 
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
             self.table.reloadData()
         }
-        viewModel.update(for: group!.id, on: weekOffset)
+        updateModel(for: weekOffset)
     }
 
     // MARK: - Public Methods
@@ -77,8 +72,10 @@ final class ScheduleViewController: UIViewController {
     // MARK: - Private Methods
 
     func updateModel(for weekOffset: Int) {
+        let defaults = UserDefaults.standard
+        let group = defaults.integer(forKey: "group")
         refreshControl.beginRefreshing()
-        viewModel.update(for: group!.id, on: weekOffset)
+        viewModel.update(for: group, on: weekOffset)
     }
 
 

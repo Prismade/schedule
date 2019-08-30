@@ -54,10 +54,9 @@ class DivisionViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationView = segue.destination as? CourseViewController{
-            if let indexPath = table.indexPathForSelectedRow {
-                destinationView.division = divisionList[indexPath.row]
-            }
+        if let indexPath = table.indexPathForSelectedRow {
+            let defaults = UserDefaults.standard
+            defaults.set(divisionList[indexPath.row].id, forKey: "division")
         }
     }
 

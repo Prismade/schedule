@@ -14,11 +14,6 @@ class GroupViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
 
-    // MARK: - Public Properties
-
-    var division: Division?
-    var course: Course?
-
     // MARK: - Private Properties
 
     private let refreshControl = UIRefreshControl()
@@ -48,7 +43,11 @@ class GroupViewController: UIViewController {
     }
 
     func loadData() {
-        Api.shared.getGroups(for: course!.course, at: division!.id) { response in
+        let defaults = UserDefaults.standard
+        let division = defaults.integer(forKey: "division")
+        let course = defaults.integer(forKey: "course")
+
+        Api.shared.getGroups(for: course, at: division) { response in
             switch response.result {
             case .success(let data): self.groupList = data
             case .failure(let error): print(error)
@@ -59,10 +58,10 @@ class GroupViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationView = segue.destination as? ScheduleViewController {
-            if let indexPath = table.indexPathForSelectedRow {
-                destinationView.group = groupList[indexPath.row]
-            }
+        if let indexPath = table.indexPathForSelectedRow {
+            let defaults = UserDefaults.standard
+            defaults.set(groupList[indexPath.row].id, forKey: "group")
+            defaults.set(true, forKey: "introPassed")
         }
     }
 }

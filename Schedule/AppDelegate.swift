@@ -15,7 +15,19 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        if defaults.object(forKey: "introPassed") == nil || defaults.bool(forKey: "introPassed") == false {
+            defaults.set(false, forKey: "introPassed")
+            let viewController = storyboard.instantiateViewController(withIdentifier: "IntroNavigationController") as! UINavigationController
+            self.window!.rootViewController = viewController
+        } else {
+            let viewController = storyboard.instantiateViewController(withIdentifier: "ScheduleNavigationController") as! UINavigationController
+            self.window!.rootViewController = viewController
+        }
+
+        self.window!.makeKeyAndVisible()
         return true
     }
 
