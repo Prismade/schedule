@@ -81,5 +81,28 @@ final class Api {
         return mondayWithOffset
     }
 
+    func getTimeForLesson(_ number: Int) -> String {
+        switch number {
+        case 1:
+            return "8:30-10:00"
+        case 2:
+            return "10:10-11:40"
+        case 3:
+            return "12:00-13:30"
+        case 4:
+            return "13:40-15:10"
+        case 5:
+            return "15:20-16:50"
+        case 6:
+            return "17:00-18:30"
+        case 7:
+            return "18:40-20:10"
+        case 8:
+            return "20:15-21:45"
+        default:
+            return ""
+        }
+    }
+
 
 }

@@ -16,8 +16,14 @@ final class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var special: UILabel!
     @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var subgroup: UILabel!
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var location: UILabel!
+
+    // MARK: - Private Properties
+
+    private var istoggledFull = false
 
     // MARK: - Public Methods
 
@@ -27,14 +33,25 @@ final class ScheduleTableViewCell: UITableViewCell {
             subject.text = lesson.subject
 
             if lesson.special != "" {
-                special.isHidden = false
                 special.text = "(\(lesson.special))"
+                special.isHidden = false
             } else {
+                special.text = ""
                 special.isHidden = true
             }
 
-            type.isHidden = false
             type.text = "(\(lesson.type))"
+            type.isHidden = false
+
+            if lesson.subgroup != 0 {
+                subgroup.text = String(lesson.subgroup)
+            } else {
+                subgroup.text = ""
+            }
+            subgroup.isHidden = true
+
+            time.text = Api.shared.getTimeForLesson(lesson.number)
+            time.isHidden = true
 
             if lesson.employeeName != "" {
                 teacher.isHidden = false
@@ -43,16 +60,39 @@ final class ScheduleTableViewCell: UITableViewCell {
                 teacher.isHidden = true
             }
 
-            location.isHidden = false
             location.text = lesson.location
+            location.isHidden = false
         } else {
             number.text = " "
             subject.text = "Пар нет"
             special.isHidden = true
             type.isHidden = true
+            subgroup.isHidden = true
+            time.isHidden = true
             teacher.isHidden = true
             location.isHidden = true
         }
+    }
+
+    func toggleFullInformation(with lesson: Lesson?) {
+        if let lesson = lesson {
+            if special.text != "" {
+                special.isHidden = !special.isHidden
+            }
+
+            if subgroup.text != "" {
+                subgroup.isHidden = !subgroup.isHidden
+            }
+
+            time.isHidden = !time.isHidden
+            if istoggledFull {
+                teacher.text = lesson.employeeName
+            } else {
+                teacher.text = lesson.fullEmployeeName
+            }
+
+        }
+        istoggledFull = !istoggledFull
     }
 
 
