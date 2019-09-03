@@ -47,9 +47,6 @@ final class ScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.viewControllers.removeFirst(
-            (self.navigationController?.viewControllers.count)! - 1)
-
         table.dataSource = viewModel
         table.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
         table.refreshControl = refreshControl
@@ -59,28 +56,40 @@ final class ScheduleViewController: UIViewController {
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
             self.table.reloadData()
+            self.animateTableUpdate(hide: false)
             self.updateWeekDates(on: self.weekOffset)
         }
-        updateModel(for: weekOffset)
-    }
 
-    // MARK: - Public Methods
-
-    @objc func refresh(_ sender: Any) {
         updateModel(for: weekOffset)
     }
 
     // MARK: - Private Methods
 
+    @objc private func refresh(_ sender: Any) {
+        updateModel(for: weekOffset)
+    }
+
     private func updateModel(for weekOffset: Int) {
         let defaults = UserDefaults.standard
         let group = defaults.integer(forKey: "group")
         refreshControl.beginRefreshing()
+        animateTableUpdate(hide: true)
         viewModel.update(for: group, on: weekOffset)
     }
 
     private func updateWeekDates(on weekOffset: Int) {
         navigationItem.title = "\(Api.shared.getWeekBoundaries(for: weekOffset))"
+    }
+
+    private func animateTableUpdate(hide: Bool) {
+        if hide {
+            table.isHidden = true
+        } else {
+            UIView.transition(with: table, duration: 0.5, options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve], animations: {
+                self.table.isHidden = false
+            })
+        }
+
     }
 
 
