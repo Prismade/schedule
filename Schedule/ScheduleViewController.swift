@@ -59,6 +59,7 @@ final class ScheduleViewController: UIViewController {
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
             self.table.reloadData()
+            self.updateWeekDates(on: self.weekOffset)
         }
         updateModel(for: weekOffset)
     }
@@ -71,11 +72,15 @@ final class ScheduleViewController: UIViewController {
 
     // MARK: - Private Methods
 
-    func updateModel(for weekOffset: Int) {
+    private func updateModel(for weekOffset: Int) {
         let defaults = UserDefaults.standard
         let group = defaults.integer(forKey: "group")
         refreshControl.beginRefreshing()
         viewModel.update(for: group, on: weekOffset)
+    }
+
+    private func updateWeekDates(on weekOffset: Int) {
+        navigationItem.title = "\(Api.shared.getWeekBoundaries(for: weekOffset))"
     }
 
 
