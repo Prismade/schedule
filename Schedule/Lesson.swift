@@ -29,6 +29,10 @@ struct Lesson: Decodable, Comparable {
         guard firstName != "", lastname != "", patronymic != "" else { return "" }
         return "👤 \(lastname) \(firstName.first!).\(patronymic.first!)."
     }
+    var fullEmployeeName: String {
+        guard firstName != "", lastname != "", patronymic != "" else { return "" }
+        return "👤 \(lastname) \(firstName) \(patronymic)"
+    }
     var location: String {
         return "📍 \(building)-\(room)"
     }

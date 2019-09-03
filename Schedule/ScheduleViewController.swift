@@ -11,6 +11,11 @@ import UIKit
 
 final class ScheduleViewController: UIViewController {
 
+    enum TableUpdateAnimationType {
+        case hide
+        case show
+    }
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var table: UITableView!
@@ -48,6 +53,7 @@ final class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = viewModel
+        table.delegate = viewModel
         table.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "ScheduleCell")
         table.refreshControl = refreshControl
 
@@ -56,7 +62,7 @@ final class ScheduleViewController: UIViewController {
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
             self.table.reloadData()
-            self.animateTableUpdate(hide: false)
+            self.animateTableUpdate(animation: .show)
             self.updateWeekDates(on: self.weekOffset)
         }
 
@@ -73,7 +79,7 @@ final class ScheduleViewController: UIViewController {
         let defaults = UserDefaults.standard
         let group = defaults.integer(forKey: "group")
         refreshControl.beginRefreshing()
-        animateTableUpdate(hide: true)
+        animateTableUpdate(animation: .hide)
         viewModel.update(for: group, on: weekOffset)
     }
 
@@ -81,15 +87,13 @@ final class ScheduleViewController: UIViewController {
         navigationItem.title = "\(Api.shared.getWeekBoundaries(for: weekOffset))"
     }
 
-    private func animateTableUpdate(hide: Bool) {
-        if hide {
-            table.isHidden = true
-        } else {
-            UIView.transition(with: table, duration: 0.5, options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve], animations: {
-                self.table.isHidden = false
-            })
+    private func animateTableUpdate(animation: TableUpdateAnimationType) {
+        switch animation {
+        case .hide: table.isHidden = true
+        case .show: UIView.transition(with: table, duration: 0.5, options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve], animations: {
+            self.table.isHidden = false
+        })
         }
-
     }
 
 

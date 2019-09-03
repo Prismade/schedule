@@ -121,8 +121,18 @@ extension ScheduleViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! ScheduleTableViewCell
         cell.configure(with: lesson(at: (indexPath.section, indexPath.row)))
+        cell.selectionStyle = .none
         return cell
     }
 
 
+}
+
+extension ScheduleViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ScheduleTableViewCell
+        cell.toggleFullInformation(with: lesson(at: (indexPath.section, indexPath.row)))
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
 }
