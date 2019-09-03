@@ -31,23 +31,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22h-le-RGS">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22h-le-RGS">
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="L0W-pu-PnJ"/>
-                                    <barButtonItem systemItem="rewind" id="RoB-9H-QSa">
+                                    <barButtonItem title="Item" image="Left button" landscapeImage="Left button" largeContentSizeImage="Left button" id="RoB-9H-QSa">
                                         <connections>
                                             <action selector="backButtonClick:" destination="BYZ-38-t0r" id="OtH-N0-Fx7"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="NIL-PV-dHv"/>
-                                    <barButtonItem systemItem="refresh" id="7TN-vS-Zwv">
+                                    <barButtonItem title="Item" image="Calendar Icon" landscapeImage="Calendar Icon" largeContentSizeImage="Calendar Icon" id="7TN-vS-Zwv">
                                         <connections>
                                             <action selector="currentWeekButtonClick:" destination="BYZ-38-t0r" id="5t3-66-HqE"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="JXc-g5-xWn"/>
-                                    <barButtonItem systemItem="fastForward" id="ZMg-5K-LeD">
+                                    <barButtonItem title="Item" image="Right button" landscapeImage="Right button" largeContentSizeImage="Right button" id="ZMg-5K-LeD">
                                         <connections>
                                             <action selector="nextButtonCkick:" destination="BYZ-38-t0r" id="rnR-Qx-odj"/>
                                         </connections>
@@ -69,7 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Расписание" id="TBN-za-F5I">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="8i4-cs-uzw">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="8i4-cs-uzw">
                             <connections>
                                 <action selector="onSettingsButtonClick:" destination="BYZ-38-t0r" id="N4u-iG-FAC"/>
                             </connections>
@@ -250,4 +250,10 @@
             <point key="canvasLocation" x="5024.8000000000002" y="-439.43028485757122"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar Icon" width="49" height="49"/>
+        <image name="Left button" width="49" height="49"/>
+        <image name="Right button" width="49" height="49"/>
+        <image name="Settings" width="40" height="40"/>
+    </resources>
 </document>
