@@ -131,6 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				2412DD7F22E317E500865EB7 /* Assets.xcassets */,
+				2412DD7C22E317E400865EB7 /* Main.storyboard */,
+				2412DD8122E317E500865EB7 /* LaunchScreen.storyboard */,
+				2412DD8422E317E500865EB7 /* Info.plist */,
+				24950A35231083DC00943183 /* Schedule.xcdatamodeld */,
 				2402B35322E331A400A276C0 /* Api Responses */,
 				24C9857A2310231100CEE01B /* View Controllers */,
 				24950A342310375000943183 /* Table Cells */,
@@ -138,10 +142,6 @@
 				2412DD7822E317E400865EB7 /* AppDelegate.swift */,
 				2421479C22FB17AB002BAB27 /* Api.swift */,
 				24D693D0230AA44D009259EA /* ScheduleViewModel.swift */,
-				2412DD7C22E317E400865EB7 /* Main.storyboard */,
-				2412DD8122E317E500865EB7 /* LaunchScreen.storyboard */,
-				24950A35231083DC00943183 /* Schedule.xcdatamodeld */,
-				2412DD8422E317E500865EB7 /* Info.plist */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
