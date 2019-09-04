@@ -22,10 +22,11 @@ final class ScheduleViewModel: NSObject {
         case saturday = 6
     }
 
-    struct ScheduleDay {
+    final class ScheduleDay {
         let weekday: WeekDay
         let sectionTitle: String
         let lessons: [Lesson]
+        var toggled: [Bool]
         var rowsNumber: Int {
             return lessons.count
         }
@@ -41,6 +42,7 @@ final class ScheduleViewModel: NSObject {
             case .saturday : self.sectionTitle = "Суббота"
             }
             self.lessons = lessons
+            self.toggled = Array(repeating: false, count: self.lessons.count)
         }
     }
 
@@ -78,6 +80,22 @@ final class ScheduleViewModel: NSObject {
 
     func scheduleDay(at day: Int) -> ScheduleDay {
         return schedule[day]
+    }
+
+    func isToggled(at position: (day: Int, number: Int)) -> Bool {
+        let (day, number) = position
+        if number >= schedule[day].lessons.count {
+            return false
+        } else {
+            return schedule[day].toggled[number]
+        }
+    }
+
+    func toggle(at position: (day: Int, number: Int)) {
+        let (day, number) = position
+        if number < schedule[day].lessons.count {
+            schedule[day].toggled[number] = !schedule[day].toggled[number]
+        }
     }
 
     // MARK: - Private Methods
@@ -120,7 +138,7 @@ extension ScheduleViewModel: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! ScheduleTableViewCell
-        cell.configure(with: lesson(at: (indexPath.section, indexPath.row)))
+        cell.configure(with: lesson(at: (indexPath.section, indexPath.row)), toggled: isToggled(at: (indexPath.section, indexPath.row)))
         cell.selectionStyle = .none
         return cell
     }
@@ -131,7 +149,11 @@ extension ScheduleViewModel: UITableViewDataSource {
 extension ScheduleViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ScheduleTableViewCell
-        cell.toggleFullInformation(with: lesson(at: (indexPath.section, indexPath.row)))
+
+        cell.update(with: lesson(at: (indexPath.section, indexPath.row)),
+                    toggled: isToggled(at: (indexPath.section, indexPath.row)))
+        toggle(at: (indexPath.section, indexPath.row))
+
         tableView.beginUpdates()
         tableView.endUpdates()
     }

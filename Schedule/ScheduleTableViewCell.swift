@@ -21,13 +21,9 @@ final class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var location: UILabel!
 
-    // MARK: - Private Properties
-
-    private var istoggledFull = false
-
     // MARK: - Public Methods
 
-    func configure(with lesson: Lesson?) {
+    func configure(with lesson: Lesson?, toggled: Bool) {
         if let lesson = lesson {
             number.text = String(lesson.number)
             subject.text = lesson.subject
@@ -42,15 +38,7 @@ final class ScheduleTableViewCell: UITableViewCell {
 
             type.text = "(\(lesson.type))"
             type.isHidden = false
-
-            if lesson.subgroup != 0 {
-                subgroup.text = String(lesson.subgroup)
-            } else {
-                subgroup.text = ""
-            }
             subgroup.isHidden = true
-
-            time.text = Api.shared.getTimeForLesson(lesson.number)
             time.isHidden = true
 
             if lesson.employeeName != "" {
@@ -72,27 +60,33 @@ final class ScheduleTableViewCell: UITableViewCell {
             teacher.isHidden = true
             location.isHidden = true
         }
+        update(with: lesson, toggled: !toggled)
     }
 
-    func toggleFullInformation(with lesson: Lesson?) {
+    func update(with lesson: Lesson?, toggled: Bool) {
         if let lesson = lesson {
-            if special.text != "" {
-                special.isHidden = !special.isHidden
-            }
-
-            if subgroup.text != "" {
-                subgroup.isHidden = !subgroup.isHidden
-            }
-
-            time.isHidden = !time.isHidden
-            if istoggledFull {
+            if toggled {
+                special.isHidden = true
+                subgroup.isHidden = true
+                time.isHidden = true
                 teacher.text = lesson.employeeName
             } else {
+                if special.text != "" {
+                    special.isHidden = false
+                }
+
+                if lesson.subgroup != 0 {
+                    subgroup.text = String("Подгруппа \(lesson.subgroup)")
+                    subgroup.isHidden = false
+                } else {
+                    subgroup.isHidden = true
+                }
+
+                time.text = Api.shared.getTimeForLesson(lesson.number)
+                time.isHidden = false
                 teacher.text = lesson.fullEmployeeName
             }
-
         }
-        istoggledFull = !istoggledFull
     }
 
 
