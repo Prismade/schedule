@@ -21,8 +21,6 @@
 		2421479B22FB1655002BAB27 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421479A22FB1655002BAB27 /* Division.swift */; };
 		2421479D22FB17AB002BAB27 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421479C22FB17AB002BAB27 /* Api.swift */; };
 		24950A37231083DC00943183 /* Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24950A35231083DC00943183 /* Schedule.xcdatamodeld */; };
-		24950A3A2312A15200943183 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950A392312A15200943183 /* CarouselView.swift */; };
-		24950A3C2312A15E00943183 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24950A3B2312A15E00943183 /* CarouselView.xib */; };
 		24950A3E2313D53A00943183 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24950A3D2313D53A00943183 /* ScheduleTableViewCell.xib */; };
 		24C9857C2310233F00CEE01B /* DivisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C9857B2310233F00CEE01B /* DivisionViewController.swift */; };
 		24C9857E2310235000CEE01B /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C9857D2310235000CEE01B /* CourseViewController.swift */; };
@@ -62,8 +60,6 @@
 		2421479A22FB1655002BAB27 /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
 		2421479C22FB17AB002BAB27 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		24950A36231083DC00943183 /* Schedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Schedule.xcdatamodel; sourceTree = "<group>"; };
-		24950A392312A15200943183 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
-		24950A3B2312A15E00943183 /* CarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		24950A3D2313D53A00943183 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		24C9857B2310233F00CEE01B /* DivisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionViewController.swift; sourceTree = "<group>"; };
 		24C9857D2310235000CEE01B /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +134,6 @@
 				2402B35322E331A400A276C0 /* Api Responses */,
 				24C9857A2310231100CEE01B /* View Controllers */,
 				24950A342310375000943183 /* Table Cells */,
-				24950A382312A0D600943183 /* (unused) Carousel View */,
 				2412DD7822E317E400865EB7 /* AppDelegate.swift */,
 				2421479C22FB17AB002BAB27 /* Api.swift */,
 				24D693D0230AA44D009259EA /* ScheduleViewModel.swift */,
@@ -163,15 +158,6 @@
 				24950A3D2313D53A00943183 /* ScheduleTableViewCell.xib */,
 			);
 			name = "Table Cells";
-			sourceTree = "<group>";
-		};
-		24950A382312A0D600943183 /* (unused) Carousel View */ = {
-			isa = PBXGroup;
-			children = (
-				24950A392312A15200943183 /* CarouselView.swift */,
-				24950A3B2312A15E00943183 /* CarouselView.xib */,
-			);
-			name = "(unused) Carousel View";
 			sourceTree = "<group>";
 		};
 		24C9857A2310231100CEE01B /* View Controllers */ = {
@@ -292,7 +278,6 @@
 			files = (
 				2412DD8322E317E500865EB7 /* LaunchScreen.storyboard in Resources */,
 				2412DD8022E317E500865EB7 /* Assets.xcassets in Resources */,
-				24950A3C2312A15E00943183 /* CarouselView.xib in Resources */,
 				2412DD7E22E317E400865EB7 /* Main.storyboard in Resources */,
 				24950A3E2313D53A00943183 /* ScheduleTableViewCell.xib in Resources */,
 			);
@@ -391,7 +376,6 @@
 				2421479B22FB1655002BAB27 /* Division.swift in Sources */,
 				2421479D22FB17AB002BAB27 /* Api.swift in Sources */,
 				2421479922FB1437002BAB27 /* Group.swift in Sources */,
-				24950A3A2312A15200943183 /* CarouselView.swift in Sources */,
 				241FB7EF22FF1C0F006CD82E /* Course.swift in Sources */,
 				24C9857E2310235000CEE01B /* CourseViewController.swift in Sources */,
 				24C9857C2310233F00CEE01B /* DivisionViewController.swift in Sources */,
