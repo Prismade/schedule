@@ -46,6 +46,8 @@ final class ScheduleViewController: UIViewController {
 
     private let viewModel = ScheduleViewModel()
     private let refreshControl = UIRefreshControl()
+    private let swipeRightRecognizer = UIScreenEdgePanGestureRecognizer()
+    private let swipeLeftRecognizer = UIScreenEdgePanGestureRecognizer()
     private var weekOffset: Int = 0
 
     // MARK: - Lifecycle
@@ -58,6 +60,15 @@ final class ScheduleViewController: UIViewController {
         table.refreshControl = refreshControl
 
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+
+        swipeRightRecognizer.addTarget(self, action: #selector(swipeFromRightEdge(_:)))
+        swipeRightRecognizer.edges = UIRectEdge.right
+
+        swipeLeftRecognizer.addTarget(self, action: #selector(swipeFromLeftEdge(_:)))
+        swipeLeftRecognizer.edges = UIRectEdge.left
+
+        table.addGestureRecognizer(swipeRightRecognizer)
+        table.addGestureRecognizer(swipeLeftRecognizer)
 
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
@@ -73,6 +84,20 @@ final class ScheduleViewController: UIViewController {
 
     @objc private func refresh(_ sender: Any) {
         updateModel(for: weekOffset)
+    }
+
+    @objc private func swipeFromLeftEdge(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+        if gestureRecognizer.state == .recognized {
+            weekOffset -= 1
+            updateModel(for: weekOffset)
+        }
+    }
+
+    @objc private func swipeFromRightEdge(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+        if gestureRecognizer.state == .recognized {
+            weekOffset += 1
+            updateModel(for: weekOffset)
+        }
     }
 
     private func updateModel(for weekOffset: Int) {

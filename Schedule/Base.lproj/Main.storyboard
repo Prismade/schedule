@@ -57,6 +57,7 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="22h-le-RGS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q3v-aI-Tyz"/>
                             <constraint firstItem="7kT-9E-TED" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QYO-X0-FWt"/>
