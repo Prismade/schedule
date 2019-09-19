@@ -82,7 +82,7 @@ final class ScheduleTableViewCell: UITableViewCell {
                     subgroup.isHidden = true
                 }
 
-                time.text = Api.shared.getTimeForLesson(lesson.number)
+                time.text = Api.shared.getTime(for: lesson.number)
                 time.isHidden = false
                 teacher.text = lesson.fullEmployeeName
             }

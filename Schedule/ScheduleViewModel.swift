@@ -53,6 +53,7 @@ final class ScheduleViewModel: NSObject {
     // MARK: - Private Properties
 
     private var schedule = [ScheduleDay]()
+    private var didScrollToCurrentLesson = false
 
     // MARK: - Public Methods
 
@@ -156,5 +157,18 @@ extension ScheduleViewModel: UITableViewDelegate {
 
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+            if indexPath == lastVisibleIndexPath && !didScrollToCurrentLesson {
+                tableView.scrollToRow(
+                    at: IndexPath(
+                        row: 0,
+                        section: Api.shared.getCurrentWeekDay()),
+                    at: .middle, animated: true)
+                didScrollToCurrentLesson = true
+            }
+        }
     }
 }
