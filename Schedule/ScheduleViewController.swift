@@ -39,7 +39,7 @@ final class ScheduleViewController: UIViewController {
     }
 
     @IBAction func onSettingsButtonClick(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "backToStart", sender: nil)
+        performSegue(withIdentifier: "toSettingsScreen", sender: nil)
     }
 
     // MARK: - Private Properties
@@ -67,9 +67,6 @@ final class ScheduleViewController: UIViewController {
         swipeLeftRecognizer.addTarget(self, action: #selector(swipeFromLeftEdge(_:)))
         swipeLeftRecognizer.edges = UIRectEdge.left
 
-        table.addGestureRecognizer(swipeRightRecognizer)
-        table.addGestureRecognizer(swipeLeftRecognizer)
-
         viewModel.dataUpdateDidFinishSuccessfully = {
             self.refreshControl.endRefreshing()
             self.table.reloadData()
@@ -78,6 +75,17 @@ final class ScheduleViewController: UIViewController {
         }
 
         updateModel(for: weekOffset)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "swipeWeek") {
+            table.addGestureRecognizer(swipeRightRecognizer)
+            table.addGestureRecognizer(swipeLeftRecognizer)
+        } else {
+            table.removeGestureRecognizer(swipeLeftRecognizer)
+            table.removeGestureRecognizer(swipeRightRecognizer)
+        }
     }
 
     // MARK: - Private Methods
@@ -109,7 +117,7 @@ final class ScheduleViewController: UIViewController {
     }
 
     private func updateWeekDates(on weekOffset: Int) {
-        navigationItem.title = "\(Api.shared.getWeekBoundaries(for: weekOffset))"
+        navigationItem.title = "\(TimeManager.shared.getWeekBoundaries(for: weekOffset))"
     }
 
     private func animateTableUpdate(animation: TableUpdateAnimationType) {

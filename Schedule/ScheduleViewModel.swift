@@ -31,7 +31,7 @@ final class ScheduleViewModel: NSObject {
             return lessons.count
         }
 
-        init(weekday: WeekDay, lessons: [Lesson]) {
+        init(weekday: WeekDay, lessons: [Lesson], isToggled: Bool) {
             self.weekday = weekday
             switch weekday {
             case .monday: self.sectionTitle = "Понедельник"
@@ -42,7 +42,7 @@ final class ScheduleViewModel: NSObject {
             case .saturday : self.sectionTitle = "Суббота"
             }
             self.lessons = lessons
-            self.toggled = Array(repeating: false, count: self.lessons.count)
+            self.toggled = Array(repeating: isToggled, count: self.lessons.count)
         }
     }
 
@@ -102,14 +102,15 @@ final class ScheduleViewModel: NSObject {
     // MARK: - Private Methods
 
     private func requestSucceeded(with response: [Lesson]) {
+        let defaults = UserDefaults.standard
         schedule = (1...6).map { weekDay in
-            ScheduleDay(weekday: WeekDay(rawValue: weekDay)!, lessons: response.filter { $0.weekDay == weekDay ? true : false }.sorted())
+            ScheduleDay(weekday: WeekDay(rawValue: weekDay)!, lessons: response.filter { $0.weekDay == weekDay ? true : false }.sorted(), isToggled: defaults.bool(forKey: "fullView"))
         }
         guard let callback = dataUpdateDidFinishSuccessfully else { return }
         callback()
     }
 
-    private func requestFailed(with error: Error, and response: DataResponse<[Lesson]>) {
+    private func requestFailed(with error: Error, and response: DataResponse<[Lesson], AFError>) {
         print(error)
         print(response)
     }
@@ -161,12 +162,16 @@ extension ScheduleViewModel: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
-            if indexPath == lastVisibleIndexPath && !didScrollToCurrentLesson {
+            let defaults = UserDefaults.standard
+            if indexPath == lastVisibleIndexPath &&
+               !didScrollToCurrentLesson &&
+               defaults.bool(forKey: "scrollToToday") {
+
                 tableView.scrollToRow(
                     at: IndexPath(
                         row: 0,
-                        section: Api.shared.getCurrentWeekDay()),
-                    at: .middle, animated: true)
+                        section: TimeManager.shared.getCurrentWeekDay()),
+                    at: .top, animated: true)
                 didScrollToCurrentLesson = true
             }
         }
