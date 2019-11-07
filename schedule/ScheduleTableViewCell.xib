@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScheduleTableViewCell" customModule="schedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="349"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkJ-V7-xOm" userLabel="#">
+                    <rect key="frame" x="20" y="10" width="10.5" height="295"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-VG-WAO">
+                    <rect key="frame" x="50.5" y="10" width="355.5" height="295"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Программирование на языке Python" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kw-jn-IXd">
+                            <rect key="frame" x="0.0" y="0.0" width="355.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00-13:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRM-Q1-Jsq">
+                            <rect key="frame" x="0.0" y="44" width="355.5" height="29.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(special)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYj-OM-sjm">
+                            <rect key="frame" x="0.0" y="83.5" width="355.5" height="29"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(лаб)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIJ-JD-de6">
+                            <rect key="frame" x="0.0" y="122.5" width="355.5" height="29.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подгруппа 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFg-2w-4qs">
+                            <rect key="frame" x="0.0" y="162" width="355.5" height="29"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤Раков В.И." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfX-c3-ig1">
+                            <rect key="frame" x="0.0" y="201" width="355.5" height="29.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📍12-306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-ke-z4Y">
+                            <rect key="frame" x="0.0" y="240.5" width="355.5" height="54.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MkJ-V7-xOm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4TP-xZ-cPi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iqf-VG-WAO" secondAttribute="trailing" constant="20" id="9Dn-Fz-sQJ"/>
+                <constraint firstItem="MkJ-V7-xOm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Osm-3M-H38"/>
+                <constraint firstItem="iqf-VG-WAO" firstAttribute="leading" secondItem="MkJ-V7-xOm" secondAttribute="trailing" constant="20" id="Rac-wA-xwy"/>
+                <constraint firstItem="iqf-VG-WAO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="da7-hH-mXA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iqf-VG-WAO" secondAttribute="bottom" constant="10" id="eFt-yz-9x8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MkJ-V7-xOm" secondAttribute="bottom" constant="10" id="p95-xa-ngB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lessonNumber" destination="MkJ-V7-xOm" id="Boi-ah-XgO"/>
+                <outlet property="lessonTime" destination="iRM-Q1-Jsq" id="WVD-bY-uRw"/>
+                <outlet property="lessonTitle" destination="8Kw-jn-IXd" id="JiV-wC-Hnh"/>
+                <outlet property="lessonType" destination="DIJ-JD-de6" id="hak-nm-cQB"/>
+                <outlet property="location" destination="dSE-ke-z4Y" id="iWl-Cc-jkN"/>
+                <outlet property="special" destination="NYj-OM-sjm" id="qJb-KF-10f"/>
+                <outlet property="subgroup" destination="PFg-2w-4qs" id="gwI-4i-Ak2"/>
+                <outlet property="teacherName" destination="lfX-c3-ig1" id="LL9-Fp-D7S"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="139.62053571428569"/>
+        </view>
+    </objects>
+</document>
