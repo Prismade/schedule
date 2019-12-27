@@ -41,12 +41,16 @@ final class ScheduleTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if traitCollection.userInterfaceStyle == .dark {
-            self.navigationController?.view.backgroundColor = .black
+        if #available(iOS 13, *) {
+            if traitCollection.userInterfaceStyle == .dark {
+                self.navigationController?.view.backgroundColor = .black
+            } else {
+                self.navigationController?.view.backgroundColor = .white
+            }
         } else {
             self.navigationController?.view.backgroundColor = .white
         }
-
+        
         table.dataSource = viewModel
         table.delegate = viewModel
         table.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "ScheduleTableCell")
@@ -81,14 +85,17 @@ final class ScheduleTableViewController: UIViewController {
         }
     }
     
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        guard previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle else {
-            return
-        }
-        if traitCollection.userInterfaceStyle == .dark {
-            self.navigationController?.view.backgroundColor = .black
-        } else {
-            self.navigationController?.view.backgroundColor = .white
+        if #available(iOS 12, *) {
+            guard previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle else {
+                return
+            }
+            if traitCollection.userInterfaceStyle == .dark {
+                self.navigationController?.view.backgroundColor = .black
+            } else {
+                self.navigationController?.view.backgroundColor = .white
+            }
         }
     }
 

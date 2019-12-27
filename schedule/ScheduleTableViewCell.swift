@@ -20,7 +20,6 @@ final class ScheduleTableViewCell: UITableViewCell {
 
     public func configure(with lesson: Lesson?, toggled: Bool) {
         if let lesson = lesson {
-            
             lessonNumber.text = String(lesson.number)
             lessonTitle.text = lesson.subject
             lessonTime.isHidden = false
