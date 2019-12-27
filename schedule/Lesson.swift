@@ -15,14 +15,14 @@ class Lesson: Decodable, Comparable {
     let employeeId: Int?
     let patronymic: String
     let firstName: String
-    let lastname: String
+    let lastName: String
     var employeeName: String {
-        guard firstName != "", lastname != "", patronymic != "" else { return "" }
-        return "👤 \(lastname) \(firstName.first!).\(patronymic.first!)."
+        guard firstName != "", lastName != "", patronymic != "" else { return "" }
+        return "👤 \(lastName) \(firstName.first!).\(patronymic.first!)."
     }
     var fullEmployeeName: String {
-        guard firstName != "", lastname != "", patronymic != "" else { return "" }
-        return "👤 \(lastname) \(firstName) \(patronymic)"
+        guard firstName != "", lastName != "", patronymic != "" else { return "" }
+        return "👤 \(lastName) \(firstName) \(patronymic)"
     }
     var location: String {
         return "📍 \(building)-\(room)"
@@ -43,7 +43,6 @@ class Lesson: Decodable, Comparable {
         case patronymic = "SecondName"
         case firstName = "Name"
         case lastName = "Family"
-        case employeeName
     }
 
     required init(from decoder: Decoder) throws {
@@ -62,7 +61,7 @@ class Lesson: Decodable, Comparable {
         employeeId = try? container.decode(Int.self, forKey: .employeeId)
         patronymic = try container.decode(String.self, forKey: .patronymic)
         firstName = try container.decode(String.self, forKey: .firstName)
-        lastname = try container.decode(String.self, forKey: .lastName)
+        lastName = try container.decode(String.self, forKey: .lastName)
     }
 
     static func < (lhs: Lesson, rhs: Lesson) -> Bool {

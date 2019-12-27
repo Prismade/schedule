@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24020DB9236F3CAB0000EB37 /* NewScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24020DB8236F3CAB0000EB37 /* NewScheduleViewModel.swift */; };
+		2421789D23B6AFCE001A343C /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421789C23B6AFCE001A343C /* Exam.swift */; };
 		242EA04F2361D3F2006809F2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242EA04E2361D3F2006809F2 /* RootViewController.swift */; };
 		2445136A2362E73B00BCCA85 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* SettingsTableViewController.swift */; };
 		244513702362EB0900BCCA85 /* CommonInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445136F2362EB0900BCCA85 /* CommonInit.swift */; };
@@ -59,6 +60,7 @@
 		0FFDA49FF5924177F33A27D5 /* Pods-scheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleTests/Pods-scheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		10400250AD491A7BAF163778 /* Pods-scheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleUITests/Pods-scheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24020DB8236F3CAB0000EB37 /* NewScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScheduleViewModel.swift; sourceTree = "<group>"; };
+		2421789C23B6AFCE001A343C /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		242EA04E2361D3F2006809F2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		244513692362E73B00BCCA85 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2445136F2362EB0900BCCA85 /* CommonInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInit.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				244F9396234F438E00A99C7F /* Group.swift */,
 				244F939F234F47F800A99C7F /* Teacher.swift */,
 				244F93A1234F497D00A99C7F /* Lesson.swift */,
+				2421789C23B6AFCE001A343C /* Exam.swift */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				2478E63F2359AAB60038E6A5 /* ScheduleTableViewCell.swift in Sources */,
 				24DA80AD234622F9008055D3 /* schedule.xcdatamodeld in Sources */,
 				24DA80A5234622F9008055D3 /* SceneDelegate.swift in Sources */,
+				2421789D23B6AFCE001A343C /* Exam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
