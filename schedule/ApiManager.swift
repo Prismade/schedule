@@ -78,7 +78,14 @@ protocol ApiManaging {
      */
     @discardableResult
     func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<[Lesson], AFError>) -> Void) -> Request
-
+    
+    /**
+     Получение расписания экзаменов на текущий семестр (если оно есть)
+     - parameter group: id группы
+     - returns: Объект запроса (для отладки). Можно опустить получение.
+     */
+    @discardableResult
+    func getExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request
 
 }
 
@@ -147,6 +154,12 @@ final class ApiManager: ApiManaging {
     func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<[Lesson], AFError>) -> Void) -> Request  {
         let timeStamp: String = TimeManager.shared.getApiTimeKey(for: weekOffset)
         let url = baseUrl + "/\(teacher)////\(timeStamp)/printschedule"
+        return session.request(url).responseDecodable(completionHandler: completion)
+    }
+    
+    @discardableResult
+    func getExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request {
+        let url = baseUrl + "/\(group)////printexamschedule"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
 
