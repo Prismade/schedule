@@ -75,7 +75,7 @@
 		24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		249CE840236D9A76004D0EEE /* TimeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTests.swift; sourceTree = "<group>"; };
 		24A69BE22350959300E95589 /* JsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTests.swift; sourceTree = "<group>"; };
-		24DA809F234622F9008055D3 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24DA809F234622F9008055D3 /* Расписание.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Расписание.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DA80A2234622F9008055D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24DA80A4234622F9008055D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		24DA80A9234622F9008055D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		24DA80A0234622F9008055D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24DA809F234622F9008055D3 /* schedule.app */,
+				24DA809F234622F9008055D3 /* Расписание.app */,
 				24DA80B8234622FA008055D3 /* scheduleTests.xctest */,
 				24DA80C3234622FA008055D3 /* scheduleUITests.xctest */,
 			);
@@ -289,7 +289,7 @@
 			);
 			name = schedule;
 			productName = schedule;
-			productReference = 24DA809F234622F9008055D3 /* schedule.app */;
+			productReference = 24DA809F234622F9008055D3 /* Расписание.app */;
 			productType = "com.apple.product-type.application";
 		};
 		24DA80B7234622FA008055D3 /* scheduleTests */ = {
@@ -683,7 +683,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Расписание";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -703,7 +703,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Расписание";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
