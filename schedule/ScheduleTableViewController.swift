@@ -64,11 +64,17 @@ final class ScheduleTableViewController: UIViewController {
         swipeLeftRecognizer.addTarget(self, action: #selector(swipeFromEdge(_:)))
         swipeLeftRecognizer.edges = .left
 
-        viewModel.dataUpdateDidFinishSuccessfully = {
+        viewModel.dataUpdateDidFinishSuccessfully = { [unowned self] in
             self.refreshControl.endRefreshing()
             self.table.reloadData()
             self.animateTableUpdate(animation: .show)
             self.updateWeekDates(on: self.weekOffset)
+        }
+
+        if #available(iOS 13.0, *) {
+            self.navigationController?.view.backgroundColor = .systemGroupedBackground
+        } else {
+            self.navigationController?.view.backgroundColor = .groupTableViewBackground
         }
 
         updateModel(for: weekOffset)
@@ -82,20 +88,6 @@ final class ScheduleTableViewController: UIViewController {
         } else {
             table.removeGestureRecognizer(swipeLeftRecognizer)
             table.removeGestureRecognizer(swipeRightRecognizer)
-        }
-    }
-    
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 12, *) {
-            guard previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle else {
-                return
-            }
-            if traitCollection.userInterfaceStyle == .dark {
-                self.navigationController?.view.backgroundColor = .black
-            } else {
-                self.navigationController?.view.backgroundColor = .white
-            }
         }
     }
 
@@ -115,10 +107,6 @@ final class ScheduleTableViewController: UIViewController {
             updateModel(for: weekOffset)
         }
     }
-    
-    @objc private func onToolbarButtonTap(_ sender: UIButton) {
-        
-    }
 
     private func updateModel(for weekOffset: Int) {
         let defaults = UserDefaults.standard
@@ -129,16 +117,17 @@ final class ScheduleTableViewController: UIViewController {
     }
 
     private func updateWeekDates(on weekOffset: Int) {
-//        navigationItem.title = "\(TimeManager.shared.getWeekBoundaries(for: weekOffset))"
         navigationItem.prompt = "\(TimeManager.shared.getWeekBoundaries(for: weekOffset))"
     }
 
     private func animateTableUpdate(animation: TableUpdateAnimationType) {
         switch animation {
         case .hide: table.isHidden = true
-        case .show: UIView.transition(with: table, duration: 0.5, options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve], animations: {
-            self.table.isHidden = false
-        })
+        case .show: UIView.transition(
+            with: table,
+            duration: 0.5,
+            options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve],
+            animations: { [unowned self] in self.table.isHidden = false })
         }
     }
 
