@@ -12,33 +12,34 @@
         <!--Расписание-->
         <scene sceneID="inD-7o-N9r">
             <objects>
-                <viewController storyboardIdentifier="ScheduleTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKN-XW-SHB" customClass="ScheduleTableViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKN-XW-SHB" customClass="ScheduleTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZdL-6g-wct">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dAi-so-wOt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-e3-IZ1">
                                 <rect key="frame" x="0.0" y="545" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="59G-yf-1RE"/>
-                                    <barButtonItem tag="1" title="Item" image="arrowtriangle.left.fill" catalog="system" id="FkR-Wg-BMl">
+                                    <barButtonItem tag="1" title="Item" image="Sort Left Icon" id="FkR-Wg-BMl">
                                         <color key="tintColor" name="MainAccentColor"/>
                                         <connections>
                                             <action selector="onBarButtonTap:" destination="wKN-XW-SHB" id="j5F-9k-11o"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="e0i-wV-kEe"/>
-                                    <barButtonItem tag="2" title="Item" image="calendar" catalog="system" id="FiF-OZ-bCf">
+                                    <barButtonItem tag="2" title="Item" image="Today Icon" id="FiF-OZ-bCf">
                                         <color key="tintColor" name="MainAccentColor"/>
                                         <connections>
                                             <action selector="onBarButtonTap:" destination="wKN-XW-SHB" id="xCf-30-3sN"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="taQ-ir-WhU"/>
-                                    <barButtonItem tag="3" title="Item" image="arrowtriangle.right.fill" catalog="system" id="OEO-9V-CCh">
+                                    <barButtonItem tag="3" title="Item" image="Sort Right Icon" id="OEO-9V-CCh">
                                         <color key="tintColor" name="MainAccentColor"/>
                                         <connections>
                                             <action selector="onBarButtonTap:" destination="wKN-XW-SHB" id="pfN-Jk-ieb"/>
@@ -62,7 +63,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Расписание" prompt=" " id="U6B-4a-ftm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="dj2-gG-Kew">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings Icon" id="dj2-gG-Kew">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="onSettingsButtonTap:" destination="wKN-XW-SHB" id="t69-lF-APP"/>
@@ -98,10 +99,91 @@
             </objects>
             <point key="canvasLocation" x="-1443" y="-820"/>
         </scene>
+        <!--О приложении-->
+        <scene sceneID="FLg-uS-Rqg">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zOR-JU-VFB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VlZ-yD-rvr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmC-Db-IF3">
+                                <rect key="frame" x="20" y="140" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-eS-inh">
+                                <rect key="frame" x="0.0" y="177" width="375" height="446"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Расписание © 2019-2020 Егор Молчанов  Today, sort left, sort right and settings icons by Icon8 (https://icons8.com)  Лицензии открытого ПО  </string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Alamofire">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="systemBold" size="14"/>
+                                            <font key="NSOriginalFont" metaFont="systemBold" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content"> 
+Copyright © 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9FR-Ov-eOo">
+                                <rect key="frame" x="137.5" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="iwD-21-992"/>
+                                    <constraint firstAttribute="height" constant="100" id="jVg-eJ-zeW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DWA-4B-eao" firstAttribute="bottom" secondItem="gOr-eS-inh" secondAttribute="bottom" id="6UX-5q-JZs"/>
+                            <constraint firstItem="DWA-4B-eao" firstAttribute="trailing" secondItem="vmC-Db-IF3" secondAttribute="trailing" constant="20" id="7Z2-ne-TI2"/>
+                            <constraint firstItem="9FR-Ov-eOo" firstAttribute="top" secondItem="DWA-4B-eao" secondAttribute="top" constant="20" id="98O-us-xtf"/>
+                            <constraint firstItem="DWA-4B-eao" firstAttribute="trailing" secondItem="gOr-eS-inh" secondAttribute="trailing" id="cHz-Sc-W7u"/>
+                            <constraint firstItem="9FR-Ov-eOo" firstAttribute="centerX" secondItem="VlZ-yD-rvr" secondAttribute="centerX" id="czV-Gp-gAA"/>
+                            <constraint firstItem="vmC-Db-IF3" firstAttribute="top" secondItem="9FR-Ov-eOo" secondAttribute="bottom" constant="20" id="imk-Se-JCL"/>
+                            <constraint firstItem="gOr-eS-inh" firstAttribute="leading" secondItem="DWA-4B-eao" secondAttribute="leading" id="nx9-Z6-2cZ"/>
+                            <constraint firstItem="vmC-Db-IF3" firstAttribute="leading" secondItem="DWA-4B-eao" secondAttribute="leading" constant="20" id="uWb-y6-g6E"/>
+                            <constraint firstItem="gOr-eS-inh" firstAttribute="top" secondItem="vmC-Db-IF3" secondAttribute="bottom" constant="20" id="wgu-5y-NQm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DWA-4B-eao"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="О приложении" id="wLA-Xx-OQW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVB-hF-fk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.7037037037037" y="-1331.1111111111111"/>
+        </scene>
         <!--Настройки-->
         <scene sceneID="NNU-FF-PHS">
             <objects>
-                <tableViewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x97-pp-ZwZ" customClass="SettingsTableViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x97-pp-ZwZ" customClass="SettingsTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="R2D-zN-Ek8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,6 +346,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="JeP-ga-93e" secondAttribute="trailing" constant="20" id="o3g-RI-ZtJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zOR-JU-VFB" kind="show" id="6iU-UX-tg2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -304,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OmW-bb-h1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039.2" y="-821.73913043478262"/>
+            <point key="canvasLocation" x="1996" y="-349"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8Id-tR-0lo">
@@ -335,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QK-fP-n3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2908" y="-821"/>
+            <point key="canvasLocation" x="2864" y="-348"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sPe-EF-5W1">
@@ -366,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDk-bj-Hp3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3791" y="-818"/>
+            <point key="canvasLocation" x="3747" y="-345"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="n2Y-5y-xWx">
@@ -382,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzt-YI-sfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4585" y="-818"/>
+            <point key="canvasLocation" x="4661" y="-345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YnE-L2-UgL">
@@ -400,14 +485,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqE-lf-p6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="-821.73913043478262"/>
+            <point key="canvasLocation" x="1104" y="-348"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.left.fill" catalog="system" width="64" height="56"/>
-        <image name="arrowtriangle.right.fill" catalog="system" width="64" height="56"/>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="Logo" width="50.666667938232422" height="50.666667938232422"/>
+        <image name="Settings Icon" width="30" height="30"/>
+        <image name="Sort Left Icon" width="30" height="30"/>
+        <image name="Sort Right Icon" width="30" height="30"/>
+        <image name="Today Icon" width="30" height="30"/>
         <namedColor name="MainAccentColor">
             <color red="0.3843137254901961" green="0.5725490196078431" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
