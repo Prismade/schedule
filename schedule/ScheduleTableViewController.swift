@@ -15,13 +15,15 @@ final class ScheduleTableViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func onBarButtonTap(_ sender: UIBarButtonItem) {
-        switch sender.tag {
-        case 1: weekOffset -= 1
-        case 2: weekOffset = 0
-        case 3: weekOffset += 1
-        default: return
+        if !(sender.tag == 2 && weekOffset == 0) {
+            switch sender.tag {
+                case 1: weekOffset -= 1
+                case 2: weekOffset = 0
+                case 3: weekOffset += 1
+                default: return
+            }
+            updateModel(for: weekOffset)
         }
-        updateModel(for: weekOffset)
     }
 
     @IBAction func onSettingsButtonTap(_ sender: UIBarButtonItem) {
