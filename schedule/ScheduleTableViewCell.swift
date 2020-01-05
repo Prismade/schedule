@@ -18,7 +18,7 @@ final class ScheduleTableViewCell: UITableViewCell {
         
     }
 
-    public func configure(with lesson: Lesson?, toggled: Bool) {
+    public func configure(with lesson: Lesson?) {
         if let lesson = lesson {
             lessonNumber.text = String(lesson.number)
             lessonTitle.text = lesson.subject
@@ -54,7 +54,7 @@ final class ScheduleTableViewCell: UITableViewCell {
         }
     }
 
-    public func update(with lesson: Lesson?, toggled: Bool) {
+    public func update(with lesson: Lesson?) {
         
     }
 

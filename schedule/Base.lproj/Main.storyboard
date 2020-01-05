@@ -121,7 +121,7 @@
                                         <string key="content">Расписание © 2019-2020 Егор Молчанов  Today, sort left, sort right and settings icons by Icon8 (https://icons8.com)  Лицензии открытого ПО  </string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -134,7 +134,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content"> 
+                                        <string key="content"> 
 Copyright © 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -142,10 +142,10 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -178,7 +178,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVB-hF-fk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103.7037037037037" y="-1331.1111111111111"/>
+            <point key="canvasLocation" x="977" y="-822"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="NNU-FF-PHS">
@@ -347,7 +347,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zOR-JU-VFB" kind="show" id="6iU-UX-tg2"/>
+                                            <segue destination="zOR-JU-VFB" kind="show" identifier="ToAboutScreen" id="6iU-UX-tg2"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -365,127 +365,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                         <outlet property="fullViewSwitch" destination="dGa-B1-5LF" id="JSw-Eg-3YM"/>
                         <outlet property="scrollToTodaySwitch" destination="PAN-fZ-UQx" id="PDA-qe-Ytw"/>
                         <outlet property="swipeToChangeSwitch" destination="rex-0O-Kqu" id="Mah-p2-dLx"/>
-                        <segue destination="XY6-8h-6Da" kind="presentation" identifier="ToFirstChoice" id="02v-8e-rqY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQM-OI-OLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="-820"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GrL-2S-8UR">
-            <objects>
-                <viewController id="qD6-ud-dcm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6uL-Oo-sXO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="EyD-V5-WQA"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5YZ-QL-oIK"/>
-                    <connections>
-                        <segue destination="kBc-6o-pce" kind="show" identifier="ToSecondChoice" id="Yep-e7-V4n"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OmW-bb-h1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1996" y="-349"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8Id-tR-0lo">
-            <objects>
-                <viewController id="kBc-6o-pce" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="opU-8R-u18">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9K1-99-zsf">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="9K1-99-zsf" firstAttribute="leading" secondItem="tCb-kQ-c8X" secondAttribute="leading" id="6AX-Ue-VBh"/>
-                            <constraint firstItem="9K1-99-zsf" firstAttribute="top" secondItem="tCb-kQ-c8X" secondAttribute="top" id="IOG-pT-kY2"/>
-                            <constraint firstItem="tCb-kQ-c8X" firstAttribute="bottom" secondItem="9K1-99-zsf" secondAttribute="bottom" id="oKG-1F-sKg"/>
-                            <constraint firstItem="tCb-kQ-c8X" firstAttribute="trailing" secondItem="9K1-99-zsf" secondAttribute="trailing" id="rzU-DC-x9G"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="tCb-kQ-c8X"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Sgz-UK-hoI"/>
-                    <connections>
-                        <segue destination="UMZ-11-Zgr" kind="show" identifier="ToThirdChoice" id="d6v-KJ-ep2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1QK-fP-n3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2864" y="-348"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="sPe-EF-5W1">
-            <objects>
-                <viewController id="UMZ-11-Zgr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MHT-AZ-NqF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-yx-4tw">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="YKR-yx-4tw" firstAttribute="top" secondItem="woe-db-GsO" secondAttribute="top" id="DYk-c9-mWk"/>
-                            <constraint firstItem="woe-db-GsO" firstAttribute="bottom" secondItem="YKR-yx-4tw" secondAttribute="bottom" id="PWD-N8-64c"/>
-                            <constraint firstItem="YKR-yx-4tw" firstAttribute="leading" secondItem="woe-db-GsO" secondAttribute="leading" id="hBg-Yh-MZz"/>
-                            <constraint firstItem="woe-db-GsO" firstAttribute="trailing" secondItem="YKR-yx-4tw" secondAttribute="trailing" id="tNl-Ng-wVf"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="woe-db-GsO"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="jG1-Ra-mdF"/>
-                    <connections>
-                        <segue destination="cDE-MN-8vE" kind="show" identifier="ToLastChoice" id="Frk-Wh-RcM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DDk-bj-Hp3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3747" y="-345"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="n2Y-5y-xWx">
-            <objects>
-                <viewController id="cDE-MN-8vE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gaN-Vb-zkP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="SlD-UV-WsY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wBp-2C-fzo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jzt-YI-sfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4661" y="-345"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YnE-L2-UgL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XY6-8h-6Da" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zsN-Xu-rVm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qD6-ud-dcm" kind="relationship" relationship="rootViewController" id="kOf-D8-M3g"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KqE-lf-p6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1104" y="-348"/>
+            <point key="canvasLocation" x="150" y="-821"/>
         </scene>
     </scenes>
     <resources>
