@@ -79,10 +79,17 @@ final class TimeManager: TimeManaging {
 
     func getMonday(for weekOffset: Int) -> Date {
         let date = Date()
-        
+        let offset: Int
+
+        if calendar.dateComponents([.weekday], from: date).weekday! == 1 {
+            offset = weekOffset + 1
+        } else {
+            offset = weekOffset
+        }
+
         let components = calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: date)
         let monday = calendar.date(from: components)!
-        return calendar.date(byAdding: .weekOfYear, value: weekOffset, to: monday)!
+        return calendar.date(byAdding: .weekOfYear, value: offset, to: monday)!
     }
 
     func getApiTimeKey(for weekOffset: Int) -> String {
