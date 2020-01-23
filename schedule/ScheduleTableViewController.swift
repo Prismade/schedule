@@ -27,7 +27,7 @@ final class ScheduleTableViewController: UIViewController {
     }
 
     @IBAction func onSettingsButtonTap(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "toSettingsScene", sender: self)
+        performSegue(withIdentifier: "ToMainSettings", sender: self)
     }
 
     // MARK: - Private Properties
@@ -101,11 +101,9 @@ final class ScheduleTableViewController: UIViewController {
     }
 
     private func updateModel(for weekOffset: Int) {
-        let defaults = UserDefaults.standard
-        let group = defaults.integer(forKey: "group")
         refreshControl.beginRefreshing()
         animateTableUpdate(animation: .hide)
-        viewModel.update(for: group, on: weekOffset)
+        viewModel.update(for: UserDefaults.standard.integer(forKey: "UserId"), on: weekOffset)
     }
 
     private func updateWeekDates(on weekOffset: Int) {
@@ -118,7 +116,7 @@ final class ScheduleTableViewController: UIViewController {
         case .show: UIView.transition(
             with: table,
             duration: 0.5,
-            options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve],
+            options: [.allowAnimatedContent, .showHideTransitionViews, .transitionCrossDissolve/*, .curveEaseOut*/],
             animations: { [unowned self] in self.table.isHidden = false })
         }
     }

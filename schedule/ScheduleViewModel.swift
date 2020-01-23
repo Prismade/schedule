@@ -5,21 +5,21 @@ import Alamofire
 
 final class ScheduleViewModel: NSObject {
 
-    final class Day {
+    final class Day: Codable {
         let title: String
         let lessons: [Lesson]
-
+        
         init(weekDay: Int, lessons: [Lesson]) {
             self.lessons = lessons
             
             switch weekDay {
-            case 1: title = "Понедельник"
-            case 2: title = "Вторник"
-            case 3: title = "Среда"
-            case 4: title = "Четверг"
-            case 5: title = "Пятница"
-            case 6: title = "Суббота"
-            default: title = ""
+                case 1: title = "Понедельник"
+                case 2: title = "Вторник"
+                case 3: title = "Среда"
+                case 4: title = "Четверг"
+                case 5: title = "Пятница"
+                case 6: title = "Суббота"
+                default: title = ""
             }
         }
     }
@@ -33,23 +33,35 @@ final class ScheduleViewModel: NSObject {
 
     private var scheduleTable = [Day]()
     private var didScrollToCurrentLesson = false
+    private var cacheFileName = "stud"
 
     // MARK: - Public Methods
 
-    func update(for group: Int, on weekOffset: Int) {
-        ApiManager.shared.getStudentSchedule(for: group, on: weekOffset) { [unowned self] response in
-            switch response.result {
-            case .success(let result): DispatchQueue.main.async {
-                self.requestSucceeded(with: result)
-                guard let callback = self.dataUpdateDidFinishSuccessfully else { return }
+    func update(for someone: Int, on weekOffset: Int) {
+        if UserDefaults.standard.bool(forKey: "EnableCaching") {
+            if let cachedSchedule: [Day] = CacheManager.shared.retrieve(weekOffset: weekOffset, from: cacheFileName) {
+                scheduleTable = cachedSchedule
+                guard let callback = dataUpdateDidFinishSuccessfully else { return }
                 callback()
+                return
+            }
+        }
+
+        let copmletionHandler: (DataResponse<[Lesson], AFError>) -> Void = { [unowned self] response in
+            switch response.result {
+                case .success(let result): DispatchQueue.main.async {
+                    self.requestSucceeded(with: result, for: weekOffset)
+                    guard let callback = self.dataUpdateDidFinishSuccessfully else { return }
+                    callback()
                 }
-            case .failure(let error): DispatchQueue.main.async {
-                guard let callback = self.dataUpdateDidFinishWithFailure else { return }
-                callback(error)
+                case .failure(let error): DispatchQueue.main.async {
+                    guard let callback = self.dataUpdateDidFinishWithFailure else { return }
+                    callback(error)
                 }
             }
         }
+
+        ApiManager.shared.getStudentSchedule(for: someone, on: weekOffset, completion: copmletionHandler)
     }
 
     func lesson(at position: (day: Int, number: Int)) -> Lesson? {
@@ -67,9 +79,17 @@ final class ScheduleViewModel: NSObject {
 
     // MARK: - Private Methods
 
-    private func requestSucceeded(with response: [Lesson]) {
+    private func requestSucceeded(with response: [Lesson], for weekOffset: Int) {
         scheduleTable = (1...6).map { weekDay in
             Day(weekDay: weekDay, lessons: response.filter { $0.weekDay == weekDay ? true : false }.sorted())
+        }
+
+        if UserDefaults.standard.bool(forKey: "EnableCaching") {
+            do {
+                try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: cacheFileName)
+            } catch {
+                debugPrint("unable to write file")
+            }
         }
     }
 

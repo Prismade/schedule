@@ -9,8 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(false, forKey: "EnableCaching")
         }
         
-        if UserDefaults.standard.object(forKey: "CacheExpirationPeriod") == nil {
-            UserDefaults.standard.set(604800, forKey: "CacheExpirationPeriod")
+        if UserDefaults.standard.object(forKey: "RequestInterval") == nil {
+            UserDefaults.standard.set(2, forKey: "RequestInterval")
         }
         
         if UserDefaults.standard.object(forKey: "ExtendedView") == nil {
@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.object(forKey: "SwipeToSwitch") == nil {
             UserDefaults.standard.set(true, forKey: "SwipeToSwitch")
         }
+        
+        // for debug only
+        UserDefaults.standard.set(4930, forKey: "UserId")
         
         return true
     }

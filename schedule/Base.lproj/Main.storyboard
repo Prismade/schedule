@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Oi-Al-uds">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Oi-Al-uds">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController storyboardIdentifier="ScheduleTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKN-XW-SHB" customClass="ScheduleTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZdL-6g-wct">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dAi-so-wOt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-e3-IZ1">
-                                <rect key="frame" x="0.0" y="545" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="59G-yf-1RE"/>
                                     <barButtonItem tag="1" title="Item" image="Sort Left Icon" id="FkR-Wg-BMl">
@@ -62,7 +62,10 @@
                         <viewLayoutGuide key="safeArea" id="a3L-gg-McL"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Расписание" prompt=" " id="U6B-4a-ftm">
+                    <navigationItem key="navigationItem" title="Расписание" id="U6B-4a-ftm">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Class Icon" id="izN-CM-VeE">
+                            <color key="tintColor" name="MainAccentColor"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Settings Icon" id="dj2-gG-Kew">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
@@ -72,12 +75,77 @@
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="dAi-so-wOt" id="vxR-Zz-xXF"/>
-                        <segue destination="x97-pp-ZwZ" kind="show" identifier="toSettingsScene" id="Uzt-kF-p4F"/>
+                        <segue destination="x97-pp-ZwZ" kind="show" identifier="ToMainSettings" id="Uzt-kF-p4F"/>
+                        <segue destination="sst-Zm-rBR" kind="presentation" identifier="ToSetupDialogFromSchedule" id="nc1-TH-o4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4J7-Np-xaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-639.20000000000005" y="-820.83958020989508"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CoL-nB-ZH4">
+            <objects>
+                <viewController id="Vd5-zM-cBG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wzx-v8-NKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VhE-qe-CQ2">
+                                <rect key="frame" x="52.5" y="259.5" width="270" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-g9-OuB">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="Я студент">
+                                            <color key="titleColor" name="MainAccentColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-Eu-1cO">
+                                        <rect key="frame" x="0.0" y="74" width="270" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="Я преподаватель">
+                                            <color key="titleColor" name="MainAccentColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VhE-qe-CQ2" firstAttribute="centerY" secondItem="Wzx-v8-NKz" secondAttribute="centerY" id="uYd-09-f5O"/>
+                            <constraint firstItem="VhE-qe-CQ2" firstAttribute="centerX" secondItem="Wzx-v8-NKz" secondAttribute="centerX" id="zTp-vq-G3i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L7a-aA-vaA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wdv-rF-z6K">
+                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="53h-iO-jgF">
+                            <color key="tintColor" name="MainAccentColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="OMU-hc-L6Y" kind="show" identifier="ToFirstStepInDialog" id="iXQ-8U-3WU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4N-o2-6eG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725.60000000000002" y="448.42578710644682"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zpq-tY-2ee">
+            <objects>
+                <viewController id="OMU-hc-L6Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cym-ed-bVI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jA9-vj-rn0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eTU-DS-adA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1X-4R-ZrG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="448"/>
         </scene>
         <!--Item-->
         <scene sceneID="geA-Dp-ch7">
@@ -112,7 +180,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Расписание – версия 1.0 © 2019-2020 Егор Молчанов  Today, sort left, sort right and settings icons by Icon8 (https://icons8.com)  Лицензии открытого ПО  </string>
+                                        <string key="content">Расписание – версия 1.0 © 2019-2020 Егор Молчанов  Today, sort left, sort right, class and settings icons by Icon8 (https://icons8.com)  Лицензии открытого ПО  </string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
@@ -160,7 +228,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVB-hF-fk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-822"/>
+            <point key="canvasLocation" x="1326" y="-361"/>
         </scene>
         <!--Настройки сохранения-->
         <scene sceneID="bLp-gz-Ie1">
@@ -292,7 +360,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWm-fr-fV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Y97-kN-0OR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="150" y="-1566"/>
+            <point key="canvasLocation" x="1326" y="-1309"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="NNU-FF-PHS">
@@ -325,6 +393,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                                 <constraint firstAttribute="trailing" secondItem="ouP-wF-rlt" secondAttribute="trailing" constant="20" id="N56-Zp-w6t"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sst-Zm-rBR" kind="show" identifier="ToSetupDialogFromMainSettings" id="3Fe-GR-UfB"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CacheSetupCell" id="dob-3J-QBE">
                                         <rect key="frame" x="0.0" y="61.5" width="375" height="43.5"/>
@@ -347,7 +418,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="TQE-dL-P7J" kind="show" id="dNP-bc-z5o"/>
+                                            <segue destination="TQE-dL-P7J" kind="show" identifier="ToCachingSettings" id="dNP-bc-z5o"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -509,8 +580,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
             </objects>
             <point key="canvasLocation" x="150" y="-821"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v6M-6T-0K7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sst-Zm-rBR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Z5I-d9-bTo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o9e-N6-Oft">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vd5-zM-cBG" kind="relationship" relationship="rootViewController" id="Efu-Tc-W04"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2X-Lq-FfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="449"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Class Icon" width="30" height="30"/>
         <image name="Settings Icon" width="30" height="30"/>
         <image name="Sort Left Icon" width="30" height="30"/>
         <image name="Sort Right Icon" width="30" height="30"/>
@@ -519,4 +610,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
             <color red="0.3843137254901961" green="0.5725490196078431" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nc1-TH-o4e"/>
+    </inferredMetricsTieBreakers>
 </document>

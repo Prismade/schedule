@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2421789D23B6AFCE001A343C /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421789C23B6AFCE001A343C /* Exam.swift */; };
+		243664B823D9CBF000692BD3 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664B723D9CBF000692BD3 /* CacheItem.swift */; };
 		2445136A2362E73B00BCCA85 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* SettingsTableViewController.swift */; };
 		244F9397234F438E00A99C7F /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9392234F438D00A99C7F /* TimeManager.swift */; };
 		244F9398234F438E00A99C7F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9393234F438D00A99C7F /* Course.swift */; };
@@ -18,7 +19,6 @@
 		244F93A2234F497D00A99C7F /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F93A1234F497D00A99C7F /* Lesson.swift */; };
 		244F93A4234F49C100A99C7F /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F93A3234F49C100A99C7F /* ScheduleViewModel.swift */; };
 		245A514623C4E5F3009124F3 /* CachingSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */; };
-		2478C99823C201410003D389 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C99723C201410003D389 /* BottomSheetViewController.swift */; };
 		2478C99E23C22E710003D389 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C99D23C22E710003D389 /* CacheManager.swift */; };
 		2478E63F2359AAB60038E6A5 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478E63E2359AAB60038E6A5 /* ScheduleTableViewCell.swift */; };
 		24874929235C62BF00DBE278 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */; };
@@ -59,6 +59,7 @@
 		0FFDA49FF5924177F33A27D5 /* Pods-scheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleTests/Pods-scheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		10400250AD491A7BAF163778 /* Pods-scheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleUITests/Pods-scheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2421789C23B6AFCE001A343C /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		243664B723D9CBF000692BD3 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 		244513692362E73B00BCCA85 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		244F9392234F438D00A99C7F /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		244F9393234F438D00A99C7F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		244F93A1234F497D00A99C7F /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		244F93A3234F49C100A99C7F /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingSettingsTableViewController.swift; sourceTree = "<group>"; };
-		2478C99723C201410003D389 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		2478C99D23C22E710003D389 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		2478E63E2359AAB60038E6A5 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 				245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */,
 				24F01DB9235E097B00EE873F /* ScheduleTableViewController.swift */,
 				244513692362E73B00BCCA85 /* SettingsTableViewController.swift */,
-				2478C99723C201410003D389 /* BottomSheetViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +173,7 @@
 				244F939F234F47F800A99C7F /* Teacher.swift */,
 				244F93A1234F497D00A99C7F /* Lesson.swift */,
 				2421789C23B6AFCE001A343C /* Exam.swift */,
+				243664B723D9CBF000692BD3 /* CacheItem.swift */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 				24F01DB8235DECBF00EE873F /* ApiManager.swift in Sources */,
 				245A514623C4E5F3009124F3 /* CachingSettingsTableViewController.swift in Sources */,
 				244F9397234F438E00A99C7F /* TimeManager.swift in Sources */,
-				2478C99823C201410003D389 /* BottomSheetViewController.swift in Sources */,
+				243664B823D9CBF000692BD3 /* CacheItem.swift in Sources */,
 				2478C99E23C22E710003D389 /* CacheManager.swift in Sources */,
 				244F93A2234F497D00A99C7F /* Lesson.swift in Sources */,
 				244F939E234F46FB00A99C7F /* Department.swift in Sources */,

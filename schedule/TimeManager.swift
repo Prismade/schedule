@@ -31,6 +31,13 @@ protocol TimeManaging {
     
     /// Возвращает номер текущей пары.
     func getCurrentLessonNumber() -> Int
+    
+    /**
+     Проверяет валиден ли кэш
+     - parameter expirationTime: время когда кэш должен перестать быть валидным
+     - returns: true, если кэш валиден, false - в противном случае
+     */
+    func validateCache(expirationTime: Date) -> Bool
 
 
 }
@@ -119,6 +126,10 @@ final class TimeManager: TimeManaging {
         let components = calendar.dateComponents([.hour, .minute], from: Date())
         let timeInMinutes = components.hour! * 60 + components.minute!
         return lessonsStartTimeInMinutes.firstIndex() { timeInMinutes <= $0 }!
+    }
+    
+    func validateCache(expirationTime: Date) -> Bool {
+        return expirationTime <= Date() ? false : true
     }
 
 

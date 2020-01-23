@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Lesson: Decodable, Comparable {
+class Lesson: Codable, Comparable {
     let groupId: Int
     let subgroup: Int
     let subject: String
@@ -62,6 +62,27 @@ class Lesson: Decodable, Comparable {
         patronymic = try container.decode(String.self, forKey: .patronymic)
         firstName = try container.decode(String.self, forKey: .firstName)
         lastName = try container.decode(String.self, forKey: .lastName)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(groupId, forKey: .groupId)
+        try container.encode(subgroup, forKey: .subgroup)
+        try container.encode(subject, forKey: .subject)
+        try container.encode(type, forKey: .type)
+        try container.encode(number, forKey: .number)
+        try container.encode(weekDay, forKey: .weekDay)
+        try container.encode(building, forKey: .building)
+        try container.encode(room, forKey: .room)
+        try container.encode(special, forKey: .special)
+        try container.encode(groupTitle, forKey: .groupTitle)
+        if let employeeId = employeeId {
+            try container.encode(employeeId, forKey: .employeeId)
+        }
+        try container.encode(patronymic, forKey: .patronymic)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(lastName, forKey: .lastName)
     }
 
     static func < (lhs: Lesson, rhs: Lesson) -> Bool {
