@@ -1,7 +1,7 @@
 import UIKit
 
 
-class CachingSettingsTableViewController: UITableViewController {
+final class CachingSettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var cachingSwitch: UISwitch!
     var numberOfSections = 2
@@ -14,20 +14,18 @@ class CachingSettingsTableViewController: UITableViewController {
         cachingSwitch.addTarget(self, action: #selector(onSwitchToggle(sender:)), for: .valueChanged)
 
         if (cachingSwitch.isOn) {
-            numberOfSections = 2
+            numberOfSections = 3
             toggleCell(row: UserDefaults.standard.integer(forKey: "RequestInterval"))
         } else {
             numberOfSections = 1
         }
-
-        
     }
 
     @objc private func onSwitchToggle(sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: "EnableCaching")
         
         if (sender.isOn) {
-            numberOfSections = 2
+            numberOfSections = 3
             tableView.reloadData()
         } else {
             numberOfSections = 1
@@ -37,7 +35,7 @@ class CachingSettingsTableViewController: UITableViewController {
     
     private func toggleCell(row: Int) {
         for i in 0..<3 {
-            let indexPath = IndexPath(row: i, section: 1)
+            let indexPath = IndexPath(row: i, section: 2)
             let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = i == row ? .checkmark : .none
         }
@@ -49,8 +47,12 @@ class CachingSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
+            do {
+                try CacheManager.shared.clear(fileNamePrefixes: [UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!, UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!])
+            } catch {}
+        } else if indexPath.section == 2 {
             toggleCell(row: indexPath.row)
-            tableView.deselectRow(at: indexPath, animated: true)            
+            tableView.deselectRow(at: indexPath, animated: true)
             UserDefaults.standard.set(indexPath.row, forKey: "RequestInterval")
         }
     }

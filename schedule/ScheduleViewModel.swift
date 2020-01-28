@@ -9,16 +9,16 @@ final class ScheduleViewModel: NSObject {
         let title: String
         let lessons: [Lesson]
         
-        init(weekDay: Int, lessons: [Lesson]) {
+        init(weekDay: Int, lessons: [Lesson], date: String) {
             self.lessons = lessons
             
             switch weekDay {
-                case 1: title = "Понедельник"
-                case 2: title = "Вторник"
-                case 3: title = "Среда"
-                case 4: title = "Четверг"
-                case 5: title = "Пятница"
-                case 6: title = "Суббота"
+                case 1: title = "Понедельник (\(date))"
+                case 2: title = "Вторник (\(date))"
+                case 3: title = "Среда (\(date))"
+                case 4: title = "Четверг (\(date))"
+                case 5: title = "Пятница (\(date))"
+                case 6: title = "Суббота (\(date))"
                 default: title = ""
             }
         }
@@ -32,22 +32,31 @@ final class ScheduleViewModel: NSObject {
     // MARK: - Private Properties
 
     private var scheduleTable = [Day]()
-    private var didScrollToCurrentLesson = false
-    private var cacheFileName = "stud"
+    private var didPerformScrollOnStart = false
+    private lazy var studentCacheFilePrefix = UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!
+    private lazy var teacherCacheFilePrefix = UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!
 
     // MARK: - Public Methods
 
-    func update(for someone: Int, on weekOffset: Int) {
-        if UserDefaults.standard.bool(forKey: "EnableCaching") {
-            if let cachedSchedule: [Day] = CacheManager.shared.retrieve(weekOffset: weekOffset, from: cacheFileName) {
-                scheduleTable = cachedSchedule
-                guard let callback = dataUpdateDidFinishSuccessfully else { return }
-                callback()
-                return
+    func update(on weekOffset: Int, force: Bool) {
+        if !force {
+            if UserDefaults.standard.bool(forKey: "EnableCaching") {
+                let filePrefix: String!
+                if UserDefaults.standard.bool(forKey: "Teacher") {
+                    filePrefix = teacherCacheFilePrefix
+                } else {
+                    filePrefix = studentCacheFilePrefix
+                }
+                if let cachedSchedule: [Day] = CacheManager.shared.retrieve(weekOffset: weekOffset, from: filePrefix) {
+                    scheduleTable = cachedSchedule
+                    guard let callback = dataUpdateDidFinishSuccessfully else { return }
+                    callback()
+                    return
+                }
             }
         }
-
-        let copmletionHandler: (DataResponse<[Lesson], AFError>) -> Void = { [unowned self] response in
+        
+        let completionHandler: (DataResponse<[Lesson], AFError>) -> Void = { [unowned self] response in
             switch response.result {
                 case .success(let result): DispatchQueue.main.async {
                     self.requestSucceeded(with: result, for: weekOffset)
@@ -60,8 +69,14 @@ final class ScheduleViewModel: NSObject {
                 }
             }
         }
-
-        ApiManager.shared.getStudentSchedule(for: someone, on: weekOffset, completion: copmletionHandler)
+        
+        let userId = UserDefaults.standard.integer(forKey: "UserId")
+        if UserDefaults.standard.bool(forKey: "Teacher") {
+            ApiManager.shared.getTeacherSchedule(for: userId, on: weekOffset, completion: completionHandler)
+        } else {
+            ApiManager.shared.getStudentSchedule(for: userId, on: weekOffset, completion: completionHandler)
+        }
+        
     }
 
     func lesson(at position: (day: Int, number: Int)) -> Lesson? {
@@ -77,16 +92,32 @@ final class ScheduleViewModel: NSObject {
         return scheduleTable[day]
     }
 
+    func forceCache(for weekOffset: Int) {
+        do {
+            try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: studentCacheFilePrefix)
+        } catch {
+            debugPrint("unable to write file")
+        }
+    }
+
     // MARK: - Private Methods
 
     private func requestSucceeded(with response: [Lesson], for weekOffset: Int) {
+        let dates = TimeManager.shared.getWeekDates(for: weekOffset)
+        
         scheduleTable = (1...6).map { weekDay in
-            Day(weekDay: weekDay, lessons: response.filter { $0.weekDay == weekDay ? true : false }.sorted())
+            Day(weekDay: weekDay, lessons: response.filter { $0.weekDay == weekDay ? true : false }.sorted(), date: dates[weekDay - 1])
         }
 
         if UserDefaults.standard.bool(forKey: "EnableCaching") {
             do {
-                try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: cacheFileName)
+                let filePrefix: String!
+                if UserDefaults.standard.bool(forKey: "Teacher") {
+                    filePrefix = teacherCacheFilePrefix
+                } else {
+                    filePrefix = studentCacheFilePrefix
+                }
+                try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: filePrefix)
             } catch {
                 debugPrint("unable to write file")
             }
@@ -118,7 +149,13 @@ extension ScheduleViewModel: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleTableCell", for: indexPath) as! ScheduleTableViewCell
-        cell.configure(with: lesson(at: (indexPath.section, indexPath.row)))
+        let cellType: CellType!
+        if UserDefaults.standard.bool(forKey: "Teacher") {
+            cellType = .teacher
+        } else {
+            cellType = .student
+        }
+        cell.configure(with: lesson(at: (indexPath.section, indexPath.row)), cellType: cellType)
         cell.selectionStyle = .none
         return cell
     }
@@ -132,15 +169,14 @@ extension ScheduleViewModel: UITableViewDelegate {
         if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
             let defaults = UserDefaults.standard
             if indexPath == lastVisibleIndexPath &&
-               !didScrollToCurrentLesson &&
-               defaults.bool(forKey: "scrollToToday") {
-
+                !didPerformScrollOnStart &&
+                defaults.bool(forKey: "ScrollOnStart") {
                 tableView.scrollToRow(
                     at: IndexPath(
                         row: 0,
                         section: TimeManager.shared.getCurrentWeekDay()),
                     at: .top, animated: true)
-                didScrollToCurrentLesson = true
+                didPerformScrollOnStart = true
             }
         }
     }

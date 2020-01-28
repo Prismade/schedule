@@ -4,17 +4,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
         if UserDefaults.standard.object(forKey: "EnableCaching") == nil {
             UserDefaults.standard.set(false, forKey: "EnableCaching")
         }
         
         if UserDefaults.standard.object(forKey: "RequestInterval") == nil {
             UserDefaults.standard.set(2, forKey: "RequestInterval")
-        }
-        
-        if UserDefaults.standard.object(forKey: "ExtendedView") == nil {
-            UserDefaults.standard.set(false, forKey: "ExtendedView")
         }
         
         if UserDefaults.standard.object(forKey: "ScrollOnStart") == nil {
@@ -25,8 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "SwipeToSwitch")
         }
         
+        if UserDefaults.standard.object(forKey: "StudentCacheFilePrefix") == nil {
+            UserDefaults.standard.set("stud", forKey: "StudentCacheFilePrefix")
+        }
+        
+        if UserDefaults.standard.object(forKey: "TeacherCacheFilePrefix") == nil {
+            UserDefaults.standard.set("teach", forKey: "TeacherCacheFilePrefix")
+        }
+        
         // for debug only
-        UserDefaults.standard.set(4930, forKey: "UserId")
+//        UserDefaults.standard.set(nil, forKey: "UserId")
         
         return true
     }

@@ -4,7 +4,7 @@ import Foundation
 class Exam: Decodable {
     let fullDate: String
     let date: String
-    let title: String
+    let group: String
     let subject: String
     let type: String
     let room: String
@@ -15,30 +15,36 @@ class Exam: Decodable {
     let lastName: String
     let employeeId: Int
     
-    var employeeName: String {
+    var employeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
         return "👤 \(lastName) \(firstName.first!).\(patronymic.first!)."
     }
-    var fullEmployeeName: String {
+    var fullEmployeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
         return "👤 \(lastName) \(firstName) \(patronymic)"
     }
-    var location: String {
+    var groupDesigned: String {
+        return "👥 \(group)"
+    }
+    var locationDesigned: String {
         return "📍 \(room)"
+    }
+    var dateTime: String {
+        return "\(time)\t\(date)"
     }
     
     enum CodingKeys: String, CodingKey {
         case fullDate = "DBDate"
         case date = "DateLesson"
-        case title = "Title"
+        case group = "Title"
         case subject = "TitleSubject"
         case type = "TypeLesson"
         case room = "NumberRoom"
         case time = "Time"
         case weekDay = "DayWeek"
-        case patronymic = "Family"
+        case patronymic = "SecondName"
         case firstName = "Name"
-        case lastname = "SecondName"
+        case lastname = "Family"
         case employeeId = "employee_id"
     }
     
@@ -47,7 +53,7 @@ class Exam: Decodable {
         
         fullDate = try container.decode(String.self, forKey: .fullDate)
         date = try container.decode(String.self, forKey: .date)
-        title = try container.decode(String.self, forKey: .title)
+        group = try container.decode(String.self, forKey: .group)
         subject = try container.decode(String.self, forKey: .subject)
         type = try container.decode(String.self, forKey: .type)
         room = try container.decode(String.self, forKey: .room)

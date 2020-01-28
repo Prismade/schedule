@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240D3DA923DDB4B200B2E4D7 /* DepartmentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D3DA823DDB4B200B2E4D7 /* DepartmentSelection.swift */; };
+		240D3DAB23DDB5CC00B2E4D7 /* TeacherSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D3DAA23DDB5CC00B2E4D7 /* TeacherSelection.swift */; };
 		2421789D23B6AFCE001A343C /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421789C23B6AFCE001A343C /* Exam.swift */; };
 		243664B823D9CBF000692BD3 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664B723D9CBF000692BD3 /* CacheItem.swift */; };
-		2445136A2362E73B00BCCA85 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* SettingsTableViewController.swift */; };
+		243664BB23DA12C500692BD3 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664BA23DA12C500692BD3 /* UserSelection.swift */; };
+		243664C123DA3C8400692BD3 /* DivisionSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664C023DA3C8400692BD3 /* DivisionSelect.swift */; };
+		2445136A2362E73B00BCCA85 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* Settings.swift */; };
 		244F9397234F438E00A99C7F /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9392234F438D00A99C7F /* TimeManager.swift */; };
 		244F9398234F438E00A99C7F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9393234F438D00A99C7F /* Course.swift */; };
 		244F939A234F438E00A99C7F /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9395234F438E00A99C7F /* Division.swift */; };
@@ -18,12 +22,16 @@
 		244F93A0234F47F800A99C7F /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F939F234F47F800A99C7F /* Teacher.swift */; };
 		244F93A2234F497D00A99C7F /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F93A1234F497D00A99C7F /* Lesson.swift */; };
 		244F93A4234F49C100A99C7F /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F93A3234F49C100A99C7F /* ScheduleViewModel.swift */; };
-		245A514623C4E5F3009124F3 /* CachingSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */; };
+		245A514623C4E5F3009124F3 /* CachingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A514523C4E5F3009124F3 /* CachingSettings.swift */; };
 		2478C99E23C22E710003D389 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C99D23C22E710003D389 /* CacheManager.swift */; };
 		2478E63F2359AAB60038E6A5 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478E63E2359AAB60038E6A5 /* ScheduleTableViewCell.swift */; };
 		24874929235C62BF00DBE278 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */; };
+		248B591123DDC6D400528B74 /* ExamsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248B591023DDC6D400528B74 /* ExamsSchedule.swift */; };
 		249CE841236D9A76004D0EEE /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249CE840236D9A76004D0EEE /* TimeManagerTests.swift */; };
 		24A69BE32350959300E95589 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A69BE22350959300E95589 /* JsonTests.swift */; };
+		24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED7E23DA7E350044B02B /* SearchableTable.swift */; };
+		24B1ED8123DAFA880044B02B /* CourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8023DAFA880044B02B /* CourseSelection.swift */; };
+		24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */; };
 		24DA80A3234622F9008055D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A2234622F9008055D3 /* AppDelegate.swift */; };
 		24DA80A5234622F9008055D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A4234622F9008055D3 /* SceneDelegate.swift */; };
 		24DA80AA234622F9008055D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DA80A8234622F9008055D3 /* Main.storyboard */; };
@@ -32,7 +40,7 @@
 		24DA80C8234622FA008055D3 /* scheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80C7234622FA008055D3 /* scheduleUITests.swift */; };
 		24DA80D623462716008055D3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24DA80D523462716008055D3 /* Colors.xcassets */; };
 		24F01DB8235DECBF00EE873F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F01DB7235DECBF00EE873F /* ApiManager.swift */; };
-		24F01DBA235E097B00EE873F /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F01DB9235E097B00EE873F /* ScheduleTableViewController.swift */; };
+		24F01DBA235E097B00EE873F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F01DB9235E097B00EE873F /* Schedule.swift */; };
 		81F3DD6CDA1633F6E17FB4A5 /* Pods_scheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BB9B13D305D41F0FD0447 /* Pods_scheduleTests.framework */; };
 		D77B563CA45D1A255E66DADE /* Pods_scheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AC310D5A4A79D5ECB3B2AA /* Pods_scheduleUITests.framework */; };
 		FAF6ABA2C011C88BD6D560EC /* Pods_schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1983313C7FFC4A4B802E17 /* Pods_schedule.framework */; };
@@ -58,9 +66,13 @@
 /* Begin PBXFileReference section */
 		0FFDA49FF5924177F33A27D5 /* Pods-scheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleTests/Pods-scheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		10400250AD491A7BAF163778 /* Pods-scheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleUITests/Pods-scheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		240D3DA823DDB4B200B2E4D7 /* DepartmentSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSelection.swift; sourceTree = "<group>"; };
+		240D3DAA23DDB5CC00B2E4D7 /* TeacherSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSelection.swift; sourceTree = "<group>"; };
 		2421789C23B6AFCE001A343C /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		243664B723D9CBF000692BD3 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
-		244513692362E73B00BCCA85 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		243664BA23DA12C500692BD3 /* UserSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
+		243664C023DA3C8400692BD3 /* DivisionSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionSelect.swift; sourceTree = "<group>"; };
+		244513692362E73B00BCCA85 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		244F9392234F438D00A99C7F /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		244F9393234F438D00A99C7F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		244F9395234F438E00A99C7F /* Division.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
@@ -69,12 +81,16 @@
 		244F939F234F47F800A99C7F /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		244F93A1234F497D00A99C7F /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		244F93A3234F49C100A99C7F /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
-		245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingSettingsTableViewController.swift; sourceTree = "<group>"; };
+		245A514523C4E5F3009124F3 /* CachingSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingSettings.swift; sourceTree = "<group>"; };
 		2478C99D23C22E710003D389 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		2478E63E2359AAB60038E6A5 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		248B591023DDC6D400528B74 /* ExamsSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSchedule.swift; sourceTree = "<group>"; };
 		249CE840236D9A76004D0EEE /* TimeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTests.swift; sourceTree = "<group>"; };
 		24A69BE22350959300E95589 /* JsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTests.swift; sourceTree = "<group>"; };
+		24B1ED7E23DA7E350044B02B /* SearchableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTable.swift; sourceTree = "<group>"; };
+		24B1ED8023DAFA880044B02B /* CourseSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelection.swift; sourceTree = "<group>"; };
+		24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelection.swift; sourceTree = "<group>"; };
 		24DA809F234622F9008055D3 /* Расписание.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Расписание.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DA80A2234622F9008055D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24DA80A4234622F9008055D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +105,7 @@
 		24DA80C9234622FA008055D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24DA80D523462716008055D3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		24F01DB7235DECBF00EE873F /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		24F01DB9235E097B00EE873F /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		24F01DB9235E097B00EE873F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		3AA8F8C4061DE4E6876FF7E5 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
 		3C1983313C7FFC4A4B802E17 /* Pods_schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404A4E17E656D6C28CE8C69C /* Pods-scheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scheduleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scheduleTests/Pods-scheduleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,12 +143,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240D3DA723DD9E4300B2E4D7 /* SelectionDialog */ = {
+			isa = PBXGroup;
+			children = (
+				24B1ED7E23DA7E350044B02B /* SearchableTable.swift */,
+				243664BA23DA12C500692BD3 /* UserSelection.swift */,
+				243664C023DA3C8400692BD3 /* DivisionSelect.swift */,
+				24B1ED8023DAFA880044B02B /* CourseSelection.swift */,
+				24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */,
+				240D3DA823DDB4B200B2E4D7 /* DepartmentSelection.swift */,
+				240D3DAA23DDB5CC00B2E4D7 /* TeacherSelection.swift */,
+			);
+			name = SelectionDialog;
+			sourceTree = "<group>";
+		};
 		2445136B2362E99E00BCCA85 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				245A514523C4E5F3009124F3 /* CachingSettingsTableViewController.swift */,
-				24F01DB9235E097B00EE873F /* ScheduleTableViewController.swift */,
-				244513692362E73B00BCCA85 /* SettingsTableViewController.swift */,
+				240D3DA723DD9E4300B2E4D7 /* SelectionDialog */,
+				245A514523C4E5F3009124F3 /* CachingSettings.swift */,
+				24F01DB9235E097B00EE873F /* Schedule.swift */,
+				244513692362E73B00BCCA85 /* Settings.swift */,
+				248B591023DDC6D400528B74 /* ExamsSchedule.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -444,17 +476,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-schedule/Pods-schedule-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedule/Pods-schedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedule/Pods-schedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-schedule/Pods-schedule-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-schedule/Pods-schedule-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E038FCB82478519ACFF391A6 /* [CP] Check Pods Manifest.lock */ = {
@@ -482,22 +513,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F01DBA235E097B00EE873F /* ScheduleTableViewController.swift in Sources */,
+				24F01DBA235E097B00EE873F /* Schedule.swift in Sources */,
 				244F93A0234F47F800A99C7F /* Teacher.swift in Sources */,
+				240D3DAB23DDB5CC00B2E4D7 /* TeacherSelection.swift in Sources */,
 				244F9398234F438E00A99C7F /* Course.swift in Sources */,
+				24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */,
 				244F93A4234F49C100A99C7F /* ScheduleViewModel.swift in Sources */,
 				244F939A234F438E00A99C7F /* Division.swift in Sources */,
-				2445136A2362E73B00BCCA85 /* SettingsTableViewController.swift in Sources */,
+				2445136A2362E73B00BCCA85 /* Settings.swift in Sources */,
 				244F939B234F438E00A99C7F /* Group.swift in Sources */,
+				24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */,
 				24DA80A3234622F9008055D3 /* AppDelegate.swift in Sources */,
+				243664BB23DA12C500692BD3 /* UserSelection.swift in Sources */,
 				24F01DB8235DECBF00EE873F /* ApiManager.swift in Sources */,
-				245A514623C4E5F3009124F3 /* CachingSettingsTableViewController.swift in Sources */,
+				24B1ED8123DAFA880044B02B /* CourseSelection.swift in Sources */,
+				245A514623C4E5F3009124F3 /* CachingSettings.swift in Sources */,
 				244F9397234F438E00A99C7F /* TimeManager.swift in Sources */,
 				243664B823D9CBF000692BD3 /* CacheItem.swift in Sources */,
+				240D3DA923DDB4B200B2E4D7 /* DepartmentSelection.swift in Sources */,
 				2478C99E23C22E710003D389 /* CacheManager.swift in Sources */,
 				244F93A2234F497D00A99C7F /* Lesson.swift in Sources */,
 				244F939E234F46FB00A99C7F /* Department.swift in Sources */,
 				2478E63F2359AAB60038E6A5 /* ScheduleTableViewCell.swift in Sources */,
+				243664C123DA3C8400692BD3 /* DivisionSelect.swift in Sources */,
+				248B591123DDC6D400528B74 /* ExamsSchedule.swift in Sources */,
 				24DA80A5234622F9008055D3 /* SceneDelegate.swift in Sources */,
 				2421789D23B6AFCE001A343C /* Exam.swift in Sources */,
 			);

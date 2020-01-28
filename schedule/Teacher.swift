@@ -1,12 +1,16 @@
 import Foundation
 
 
-class Teacher: Decodable {
+class Teacher: NSObject, Decodable {
     let id: Int
-    let lastName: String
-    let firstName: String
-    let patronymic: String
+    @objc let lastName: String
+    @objc let firstName: String
+    @objc let patronymic: String
     let fullName: String
+    var name: String {
+        guard firstName != "", lastName != "", patronymic != "" else { return "" }
+        return "\(lastName) \(firstName.first!).\(patronymic.first!)."
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "employee_id"
@@ -14,6 +18,12 @@ class Teacher: Decodable {
         case firstName = "Name"
         case patronymic = "SecondName"
         case fullName = "fio"
+    }
+    
+    enum ExpressionKeys: String {
+        case lastName
+        case firstName
+        case patronymic
     }
     
     required init(from decoder: Decoder) throws {

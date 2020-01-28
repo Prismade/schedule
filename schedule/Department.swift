@@ -1,15 +1,20 @@
 import Foundation
 
 
-class Department: Decodable {
+class Department: NSObject, Decodable {
     let id: Int
-    let title: String
-    let short: String
+    @objc let title: String
+    @objc let short: String
     
     enum CodingKeys: String, CodingKey {
         case id = "idDivision"
         case title = "titleDivision"
         case short = "shortTitle"
+    }
+    
+    enum ExpressionKeys: String {
+        case title
+        case short
     }
 
     required init(from decoder: Decoder) throws {

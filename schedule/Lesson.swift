@@ -16,15 +16,18 @@ class Lesson: Codable, Comparable {
     let patronymic: String
     let firstName: String
     let lastName: String
-    var employeeName: String {
+    var employeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
         return "👤 \(lastName) \(firstName.first!).\(patronymic.first!)."
     }
-    var fullEmployeeName: String {
+    var fullEmployeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
         return "👤 \(lastName) \(firstName) \(patronymic)"
     }
-    var location: String {
+    var groupTitleDesigned: String {
+        return "👥 \(groupTitle)"
+    }
+    var locationDesigned: String {
         return "📍 \(building)-\(room)"
     }
 
