@@ -80,12 +80,23 @@ protocol ApiManaging {
     func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<[Lesson], AFError>) -> Void) -> Request
     
     /**
-     Получение расписания экзаменов на текущий семестр (если оно есть)
+     Получение расписания экзаменов на текущий семестр (если оно есть) для студентов
      - parameter group: id группы
+     - parameter completion: Замыкание, выполняющееся по завершении запроса. В качестве параметра передается результат запроса.
      - returns: Объект запроса (для отладки). Можно опустить получение.
      */
     @discardableResult
-    func getExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request
+    func getStudentExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request
+    
+    /**
+     Получение оасписания экзаменов на текущий семестр (если оно есть) для преподавателей
+     - parameter teacher: id преподавателя
+     - parameter completion: Замыкание, выполняющееся по завершении запроса. В качестве параметра передается результат запроса.
+     - returns: Объект запроса (для отладки). Можно опустить получение.
+     */
+    @discardableResult
+    func getTeacherExamsSchedule(for teacher: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request
+
 
 }
 
@@ -127,7 +138,7 @@ final class ApiManager: ApiManaging {
 
     @discardableResult
     func getDepartments(for division: Int, completion: @escaping (DataResponse<[Department], AFError>) -> Void) -> Request {
-        let url = baseUrl + ""
+        let url = baseUrl + "/\(division)/kaflist"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
 
@@ -139,7 +150,7 @@ final class ApiManager: ApiManaging {
 
     @discardableResult
     func getTeachers(for department: Int, at division: Int, completion: @escaping (DataResponse<[Teacher], AFError>) -> Void) -> Request {
-        let url = baseUrl + ""
+        let url = baseUrl + "/\(department)/preplist"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
 
@@ -158,8 +169,14 @@ final class ApiManager: ApiManaging {
     }
     
     @discardableResult
-    func getExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request {
+    func getStudentExamsSchedule(for group: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request {
         let url = baseUrl + "/\(group)////printexamschedule"
+        return session.request(url).responseDecodable(completionHandler: completion)
+    }
+    
+    @discardableResult
+    func getTeacherExamsSchedule(for teacher: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request {
+        let url = baseUrl + "//\(teacher)///printexamschedule"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
 

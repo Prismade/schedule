@@ -1,5 +1,6 @@
 import Foundation
 
+
 /**
  Методы для получения времени в том или ином виде и ключей API.
  */
@@ -21,6 +22,13 @@ protocol TimeManaging {
      - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
      */
     func getWeekBoundaries(for weekOffset: Int) -> String
+    
+    /**
+     Возвращает даты в строковом виде для каждого из дней недели
+     - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
+     - returns: даты для каждого дня недели
+     */
+    func getWeekDates(for weekOffset: Int) -> [String]
     
     /// Возвращает номер текущего дня недели.
     func getCurrentWeekDay() -> Int
@@ -112,6 +120,22 @@ final class TimeManager: TimeManaging {
         let sunday = calendar.date(byAdding: .day, value: 6, to: monday)!
 
         return "\(formatter.string(from: monday))-\(formatter.string(from: sunday))"
+    }
+    
+    func getWeekDates(for weekOffset: Int) -> [String] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yy"
+        
+        var week = [String]()
+        let monday = getMonday(for: weekOffset)
+        week.append(formatter.string(from: monday))
+        
+        for i in 1...6 {
+            let nextDay = calendar.date(byAdding: .day, value: i, to: monday)!
+            week.append(formatter.string(from: nextDay))
+        }
+        
+        return week
     }
 
     func getCurrentWeekDay() -> Int {
