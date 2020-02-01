@@ -42,6 +42,7 @@ final class CachingSettingsTableViewController: UITableViewController {
         if indexPath.section == 1 && indexPath.row == 0 {
             do {
                 try CacheManager.shared.clear(fileNamePrefixes: [UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!, UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!])
+                tableView.deselectRow(at: indexPath, animated: true)
             } catch {}
         }
     }
