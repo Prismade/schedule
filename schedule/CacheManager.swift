@@ -21,50 +21,26 @@ final class CacheManager {
     private let fileManager = FileManager.default
     
     func cache(_ data: [ScheduleViewModel.Day], weekOffset: Int, to fileName: String) throws {
-        if weekOffset == 0 {
-            do {
-                if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))") {
-                    let jsonData = try JSONEncoder().encode(data)
-                    try jsonData.write(to: url, options: .atomic)
-                }
-            } catch let error {
-                throw CMError(kind: .fileWriteError, localizedDescription: error.localizedDescription)
+        do {
+            if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)") {
+                let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getMonday(for: 1)))
+                try jsonData.write(to: url, options: .atomic)
             }
-        } else if weekOffset > 0 {
-            do {
-                if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)") {
-                    let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getMonday(for: 1)))
-                    try jsonData.write(to: url, options: .atomic)
-                }
-            } catch let error {
-                throw CMError(kind: .fileWriteError, localizedDescription: error.localizedDescription)
-            }
-        } else {
-            return
+        } catch let error {
+            throw CMError(kind: .fileWriteError, localizedDescription: error.localizedDescription)
         }
     }
     
     func retrieve(weekOffset: Int, from fileName: String) -> [ScheduleViewModel.Day]? {
-        let path: String
-        if weekOffset == 0 {
-            path = "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))"
-        } else if weekOffset > 0 {
-            path = "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)"
-        } else {
-            return nil
-        }
-
+        let path = "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)"
+        
         if let url = getFileUrl(for: path) {
             if fileManager.fileExists(atPath: url.path) {
                 do {
                     let jsonData = try Data(contentsOf: url)
-                    if weekOffset == 0 {
-                        return try? JSONDecoder().decode([ScheduleViewModel.Day].self, from: jsonData)
-                    } else if weekOffset > 0 {
-                        let cacheItem = try JSONDecoder().decode(CacheItem.self, from: jsonData)
-                        if TimeManager.shared.validateCache(expirationTime: cacheItem.expirationTime) {
-                            return cacheItem.data
-                        }
+                    let cacheItem = try JSONDecoder().decode(CacheItem.self, from: jsonData)
+                    if TimeManager.shared.validateCache(expirationTime: cacheItem.expirationTime) {
+                        return cacheItem.data
                     }
                 } catch {
                     return nil

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Oi-Al-uds">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -518,77 +517,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                                 <constraint firstItem="OU7-8j-j38" firstAttribute="top" secondItem="uac-PK-M6s" secondAttribute="top" constant="11" id="HbM-Fj-RkU"/>
                                                 <constraint firstAttribute="trailing" secondItem="OU7-8j-j38" secondAttribute="trailing" constant="16" id="UUk-5n-T6C"/>
                                                 <constraint firstItem="OU7-8j-j38" firstAttribute="leading" secondItem="uac-PK-M6s" secondAttribute="leading" constant="16" id="qSI-tD-moF"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Частота обновления" id="aHw-gQ-ASA">
-                                <string key="footerTitle">Чтобы сохранять расписание в акутальном состоянии, приложение будет скачивать его через заданные промежутки времени (для этого приложению нужен доступ к уведомлениям)  Вы всегда можете обновить его вручную, если потяните вниз и отпустите</string>
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoHoursCachingTableCell" id="s1f-9w-X9j">
-                                        <rect key="frame" x="0.0" y="232.5" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s1f-9w-X9j" id="YIo-gv-7JX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каждые 2 часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-7H-vyv">
-                                                    <rect key="frame" x="16" y="11" width="343" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="W8o-7H-vyv" firstAttribute="leading" secondItem="YIo-gv-7JX" secondAttribute="leading" constant="16" id="Sc4-3f-BdP"/>
-                                                <constraint firstAttribute="trailing" secondItem="W8o-7H-vyv" secondAttribute="trailing" constant="16" id="UVO-6k-b1X"/>
-                                                <constraint firstAttribute="bottom" secondItem="W8o-7H-vyv" secondAttribute="bottom" constant="11" id="Uve-UX-2yl"/>
-                                                <constraint firstItem="W8o-7H-vyv" firstAttribute="top" secondItem="YIo-gv-7JX" secondAttribute="top" constant="11" id="bhC-Zg-hu1"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyCachingTableCell" id="Tdb-UW-lIK">
-                                        <rect key="frame" x="0.0" y="276" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tdb-UW-lIK" id="6Wf-GJ-T8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каждый день" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-zq-oIh">
-                                                    <rect key="frame" x="16" y="11" width="343" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="a0R-zq-oIh" firstAttribute="top" secondItem="6Wf-GJ-T8h" secondAttribute="top" constant="11" id="4EE-G1-moH"/>
-                                                <constraint firstAttribute="bottom" secondItem="a0R-zq-oIh" secondAttribute="bottom" constant="11" id="Qg5-e3-LZU"/>
-                                                <constraint firstAttribute="trailing" secondItem="a0R-zq-oIh" secondAttribute="trailing" constant="16" id="Xvt-16-EvD"/>
-                                                <constraint firstItem="a0R-zq-oIh" firstAttribute="leading" secondItem="6Wf-GJ-T8h" secondAttribute="leading" constant="16" id="dbn-MK-0DB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="WeeklyCachingTableCell" id="77Q-bc-Qwt">
-                                        <rect key="frame" x="0.0" y="319.5" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77Q-bc-Qwt" id="BSJ-Gp-rAL">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каждое воскресенье" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwM-mR-A0u">
-                                                    <rect key="frame" x="16" y="11" width="303" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kwM-mR-A0u" firstAttribute="top" secondItem="BSJ-Gp-rAL" secondAttribute="top" constant="11" id="2OX-Gd-pGc"/>
-                                                <constraint firstItem="kwM-mR-A0u" firstAttribute="leading" secondItem="BSJ-Gp-rAL" secondAttribute="leading" constant="16" id="6Yn-Cd-fdO"/>
-                                                <constraint firstAttribute="bottom" secondItem="kwM-mR-A0u" secondAttribute="bottom" constant="11" id="fyt-p3-f7P"/>
-                                                <constraint firstAttribute="trailing" secondItem="kwM-mR-A0u" secondAttribute="trailing" constant="16" id="mOi-J7-Pxu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

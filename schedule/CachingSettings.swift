@@ -4,6 +4,8 @@ import UIKit
 final class CachingSettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var cachingSwitch: UISwitch!
+    let onCachingToggledOnSectionsNumber = 2
+    let onCachingToggledOffSectionsNumber = 1
     var numberOfSections = 2
 
     override func viewDidLoad() {
@@ -14,10 +16,9 @@ final class CachingSettingsTableViewController: UITableViewController {
         cachingSwitch.addTarget(self, action: #selector(onSwitchToggle(sender:)), for: .valueChanged)
 
         if (cachingSwitch.isOn) {
-            numberOfSections = 3
-            toggleCell(row: UserDefaults.standard.integer(forKey: "RequestInterval"))
+            numberOfSections = onCachingToggledOnSectionsNumber
         } else {
-            numberOfSections = 1
+            numberOfSections = onCachingToggledOffSectionsNumber
         }
     }
 
@@ -25,19 +26,11 @@ final class CachingSettingsTableViewController: UITableViewController {
         UserDefaults.standard.set(sender.isOn, forKey: "EnableCaching")
         
         if (sender.isOn) {
-            numberOfSections = 3
-            tableView.reloadData()
+            numberOfSections = onCachingToggledOnSectionsNumber
+            tableView.insertSections(IndexSet(integer: 1), with: .fade)
         } else {
-            numberOfSections = 1
-            tableView.reloadData()
-        }
-    }
-    
-    private func toggleCell(row: Int) {
-        for i in 0..<3 {
-            let indexPath = IndexPath(row: i, section: 2)
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = i == row ? .checkmark : .none
+            numberOfSections = onCachingToggledOffSectionsNumber
+            tableView.deleteSections(IndexSet(integer: 1), with: .fade)
         }
     }
     
@@ -46,14 +39,10 @@ final class CachingSettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 1 && indexPath.row == 0 {
             do {
                 try CacheManager.shared.clear(fileNamePrefixes: [UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!, UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!])
             } catch {}
-        } else if indexPath.section == 2 {
-            toggleCell(row: indexPath.row)
-            tableView.deselectRow(at: indexPath, animated: true)
-            UserDefaults.standard.set(indexPath.row, forKey: "RequestInterval")
         }
     }
 
