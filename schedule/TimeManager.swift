@@ -17,18 +17,16 @@ protocol TimeManaging {
      */
     func getApiTimeKey(for weekOffset: Int) -> String
     
-    /**
-     Возвращает дату начала и конца недели.
-     - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
-     */
+    /// Возвращает дату начала и конца недели.
+    /// - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
     func getWeekBoundaries(for weekOffset: Int) -> String
     
     /**
-     Возвращает даты в строковом виде для каждого из дней недели
+     Возвращает даты для каждого из дней недели
      - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
-     - returns: даты для каждого дня недели
+     - returns: даты для каждого дня недели в строковом представлении и в виде объектов
      */
-    func getWeekDates(for weekOffset: Int) -> [String]
+    func getWeekDates(for weekOffset: Int) -> ([String], [Date])
     
     /// Возвращает номер текущего дня недели.
     func getCurrentWeekDay() -> Int
@@ -36,6 +34,13 @@ protocol TimeManaging {
     /// Возвращает время начала и конца пары.
     /// - parameter lessonNumber: номер пары.
     func getTimeBoundaries(for lessonNumber: Int) -> String
+    
+    /** Возвращает время начала и конца пары как экземпляры класса Date
+     - parameter lessonNumber: номер пары.
+     - parameter day: номер дня.
+     - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
+     */
+    func getTimeBoundariesAsDates(for lessonNumber: Int, on day: Int, weekOffset: Int) -> (Date, Date)
     
     /// Возвращает номер текущей пары.
     func getCurrentLessonNumber() -> Int
@@ -84,11 +89,13 @@ final class TimeManager: TimeManaging {
     
     // MARK: - Private Properties
 
-    private let calendar = Calendar(identifier: .iso8601)
+    private var calendar = Calendar(identifier: .iso8601)
 
     // MARK: - Initializers
 
-    private init() {}
+    private init() {
+        calendar.timeZone = TimeZone(abbreviation: "GMT+3")!
+    }
 
     // MARK: - Public Methods
 
@@ -122,24 +129,46 @@ final class TimeManager: TimeManaging {
         return "\(formatter.string(from: monday))-\(formatter.string(from: sunday))"
     }
     
-    func getWeekDates(for weekOffset: Int) -> [String] {
+    func getWeekDates(for weekOffset: Int) -> ([String], [Date]) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yy"
         
-        var week = [String]()
+        var weekStrings = [String]()
+        var weekDates = [Date]()
         let monday = getMonday(for: weekOffset)
-        week.append(formatter.string(from: monday))
+        weekStrings.append(formatter.string(from: monday))
         
         for i in 1...6 {
             let nextDay = calendar.date(byAdding: .day, value: i, to: monday)!
-            week.append(formatter.string(from: nextDay))
+            weekDates.append(nextDay)
+            weekStrings.append(formatter.string(from: nextDay))
         }
         
-        return week
+        return (weekStrings, weekDates)
     }
 
     func getCurrentWeekDay() -> Int {
         return calendar.dateComponents([.weekday], from: Date()).weekday! - 1
+    }
+    
+    func getTimeBoundariesAsDates(for lessonNumber: Int, on day: Int, weekOffset: Int) -> (Date, Date) {
+        let monday = getMonday(for: weekOffset)
+        let dayDate = calendar.date(byAdding: .day, value: day - 1, to: monday)!
+        
+        let boundaries = getTimeBoundaries(for: lessonNumber)
+        let separatedBoundaries = boundaries.split(separator: "-")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        let start = formatter.date(from: String(separatedBoundaries[0]))!
+        var components = calendar.dateComponents([.hour, .minute], from: start)
+        let startDate = calendar.date(byAdding: components, to: dayDate)!
+        
+        let finish = formatter.date(from: String(separatedBoundaries[1]))!
+        components = calendar.dateComponents([.hour, .minute], from: finish)
+        let finishDate = calendar.date(byAdding: components, to: dayDate)!
+        
+        return (startDate, finishDate)
     }
 
     func getCurrentLessonNumber() -> Int {
@@ -149,7 +178,7 @@ final class TimeManager: TimeManaging {
              20 * 60 + 10, 24 * 60]
         let components = calendar.dateComponents([.hour, .minute], from: Date())
         let timeInMinutes = components.hour! * 60 + components.minute!
-        return lessonsStartTimeInMinutes.firstIndex() { timeInMinutes <= $0 }!
+        return lessonsStartTimeInMinutes.firstIndex { timeInMinutes <= $0 }!
     }
     
     func validateCache(expirationTime: Date) -> Bool {

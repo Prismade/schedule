@@ -30,6 +30,9 @@ class Lesson: Codable, Comparable {
     var locationDesigned: String {
         return "📍 \(building)-\(room)"
     }
+    var location: String {
+        return "\(building)-\(room)"
+    }
 
     enum CodingKeys: String, CodingKey {
         case groupId = "idGruop"

@@ -20,7 +20,7 @@ final class CacheManager {
     
     private let fileManager = FileManager.default
     
-    func cache(_ data: [ScheduleViewModel.Day], weekOffset: Int, to fileName: String) throws {
+    func cache(_ data: [ScheduleDay], weekOffset: Int, to fileName: String) throws {
         do {
             if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)") {
                 let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getMonday(for: 1)))
@@ -31,7 +31,7 @@ final class CacheManager {
         }
     }
     
-    func retrieve(weekOffset: Int, from fileName: String) -> [ScheduleViewModel.Day]? {
+    func retrieve(weekOffset: Int, from fileName: String) -> [ScheduleDay]? {
         let path = "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)"
         
         if let url = getFileUrl(for: path) {

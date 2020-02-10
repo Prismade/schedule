@@ -1,4 +1,4 @@
-framework module Pods_schedule {
+module Pods_schedule {
   umbrella header "Pods-schedule-umbrella.h"
 
   export *
