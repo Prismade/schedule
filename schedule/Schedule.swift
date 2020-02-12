@@ -29,6 +29,7 @@ final class ScheduleTableViewController: UIViewController {
     private let swipeLeftRecognizer = UIScreenEdgePanGestureRecognizer()
     private var needUpdate: Bool!
     private var didPerformScrollOnStart = false
+    private var selectedCell: IndexPath!
 
     // MARK: - Lifecycle
     
@@ -131,6 +132,10 @@ final class ScheduleTableViewController: UIViewController {
             if #available(iOS 13.0, *) {
                 vc.isModalInPresentation = true
             }
+        } else if segue.identifier ?? "" == "ToScheduleDetails" {
+            let destination = segue.destination as! ScheduleDetailsViewController
+            destination.day = selectedCell.section
+            destination.lesson = selectedCell.row
         }
     }
 
@@ -186,5 +191,11 @@ extension ScheduleTableViewController: UITableViewDelegate {
                 didPerformScrollOnStart = true
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let _ = ScheduleManager.shared.lesson(at: (indexPath.section, indexPath.row)) else { return }
+        selectedCell = indexPath
+        performSegue(withIdentifier: "ToScheduleDetails", sender: self)
     }
 }

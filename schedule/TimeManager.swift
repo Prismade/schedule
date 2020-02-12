@@ -94,7 +94,7 @@ final class TimeManager: TimeManaging {
     // MARK: - Initializers
 
     private init() {
-        calendar.timeZone = TimeZone(abbreviation: "GMT+3")!
+        calendar.timeZone = TimeZone(abbreviation: "MSK")!
     }
 
     // MARK: - Public Methods

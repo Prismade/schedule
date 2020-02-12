@@ -96,6 +96,14 @@ protocol ApiManaging {
      */
     @discardableResult
     func getTeacherExamsSchedule(for teacher: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request
+    
+    /**
+     Получение информации о корпусах университета
+     - parameter completion: Замыкание, выполняющееся по завершении запроса. В качестве параметра передается результат запроса.
+     - returns: Объект запроса (для отладки). Можно опустить получение.
+     */
+    @discardableResult
+    func getBuildingsData(completion: @escaping (DataResponse<BuildingData, AFError>) -> Void) -> Request
 
 
 }
@@ -177,6 +185,12 @@ final class ApiManager: ApiManaging {
     @discardableResult
     func getTeacherExamsSchedule(for teacher: Int, completion: @escaping (DataResponse<[Exam], AFError>) -> Void) -> Request {
         let url = baseUrl + "//\(teacher)///printexamschedule"
+        return session.request(url).responseDecodable(completionHandler: completion)
+    }
+    
+    @discardableResult
+    func getBuildingsData(completion: @escaping (DataResponse<BuildingData, AFError>) -> Void) -> Request {
+        let url = "http://oreluniver.ru/assets/js/buildings.json"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
 

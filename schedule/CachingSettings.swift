@@ -41,7 +41,7 @@ final class CachingSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 && indexPath.row == 0 {
             do {
-                try CacheManager.shared.clear(fileNamePrefixes: [UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!, UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!])
+                try CacheManager.shared.clearSchedule(fileNamePrefixes: [UserDefaults.standard.string(forKey: "StudentCacheFilePrefix")!, UserDefaults.standard.string(forKey: "TeacherCacheFilePrefix")!])
                 tableView.deselectRow(at: indexPath, animated: true)
             } catch {}
         }

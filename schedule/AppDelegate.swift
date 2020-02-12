@@ -32,8 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set("teach", forKey: "TeacherCacheFilePrefix")
         }
         
-        // for debug only
-//        UserDefaults.standard.set(nil, forKey: "UserId")
+        if UserDefaults.standard.object(forKey: "BuildingsCacheFilePrefix") == nil {
+            UserDefaults.standard.set("buildings", forKey: "BuildingsCacheFilePrefix")
+        }
         
         return true
     }

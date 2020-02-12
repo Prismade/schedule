@@ -47,7 +47,7 @@ final class ScheduleManager {
                 } else {
                     filePrefix = studentCacheFilePrefix
                 }
-                if let cachedSchedule: [ScheduleDay] = CacheManager.shared.retrieve(weekOffset: weekOffset, from: filePrefix) {
+                if let cachedSchedule: [ScheduleDay] = CacheManager.shared.retrieveSchedule(weekOffset: weekOffset, from: filePrefix) {
                     scheduleTable = cachedSchedule
                     completion(nil)
                     return
@@ -116,7 +116,7 @@ final class ScheduleManager {
 
     func forceCache(for weekOffset: Int) {
         do {
-            try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: studentCacheFilePrefix)
+            try CacheManager.shared.cacheSchedule(scheduleTable, weekOffset: weekOffset, to: studentCacheFilePrefix)
         } catch {
             debugPrint("Unable to write a file")
         }
@@ -144,7 +144,7 @@ final class ScheduleManager {
                 } else {
                     filePrefix = studentCacheFilePrefix
                 }
-                try CacheManager.shared.cache(scheduleTable, weekOffset: weekOffset, to: filePrefix)
+                try CacheManager.shared.cacheSchedule(scheduleTable, weekOffset: weekOffset, to: filePrefix)
             } catch {
                 debugPrint("Unable to write a file")
             }

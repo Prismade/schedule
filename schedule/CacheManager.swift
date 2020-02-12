@@ -20,7 +20,7 @@ final class CacheManager {
     
     private let fileManager = FileManager.default
     
-    func cache(_ data: [ScheduleDay], weekOffset: Int, to fileName: String) throws {
+    func cacheSchedule(_ data: [ScheduleDay], weekOffset: Int, to fileName: String) throws {
         do {
             if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)") {
                 let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getMonday(for: 1)))
@@ -31,7 +31,7 @@ final class CacheManager {
         }
     }
     
-    func retrieve(weekOffset: Int, from fileName: String) -> [ScheduleDay]? {
+    func retrieveSchedule(weekOffset: Int, from fileName: String) -> [ScheduleDay]? {
         let path = "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)"
         
         if let url = getFileUrl(for: path) {
@@ -51,7 +51,7 @@ final class CacheManager {
         return nil
     }
     
-    func clear(fileNamePrefixes: [String]) throws {
+    func clearSchedule(fileNamePrefixes: [String]) throws {
         if let directory = getRootUrl() {
             do {
                 let files = try fileManager.contentsOfDirectory(at: directory, includingPropertiesForKeys: [.nameKey])
@@ -66,6 +66,33 @@ final class CacheManager {
                 throw CMError(kind: .fileDeletionError, localizedDescription: error.localizedDescription)
             }
         }
+    }
+    
+    func cacheBuildings(_ data: [Building]) throws {
+        do {
+            if let url = getFileUrl(for: "\(UserDefaults.standard.string(forKey: "BuildingsCacheFilePrefix")!)") {
+                let jsonData = try JSONEncoder().encode(data)
+                try jsonData.write(to: url, options: .atomic)
+            }
+        } catch let error {
+            throw CMError(kind: .fileWriteError, localizedDescription: error.localizedDescription)
+        }
+    }
+    
+    func retrieveBuildings() -> [Building]? {
+        if let url = getFileUrl(for: "\(UserDefaults.standard.string(forKey: "BuildingsCacheFilePrefix")!)") {
+            if fileManager.fileExists(atPath: url.path) {
+                do {
+                    let jsonData = try Data(contentsOf: url)
+                    let data = try JSONDecoder().decode([Building].self, from: jsonData)
+                    return data
+                } catch {
+                    return nil
+                }
+            }
+        }
+        
+        return nil
     }
     
     private func getFileUrl(for fileName: String) -> URL? {
