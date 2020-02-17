@@ -203,6 +203,7 @@ final class ApiManager: ApiManaging {
         return session.request(url).responseDecodable(completionHandler: completion)
     }
     
+    @discardableResult
     func getEmployeeData(for id: Int, completion: @escaping (DataResponse<Data?, AFError>) -> Void) -> Request {
         let url = "http://oreluniver.ru/employee/\(id)"
         return session.request(url).response(completionHandler: completion)
