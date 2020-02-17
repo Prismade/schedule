@@ -104,6 +104,15 @@ protocol ApiManaging {
      */
     @discardableResult
     func getBuildingsData(completion: @escaping (DataResponse<BuildingData, AFError>) -> Void) -> Request
+    
+    /**
+     Получение веб страницы с информацией о преподавателе.
+     - parameter id: ID преподавателя.
+     - parameter completion: Замыкание, выполняющееся по завершении запроса. В качестве параметра передается результат запроса.
+     - returns: Объект запроса (для отладки). Можно опустить получение.
+     */
+    @discardableResult
+    func getEmployeeData(for id: Int, completion: @escaping (DataResponse<Data?, AFError>) -> Void) -> Request
 
 
 }
@@ -192,6 +201,11 @@ final class ApiManager: ApiManaging {
     func getBuildingsData(completion: @escaping (DataResponse<BuildingData, AFError>) -> Void) -> Request {
         let url = "http://oreluniver.ru/assets/js/buildings.json"
         return session.request(url).responseDecodable(completionHandler: completion)
+    }
+    
+    func getEmployeeData(for id: Int, completion: @escaping (DataResponse<Data?, AFError>) -> Void) -> Request {
+        let url = "http://oreluniver.ru/employee/\(id)"
+        return session.request(url).response(completionHandler: completion)
     }
 
 
