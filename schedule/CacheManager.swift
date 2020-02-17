@@ -95,6 +95,33 @@ final class CacheManager {
         return nil
     }
     
+    func cacheEmployee(id: Int, _ data: Employee) throws {
+        do {
+            if let url = getFileUrl(for: "\(UserDefaults.standard.string(forKey: "EmployeeCacheFilePrefix")!)\(id)") {
+                let jsonData = try JSONEncoder().encode(data)
+                try jsonData.write(to: url, options: .atomic)
+            }
+        } catch let error {
+            throw CMError(kind: .fileWriteError, localizedDescription: error.localizedDescription)
+        }
+    }
+    
+    func retrieveEmployee(id: Int) -> Employee? {
+        if let url = getFileUrl(for: "\(UserDefaults.standard.string(forKey: "EmployeeCacheFilePrefix")!)\(id)") {
+            if fileManager.fileExists(atPath: url.path) {
+                do {
+                    let jsonData = try Data(contentsOf: url)
+                    let data = try JSONDecoder().decode(Employee.self, from: jsonData)
+                    return data
+                } catch {
+                    return nil
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     private func getFileUrl(for fileName: String) -> URL? {
         if let url = getRootUrl() {
             do {
