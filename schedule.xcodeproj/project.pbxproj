@@ -10,6 +10,7 @@
 		1FF70D037296514147E47632 /* libPods-schedule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 194D7F1AFF7D543454D4494B /* libPods-schedule.a */; };
 		240D3DA923DDB4B200B2E4D7 /* DepartmentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D3DA823DDB4B200B2E4D7 /* DepartmentSelection.swift */; };
 		240D3DAB23DDB5CC00B2E4D7 /* TeacherSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D3DAA23DDB5CC00B2E4D7 /* TeacherSelection.swift */; };
+		240D5EDF23FAE12600BB5257 /* EmployeeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D5EDE23FAE12600BB5257 /* EmployeeManagerTests.swift */; };
 		2421789D23B6AFCE001A343C /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2421789C23B6AFCE001A343C /* Exam.swift */; };
 		243664B823D9CBF000692BD3 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664B723D9CBF000692BD3 /* CacheItem.swift */; };
 		243664BB23DA12C500692BD3 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664BA23DA12C500692BD3 /* UserSelection.swift */; };
@@ -32,10 +33,8 @@
 		24874929235C62BF00DBE278 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */; };
 		248B591123DDC6D400528B74 /* ExamsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248B591023DDC6D400528B74 /* ExamsSchedule.swift */; };
 		249AFA7C23F1839600D251C6 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AFA7B23F1839600D251C6 /* ScheduleManager.swift */; };
-		249CE841236D9A76004D0EEE /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249CE840236D9A76004D0EEE /* TimeManagerTests.swift */; };
 		24A0F7C623ED77C6004334AF /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A56E6423F4515000D77C3F /* BuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A56E6323F4515000D77C3F /* BuildingData.swift */; };
-		24A69BE32350959300E95589 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A69BE22350959300E95589 /* JsonTests.swift */; };
 		24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED7E23DA7E350044B02B /* SearchableTable.swift */; };
 		24B1ED8123DAFA880044B02B /* CourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8023DAFA880044B02B /* CourseSelection.swift */; };
 		24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */; };
@@ -90,6 +89,7 @@
 		2226D838CA79ECD78D445C19 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.debug.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		240D3DA823DDB4B200B2E4D7 /* DepartmentSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentSelection.swift; sourceTree = "<group>"; };
 		240D3DAA23DDB5CC00B2E4D7 /* TeacherSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSelection.swift; sourceTree = "<group>"; };
+		240D5EDE23FAE12600BB5257 /* EmployeeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManagerTests.swift; sourceTree = "<group>"; };
 		2421789C23B6AFCE001A343C /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		243664B723D9CBF000692BD3 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 		243664BA23DA12C500692BD3 /* UserSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
@@ -112,10 +112,8 @@
 		24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		248B591023DDC6D400528B74 /* ExamsSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSchedule.swift; sourceTree = "<group>"; };
 		249AFA7B23F1839600D251C6 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
-		249CE840236D9A76004D0EEE /* TimeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTests.swift; sourceTree = "<group>"; };
 		24A0F7C923ED79A9004334AF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A56E6323F4515000D77C3F /* BuildingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingData.swift; sourceTree = "<group>"; };
-		24A69BE22350959300E95589 /* JsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTests.swift; sourceTree = "<group>"; };
 		24B1ED7E23DA7E350044B02B /* SearchableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTable.swift; sourceTree = "<group>"; };
 		24B1ED8023DAFA880044B02B /* CourseSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelection.swift; sourceTree = "<group>"; };
 		24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelection.swift; sourceTree = "<group>"; };
@@ -300,9 +298,8 @@
 		24DA80BB234622FA008055D3 /* scheduleTests */ = {
 			isa = PBXGroup;
 			children = (
-				24A69BE22350959300E95589 /* JsonTests.swift */,
-				249CE840236D9A76004D0EEE /* TimeManagerTests.swift */,
 				24DA80BE234622FA008055D3 /* Info.plist */,
+				240D5EDE23FAE12600BB5257 /* EmployeeManagerTests.swift */,
 			);
 			path = scheduleTests;
 			sourceTree = "<group>";
@@ -404,6 +401,7 @@
 					};
 					24DA80B7234622FA008055D3 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1130;
 						TestTargetID = 24DA809E234622F9008055D3;
 					};
 					24DA80C2234622FA008055D3 = {
@@ -574,8 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				249CE841236D9A76004D0EEE /* TimeManagerTests.swift in Sources */,
-				24A69BE32350959300E95589 /* JsonTests.swift in Sources */,
+				240D5EDF23FAE12600BB5257 /* EmployeeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +779,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = scheduleTests/Info.plist;
@@ -793,9 +791,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.scheduleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/schedule.app/schedule";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Расписание.app/Расписание";
 			};
 			name = Debug;
 		};
@@ -805,6 +804,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = scheduleTests/Info.plist;
@@ -818,7 +818,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/schedule.app/schedule";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Расписание.app/Расписание";
 			};
 			name = Release;
 		};
