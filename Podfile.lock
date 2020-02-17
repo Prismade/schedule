@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - SwiftSoup (2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - SwiftSoup
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
 
-PODFILE CHECKSUM: e3d030c089390e266e3feb34e9595d91bc0cb85f
+PODFILE CHECKSUM: 37dc41dd670158d4047fe3904221cb1b227b2748
 
 COCOAPODS: 1.8.4

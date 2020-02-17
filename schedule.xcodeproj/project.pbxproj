@@ -15,6 +15,7 @@
 		243664BB23DA12C500692BD3 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664BA23DA12C500692BD3 /* UserSelection.swift */; };
 		243664C123DA3C8400692BD3 /* DivisionSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664C023DA3C8400692BD3 /* DivisionSelect.swift */; };
 		2445136A2362E73B00BCCA85 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* Settings.swift */; };
+		244C100B23FAB90E000234FC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C100A23FAB90E000234FC /* Employee.swift */; };
 		244F9397234F438E00A99C7F /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9392234F438D00A99C7F /* TimeManager.swift */; };
 		244F9398234F438E00A99C7F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9393234F438D00A99C7F /* Course.swift */; };
 		244F939A234F438E00A99C7F /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9395234F438E00A99C7F /* Division.swift */; };
@@ -31,7 +32,7 @@
 		248B591123DDC6D400528B74 /* ExamsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248B591023DDC6D400528B74 /* ExamsSchedule.swift */; };
 		249AFA7C23F1839600D251C6 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AFA7B23F1839600D251C6 /* ScheduleManager.swift */; };
 		249CE841236D9A76004D0EEE /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249CE840236D9A76004D0EEE /* TimeManagerTests.swift */; };
-		24A0F7C623ED77C6004334AF /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24A0F7C623ED77C6004334AF /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A56E6423F4515000D77C3F /* BuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A56E6323F4515000D77C3F /* BuildingData.swift */; };
 		24A69BE32350959300E95589 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A69BE22350959300E95589 /* JsonTests.swift */; };
 		24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED7E23DA7E350044B02B /* SearchableTable.swift */; };
@@ -75,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				24A0F7C623ED77C6004334AF /* BuildFile in Embed Frameworks */,
+				24A0F7C623ED77C6004334AF /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +94,7 @@
 		243664BA23DA12C500692BD3 /* UserSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
 		243664C023DA3C8400692BD3 /* DivisionSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionSelect.swift; sourceTree = "<group>"; };
 		244513692362E73B00BCCA85 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		244C100A23FAB90E000234FC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		244F9392234F438D00A99C7F /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		244F9393234F438D00A99C7F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		244F9395234F438E00A99C7F /* Division.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				2421789C23B6AFCE001A343C /* Exam.swift */,
 				243664B723D9CBF000692BD3 /* CacheItem.swift */,
 				24A56E6323F4515000D77C3F /* BuildingData.swift */,
+				244C100A23FAB90E000234FC /* Employee.swift */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				244F9398234F438E00A99C7F /* Course.swift in Sources */,
 				24EFC24F23EAC9F6004B1C0F /* ExportManager.swift in Sources */,
 				247493D123F32F1200377F50 /* BuildingsManager.swift in Sources */,
+				244C100B23FAB90E000234FC /* Employee.swift in Sources */,
 				24A56E6423F4515000D77C3F /* BuildingData.swift in Sources */,
 				24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */,
 				244F939A234F438E00A99C7F /* Division.swift in Sources */,
