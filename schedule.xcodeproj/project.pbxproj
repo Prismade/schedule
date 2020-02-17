@@ -298,8 +298,8 @@
 		24DA80BB234622FA008055D3 /* scheduleTests */ = {
 			isa = PBXGroup;
 			children = (
-				24DA80BE234622FA008055D3 /* Info.plist */,
 				240D5EDE23FAE12600BB5257 /* EmployeeManagerTests.swift */,
+				24DA80BE234622FA008055D3 /* Info.plist */,
 			);
 			path = scheduleTests;
 			sourceTree = "<group>";

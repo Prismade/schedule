@@ -6,7 +6,7 @@ class EmployeeManagerTests: XCTestCase {
 
     func testParsing() {
         
-        let expectation = XCTestExpectation(description: "Download apple.com home page")
+        let expectation = XCTestExpectation(description: "Test em parsing")
         
         EmployeeManager.shared.data(for: 159) { result in
             switch result {
