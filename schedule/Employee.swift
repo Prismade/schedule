@@ -21,7 +21,7 @@ final class Employee: Codable {
     
     init(id: Int, name: String,
          image: String? = nil,
-         position: [String]? = nil,
+         position: [String] = [],
          degree: String? = nil,
          rank: String? = nil,
          contacts: Contacts) {
@@ -37,7 +37,7 @@ final class Employee: Codable {
     let id: Int
     let name: String
     let image: String?
-    let position: [String]?
+    let position: [String]
     let degree: String?
     let rank: String?
     let contacts: Contacts
