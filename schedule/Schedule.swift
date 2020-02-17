@@ -170,7 +170,6 @@ extension ScheduleTableViewController: UITableViewDataSource {
             cellType = .student
         }
         cell.configure(with: ScheduleManager.shared.lesson(at: (indexPath.section, indexPath.row)), cellType: cellType)
-        cell.selectionStyle = .none
         return cell
     }
 }
@@ -194,6 +193,7 @@ extension ScheduleTableViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let _ = ScheduleManager.shared.lesson(at: (indexPath.section, indexPath.row)) else { return }
         selectedCell = indexPath
         performSegue(withIdentifier: "ToScheduleDetails", sender: self)
