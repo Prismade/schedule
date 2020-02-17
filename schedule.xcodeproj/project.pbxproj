@@ -16,6 +16,7 @@
 		243664C123DA3C8400692BD3 /* DivisionSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243664C023DA3C8400692BD3 /* DivisionSelect.swift */; };
 		2445136A2362E73B00BCCA85 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244513692362E73B00BCCA85 /* Settings.swift */; };
 		244C100B23FAB90E000234FC /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C100A23FAB90E000234FC /* Employee.swift */; };
+		244C100D23FAC37E000234FC /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244C100C23FAC37E000234FC /* EmployeeManager.swift */; };
 		244F9397234F438E00A99C7F /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9392234F438D00A99C7F /* TimeManager.swift */; };
 		244F9398234F438E00A99C7F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9393234F438D00A99C7F /* Course.swift */; };
 		244F939A234F438E00A99C7F /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244F9395234F438E00A99C7F /* Division.swift */; };
@@ -95,6 +96,7 @@
 		243664C023DA3C8400692BD3 /* DivisionSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionSelect.swift; sourceTree = "<group>"; };
 		244513692362E73B00BCCA85 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		244C100A23FAB90E000234FC /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		244C100C23FAC37E000234FC /* EmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
 		244F9392234F438D00A99C7F /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		244F9393234F438D00A99C7F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		244F9395234F438E00A99C7F /* Division.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				24EFC24E23EAC9F6004B1C0F /* ExportManager.swift */,
 				249AFA7B23F1839600D251C6 /* ScheduleManager.swift */,
 				247493D023F32F1200377F50 /* BuildingsManager.swift */,
+				244C100C23FAC37E000234FC /* EmployeeManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				24A56E6423F4515000D77C3F /* BuildingData.swift in Sources */,
 				24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */,
 				244F939A234F438E00A99C7F /* Division.swift in Sources */,
+				244C100D23FAC37E000234FC /* EmployeeManager.swift in Sources */,
 				2445136A2362E73B00BCCA85 /* Settings.swift in Sources */,
 				244F939B234F438E00A99C7F /* Group.swift in Sources */,
 				24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */,
