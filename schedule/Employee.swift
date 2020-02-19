@@ -41,6 +41,16 @@ final class Employee: Codable {
     let degree: String?
     let rank: String?
     let contacts: Contacts
+    var allPositions: String {
+        guard position.count > 0 else { return "" }
+        return position.reduce(into: "") { accumulator, newValue in
+            if accumulator != "" {
+                accumulator += ", \(newValue)"
+            } else {
+                accumulator = "\(newValue)"
+            }
+        }
+    }
 
 
 }
