@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Преподаватель-->
+        <!--Teacher-->
         <scene sceneID="Ris-n1-kC8">
             <objects>
                 <viewController storyboardIdentifier="TeacherProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHy-Wv-Dpy" customClass="TeacherProfileViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,8 +72,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контакты:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjt-BM-mR7">
-                                                        <rect key="frame" x="0.0" y="325.5" width="98" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjt-BM-mR7">
+                                                        <rect key="frame" x="0.0" y="325.5" width="89.5" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JCD-ek-YLT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Преподаватель" id="Oy1-NI-GGu">
+                    <navigationItem key="navigationItem" title="Teacher" id="Oy1-NI-GGu">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="Bsk-6f-4Lb">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="-1114" y="976"/>
         </scene>
-        <!--Экзамены-->
+        <!--Exams-->
         <scene sceneID="eK5-yI-3nv">
             <objects>
                 <tableViewController storyboardIdentifier="ExamsSchedule" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bUi-Hd-9Xz" customClass="ExamsScheduleTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                             <outlet property="delegate" destination="bUi-Hd-9Xz" id="aYr-3q-Hde"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Экзамены" id="bZ5-VE-POV">
+                    <navigationItem key="navigationItem" title="Exams" id="bZ5-VE-POV">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="UMR-OC-MKz">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="-175.19999999999999" y="978.26086956521749"/>
         </scene>
-        <!--Расписание-->
+        <!--Schedule-->
         <scene sceneID="inD-7o-N9r">
             <objects>
                 <viewController storyboardIdentifier="ScheduleTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKN-XW-SHB" customClass="ScheduleTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,7 +238,7 @@
                         <viewLayoutGuide key="safeArea" id="a3L-gg-McL"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Расписание" id="U6B-4a-ftm">
+                    <navigationItem key="navigationItem" title="Schedule" id="U6B-4a-ftm">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Class Icon" id="izN-CM-VeE">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
@@ -262,7 +262,7 @@
             </objects>
             <point key="canvasLocation" x="-639.20000000000005" y="-820.83958020989508"/>
         </scene>
-        <!--Выбор пользователя-->
+        <!--User selection-->
         <scene sceneID="CoL-nB-ZH4">
             <objects>
                 <viewController storyboardIdentifier="UserSelectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vd5-zM-cBG" customClass="UserSelectionViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -271,12 +271,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VhE-qe-CQ2">
-                                <rect key="frame" x="52.5" y="259.5" width="270" height="128"/>
+                                <rect key="frame" x="91.5" y="259.5" width="192" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-g9-OuB">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="Я студент">
+                                        <state key="normal" title="I'm a student">
                                             <color key="titleColor" name="MainAccentColor"/>
                                         </state>
                                         <connections>
@@ -284,9 +284,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-Eu-1cO">
-                                        <rect key="frame" x="0.0" y="74" width="270" height="54"/>
+                                        <rect key="frame" x="0.0" y="74" width="192" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="Я преподаватель">
+                                        <state key="normal" title="I'm teacher">
                                             <color key="titleColor" name="MainAccentColor"/>
                                         </state>
                                         <connections>
@@ -303,9 +303,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L7a-aA-vaA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Выбор пользователя" id="wdv-rF-z6K">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="Epg-Ra-ux4"/>
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="53h-iO-jgF">
+                    <navigationItem key="navigationItem" title="User selection" id="wdv-rF-z6K">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="53h-iO-jgF">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="onCancelButtonTap:" destination="Vd5-zM-cBG" id="qc3-k1-OCi"/>
@@ -321,7 +320,7 @@
             </objects>
             <point key="canvasLocation" x="807.20000000000005" y="977.36131934032994"/>
         </scene>
-        <!--Выбор кафедры-->
+        <!--Department selection-->
         <scene sceneID="yMD-UW-DUa">
             <objects>
                 <tableViewController storyboardIdentifier="DepartmentselectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vSB-RD-RRK" customClass="DepartmentSelectionTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -344,9 +343,8 @@
                             <outlet property="delegate" destination="vSB-RD-RRK" id="vRq-1n-Ll0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбор кафедры" id="PLe-Iy-JCh">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="KA7-5j-fAM"/>
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="Dpe-u6-USq">
+                    <navigationItem key="navigationItem" title="Department selection" id="PLe-Iy-JCh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Dpe-u6-USq">
                             <connections>
                                 <action selector="onCancelButtonTap:" destination="vSB-RD-RRK" id="c2t-QD-TS6"/>
                             </connections>
@@ -361,7 +359,7 @@
             </objects>
             <point key="canvasLocation" x="3272.8000000000002" y="1492.8035982008996"/>
         </scene>
-        <!--Выбор преподавателя-->
+        <!--Teacher selection-->
         <scene sceneID="LPc-Fk-63p">
             <objects>
                 <tableViewController storyboardIdentifier="TeacherSelectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GHc-cW-05P" customClass="TeacherSelectionTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,8 +382,8 @@
                             <outlet property="delegate" destination="GHc-cW-05P" id="IdP-KN-wLk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбор преподавателя" id="SpX-79-nsf">
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="cSx-Uk-7zz">
+                    <navigationItem key="navigationItem" title="Teacher selection" id="SpX-79-nsf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cSx-Uk-7zz">
                             <connections>
                                 <action selector="onCancelButtonTap:" destination="GHc-cW-05P" id="6sU-im-qpb"/>
                             </connections>
@@ -399,7 +397,7 @@
             </objects>
             <point key="canvasLocation" x="4224.8000000000002" y="1492.8035982008996"/>
         </scene>
-        <!--Выбор института (факультета)-->
+        <!--Institue selection-->
         <scene sceneID="3an-Vu-oBC">
             <objects>
                 <tableViewController storyboardIdentifier="DivisionSelectTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Umw-Xa-Yte" customClass="DivisionSelectTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -423,11 +421,8 @@
                             <outlet property="delegate" destination="Umw-Xa-Yte" id="yt6-SD-i4F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбор института (факультета)" id="h8Y-OM-aQz">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="2m2-dx-znX">
-                            <color key="tintColor" name="MainAccentColor"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="li9-62-PeT">
+                    <navigationItem key="navigationItem" title="Institue selection" id="h8Y-OM-aQz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="li9-62-PeT">
                             <connections>
                                 <action selector="onCancelButtonTap:" destination="Umw-Xa-Yte" id="20F-0r-v1a"/>
                             </connections>
@@ -443,7 +438,7 @@
             </objects>
             <point key="canvasLocation" x="2264.8000000000002" y="567.16641679160421"/>
         </scene>
-        <!--Выбор курса-->
+        <!--Course selection-->
         <scene sceneID="Lgj-I2-VlD">
             <objects>
                 <tableViewController storyboardIdentifier="CourseSelectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1zp-DG-HkG" customClass="CourseSelectionTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -466,9 +461,8 @@
                             <outlet property="delegate" destination="1zp-DG-HkG" id="Iqu-c0-zs2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбор курса" id="7eB-DM-6MJ">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="ACS-m4-OtF"/>
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="Rdd-Zd-dtY">
+                    <navigationItem key="navigationItem" title="Course selection" id="7eB-DM-6MJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Rdd-Zd-dtY">
                             <connections>
                                 <action selector="onCancelButtonTap:" destination="1zp-DG-HkG" id="8A7-QA-bAe"/>
                             </connections>
@@ -483,7 +477,7 @@
             </objects>
             <point key="canvasLocation" x="3272.8000000000002" y="567.16641679160421"/>
         </scene>
-        <!--Выбор группы-->
+        <!--Group selection-->
         <scene sceneID="IxN-ag-SnC">
             <objects>
                 <tableViewController storyboardIdentifier="GroupSelectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rnb-2V-u7M" customClass="GroupSelectionTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -506,8 +500,8 @@
                             <outlet property="delegate" destination="Rnb-2V-u7M" id="KNG-jQ-IS7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбор группы" id="C5T-Is-Oaa">
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="bT7-bd-mfn">
+                    <navigationItem key="navigationItem" title="Group selection" id="C5T-Is-Oaa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="bT7-bd-mfn">
                             <connections>
                                 <action selector="onFinishButtonTap:" destination="Rnb-2V-u7M" id="8Ge-z3-atv"/>
                             </connections>
@@ -541,7 +535,7 @@
             </objects>
             <point key="canvasLocation" x="-1443" y="-820"/>
         </scene>
-        <!--О приложении-->
+        <!--About-->
         <scene sceneID="FLg-uS-Rqg">
             <objects>
                 <viewController storyboardIdentifier="AboutSection" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zOR-JU-VFB" sceneMemberID="viewController">
@@ -554,7 +548,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Расписание – версия 1.0 © 2019-2020 Егор Молчанов  Today, sort left, sort right, class and settings icons by Icon8 (https://icons8.com)  Лицензии открытого ПО  </string>
+                                        <string key="content">Schedule – версия 1.0 © 2019-2020 Yegor Molchanov  Today, sort left, sort right, class and settings icons by Icon8 (https://icons8.com)  Opensource software licenses  </string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
@@ -570,7 +564,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> 
+                                        <mutableString key="content"> 
 Copyright © 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -578,7 +572,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
@@ -598,13 +592,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWA-4B-eao"/>
                     </view>
-                    <navigationItem key="navigationItem" title="О приложении" id="wLA-Xx-OQW"/>
+                    <navigationItem key="navigationItem" title="About" id="wLA-Xx-OQW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVB-hF-fk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1326" y="-361"/>
         </scene>
-        <!--Настройки сохранения-->
+        <!--Caching settings-->
         <scene sceneID="bLp-gz-Ie1">
             <objects>
                 <tableViewController storyboardIdentifier="CachingSettings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TQE-dL-P7J" customClass="CachingSettingsTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -613,7 +607,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection footerTitle="Включите, чтобы иметь доступ к распианию без интернета" id="E9F-FV-Q06">
+                            <tableViewSection footerTitle="Turn on to have access to schedule without internet connection" id="E9F-FV-Q06">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToggleCachingTableCell" id="zs5-IF-5bF">
                                         <rect key="frame" x="0.0" y="18" width="375" height="43.5"/>
@@ -629,7 +623,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                                         <action selector="cachingSwitch:" destination="Y97-kN-0OR" eventType="valueChanged" id="M6C-ZL-AFV"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сохранять расписание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw1-2A-pJS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cache schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw1-2A-pJS">
                                                     <rect key="frame" x="16" y="11" width="278" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -658,7 +652,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить сохраненные данные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-8j-j38">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear cached data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-8j-j38">
                                                     <rect key="frame" x="16" y="11" width="343" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -681,7 +675,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                             <outlet property="delegate" destination="TQE-dL-P7J" id="rId-d0-vrx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Настройки сохранения" id="lIz-ZB-c7i"/>
+                    <navigationItem key="navigationItem" title="Caching settings" id="lIz-ZB-c7i"/>
                     <connections>
                         <outlet property="cachingSwitch" destination="bkh-II-BxD" id="LJD-05-dl9"/>
                     </connections>
@@ -691,7 +685,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
             </objects>
             <point key="canvasLocation" x="1326" y="-1309"/>
         </scene>
-        <!--Настройки-->
+        <!--Settings-->
         <scene sceneID="NNU-FF-PHS">
             <objects>
                 <tableViewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x97-pp-ZwZ" customClass="SettingsTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -709,7 +703,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Выбрать институт и др." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55T-kY-C5v">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Select institute etc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55T-kY-C5v">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -729,7 +723,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Расписание без интернета" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q3y-AN-HGj">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Caching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q3y-AN-HGj">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -753,7 +747,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прокр. до тек. дня при запуске" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLx-q2-cbl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll to today on start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLx-q2-cbl">
                                                     <rect key="frame" x="16" y="11" width="278" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -783,7 +777,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Менять недели свайпом" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usf-cd-5yL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to switch weeks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usf-cd-5yL">
                                                     <rect key="frame" x="16" y="11" width="278" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -817,7 +811,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Экспорт в календарь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxf-36-lBk">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Export to calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxf-36-lBk">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -838,7 +832,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="О приложении" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="52X-vp-hLz">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="52X-vp-hLz">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -859,9 +853,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                             <outlet property="delegate" destination="x97-pp-ZwZ" id="Fyt-hF-rxF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Настройки" id="n8b-I0-OCg">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="e59-Ns-OeT"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="n8b-I0-OCg"/>
                     <connections>
                         <outlet property="scrollToTodaySwitch" destination="PAN-fZ-UQx" id="PDA-qe-Ytw"/>
                         <outlet property="swipeToChangeSwitch" destination="rex-0O-Kqu" id="Mah-p2-dLx"/>
@@ -995,9 +987,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YGP-mB-Mo0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tl8-1N-dZ7">
-                        <barButtonItem key="backBarButtonItem" title="Занятие" id="kgN-EI-X4Y"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="tl8-1N-dZ7"/>
                     <connections>
                         <outlet property="location" destination="7AF-Hl-TkO" id="mRk-Y6-UHr"/>
                         <outlet property="map" destination="a1o-fo-g5X" id="O3d-1k-oCj"/>

@@ -1,0 +1,15 @@
+"monday" = "Monday";
+"tuesday" = "Tuesday";
+"wednesday" = "Wednesday";
+"thursday" = "Thursday";
+"friday" = "Friday";
+"saturday" = "Saturday";
+"searchPlaceholder" = "Search";
+"noPerm" = "No permission";
+"noPermMsg" = "To export schedule app needs persmission. Grant access to calendar in settings.";
+"position" = "Position: ";
+"degree" = "Degree: ";
+"rank" = "Rank: ";
+"noContacts" = "None";
+"subgroup" = "Subgroup";
+"noClasses" = "No classes";

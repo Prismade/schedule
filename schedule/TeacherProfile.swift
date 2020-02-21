@@ -67,14 +67,14 @@ class TeacherProfileViewController: UIViewController {
             UIFont.systemFont(ofSize: 17, weight: .light)]
         
         let positionText = NSMutableAttributedString(
-            string: "Занимаемые должности: ",
+            string: "\(NSLocalizedString("position", comment: ""))",
             attributes: boldFontAttribute)
         positionText.append(NSAttributedString(string: employee!.allPositions, attributes: fontAttribute))
         position.attributedText = positionText
         
         if let degree = employee!.degree {
             let degreeText = NSMutableAttributedString(
-                string: "Ученая степень: ",
+                string: "\(NSLocalizedString("degree", comment: ""))",
                 attributes: boldFontAttribute)
             degreeText.append(NSAttributedString(string: degree, attributes: fontAttribute))
             self.degree.attributedText = degreeText
@@ -84,7 +84,7 @@ class TeacherProfileViewController: UIViewController {
         
         if let rank = employee!.rank {
             let rankText = NSMutableAttributedString(
-                string: "Ученое звание: ",
+                string: "\(NSLocalizedString("rank", comment: ""))",
                 attributes: boldFontAttribute)
             rankText.append(NSAttributedString(string: rank, attributes: fontAttribute))
             self.rank.attributedText = rankText
@@ -96,7 +96,7 @@ class TeacherProfileViewController: UIViewController {
             employee!.contacts.email != nil ||
             employee!.contacts.phone != nil
         else {
-            self.address.text = "Нет"
+            self.address.text = "\(NSLocalizedString("noContacts", comment: ""))"
             self.phone.isHidden = true
             self.email.isHidden = true
             stackView.layoutIfNeeded()
