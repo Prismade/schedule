@@ -32,6 +32,7 @@
 		24792E4923F32104007439F6 /* ScheduleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24792E4823F32104007439F6 /* ScheduleDetails.swift */; };
 		24874929235C62BF00DBE278 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */; };
 		248B591123DDC6D400528B74 /* ExamsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248B591023DDC6D400528B74 /* ExamsSchedule.swift */; };
+		2493BFA023FC70D200A4CA9E /* TeacherProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2493BF9F23FC70D200A4CA9E /* TeacherProfile.swift */; };
 		249AFA7C23F1839600D251C6 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AFA7B23F1839600D251C6 /* ScheduleManager.swift */; };
 		24A0F7C623ED77C6004334AF /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A56E6423F4515000D77C3F /* BuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A56E6323F4515000D77C3F /* BuildingData.swift */; };
@@ -111,6 +112,7 @@
 		24792E4823F32104007439F6 /* ScheduleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetails.swift; sourceTree = "<group>"; };
 		24874928235C62BF00DBE278 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		248B591023DDC6D400528B74 /* ExamsSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSchedule.swift; sourceTree = "<group>"; };
+		2493BF9F23FC70D200A4CA9E /* TeacherProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherProfile.swift; sourceTree = "<group>"; };
 		249AFA7B23F1839600D251C6 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		24A0F7C923ED79A9004334AF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A56E6323F4515000D77C3F /* BuildingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingData.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				24792E4823F32104007439F6 /* ScheduleDetails.swift */,
 				244513692362E73B00BCCA85 /* Settings.swift */,
 				248B591023DDC6D400528B74 /* ExamsSchedule.swift */,
+				2493BF9F23FC70D200A4CA9E /* TeacherProfile.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			files = (
 				24F01DBA235E097B00EE873F /* Schedule.swift in Sources */,
 				244F93A0234F47F800A99C7F /* Teacher.swift in Sources */,
+				2493BFA023FC70D200A4CA9E /* TeacherProfile.swift in Sources */,
 				240D3DAB23DDB5CC00B2E4D7 /* TeacherSelection.swift in Sources */,
 				24792E4923F32104007439F6 /* ScheduleDetails.swift in Sources */,
 				244F9398234F438E00A99C7F /* Course.swift in Sources */,

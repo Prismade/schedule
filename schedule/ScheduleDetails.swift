@@ -16,6 +16,7 @@ class ScheduleDetailsViewController: UIViewController {
     var lesson: Int!
     
     private var lessonData: Lesson!
+    private let tapGestureRecognizer = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,14 @@ class ScheduleDetailsViewController: UIViewController {
                 user.text = data.groupTitleDesigned
             } else {
                 user.text = data.fullEmployeeNameDesigned
+                tapGestureRecognizer.addTarget(self, action: #selector(teacherLabelTaped(_:)))
+                user.addGestureRecognizer(tapGestureRecognizer)
             }
             
             location.text = data.locationDesigned
             time.text = TimeManager.shared.getTimeBoundaries(for: data.number)
+            
+            
         }
     }
     
@@ -49,6 +54,20 @@ class ScheduleDetailsViewController: UIViewController {
             self.map.addAnnotation(annotation)
             self.map.setCenter(coordinate, animated: true)
             self.map.setRegion(MKCoordinateRegion(center: coordinate, latitudinalMeters: CLLocationDistance(floatLiteral: 300.0), longitudinalMeters: CLLocationDistance(floatLiteral: 300.0)), animated: true)
+        }
+    }
+    
+    @objc private func teacherLabelTaped(_ gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == .recognized {
+            performSegue(withIdentifier: "ToTeacherProfile", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ?? "" == "ToTeacherProfile" {
+            let destination = segue.destination as! UINavigationController
+            let vc = destination.topViewController! as! TeacherProfileViewController
+            vc.employeeId = lessonData.employeeId
         }
     }
 }
