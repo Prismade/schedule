@@ -17,7 +17,7 @@ class TeacherProfileViewController: UIViewController {
     @IBOutlet weak var degree: UILabel!
     @IBOutlet weak var rank: UILabel!
     @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var phone: CopyableLabel!
     @IBOutlet weak var email: UILabel!
     @IBAction func onCloseButtonTap(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true)
@@ -124,16 +124,10 @@ class TeacherProfileViewController: UIViewController {
         stackView.layoutIfNeeded()
     }
     
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
+    private func phoneLabelTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+        if gestureRecognizer.state == .recognized {
+            UIPasteboard.general.string = phone.text!
+        }
     }
 
 

@@ -39,6 +39,7 @@
 		24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED7E23DA7E350044B02B /* SearchableTable.swift */; };
 		24B1ED8123DAFA880044B02B /* CourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8023DAFA880044B02B /* CourseSelection.swift */; };
 		24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */; };
+		24B47A8723FFE4D900B845A4 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B47A8623FFE4D900B845A4 /* CopyableLabel.swift */; };
 		24DA80A3234622F9008055D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A2234622F9008055D3 /* AppDelegate.swift */; };
 		24DA80A5234622F9008055D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A4234622F9008055D3 /* SceneDelegate.swift */; };
 		24DA80AA234622F9008055D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DA80A8234622F9008055D3 /* Main.storyboard */; };
@@ -119,6 +120,7 @@
 		24B1ED7E23DA7E350044B02B /* SearchableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTable.swift; sourceTree = "<group>"; };
 		24B1ED8023DAFA880044B02B /* CourseSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelection.swift; sourceTree = "<group>"; };
 		24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelection.swift; sourceTree = "<group>"; };
+		24B47A8623FFE4D900B845A4 /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		24DA809F234622F9008055D3 /* Расписание.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Расписание.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DA80A2234622F9008055D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24DA80A4234622F9008055D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		24B47A8523FFE4AA00B845A4 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				24B47A8623FFE4D900B845A4 /* CopyableLabel.swift */,
+			);
+			name = CustomControls;
+			sourceTree = "<group>";
+		};
 		24DA8096234622F9008055D3 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +294,7 @@
 		24DA80A1234622F9008055D3 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				24B47A8523FFE4AA00B845A4 /* CustomControls */,
 				244F939C234F43B600A99C7F /* Json */,
 				2478E6402359ADF70038E6A5 /* Managers */,
 				2445136B2362E99E00BCCA85 /* ViewControllers */,
@@ -549,6 +560,7 @@
 				24B1ED7F23DA7E350044B02B /* SearchableTable.swift in Sources */,
 				244F939A234F438E00A99C7F /* Division.swift in Sources */,
 				244C100D23FAC37E000234FC /* EmployeeManager.swift in Sources */,
+				24B47A8723FFE4D900B845A4 /* CopyableLabel.swift in Sources */,
 				2445136A2362E73B00BCCA85 /* Settings.swift in Sources */,
 				244F939B234F438E00A99C7F /* Group.swift in Sources */,
 				24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */,

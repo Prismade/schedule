@@ -35,7 +35,7 @@ class ScheduleDetailsViewController: UIViewController {
                 user.text = data.groupTitleDesigned
             } else {
                 user.text = data.fullEmployeeNameDesigned
-                tapGestureRecognizer.addTarget(self, action: #selector(teacherLabelTaped(_:)))
+                tapGestureRecognizer.addTarget(self, action: #selector(teacherLabelTapped(_:)))
                 user.addGestureRecognizer(tapGestureRecognizer)
             }
             
@@ -57,7 +57,7 @@ class ScheduleDetailsViewController: UIViewController {
         }
     }
     
-    @objc private func teacherLabelTaped(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc private func teacherLabelTapped(_ gestureRecognizer: UITapGestureRecognizer) {
         if gestureRecognizer.state == .recognized {
             performSegue(withIdentifier: "ToTeacherProfile", sender: self)
         }
