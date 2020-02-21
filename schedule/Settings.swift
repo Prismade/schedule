@@ -48,7 +48,7 @@ final class SettingsTableViewController: UITableViewController {
         case .authorized:
             chooseCalendar()
         case .denied:
-            let alert = UIAlertController(title: "Нет разрешения", message: "Для экспорта данных в календарь нужно разрешение. Перейдите в настройки и включите разрешение доступа к календарю.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "\(NSLocalizedString("noPerm", comment: ""))", message: "\(NSLocalizedString("noPermMsg", comment: ""))", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
         default: return

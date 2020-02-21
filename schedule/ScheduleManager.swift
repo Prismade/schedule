@@ -13,12 +13,12 @@ final class ScheduleDay: Codable {
         self.lessons = lessons
         
         switch weekDay {
-            case 1: title = "Понедельник (\(dateString))"
-            case 2: title = "Вторник (\(dateString))"
-            case 3: title = "Среда (\(dateString))"
-            case 4: title = "Четверг (\(dateString))"
-            case 5: title = "Пятница (\(dateString))"
-            case 6: title = "Суббота (\(dateString))"
+            case 1: title = "\(NSLocalizedString("monday", comment: "")) (\(dateString))"
+            case 2: title = "\(NSLocalizedString("tuesday", comment: "")) (\(dateString))"
+            case 3: title = "\(NSLocalizedString("wednesday", comment: "")) (\(dateString))"
+            case 4: title = "\(NSLocalizedString("thursday", comment: "")) (\(dateString))"
+            case 5: title = "\(NSLocalizedString("friday", comment: "")) (\(dateString))"
+            case 6: title = "\(NSLocalizedString("saturday", comment: "")) (\(dateString))"
             default: title = ""
         }
     }

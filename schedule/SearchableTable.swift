@@ -16,7 +16,7 @@ class SearchableTableViewController: UITableViewController, UISearchBarDelegate,
     }
     
     var reuseIdentifier = "SearchableTableCell"
-    let searchBarPlaceholder = "Поиск"
+    let searchBarPlaceholder = "\(NSLocalizedString("searchPlaceholder", comment: ""))"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,6 @@ class SearchableTableViewController: UITableViewController, UISearchBarDelegate,
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.placeholder = searchBarPlaceholder
-        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         

@@ -37,13 +37,13 @@ final class ScheduleTableViewCell: UITableViewCell {
                 }
                 location.text = lesson.locationDesigned
                 if lesson.subgroup != 0 {
-                    subgroup.text = "Подгруппа \(lesson.subgroup)"
+                    subgroup.text = "\(NSLocalizedString("subgroup", comment: "")) \(lesson.subgroup)"
                 } else {
                     subgroup.text = ""
                 }
             } else {
                 lessonNumber.text = ""
-                lessonTitle.text = "Нет пар"
+                lessonTitle.text = "\(NSLocalizedString("noClasses", comment: ""))"
                 lessonTime.text = ""
                 special.text = ""
                 lessonType.text = ""
