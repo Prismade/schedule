@@ -142,7 +142,7 @@ final class TimeManager: TimeManaging {
     }
 
     func getCurrentWeekDay() -> Int {
-        return calendar.dateComponents([.weekday], from: Date()).weekday! - 1
+        return calendar.dateComponents([.weekday], from: Date()).weekday!
     }
     
     func getTimeBoundariesAsDates(for lessonNumber: Int, on day: Int, weekOffset: Int) -> (Date, Date) {

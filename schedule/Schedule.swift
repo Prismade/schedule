@@ -182,10 +182,16 @@ extension ScheduleTableViewController: UITableViewDelegate {
             if indexPath == lastVisibleIndexPath &&
                 !didPerformScrollOnStart &&
                 defaults.bool(forKey: "ScrollOnStart") {
+                var weekDay = TimeManager.shared.getCurrentWeekDay()
+                if weekDay == 1 {
+                    weekDay = 0
+                } else {
+                    weekDay -= 2
+                }
                 tableView.scrollToRow(
                     at: IndexPath(
                         row: 0,
-                        section: TimeManager.shared.getCurrentWeekDay()),
+                        section: weekDay),
                     at: .top, animated: true)
                 didPerformScrollOnStart = true
             }
