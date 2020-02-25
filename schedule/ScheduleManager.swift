@@ -3,24 +3,17 @@ import Alamofire
 
 
 final class ScheduleDay: Codable {
-    let title: String
+    var title: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE (dd.MM.yy)"
+        return formatter.string(from: date)
+    }
     let lessons: [Lesson]
     let date: Date
     
-    init(weekDay: Int, lessons: [Lesson], date: (String, Date)) {
-        let (dateString, dateObject) = date
-        self.date = dateObject
+    init(weekDay: Int, lessons: [Lesson], date: Date) {
+        self.date = date
         self.lessons = lessons
-        
-        switch weekDay {
-            case 1: title = "\(NSLocalizedString("monday", comment: "")) (\(dateString))"
-            case 2: title = "\(NSLocalizedString("tuesday", comment: "")) (\(dateString))"
-            case 3: title = "\(NSLocalizedString("wednesday", comment: "")) (\(dateString))"
-            case 4: title = "\(NSLocalizedString("thursday", comment: "")) (\(dateString))"
-            case 5: title = "\(NSLocalizedString("friday", comment: "")) (\(dateString))"
-            case 6: title = "\(NSLocalizedString("saturday", comment: "")) (\(dateString))"
-            default: title = ""
-        }
     }
 }
 
@@ -125,13 +118,13 @@ final class ScheduleManager {
     // MARK: - Private Methods
 
     private func requestSucceeded(with response: [Lesson], for weekOffset: Int) {
-        let (dateStrings, dateObjects) = TimeManager.shared.getWeekDates(for: weekOffset)
+        let dates = TimeManager.shared.getWeekDates(for: weekOffset)
         
         scheduleTable = (1...6).map { weekDay in
             let lessons = response.filter {
                 $0.weekDay == weekDay ? true : false
             }.sorted()
-            let date = (dateStrings[weekDay - 1], dateObjects[weekDay - 1])
+            let date = dates[weekDay - 1]
             
             return ScheduleDay(weekDay: weekDay, lessons: lessons, date: date)
         }

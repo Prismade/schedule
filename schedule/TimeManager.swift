@@ -24,9 +24,9 @@ protocol TimeManaging {
     /**
      Возвращает даты для каждого из дней недели
      - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
-     - returns: даты для каждого дня недели в строковом представлении и в виде объектов
+     - returns: даты для каждого дня недели
      */
-    func getWeekDates(for weekOffset: Int) -> ([String], [Date])
+    func getWeekDates(for weekOffset: Int) -> [Date]
     
     /// Возвращает номер текущего дня недели.
     func getCurrentWeekDay() -> Int
@@ -129,22 +129,16 @@ final class TimeManager: TimeManaging {
         return "\(formatter.string(from: monday))-\(formatter.string(from: sunday))"
     }
     
-    func getWeekDates(for weekOffset: Int) -> ([String], [Date]) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yy"
-        
-        var weekStrings = [String]()
+    func getWeekDates(for weekOffset: Int) -> [Date] {
         var weekDates = [Date]()
         let monday = getMonday(for: weekOffset)
-        weekStrings.append(formatter.string(from: monday))
         
         for i in 1...6 {
             let nextDay = calendar.date(byAdding: .day, value: i, to: monday)!
             weekDates.append(nextDay)
-            weekStrings.append(formatter.string(from: nextDay))
         }
         
-        return (weekStrings, weekDates)
+        return weekDates
     }
 
     func getCurrentWeekDay() -> Int {
