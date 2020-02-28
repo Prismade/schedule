@@ -131,7 +131,10 @@ final class TimeManager: TimeManaging {
     
     func getWeekDates(for weekOffset: Int) -> [Date] {
         var weekDates = [Date]()
-        let monday = getMonday(for: weekOffset)
+        var monday = getMonday(for: weekOffset)
+        // без вычитания одного часа форматтер будет считать, что это следующий день
+        monday = calendar.date(byAdding: .hour, value: -1, to: monday)!
+        
         
         for i in 1...6 {
             let nextDay = calendar.date(byAdding: .day, value: i, to: monday)!
