@@ -48,12 +48,16 @@ class ScheduleDetailsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         BuildingsManager.shared.setCoordinates(for: Int(lessonData.building)!) { [unowned self] latitude, longtitude in
+            guard let lat = latitude, let long = longtitude else {
+                self.map.isHidden = true
+                return
+            }
             let annotation = MKPointAnnotation()
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
+            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             annotation.coordinate = coordinate
             self.map.addAnnotation(annotation)
-            self.map.setCenter(coordinate, animated: true)
-            self.map.setRegion(MKCoordinateRegion(center: coordinate, latitudinalMeters: CLLocationDistance(floatLiteral: 300.0), longitudinalMeters: CLLocationDistance(floatLiteral: 300.0)), animated: true)
+            self.map.setCenter(coordinate, animated: false)
+            self.map.setRegion(MKCoordinateRegion(center: coordinate, latitudinalMeters: CLLocationDistance(floatLiteral: 300.0), longitudinalMeters: CLLocationDistance(floatLiteral: 300.0)), animated: false)
         }
     }
     

@@ -10,11 +10,15 @@ final class BuildingsManager {
     
     private var buildings = [Building]()
     
-    func setCoordinates(for building: Int, completion: @escaping (Double, Double) -> Void) {
+    func setCoordinates(for building: Int, completion: @escaping (Double?, Double?) -> Void) {
         if buildings.count == 0 {
             if let data = CacheManager.shared.retrieveBuildings() {
                 buildings = data
-                completion(buildings[building - 1].coord[0], buildings[building - 1].coord[1])
+                if building > 0 {
+                    completion(buildings[building - 1].coord[0], buildings[building - 1].coord[1])
+                } else {
+                    completion(nil, nil)
+                }
             } else {
                 ApiManager.shared.getBuildingsData { [unowned self] response in
                     switch response.result {
@@ -22,7 +26,11 @@ final class BuildingsManager {
                         self.buildings = data.corpusData
                         if (building - 1) < self.buildings.count {
                             DispatchQueue.main.async {
-                                completion(self.buildings[building - 1].coord[0], self.buildings[building - 1].coord[1])
+                                if building > 0 {
+                                    completion(self.buildings[building - 1].coord[0], self.buildings[building - 1].coord[1])
+                                } else {
+                                    completion(nil, nil)
+                                }
                             }
                         }
                         do {
@@ -35,7 +43,11 @@ final class BuildingsManager {
                 }
             }
         } else {
-            completion(buildings[building - 1].coord[0], buildings[building - 1].coord[1])
+            if building > 0 {
+                completion(buildings[building - 1].coord[0], buildings[building - 1].coord[1])
+            } else {
+                completion(nil, nil)
+            }
         }
     }
 }
