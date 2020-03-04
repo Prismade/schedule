@@ -37,11 +37,6 @@
                BlueprintName = "scheduleTests"
                ReferencedContainer = "container:schedule.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TimeManagerTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

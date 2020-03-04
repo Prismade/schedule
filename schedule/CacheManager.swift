@@ -23,7 +23,7 @@ final class CacheManager {
     func cacheSchedule(_ data: [ScheduleDay], weekOffset: Int, to fileName: String) throws {
         do {
             if let url = getFileUrl(for: "\(fileName)\(UserDefaults.standard.integer(forKey: "UserId"))\(weekOffset)") {
-                let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getMonday(for: 1)))
+                let jsonData = try JSONEncoder().encode(CacheItem(data: data, expirationTime: TimeManager.shared.getNextDay()))
                 try jsonData.write(to: url, options: .atomic)
             }
         } catch let error {

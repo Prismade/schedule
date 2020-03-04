@@ -41,6 +41,7 @@
 		24B1ED8323DAFEDC0044B02B /* GroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1ED8223DAFEDC0044B02B /* GroupSelection.swift */; };
 		24B47A8723FFE4D900B845A4 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B47A8623FFE4D900B845A4 /* CopyableLabel.swift */; };
 		24B47A9223FFFC2C00B845A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24B47A9423FFFC2C00B845A4 /* Localizable.strings */; };
+		24D1905E240933830075E3F3 /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1905D240933830075E3F3 /* TimeManagerTests.swift */; };
 		24DA80A3234622F9008055D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A2234622F9008055D3 /* AppDelegate.swift */; };
 		24DA80A5234622F9008055D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA80A4234622F9008055D3 /* SceneDelegate.swift */; };
 		24DA80AA234622F9008055D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DA80A8234622F9008055D3 /* Main.storyboard */; };
@@ -125,6 +126,7 @@
 		24B47A8A23FFF4E500B845A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		24B47A9323FFFC2C00B845A4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		24B47A9523FFFC6B00B845A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		24D1905D240933830075E3F3 /* TimeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTests.swift; sourceTree = "<group>"; };
 		24DA809F234622F9008055D3 /* Расписание.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Расписание.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DA80A2234622F9008055D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24DA80A4234622F9008055D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		24DA80BB234622FA008055D3 /* scheduleTests */ = {
 			isa = PBXGroup;
 			children = (
+				24D1905D240933830075E3F3 /* TimeManagerTests.swift */,
 				240D5EDE23FAE12600BB5257 /* EmployeeManagerTests.swift */,
 				24DA80BE234622FA008055D3 /* Info.plist */,
 			);
@@ -595,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D1905E240933830075E3F3 /* TimeManagerTests.swift in Sources */,
 				240D5EDF23FAE12600BB5257 /* EmployeeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,6 +777,7 @@
 			baseConfigurationReference = 2226D838CA79ECD78D445C19 /* Pods-schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = schedule/Info.plist;
@@ -783,6 +788,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.schedule;
 				PRODUCT_NAME = "Расписание";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -793,6 +799,7 @@
 			baseConfigurationReference = 83DED574A71812E1BF0FF8E0 /* Pods-schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = schedule/Info.plist;
@@ -803,6 +810,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.schedule;
 				PRODUCT_NAME = "Расписание";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -815,10 +823,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = scheduleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -826,6 +836,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.scheduleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -840,10 +852,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = scheduleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,6 +865,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = prismade.ru.scheduleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Расписание.app/Расписание";
