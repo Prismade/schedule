@@ -126,8 +126,7 @@ class TimeManager: TimeManaging {
     
     func getNextDay() -> Date {
         let today = getCurrentDate()
-        var tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
-        tomorrow = calendar.date(bySetting: .hour, value: 0, of: tomorrow)!
+        var tomorrow = calendar.date(bySetting: .hour, value: 0, of: today)!
         tomorrow = calendar.date(bySetting: .minute, value: 0, of: tomorrow)!
         tomorrow = calendar.date(bySetting: .second, value: 0, of: tomorrow)!
         return tomorrow
