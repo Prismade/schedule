@@ -9,6 +9,12 @@ protocol TimeManaging {
     /// - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
     func getMonday(for weekOffset: Int) -> Date
     
+    // Возвращает дату текущего дня
+    func getCurrentDate() -> Date
+    
+    /// Возвращает дату следующего дня
+    func getNextDay() -> Date
+    
     /**
      Создает ключ API для получения расписания.
      - parameter weekOffset: сдвиг (в количестве недель) относительно текущей недели.
@@ -81,7 +87,7 @@ extension TimeManaging {
 }
 
 
-final class TimeManager: TimeManaging {
+class TimeManager: TimeManaging {
 
     // MARK: - Public Properties
 
@@ -100,7 +106,7 @@ final class TimeManager: TimeManaging {
     // MARK: - Public Methods
 
     func getMonday(for weekOffset: Int) -> Date {
-        let date = Date()
+        let date = getCurrentDate()
         let offset: Int
 
         if calendar.dateComponents([.weekday], from: date).weekday! == 1 {
@@ -112,6 +118,19 @@ final class TimeManager: TimeManaging {
         let components = calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: date)
         let monday = calendar.date(from: components)!
         return calendar.date(byAdding: .weekOfYear, value: offset, to: monday)!
+    }
+    
+    func getCurrentDate() -> Date {
+        return Date()
+    }
+    
+    func getNextDay() -> Date {
+        let today = getCurrentDate()
+        var tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
+        tomorrow = calendar.date(bySetting: .hour, value: 0, of: tomorrow)!
+        tomorrow = calendar.date(bySetting: .minute, value: 0, of: tomorrow)!
+        tomorrow = calendar.date(bySetting: .second, value: 0, of: tomorrow)!
+        return tomorrow
     }
 
     func getApiTimeKey(for weekOffset: Int) -> String {
@@ -135,7 +154,6 @@ final class TimeManager: TimeManaging {
         // без вычитания одного часа форматтер будет считать, что это следующий день
         monday = calendar.date(byAdding: .hour, value: -1, to: monday)!
         
-        
         for i in 1...6 {
             let nextDay = calendar.date(byAdding: .day, value: i, to: monday)!
             weekDates.append(nextDay)
@@ -145,7 +163,7 @@ final class TimeManager: TimeManaging {
     }
 
     func getCurrentWeekDay() -> Int {
-        return calendar.dateComponents([.weekday], from: Date()).weekday!
+        return calendar.dateComponents([.weekday], from: getCurrentDate()).weekday!
     }
     
     func getTimeBoundariesAsDates(for lessonNumber: Int, on day: Int, weekOffset: Int) -> (Date, Date) {
@@ -173,13 +191,13 @@ final class TimeManager: TimeManaging {
             [10 * 60, 11 * 60 + 40, 13 * 60 + 30,
              15 * 60 + 10, 16 * 60 + 50, 18 * 60 + 30,
              20 * 60 + 10, 24 * 60]
-        let components = calendar.dateComponents([.hour, .minute], from: Date())
+        let components = calendar.dateComponents([.hour, .minute], from: getCurrentDate())
         let timeInMinutes = components.hour! * 60 + components.minute!
         return lessonsStartTimeInMinutes.firstIndex { timeInMinutes <= $0 }!
     }
     
     func validateCache(expirationTime: Date) -> Bool {
-        return expirationTime <= Date() ? false : true
+        return expirationTime <= getCurrentDate() ? false : true
     }
 
 
