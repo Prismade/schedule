@@ -114,6 +114,7 @@ final class ScheduleTableViewController: UIViewController {
     }
     
     private func updateWeekOffset(_ newValue: Int) {
+        tableView.setContentOffset(CGPoint(x: 0, y: -refreshControl.frame.size.height), animated: true)
         refreshControl.beginRefreshing()
         ScheduleManager.shared.setWeekOffset(newValue) { [unowned self] error in
             self.refreshControl.endRefreshing()
