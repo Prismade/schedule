@@ -2,10 +2,16 @@ import UIKit
 
 
 final class ScheduleTableViewController: UIViewController {
+    
+    enum ScheduleType {
+        case my
+        case other
+    }
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     // MARK: - IBActions
     
@@ -22,6 +28,15 @@ final class ScheduleTableViewController: UIViewController {
         }
     }
 
+    @IBAction func onSegmentControlTap(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            scheduleType = .my
+            updateModel(force: false, programmaticaly: true)
+        } else if sender.selectedSegmentIndex == 1 {
+            scheduleType = .other
+            performSegue(withIdentifier: "ToSetupDialogFromSchedule", sender: self)
+        }
+    }
     // MARK: - Private Properties
 
     private let refreshControl = UIRefreshControl()
@@ -30,6 +45,8 @@ final class ScheduleTableViewController: UIViewController {
     private var needUpdate: Bool!
     private var didPerformScrollOnStart = false
     private var selectedCell: IndexPath!
+    private var scheduleType: ScheduleType = .my
+    private var tempUserInfo = [String : Int]()
 
     // MARK: - Lifecycle
     
@@ -99,7 +116,22 @@ final class ScheduleTableViewController: UIViewController {
     }
     
     @objc private func onModalDismiss(_ notification: Notification) {
-        updateModel(force: false, programmaticaly: true)
+        if let result = notification.userInfo {
+            if scheduleType == .my {
+                UserDefaults.standard.set(result["UserId"], forKey: "UserId")
+                if (result as! [String : Int])["Teacher"] == 1 {
+                    UserDefaults.standard.set(true, forKey: "Teacher")
+                } else {
+                    UserDefaults.standard.set(false, forKey: "Teacher")
+                }
+            } else if scheduleType == .other {
+                tempUserInfo = result as! [String : Int]
+            }
+            updateModel(force: false, programmaticaly: true)
+        } else {
+            scheduleType = .my
+            segmentedControl.selectedSegmentIndex = 0
+        }
     }
 
     private func updateModel(force: Bool, programmaticaly: Bool) {
@@ -107,18 +139,31 @@ final class ScheduleTableViewController: UIViewController {
             tableView.setContentOffset(CGPoint(x: 0, y: -refreshControl.frame.size.height), animated: true)
         }
         refreshControl.beginRefreshing()
-        ScheduleManager.shared.update(force: force) { [unowned self] error in
+        let completionHandler: (Error?) -> Void = { [unowned self] error in
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
         }
+        if scheduleType == .my {
+            let updateType: UpdateType = force ? .force : .normal
+            ScheduleManager.shared.update(for: UserDefaults.standard.integer(forKey: "UserId"), isTeacher: UserDefaults.standard.bool(forKey: "Teacher"), updateType: updateType, completion: completionHandler)
+        } else if scheduleType == .other {
+            ScheduleManager.shared.update(for: tempUserInfo["UserId"]!, isTeacher: tempUserInfo["Teacher"] == 1 ? true : false, updateType: .nonCaching, completion: completionHandler)
+        }
+        
     }
     
     private func updateWeekOffset(_ newValue: Int) {
         tableView.setContentOffset(CGPoint(x: 0, y: -refreshControl.frame.size.height), animated: true)
         refreshControl.beginRefreshing()
-        ScheduleManager.shared.setWeekOffset(newValue) { [unowned self] error in
+        
+        let completionHandler: (Error?) -> Void = { [unowned self] error in
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
+        }
+        if scheduleType == .my {
+            ScheduleManager.shared.setWeekOffset(newValue, for: UserDefaults.standard.integer(forKey: "UserId"), isTeacher: UserDefaults.standard.bool(forKey: "Teacher"), updateType: .normal, completion: completionHandler)
+        } else if scheduleType == .other {
+            ScheduleManager.shared.update(for: tempUserInfo["UserId"]!, isTeacher: tempUserInfo["Teacher"] == 1 ? true : false, updateType: .nonCaching, completion: completionHandler)
         }
     }
     
@@ -128,11 +173,20 @@ final class ScheduleTableViewController: UIViewController {
         if segue.identifier ?? "" == "ToSetupDialogFromSchedule" {
             let destination = segue.destination as! UINavigationController
             let vc = destination.topViewController! as! UserSelectionViewController
-            vc.needCancelButton = false
+            
+            if scheduleType == .my {
+                vc.needCancelButton = false
 
-            if #available(iOS 13.0, *) {
-                vc.isModalInPresentation = true
+                if #available(iOS 13.0, *) {
+                    vc.isModalInPresentation = true
+                }
+            } else if scheduleType == .other {
+                vc.needCancelButton = true
+                if #available(iOS 13.0, *) {
+                    vc.navigationController?.presentationController?.delegate = self
+                }
             }
+            
         } else if segue.identifier ?? "" == "ToScheduleDetails" {
             let destination = segue.destination as! ScheduleDetailsViewController
             destination.day = selectedCell.section
@@ -204,5 +258,13 @@ extension ScheduleTableViewController: UITableViewDelegate {
         guard let _ = ScheduleManager.shared.lesson(at: (indexPath.section, indexPath.row)) else { return }
         selectedCell = indexPath
         performSegue(withIdentifier: "ToScheduleDetails", sender: self)
+    }
+}
+
+@available(iOS 13.0, *)
+extension ScheduleTableViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        scheduleType = .my
+        segmentedControl.selectedSegmentIndex = 0
     }
 }

@@ -14,7 +14,9 @@ final class GroupSelectionTableViewController: SearchableTableViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBAction func onFinishButtonTap(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
+        navigationController?.dismiss(animated: true) {
+            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -107,11 +109,11 @@ final class GroupSelectionTableViewController: SearchableTableViewController {
             selectedGroup = data[indexPath.row].id
         }
         
-        UserDefaults.standard.set(false, forKey: "Teacher")
-        UserDefaults.standard.set(selectedGroup, forKey: "UserId")
+//        UserDefaults.standard.set(false, forKey: "Teacher")
+//        UserDefaults.standard.set(selectedGroup, forKey: "UserId")
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: ["Teacher": 0, "UserId": self.selectedGroup!])
         }
     }
 

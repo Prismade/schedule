@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="-175.19999999999999" y="978.26086956521749"/>
         </scene>
-        <!--Schedule-->
+        <!--Schedule Table View Controller-->
         <scene sceneID="inD-7o-N9r">
             <objects>
                 <viewController storyboardIdentifier="ScheduleTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKN-XW-SHB" customClass="ScheduleTableViewController" customModule="Расписание" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,10 +193,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dAi-so-wOt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
-                                <color key="tintColor" name="MainAccentColor"/>
-                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-e3-IZ1">
                                 <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                 <items>
@@ -224,6 +220,10 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Q8Y-U5-6ZW"/>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dAi-so-wOt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
+                                <color key="tintColor" name="MainAccentColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -238,13 +238,25 @@
                         <viewLayoutGuide key="safeArea" id="a3L-gg-McL"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Schedule" id="U6B-4a-ftm">
+                    <navigationItem key="navigationItem" id="U6B-4a-ftm">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Class Icon" id="izN-CM-VeE">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <segue destination="ZDL-xF-jjz" kind="presentation" identifier="ToExams" id="yKj-EF-Mk8"/>
                             </connections>
                         </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="uDG-aE-TlE">
+                            <rect key="frame" x="122" y="5.5" width="131" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="My"/>
+                                <segment title="Other"/>
+                            </segments>
+                            <connections>
+                                <action selector="onSegmentControlTap:" destination="wKN-XW-SHB" eventType="valueChanged" id="Ada-Ek-DGv"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Settings Icon" id="dj2-gG-Kew">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
@@ -253,6 +265,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentedControl" destination="uDG-aE-TlE" id="Nt0-eh-CBo"/>
                         <outlet property="tableView" destination="dAi-so-wOt" id="vxR-Zz-xXF"/>
                         <segue destination="sst-Zm-rBR" kind="presentation" identifier="ToSetupDialogFromSchedule" id="nc1-TH-o4e"/>
                         <segue destination="oUZ-pq-a9F" kind="show" identifier="ToScheduleDetails" id="bkA-wt-eXB"/>
@@ -260,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4J7-Np-xaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639.20000000000005" y="-820.83958020989508"/>
+            <point key="canvasLocation" x="-652" y="-821"/>
         </scene>
         <!--User selection-->
         <scene sceneID="CoL-nB-ZH4">

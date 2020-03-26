@@ -17,6 +17,12 @@ final class ScheduleDay: Codable {
     }
 }
 
+enum UpdateType {
+    case normal
+    case force
+    case nonCaching
+}
+
 final class ScheduleManager {
     
     static let shared = ScheduleManager()
@@ -31,8 +37,8 @@ final class ScheduleManager {
 
     // MARK: - Public Methods
 
-    func update(force: Bool, completion: @escaping (Error?) -> Void) {
-        if !force {
+    func update(for userId: Int, isTeacher: Bool, updateType: UpdateType, completion: @escaping (Error?) -> Void) {
+        if updateType == .normal {
             if UserDefaults.standard.bool(forKey: "EnableCaching") {
                 let filePrefix: String!
                 if UserDefaults.standard.bool(forKey: "Teacher") {
@@ -51,7 +57,7 @@ final class ScheduleManager {
         let completionHandler: (DataResponse<[Lesson], AFError>) -> Void = { [unowned self] response in
             switch response.result {
                 case .success(let result): DispatchQueue.main.async {
-                    self.requestSucceeded(with: result, for: self.weekOffset)
+                    self.requestSucceeded(with: result, for: self.weekOffset, updateType: updateType)
                     completion(nil)
                 }
                 case .failure(let error): DispatchQueue.main.async {
@@ -60,8 +66,7 @@ final class ScheduleManager {
             }
         }
         
-        let userId = UserDefaults.standard.integer(forKey: "UserId")
-        if UserDefaults.standard.bool(forKey: "Teacher") {
+        if isTeacher {
             ApiManager.shared.getTeacherSchedule(for: userId, on: weekOffset, completion: completionHandler)
         } else {
             ApiManager.shared.getStudentSchedule(for: userId, on: weekOffset, completion: completionHandler)
@@ -69,9 +74,9 @@ final class ScheduleManager {
         
     }
     
-    func setWeekOffset(_ new: Int, completion: @escaping (Error?) -> Void) {
+    func setWeekOffset(_ new: Int, for userId: Int, isTeacher: Bool, updateType: UpdateType, completion: @escaping (Error?) -> Void) {
         weekOffset = new
-        update(force: false, completion: completion)
+        update(for: userId, isTeacher: isTeacher, updateType: updateType, completion: completion)
     }
     
     func getWeekOffset() -> Int {
@@ -117,7 +122,7 @@ final class ScheduleManager {
 
     // MARK: - Private Methods
 
-    private func requestSucceeded(with response: [Lesson], for weekOffset: Int) {
+    private func requestSucceeded(with response: [Lesson], for weekOffset: Int, updateType: UpdateType) {
         let dates = TimeManager.shared.getWeekDates(for: weekOffset)
         
         scheduleTable = (1...6).map { weekDay in
@@ -129,7 +134,7 @@ final class ScheduleManager {
             return ScheduleDay(weekDay: weekDay, lessons: lessons, date: date)
         }
 
-        if UserDefaults.standard.bool(forKey: "EnableCaching") {
+        if UserDefaults.standard.bool(forKey: "EnableCaching") && updateType != .nonCaching {
             do {
                 let filePrefix: String!
                 if UserDefaults.standard.bool(forKey: "Teacher") {

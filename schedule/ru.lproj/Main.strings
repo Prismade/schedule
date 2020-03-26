@@ -127,3 +127,9 @@
 
 /* Class = "UILabel"; text = "#Teacher"; ObjectID = "xBg-eb-O3G"; */
 "xBg-eb-O3G.text" = "#Teacher";
+
+/* Class = "UISegmentedControl"; uDG-aE-TlE.segmentTitles[0] = "My"; ObjectID = "uDG-aE-TlE"; */
+"uDG-aE-TlE.segmentTitles[0]" = "Мое";
+
+/* Class = "UISegmentedControl"; uDG-aE-TlE.segmentTitles[1] = "Other"; ObjectID = "uDG-aE-TlE"; */
+"uDG-aE-TlE.segmentTitles[1]" = "Другое";

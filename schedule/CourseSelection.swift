@@ -12,7 +12,9 @@ final class CourseSelectionTableViewController: UITableViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 
     @IBAction func onCancelButtonTap(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true)
+        navigationController?.dismiss(animated: true) {
+            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+        }
     }
 
     override func viewDidLoad() {
