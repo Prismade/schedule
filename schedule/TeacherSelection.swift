@@ -15,6 +15,9 @@ final class TeacherSelectionTableViewController: SearchableTableViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 
     @IBAction func onCancelButtonTap(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true) {
+            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -107,11 +110,11 @@ final class TeacherSelectionTableViewController: SearchableTableViewController {
             selectedTeacher = data[indexPath.row].id
         }
         
-        UserDefaults.standard.set(true, forKey: "Teacher")
-        UserDefaults.standard.set(selectedTeacher, forKey: "UserId")
+//        UserDefaults.standard.set(true, forKey: "Teacher")
+//        UserDefaults.standard.set(selectedTeacher, forKey: "UserId")
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: ["Teacher": 1, "UserId": self.selectedTeacher!])
         }
     }
 
