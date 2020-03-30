@@ -17,17 +17,17 @@ class Exam: Decodable {
     
     var employeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
-        return "👤 \(lastName) \(firstName.first!).\(patronymic.first!)."
+        return "\(lastName) \(firstName.first!).\(patronymic.first!)."
     }
     var fullEmployeeNameDesigned: String {
         guard firstName != "", lastName != "", patronymic != "" else { return "" }
-        return "👤 \(lastName) \(firstName) \(patronymic)"
+        return "\(lastName) \(firstName) \(patronymic)"
     }
     var groupDesigned: String {
-        return "👥 \(group)"
+        return "\(group)"
     }
     var locationDesigned: String {
-        return "📍 \(room)"
+        return "\(room)"
     }
     var dateTime: String {
         return "\(time)\t\(date)"

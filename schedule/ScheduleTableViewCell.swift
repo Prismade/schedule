@@ -8,10 +8,12 @@ enum CellType {
 
 final class ScheduleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lessonNumber: UILabel!
+    @IBOutlet weak var userAndLessonType: UIStackView!
+    @IBOutlet weak var lessonTimeBounds: UIView!
+    @IBOutlet weak var line: UIView!
+    @IBOutlet weak var beginTime: UILabel!
+    @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var lessonTitle: UILabel!
-    @IBOutlet weak var lessonTime: UILabel!
-    @IBOutlet weak var special: UILabel!
     @IBOutlet weak var lessonType: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -20,46 +22,42 @@ final class ScheduleTableViewCell: UITableViewCell {
     public func configure(with lesson: Lesson?, cellType: CellType) {
         if cellType == .student || cellType == .teacher {
             if let lesson = lesson {
-                lessonNumber.text = String(lesson.number)
+                let bounds = TimeManager.shared.getTimeBoundaries(for: lesson.number).split(separator: "-")
+                lessonTimeBounds.isHidden = false
+                line.isHidden = false
+                beginTime.text = String(bounds[0])
+                endTime.text = String(bounds[1])
                 lessonTitle.text = lesson.subject
-                lessonTime.text = TimeManager.shared.getTimeBoundaries(for: lesson.number)
-                if lesson.special != "" {
-                    special.text = "(\(lesson.special))"
+                if lesson.subgroup != 0 {
+                    subgroup.isHidden = false
+                    subgroup.text = "\(NSLocalizedString("subgroup", comment: "")) \(lesson.subgroup)"
                 } else {
-                    special.text = ""
+                    subgroup.isHidden = true
                 }
-                
-                lessonType.text = "(\(lesson.type))"
+                userAndLessonType.isHidden = false
                 if cellType == .student {
                     userName.text = lesson.employeeNameDesigned
                 } else if cellType == .teacher {
                     userName.text = lesson.groupTitleDesigned
                 }
+                lessonType.text = "(\(lesson.type))"
+                location.isHidden = false
                 location.text = lesson.locationDesigned
-                if lesson.subgroup != 0 {
-                    subgroup.text = "\(NSLocalizedString("subgroup", comment: "")) \(lesson.subgroup)"
-                } else {
-                    subgroup.text = ""
-                }
             } else {
-                lessonNumber.text = ""
+                lessonTimeBounds.isHidden = true
+                line.isHidden = true
                 lessonTitle.text = "\(NSLocalizedString("noClasses", comment: ""))"
-                lessonTime.text = ""
-                special.text = ""
-                lessonType.text = ""
-                userName.text = ""
-                location.text = ""
-                subgroup.text = ""
+                userAndLessonType.isHidden = true
+                location.isHidden = true
+                subgroup.isHidden = true
             }
         }
     }
     
     public func configure(with exam: Exam) {
-        lessonNumber.text = ""
-        lessonNumber.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         lessonTitle.text = exam.subject
-        lessonTime.text = exam.dateTime
-        special.text = ""
+        beginTime.text = exam.dateTime
+        endTime.isHidden = true
         lessonType.text = exam.type
         if UserDefaults.standard.bool(forKey: "Teacher") {
             userName.text = exam.groupDesigned
@@ -68,7 +66,7 @@ final class ScheduleTableViewCell: UITableViewCell {
         }
         
         location.text = exam.locationDesigned
-        subgroup.text = ""
+        subgroup.isHidden = true
     }
 
 
