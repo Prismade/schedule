@@ -63,6 +63,7 @@ final class ScheduleTableViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "ScheduleTableCell")
         tableView.refreshControl = refreshControl
+        tableView.rowHeight = UITableView.automaticDimension
 
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
 
