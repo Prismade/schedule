@@ -785,42 +785,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SwipeToToggleTableCell" id="oDL-K2-giU">
-                                        <rect key="frame" x="0.0" y="184.5" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oDL-K2-giU" id="Lbg-O5-RrM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to switch weeks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usf-cd-5yL">
-                                                    <rect key="frame" x="16" y="11" width="278" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rex-0O-Kqu">
-                                                    <rect key="frame" x="310" y="6" width="51" height="32"/>
-                                                    <color key="onTintColor" name="MainAccentColor"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="usf-cd-5yL" secondAttribute="bottom" constant="11" id="2WI-Li-PWj"/>
-                                                <constraint firstItem="usf-cd-5yL" firstAttribute="leading" secondItem="Lbg-O5-RrM" secondAttribute="leading" constant="16" id="8le-w1-LLQ"/>
-                                                <constraint firstItem="rex-0O-Kqu" firstAttribute="leading" secondItem="usf-cd-5yL" secondAttribute="trailing" constant="16" id="EVd-vL-H7n"/>
-                                                <constraint firstItem="rex-0O-Kqu" firstAttribute="centerY" secondItem="Lbg-O5-RrM" secondAttribute="centerY" id="EiG-8v-nAG"/>
-                                                <constraint firstAttribute="trailing" secondItem="rex-0O-Kqu" secondAttribute="trailing" constant="16" id="Kf8-dC-JcI"/>
-                                                <constraint firstItem="rex-0O-Kqu" firstAttribute="top" secondItem="Lbg-O5-RrM" secondAttribute="top" constant="6" id="PCG-bN-RvY"/>
-                                                <constraint firstAttribute="bottom" secondItem="rex-0O-Kqu" secondAttribute="bottom" constant="6" id="pjE-pX-oP9"/>
-                                                <constraint firstItem="usf-cd-5yL" firstAttribute="top" secondItem="Lbg-O5-RrM" secondAttribute="top" constant="11" id="x3Y-bd-GSu"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="QsD-SD-n7C">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CalendarExportTableCell" textLabel="cxf-36-lBk" style="IBUITableViewCellStyleDefault" id="hGZ-FD-cmV">
-                                        <rect key="frame" x="0.0" y="264" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="220.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hGZ-FD-cmV" id="blQ-Jb-t7U">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
@@ -841,7 +811,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                             <tableViewSection id="a0S-3J-zZd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AboutTableCell" textLabel="52X-vp-hLz" style="IBUITableViewCellStyleDefault" id="NFr-Ju-EGf">
-                                        <rect key="frame" x="0.0" y="343.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="300" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFr-Ju-EGf" id="yo1-ZC-kd5">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
@@ -871,7 +841,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                     <navigationItem key="navigationItem" title="Settings" id="n8b-I0-OCg"/>
                     <connections>
                         <outlet property="scrollToTodaySwitch" destination="PAN-fZ-UQx" id="PDA-qe-Ytw"/>
-                        <outlet property="swipeToChangeSwitch" destination="rex-0O-Kqu" id="Mah-p2-dLx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQM-OI-OLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1068,6 +1037,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nc1-TH-o4e"/>
+        <segue reference="3Fe-GR-UfB"/>
     </inferredMetricsTieBreakers>
 </document>
