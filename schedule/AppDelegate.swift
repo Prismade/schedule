@@ -20,10 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(false, forKey: "ScrollOnStart")
         }
         
-        if UserDefaults.standard.object(forKey: "SwipeToSwitch") == nil {
-            UserDefaults.standard.set(true, forKey: "SwipeToSwitch")
-        }
-        
         if UserDefaults.standard.object(forKey: "StudentCacheFilePrefix") == nil {
             UserDefaults.standard.set("stud", forKey: "StudentCacheFilePrefix")
         }

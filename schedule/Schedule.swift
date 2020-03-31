@@ -40,8 +40,8 @@ final class ScheduleTableViewController: UIViewController {
     // MARK: - Private Properties
 
     private let refreshControl = UIRefreshControl()
-    private let swipeRightRecognizer = UIScreenEdgePanGestureRecognizer()
-    private let swipeLeftRecognizer = UIScreenEdgePanGestureRecognizer()
+    private let swipeRightRecognizer = UISwipeGestureRecognizer()
+    private let swipeLeftRecognizer = UISwipeGestureRecognizer()
     private var needUpdate: Bool!
     private var didPerformScrollOnStart = false
     private var selectedCell: IndexPath!
@@ -68,23 +68,14 @@ final class ScheduleTableViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
 
         swipeRightRecognizer.addTarget(self, action: #selector(swipeFromEdge(_:)))
-        swipeRightRecognizer.edges = .right
-
+        swipeRightRecognizer.direction = .right
+        tableView.addGestureRecognizer(swipeRightRecognizer)
+        
         swipeLeftRecognizer.addTarget(self, action: #selector(swipeFromEdge(_:)))
-        swipeLeftRecognizer.edges = .left
+        swipeLeftRecognizer.direction = .left
+        tableView.addGestureRecognizer(swipeLeftRecognizer)
 
         needUpdate = true
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "SwipeToSwitch") {
-            tableView.addGestureRecognizer(swipeRightRecognizer)
-            tableView.addGestureRecognizer(swipeLeftRecognizer)
-        } else {
-            tableView.removeGestureRecognizer(swipeLeftRecognizer)
-            tableView.removeGestureRecognizer(swipeRightRecognizer)
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -104,12 +95,12 @@ final class ScheduleTableViewController: UIViewController {
         updateModel(force: true, programmaticaly: false)
     }
 
-    @objc private func swipeFromEdge(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+    @objc private func swipeFromEdge(_ gestureRecognizer: UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .recognized {
             var weekOffset = ScheduleManager.shared.getWeekOffset()
-            if gestureRecognizer.edges == .left {
+            if gestureRecognizer.direction == .right {
                 weekOffset -= 1
-            } else if gestureRecognizer.edges == .right {
+            } else if gestureRecognizer.direction == .left {
                 weekOffset += 1
             }
             updateWeekOffset(weekOffset)
