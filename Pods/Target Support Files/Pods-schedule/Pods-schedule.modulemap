@@ -1,6 +1,0 @@
-module Pods_schedule {
-  umbrella header "Pods-schedule-umbrella.h"
-
-  export *
-  module * { export * }
-}
