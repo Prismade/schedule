@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="1Kh-Mz-tJA" userLabel="SNibCalendar" customClass="SNibCalendarView" customModule="Schedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="234"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="260" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rJ6-Ur-pO1">
+                    <rect key="frame" x="0.0" y="0.0" width="206" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIw-pP-Iun">
+                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="LNT-OJ-ecT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="WorkingDayTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-tw-J4J">
+                            <rect key="frame" x="34.5" y="0.0" width="34" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="PAY-Fw-RUh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="WorkingDayTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TD-1K-MtF">
+                            <rect key="frame" x="68.5" y="0.0" width="34.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="eZh-Nh-KTF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="WorkingDayTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIl-e0-wRD">
+                            <rect key="frame" x="103" y="0.0" width="34.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5Et-L6-e0P"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="WorkingDayTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQs-nn-tRf">
+                            <rect key="frame" x="137.5" y="0.0" width="34" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="etO-QM-iJG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="WorkingDayTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGf-7R-9Yo">
+                            <rect key="frame" x="171.5" y="0.0" width="34.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="G05-vZ-3RL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" name="DayOffTitleText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <scrollView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="760" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpO-Rs-qPP">
+                    <rect key="frame" x="0.0" y="20" width="206" height="210"/>
+                    <subviews>
+                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTu-Yp-ZCI" userLabel="Item 0" customClass="SWeekView" customModule="Schedule" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="206" height="210"/>
+                        </view>
+                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZE-7I-w8i" userLabel="Item 1" customClass="SWeekView" customModule="Schedule" customModuleProvider="target">
+                            <rect key="frame" x="206" y="0.0" width="206" height="210"/>
+                        </view>
+                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVd-Z6-mu8" userLabel="Item 2" customClass="SWeekView" customModule="Schedule" customModuleProvider="target">
+                            <rect key="frame" x="412" y="0.0" width="206" height="210"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ZVd-Z6-mu8" firstAttribute="leading" secondItem="VZE-7I-w8i" secondAttribute="trailing" id="2mj-kW-mPm"/>
+                        <constraint firstItem="WTu-Yp-ZCI" firstAttribute="leading" secondItem="cfJ-KY-ZCr" secondAttribute="leading" id="46c-70-ER5"/>
+                        <constraint firstItem="VZE-7I-w8i" firstAttribute="leading" secondItem="WTu-Yp-ZCI" secondAttribute="trailing" id="5Gh-EC-9vY"/>
+                        <constraint firstItem="WTu-Yp-ZCI" firstAttribute="width" secondItem="PGo-Ct-FWU" secondAttribute="width" id="EF7-v2-x4h"/>
+                        <constraint firstItem="cfJ-KY-ZCr" firstAttribute="bottom" secondItem="WTu-Yp-ZCI" secondAttribute="bottom" id="Fin-y1-WP3"/>
+                        <constraint firstItem="VZE-7I-w8i" firstAttribute="width" secondItem="WTu-Yp-ZCI" secondAttribute="width" id="J4D-3w-Nt2"/>
+                        <constraint firstItem="ZVd-Z6-mu8" firstAttribute="width" secondItem="VZE-7I-w8i" secondAttribute="width" id="JMl-Mn-Pe4"/>
+                        <constraint firstItem="WTu-Yp-ZCI" firstAttribute="height" secondItem="PGo-Ct-FWU" secondAttribute="height" id="MQE-zm-dlS"/>
+                        <constraint firstItem="ZVd-Z6-mu8" firstAttribute="centerY" secondItem="WTu-Yp-ZCI" secondAttribute="centerY" id="SXV-fx-Mfm"/>
+                        <constraint firstItem="VZE-7I-w8i" firstAttribute="height" secondItem="WTu-Yp-ZCI" secondAttribute="height" id="UbE-YP-WmO"/>
+                        <constraint firstItem="VZE-7I-w8i" firstAttribute="centerY" secondItem="WTu-Yp-ZCI" secondAttribute="centerY" id="V7s-EQ-JaS"/>
+                        <constraint firstItem="ZVd-Z6-mu8" firstAttribute="trailing" secondItem="cfJ-KY-ZCr" secondAttribute="trailing" id="WHg-Oh-oZf"/>
+                        <constraint firstItem="ZVd-Z6-mu8" firstAttribute="height" secondItem="VZE-7I-w8i" secondAttribute="height" id="deZ-hD-yta"/>
+                        <constraint firstItem="WTu-Yp-ZCI" firstAttribute="top" secondItem="cfJ-KY-ZCr" secondAttribute="top" id="l7Z-8b-oKX"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="cfJ-KY-ZCr"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="PGo-Ct-FWU"/>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="april, 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-4t-XKt">
+                    <rect key="frame" x="0.0" y="230" width="206" height="4"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="UWi-6W-Kn0"/>
+            <connections>
+                <outlet property="scrollView" destination="hpO-Rs-qPP" id="THd-CU-jTI"/>
+            </connections>
+            <point key="canvasLocation" x="379.71014492753625" y="97.098214285714278"/>
+        </stackView>
+    </objects>
+    <resources>
+        <namedColor name="DayOffTitleText">
+            <color red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WorkingDayTitleText">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

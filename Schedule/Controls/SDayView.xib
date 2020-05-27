@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cJp-x7-Rnr" customClass="SNibDayView" customModule="Schedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="460"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SL-Z3-aE3">
+                    <rect key="frame" x="192" y="210" width="40" height="40"/>
+                    <color key="backgroundColor" name="DayBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8Od-he-Euk"/>
+                        <constraint firstAttribute="width" secondItem="3SL-Z3-aE3" secondAttribute="height" multiplier="1:1" id="J9d-Hy-MyG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3SL-Z3-aE3" firstAttribute="centerY" secondItem="cJp-x7-Rnr" secondAttribute="centerY" id="4Dl-K6-gE4"/>
+                <constraint firstItem="3SL-Z3-aE3" firstAttribute="centerX" secondItem="cJp-x7-Rnr" secondAttribute="centerX" id="8Jg-87-Jy0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="hjI-V7-2XP"/>
+            <connections>
+                <outlet property="dayLabel" destination="3SL-Z3-aE3" id="S0C-vh-iYa"/>
+            </connections>
+            <point key="canvasLocation" x="384.05797101449281" y="-694.41964285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DayBackground">
+            <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

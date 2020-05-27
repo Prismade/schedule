@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SScheduleTableViewCell" customModule="Schedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-ku-2vY">
+                    <rect key="frame" x="16" y="92" width="64" height="48"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="08:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KL5-df-qY9">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" name="MainAccentColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10:10:10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="nzR-Zg-hvo" userLabel="End Time">
+                            <rect key="frame" x="0.0" y="24" width="64" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DXD-U5-fPG">
+                    <rect key="frame" x="88" y="52" width="320" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnn-jN-5sf" userLabel="Line">
+                            <rect key="frame" x="0.0" y="0.0" width="2" height="128"/>
+                            <color key="backgroundColor" name="MainAccentColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2" id="RFm-eH-xEf"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hOC-ud-OsE" userLabel="Class Data">
+                            <rect key="frame" x="10" y="0.0" width="310" height="128"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Theoretical Physics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kw-jn-IXd">
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Subgroup 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFg-2w-4qs">
+                                    <rect key="frame" x="0.0" y="54" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EJH-fE-8HF">
+                                    <rect key="frame" x="0.0" y="82" width="310" height="18"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="J.N. Brown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfX-c3-ig1">
+                                            <rect key="frame" x="0.0" y="0.0" width="208.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(lect)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIJ-JD-de6">
+                                            <rect key="frame" x="208.5" y="0.0" width="101.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="12 corpus, room 320" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-ke-z4Y">
+                                    <rect key="frame" x="0.0" y="110" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DXD-U5-fPG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="1XN-LD-k8H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DXD-U5-fPG" secondAttribute="trailing" constant="16" id="53m-T1-h5L"/>
+                <constraint firstItem="DXD-U5-fPG" firstAttribute="width" secondItem="QfZ-ku-2vY" secondAttribute="width" multiplier="5" id="6kG-L0-riy"/>
+                <constraint firstItem="QfZ-ku-2vY" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="T0h-dH-6Ix"/>
+                <constraint firstItem="DXD-U5-fPG" firstAttribute="leading" secondItem="QfZ-ku-2vY" secondAttribute="trailing" constant="8" id="WbY-Ud-ydW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DXD-U5-fPG" secondAttribute="bottom" constant="8" id="Y4m-jV-ps5"/>
+                <constraint firstItem="QfZ-ku-2vY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="nwd-Z6-99M"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="beginTime" destination="KL5-df-qY9" id="YWf-5Q-UvJ"/>
+                <outlet property="classKind" destination="DIJ-JD-de6" id="VBS-bL-1Yl"/>
+                <outlet property="classTitle" destination="8Kw-jn-IXd" id="6bT-q9-bAx"/>
+                <outlet property="endTime" destination="nzR-Zg-hvo" id="tEV-EE-q9b"/>
+                <outlet property="location" destination="dSE-ke-z4Y" id="lUg-xv-koW"/>
+                <outlet property="subgroup" destination="PFg-2w-4qs" id="atj-dk-BaQ"/>
+                <outlet property="userAndClassKind" destination="EJH-fE-8HF" id="2fV-1E-S9P"/>
+                <outlet property="userName" destination="lfX-c3-ig1" id="yE0-X7-vEA"/>
+            </connections>
+            <point key="canvasLocation" x="-128.98550724637681" y="50.223214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="MainAccentColor">
+            <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
