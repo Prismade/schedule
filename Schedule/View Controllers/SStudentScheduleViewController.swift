@@ -1,4 +1,6 @@
 import UIKit
+import EventKit
+import EventKitUI
 import SDStateTableView
 
 class SStudentScheduleViewController: UIViewController {
@@ -11,10 +13,41 @@ class SStudentScheduleViewController: UIViewController {
     @IBOutlet weak var calendar: SCalendarView!
     @IBOutlet weak var schedule: SScheduleView!
     
+    @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "SetupFromStudentSegue", sender: self)
+    }
+    
+    @IBAction func calendarExportButtonTapped(_ sender: UIBarButtonItem) {
+        switch SExportManager.shared.authStatus {
+        case .notDetermined:
+            SExportManager.shared.requestPermission { [unowned self] authorized, error in
+                if authorized {
+                    DispatchQueue.main.async {
+                        self.chooseCalendar()
+                    }
+                }
+            }
+        case .authorized:
+            chooseCalendar()
+        case .denied:
+            let alert = UIAlertController(title: "\(NSLocalizedString("noPerm", comment: ""))", message: "\(NSLocalizedString("noPermMsg", comment: ""))", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        default: return
+        }
+    }
+    
     var lastSelectedClass: SelectedClass? = nil
     
+    private lazy var calendarSelectionViewController = UINavigationController()
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(onModalDismiss(_:)), name: Notification.Name("UserSetupModalDismiss"), object: nil)
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.layoutIfNeeded()
@@ -63,14 +96,39 @@ class SStudentScheduleViewController: UIViewController {
         
         schedule.tableViewDataSource = self
         schedule.tableViewDelegate = self
-        schedule.prepareForUpdate()
-        SScheduleManager.shared.studentSchedule.updateData()
+        
+        if SDefaults.studentId != nil {
+            schedule.prepareForUpdate()
+            SScheduleManager.shared.studentSchedule.updateData()
+        } else {
+            // TODO: Show message about need of choosing group
+        }
     }
     
     override func viewDidLayoutSubviews() {
         let weekDay = STimeManager.shared.getCurrentWeekday()
         calendar.instantiateView(for: weekDay)
         schedule.instantiateView(for: weekDay)
+    }
+    
+    @objc private func onModalDismiss(_ notification: Notification) {
+        if let result = notification.userInfo {
+            SDefaults.studentId = (result as! [String : Int])["UserId"]
+            schedule.prepareForUpdate()
+            SScheduleManager.shared.studentSchedule.userId = SDefaults.studentId
+            SScheduleManager.shared.studentSchedule.updateData()
+            // TODO: Hide message about need of choosing group
+        }
+    }
+    
+    private func chooseCalendar() {
+        let ccvc = EKCalendarChooser(selectionStyle: .single, displayStyle: .writableCalendarsOnly, eventStore: SExportManager.shared.eventStore)
+        ccvc.delegate = self
+        ccvc.showsDoneButton = true
+        ccvc.showsCancelButton = true
+
+        calendarSelectionViewController.pushViewController(ccvc, animated: false)
+        present(calendarSelectionViewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,6 +138,10 @@ class SStudentScheduleViewController: UIViewController {
             classDetails.classData = SScheduleManager.shared.studentSchedule.classData(number: lastSelectedClass.number, at: lastSelectedClass.day)
             classDetails.userKind = .student
             
+        } else if segue.identifier ?? "" == "SetupFromStudentSegue" {
+            let destination = segue.destination as! UINavigationController
+            let vc = destination.topViewController! as! SDivisionSelectTableViewController
+            vc.isTeacher = false
         }
     }
     
@@ -116,6 +178,28 @@ extension SStudentScheduleViewController: UITableViewDelegate {
             day: SWeekDay(rawValue: tableView.tag)!,
             number: indexPath.row)
         performSegue(withIdentifier: "ClassDetailFromStudentSegue", sender: self)
+    }
+    
+}
+
+extension SStudentScheduleViewController: EKCalendarChooserDelegate {
+    
+    func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
+        if let selectedCalendar = calendarChooser.selectedCalendars.first {
+            do {
+                let schedule = SScheduleManager.shared.studentSchedule.schedule
+                let weekOffset = SScheduleManager.shared.studentSchedule.weekOffset
+                try SExportManager.shared.export(schedule, weekOffset: weekOffset, into: selectedCalendar)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        calendarSelectionViewController.dismiss(animated: true)
+        
+    }
+    
+    func calendarChooserDidCancel(_ calendarChooser: EKCalendarChooser) {
+        calendarSelectionViewController.dismiss(animated: true)
     }
     
 }

@@ -9,10 +9,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SDefaults.launchSetup()
         
-        // testing only
-        SDefaults.studentId = 4930
-        SDefaults.teacherId = 3686
-        
         return true
     }
     
