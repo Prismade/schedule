@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ASM-jX-RSd">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -269,17 +269,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQt-7v-8VZ" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-z5-p0o">
+                                        <rect key="frame" x="153" y="276.5" width="69" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="2a9-z5-p0o" firstAttribute="centerY" secondItem="DYe-cO-yIO" secondAttribute="centerY" id="jNJ-RP-way"/>
+                                    <constraint firstItem="2a9-z5-p0o" firstAttribute="centerX" secondItem="DYe-cO-yIO" secondAttribute="centerX" id="oQU-bZ-Nvx"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SmF-G3-E8l" firstAttribute="trailing" secondItem="rQt-7v-8VZ" secondAttribute="trailing" id="3tP-S2-HWd"/>
                             <constraint firstItem="rQt-7v-8VZ" firstAttribute="leading" secondItem="SmF-G3-E8l" secondAttribute="leading" id="6YP-Pd-ILM"/>
                             <constraint firstItem="PKZ-Pa-sw2" firstAttribute="top" secondItem="SmF-G3-E8l" secondAttribute="top" id="7L9-dC-1mT"/>
+                            <constraint firstItem="DYe-cO-yIO" firstAttribute="top" secondItem="SmF-G3-E8l" secondAttribute="top" id="8eN-S3-css"/>
+                            <constraint firstItem="SmF-G3-E8l" firstAttribute="bottom" secondItem="DYe-cO-yIO" secondAttribute="bottom" id="AQN-xf-1qz"/>
                             <constraint firstItem="rQt-7v-8VZ" firstAttribute="top" secondItem="PKZ-Pa-sw2" secondAttribute="bottom" id="F4W-dO-Oms"/>
+                            <constraint firstItem="DYe-cO-yIO" firstAttribute="leading" secondItem="SmF-G3-E8l" secondAttribute="leading" id="ISf-Qe-at8"/>
                             <constraint firstItem="SmF-G3-E8l" firstAttribute="trailing" secondItem="PKZ-Pa-sw2" secondAttribute="trailing" id="QpJ-7Q-WTk"/>
                             <constraint firstItem="PKZ-Pa-sw2" firstAttribute="leading" secondItem="SmF-G3-E8l" secondAttribute="leading" id="R0g-xR-k56"/>
                             <constraint firstItem="SmF-G3-E8l" firstAttribute="bottom" secondItem="rQt-7v-8VZ" secondAttribute="bottom" id="d1m-Fg-kfK"/>
+                            <constraint firstItem="SmF-G3-E8l" firstAttribute="trailing" secondItem="DYe-cO-yIO" secondAttribute="trailing" id="r3j-B4-EG5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SmF-G3-E8l"/>
                     </view>
@@ -300,6 +322,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="PKZ-Pa-sw2" id="Gsi-ur-jMX"/>
+                        <outlet property="messageLabel" destination="2a9-z5-p0o" id="OkS-iB-Od1"/>
+                        <outlet property="messageView" destination="DYe-cO-yIO" id="QGz-cH-U5C"/>
                         <outlet property="schedule" destination="rQt-7v-8VZ" id="h2b-AC-n16"/>
                         <segue destination="K5Q-HM-Tkg" kind="show" identifier="ClassDetailFromStudentSegue" id="bTQ-gw-ZPF"/>
                         <segue destination="OuI-pv-vlF" kind="presentation" identifier="SetupFromStudentSegue" id="ywc-KR-mdt"/>
@@ -318,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyE-Q0-vKs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNj-zq-FCa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
@@ -366,7 +390,6 @@
                                                 </constraints>
                                             </mapView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="4sW-cn-qRY" firstAttribute="trailing" secondItem="aib-TZ-Gov" secondAttribute="trailing" id="57n-1f-avO"/>
                                             <constraint firstItem="4sW-cn-qRY" firstAttribute="leading" secondItem="89I-Mz-bbp" secondAttribute="leading" id="5ZE-hR-k45"/>
@@ -606,7 +629,6 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uJT-wt-NPf" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="3De-hx-1Io"/>
@@ -860,7 +882,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                 <viewLayoutGuide key="frameLayoutGuide" id="Vwl-zY-C5O"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dfz-8R-fc7" firstAttribute="trailing" secondItem="cP3-gy-3YS" secondAttribute="trailing" id="IMK-CZ-gVS"/>
                             <constraint firstItem="cP3-gy-3YS" firstAttribute="top" secondItem="dfz-8R-fc7" secondAttribute="top" id="Sdv-kw-itW"/>
@@ -1082,7 +1103,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3nJ-X3-4cG"/>
+        <segue reference="bTQ-gw-ZPF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CalendarPlus" width="30" height="30"/>

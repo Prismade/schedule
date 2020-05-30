@@ -12,6 +12,8 @@ class SStudentScheduleViewController: UIViewController {
     
     @IBOutlet weak var calendar: SCalendarView!
     @IBOutlet weak var schedule: SScheduleView!
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SetupFromStudentSegue", sender: self)
@@ -98,10 +100,11 @@ class SStudentScheduleViewController: UIViewController {
         schedule.tableViewDelegate = self
         
         if SDefaults.studentId != nil {
-            schedule.prepareForUpdate()
-            SScheduleManager.shared.studentSchedule.updateData()
+            messageView.isHidden = true
+            updateSchedule()
         } else {
-            // TODO: Show message about need of choosing group
+            messageView.isHidden = false
+            messageLabel.text = NSLocalizedString("NeedGroup", comment: "")
         }
     }
     
@@ -114,11 +117,15 @@ class SStudentScheduleViewController: UIViewController {
     @objc private func onModalDismiss(_ notification: Notification) {
         if let result = notification.userInfo {
             SDefaults.studentId = (result as! [String : Int])["UserId"]
-            schedule.prepareForUpdate()
             SScheduleManager.shared.studentSchedule.userId = SDefaults.studentId
-            SScheduleManager.shared.studentSchedule.updateData()
-            // TODO: Hide message about need of choosing group
+            messageView.isHidden = true
+            updateSchedule()
         }
+    }
+    
+    private func updateSchedule() {
+        schedule.prepareForUpdate()
+        SScheduleManager.shared.studentSchedule.updateData()
     }
     
     private func chooseCalendar() {
