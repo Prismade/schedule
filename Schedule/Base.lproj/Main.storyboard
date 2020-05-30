@@ -268,7 +268,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQt-7v-8VZ" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -286,13 +285,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="WpD-z3-XBg">
                         <barButtonItem key="backBarButtonItem" title="Schedule" id="SKn-ao-pYz"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="RcL-tI-WB0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" style="plain" id="RcL-tI-WB0">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="calendarExportButtonTapped:" destination="nZw-Vi-CTv" id="6Qy-RY-DPK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="5Mi-s0-cgx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" style="plain" id="5Mi-s0-cgx">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="setupUserButtonTapped:" destination="nZw-Vi-CTv" id="7CO-x0-fy7"/>
@@ -319,12 +318,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyE-Q0-vKs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNj-zq-FCa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aib-TZ-Gov">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aib-TZ-Gov">
                                                 <rect key="frame" x="15" y="35" width="345" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <nil key="textColor"/>
@@ -464,7 +463,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-4a-KQe">
                                         <rect key="frame" x="15" y="250" width="345" height="255.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher's name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-9p-Zya">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher's name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-9p-Zya">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <nil key="textColor"/>
@@ -605,7 +604,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94E-Qq-nrD" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -659,7 +657,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bac-ld-oq9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="XFK-pn-Jdd">
@@ -884,7 +882,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEX-js-QG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection footerTitle="Turn on to have access to schedule without internet connection" id="nWD-fF-Owh">
                                 <cells>
@@ -1084,7 +1082,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bTQ-gw-ZPF"/>
+        <segue reference="3nJ-X3-4cG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CalendarPlus" width="30" height="30"/>

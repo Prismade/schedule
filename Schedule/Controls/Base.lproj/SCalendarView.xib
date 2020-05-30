@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -115,6 +115,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="UWi-6W-Kn0"/>
             <connections>
+                <outlet property="currentDateLabel" destination="lSq-4t-XKt" id="5Jk-30-ekU"/>
                 <outlet property="scrollView" destination="hpO-Rs-qPP" id="THd-CU-jTI"/>
             </connections>
             <point key="canvasLocation" x="379.71014492753625" y="97.098214285714278"/>

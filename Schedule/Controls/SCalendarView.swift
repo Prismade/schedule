@@ -3,6 +3,7 @@ import UIKit
 final class SNibCalendarView: UIStackView {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var currentDateLabel: UILabel!
     
     static func loadFromNib() -> SNibCalendarView {
         let bundle = Bundle(for: self)
@@ -45,6 +46,7 @@ final class SCalendarView: UIView {
                     y: view.scrollView.contentOffset.y),
                 animated: false)
             previousPhysicalPage = currentPhysicalPage
+            updateDateLabel()
         }
     }
     var selectedDay: SWeekDay = .monday {
@@ -52,6 +54,7 @@ final class SCalendarView: UIView {
             for week in view.scrollView.subviews {
                 (week as! SWeekView).selectedDay = selectedDay
             }
+            updateDateLabel()
         }
     }
     var lastScrollDirection: SScrollDirection {
@@ -141,6 +144,15 @@ final class SCalendarView: UIView {
         currWeek.days = daysGetter(weekOffset)
         let nextWeek = view.scrollView.subviews.first(where: { $0.tag == 3 }) as! SWeekView
         nextWeek.days = daysGetter(weekOffset + 1)
+    }
+    
+    private func updateDateLabel() {
+        let date = (view.scrollView.subviews[1] as! SWeekView).days[selectedDay.rawValue - 1]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM"
+        
+        let formatedDate = formatter.string(from: date)
+        view.currentDateLabel.text = formatedDate
     }
     
 }

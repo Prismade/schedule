@@ -44,6 +44,7 @@ final class SEmployeeManager {
     
     // MARK: - Private Methods
     
+    // TODO: Fix crash if there's no teacher info
     private func parse(_ dataFromResponse: Data?, for employeeId: Int) -> Result<SEmployee, SEmMError> {
         if let rawData = dataFromResponse {
             if let htmlString = String(data: rawData, encoding: .windowsCP1251) {

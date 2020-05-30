@@ -14,7 +14,6 @@ class SStudentScheduleViewController: UIViewController {
     @IBOutlet weak var schedule: SScheduleView!
     
     @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
-        
         performSegue(withIdentifier: "SetupFromStudentSegue", sender: self)
     }
     
@@ -47,6 +46,8 @@ class SStudentScheduleViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(onModalDismiss(_:)), name: Notification.Name("UserSetupModalDismiss"), object: nil)
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
