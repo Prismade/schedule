@@ -63,8 +63,8 @@ class SStudentScheduleViewController: UIViewController {
             }
         }
         
-        calendar.weekDaysForPage = { index in
-            let weekDates = STimeManager.shared.getDates(for: index)
+        calendar.weekDaysForWeekOffset = { weekOffset in
+            let weekDates = STimeManager.shared.getDates(for: weekOffset)
             return weekDates
         }
         
@@ -83,6 +83,7 @@ class SStudentScheduleViewController: UIViewController {
         }
         
         schedule.weekWasChanged = { schedule, direction in
+            SScheduleManager.shared.studentSchedule.schedule.removeAll()
             switch direction {
                 case .back:
                     self.calendar.weekOffset -= 1
@@ -110,8 +111,13 @@ class SStudentScheduleViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         let weekDay = STimeManager.shared.getCurrentWeekday()
-        calendar.instantiateView(for: weekDay)
-        schedule.instantiateView(for: weekDay)
+        if weekDay == .sunday {
+            calendar.instantiateView(for: .monday)
+            schedule.instantiateView(for: .monday)
+        } else {
+            calendar.instantiateView(for: weekDay)
+            schedule.instantiateView(for: weekDay)
+        }
     }
     
     @objc private func onModalDismiss(_ notification: Notification) {
@@ -181,6 +187,7 @@ extension SStudentScheduleViewController: UITableViewDataSource {
 extension SStudentScheduleViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         lastSelectedClass = SelectedClass(
             day: SWeekDay(rawValue: tableView.tag)!,
             number: indexPath.row)

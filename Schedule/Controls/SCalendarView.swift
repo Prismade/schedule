@@ -32,7 +32,7 @@ final class SCalendarView: UIView {
     // MARK: - Public Properties
     
     // delegate & datasource closures
-    var weekDaysForPage: ((Int) -> [Date])?
+    var weekDaysForWeekOffset: ((Int) -> [Date])?
     var weekWasChanged: ((SCalendarView, Int) -> Void)?
     var dayWasSelected: ((SCalendarView, IndexPath) -> Void)?
     
@@ -136,7 +136,7 @@ final class SCalendarView: UIView {
     // MARK: - Private Methods
     
     private func updateWeekDates() {
-        guard let daysGetter = weekDaysForPage else { return }
+        guard let daysGetter = weekDaysForWeekOffset else { return }
         
         let prevWeek = view.scrollView.subviews.first(where: { $0.tag == 1 }) as! SWeekView
         prevWeek.days = daysGetter(weekOffset - 1)

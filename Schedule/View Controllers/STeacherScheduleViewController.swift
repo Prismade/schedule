@@ -16,7 +16,7 @@ class STeacherScheduleViewController: UIViewController {
             }
         }
         
-        calendar.weekDaysForPage = { index in
+        calendar.weekDaysForWeekOffset = { index in
             let weekDates = STimeManager.shared.getDates(for: index)
             return weekDates
         }
@@ -55,8 +55,14 @@ class STeacherScheduleViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         let weekDay = STimeManager.shared.getCurrentWeekday()
-        calendar.instantiateView(for: weekDay)
-        schedule.instantiateView(for: weekDay)
+        if weekDay == .sunday {
+            calendar.instantiateView(for: .monday)
+            schedule.instantiateView(for: .monday)
+        } else {
+            calendar.instantiateView(for: weekDay)
+            schedule.instantiateView(for: weekDay)
+        }
+        
     }
     
 }

@@ -8,4 +8,7 @@ target 'Schedule' do
   pod 'ReachabilitySwift'
   pod 'Alamofire', '~> 5.1'
   pod 'Kingfisher', '~> 5.0'
+  
+  # For demonstrations
+  pod 'ShowTime'
 end

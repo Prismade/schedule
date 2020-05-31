@@ -882,6 +882,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                 <viewLayoutGuide key="frameLayoutGuide" id="Vwl-zY-C5O"/>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dfz-8R-fc7" firstAttribute="trailing" secondItem="cP3-gy-3YS" secondAttribute="trailing" id="IMK-CZ-gVS"/>
                             <constraint firstItem="cP3-gy-3YS" firstAttribute="top" secondItem="dfz-8R-fc7" secondAttribute="top" id="Sdv-kw-itW"/>
