@@ -49,7 +49,7 @@ final class SScheduleData {
         return schedule.classes.count
     }
     
-    func classData(number: Int, at day: SWeekDay) -> SClass? {
+    func classData(number: Int, on day: SWeekDay) -> SClass? {
         guard let schedule = scheduleData(for: day) else { return nil }
         guard number <= schedule.classes.count && number >= 0 else { return nil }
         return schedule.classes[number]
@@ -58,7 +58,7 @@ final class SScheduleData {
     func updateData(force: Bool = false) {
         guard let id = userId else { return }
         
-        let isRightUserKind: Bool = {
+        let needCaching: Bool = {
             switch userKind {
                 case .student:
                     return SDefaults.cachingUserKind == .student || SDefaults.cachingUserKind == .both
@@ -68,7 +68,7 @@ final class SScheduleData {
             }
         }()
         
-        if SDefaults.isCachingEnabled && force == false && isRightUserKind {
+        if SDefaults.isCachingEnabled && force == false && needCaching {
             if let cachedSchedule = SCacheManager.shared.retrieveSchedule(
                 weekOffset: weekOffset,
                 for: userKind == .student ? .student : .teacher) {
@@ -78,7 +78,7 @@ final class SScheduleData {
             }
         }
         let completionHandler: (DataResponse<[SClass], AFError>) -> Void =
-        { [unowned self, isRightUserKind] response in
+        { [unowned self, needCaching] response in
             switch response.result {
                 case .success(let newSchedule): DispatchQueue.main.async {
                     self.schedule = (1...6).map { weekDay in
@@ -88,7 +88,7 @@ final class SScheduleData {
                         return SScheduleDay(weekDay: SWeekDay(rawValue: weekDay)!, classes: classes)
                     }
                     
-                    if SDefaults.isCachingEnabled && isRightUserKind && self.weekOffset >= 0 {
+                    if SDefaults.isCachingEnabled && needCaching && self.weekOffset >= 0 {
                         do {
                             try SCacheManager.shared.cacheSchedule(
                                 self.schedule,

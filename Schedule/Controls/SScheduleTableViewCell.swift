@@ -49,6 +49,9 @@ final class SScheduleTableViewCell: UITableViewCell {
     }
     
     func configure(with exam: SExam, cellKind: SCellKind) {
+        if let color = generateColor(for: exam.subject) {
+            line.backgroundColor = color
+        }
         
         classTitle.text = exam.subject
         beginTime.text = exam.time

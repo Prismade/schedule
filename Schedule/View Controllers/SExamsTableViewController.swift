@@ -1,90 +1,116 @@
-//
-//  ExamsTableViewController.swift
-//  Schedule
-//
-//  Created by George Molchanov on 18.05.2020.
-//  Copyright © 2020 Prismade. All rights reserved.
-//
-
 import UIKit
+import Alamofire
+import SDStateTableView
 
 class SExamsTableViewController: UITableViewController {
-
+    
+    // MARK: - Private Properties
+    
+    private var examsData = [SExam]()
+    private var firstSetupFinished = false
+    private let reuseIdentifier = "ExamTableCell"
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        tableView.register(UINib(nibName: "SScheduleTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifier)
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        
+        (self.tableView as! SDStateTableView).setState(.withButton(
+            errorImage: nil, title: NSLocalizedString("NoExams", comment: ""),
+            message: NSLocalizedString("NoExamsSoon", comment: ""),
+            buttonTitle: NSLocalizedString("Refresh", comment: ""),
+            buttonConfig: { button in return }, retryAction: {
+                self.tableView.setContentOffset(
+                    CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
+                self.updateData()
+            }))
     }
-
-    // MARK: - Table view data source
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !firstSetupFinished {
+            tableView.setContentOffset(
+                CGPoint(x: 0, y: -refreshControl!.frame.size.height), animated: true)
+            updateData()
+        }
+    }
+    
+    // MARK: - Private Methods
+    
+    private func updateData() {
+        let completionHandler: (DataResponse<[SExam], AFError>) -> Void =
+        { [unowned self] response in
+            switch response.result {
+                case .success(let data): DispatchQueue.main.async {
+                    self.examsData = data
+                    self.refreshControl?.endRefreshing()
+                    
+                    if self.examsData.count > 0 {
+                        self.tableView.reloadData()
+                        (self.tableView as! SDStateTableView).setState(.dataAvailable)
+                    } else {
+                        (self.tableView as! SDStateTableView).setState(.withButton(
+                            errorImage: nil, title: "Пока расписания нет",
+                            message: "Экзамены не скоро", buttonTitle: "Обновить",
+                            buttonConfig: { button in return }, retryAction: {
+                                self.tableView.setContentOffset(
+                                    CGPoint(x: 0, y: -self.refreshControl!.frame.size.height),
+                                    animated: true)
+                                self.updateData()
+                        }))
+                    }
+                }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+        
+        let userKind = SDefaults.defaultUser
+        switch userKind {
+            case .student:
+                guard let id = SDefaults.studentId else { return }
+                SApiManager.shared.getStudentExamsSchedule(for: id, completion: completionHandler)
+            case .teacher:
+                guard let id = SDefaults.teacherId else { return }
+                SApiManager.shared.getTeacherExamsSchedule(for: id, completion: completionHandler)
+        }
+    }
+    
+    @objc func refresh(_ sender: UIRefreshControl) {
+        refreshControl?.beginRefreshing()
+        updateData()
+    }
+    
+    // MARK: - UITableViewDataSource
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return examsData.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: reuseIdentifier,
+            for: indexPath) as! SScheduleTableViewCell
+        
+        let data = examsData[indexPath.row]
+        let userKind = SDefaults.defaultUser
+        
+        switch userKind {
+            case .student:
+                cell.configure(with: data, cellKind: .student)
+            case .teacher:
+                cell.configure(with: data, cellKind: .teacher)
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

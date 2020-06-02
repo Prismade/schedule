@@ -86,7 +86,7 @@ extension STeacherScheduleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: schedule.reuseIdentifier, for: indexPath) as! SScheduleTableViewCell
-        let classData = SScheduleManager.shared.studentSchedule.classData(number: indexPath.row, at: SWeekDay(rawValue: tableView.tag)!)!
+        let classData = SScheduleManager.shared.studentSchedule.classData(number: indexPath.row, on: SWeekDay(rawValue: tableView.tag)!)!
         cell.configure(with: classData, cellKind: .student)
         return cell
     }

@@ -14,6 +14,17 @@ class SSettingsTableViewController: UITableViewController {
         clearsSelectionOnViewWillAppear = true
     }
     
+    /*
+     Thread 1: Exception: "Your application has presented a UIAlertController
+     (<UIAlertController: 0x14429fe00>) of style UIAlertControllerStyleActionSheet
+     from UITabBarController (<UITabBarController: 0x144025600>).
+     The modalPresentationStyle of a UIAlertController with this style is UIModalPresentationPopover.
+     You must provide location information for this popover through the alert controller's
+     popoverPresentationController. You must provide either a sourceView and sourceRect or a
+     barButtonItem.  If this information is not known when you present the alert controller, you
+     may provide it in the UIPopoverPresentationControllerDelegate method
+     -prepareForPopoverPresentation."
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

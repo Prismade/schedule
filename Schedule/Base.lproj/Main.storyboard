@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slk-gW-90k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4324" y="-1280.5097451274364"/>
+            <point key="canvasLocation" x="6196" y="-1290"/>
         </scene>
         <!--Choose Department-->
         <scene sceneID="JzU-vN-y6P">
@@ -106,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbn-Kx-Hgn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5265" y="-2045"/>
+            <point key="canvasLocation" x="7137" y="-2055"/>
         </scene>
         <!--Choose Teacher-->
         <scene sceneID="nPO-f2-hCm">
@@ -153,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNS-DQ-lza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6185" y="-2045"/>
+            <point key="canvasLocation" x="8057" y="-2055"/>
         </scene>
         <!--Choose Course-->
         <scene sceneID="zOw-cT-AFn">
@@ -202,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPp-oK-Km0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5266" y="-1281"/>
+            <point key="canvasLocation" x="7137" y="-1291"/>
         </scene>
         <!--Choose Group-->
         <scene sceneID="HNr-f6-xgh">
@@ -249,9 +249,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4f-dH-hzG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6186" y="-1281"/>
+            <point key="canvasLocation" x="8057" y="-1291"/>
         </scene>
-        <!--Student Schedule View Controller-->
+        <!--Student-->
         <scene sceneID="6ag-5G-K8h">
             <objects>
                 <viewController id="nZw-Vi-CTv" customClass="SStudentScheduleViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,15 +305,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SmF-G3-E8l"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WpD-z3-XBg">
+                    <navigationItem key="navigationItem" title="Student" id="WpD-z3-XBg">
                         <barButtonItem key="backBarButtonItem" title="Schedule" id="SKn-ao-pYz"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" style="plain" id="RcL-tI-WB0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="RcL-tI-WB0">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="calendarExportButtonTapped:" destination="nZw-Vi-CTv" id="6Qy-RY-DPK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" style="plain" id="5Mi-s0-cgx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="5Mi-s0-cgx">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="setupUserButtonTapped:" destination="nZw-Vi-CTv" id="7CO-x0-fy7"/>
@@ -450,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boI-V0-jaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5476.811594202899" y="-405.13392857142856"/>
+            <point key="canvasLocation" x="6614" y="-342"/>
         </scene>
         <!--Teacher-->
         <scene sceneID="KkQ-2H-i9q">
@@ -586,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Yk-fG-chx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7114" y="-405"/>
+            <point key="canvasLocation" x="8250" y="-342"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gsH-wg-bGq">
@@ -601,7 +601,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="XZx-SF-Am9" kind="relationship" relationship="viewControllers" id="gyC-RY-Vxk"/>
-                        <segue destination="OnN-AB-iHi" kind="relationship" relationship="viewControllers" id="IBV-hB-ODe"/>
+                        <segue destination="HgQ-jr-wJp" kind="relationship" relationship="viewControllers" id="IBV-hB-ODe"/>
                         <segue destination="HUo-p3-goi" kind="relationship" relationship="viewControllers" id="eTD-lo-McI"/>
                         <segue destination="D6F-ws-fXZ" kind="relationship" relationship="viewControllers" id="h6l-PN-s60"/>
                     </connections>
@@ -619,21 +619,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJT-wt-NPf" customClass="SCalendarView" customModule="Schedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="16" width="375" height="84"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                <color key="backgroundColor" name="NavBarColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="tdQ-FG-dtd"/>
+                                    <constraint firstAttribute="height" constant="92" id="tdQ-FG-dtd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94E-Qq-nrD" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uJT-wt-NPf" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="3De-hx-1Io"/>
                             <constraint firstItem="lTd-Re-uT2" firstAttribute="trailing" secondItem="uJT-wt-NPf" secondAttribute="trailing" id="Dhe-Gq-Zbs"/>
-                            <constraint firstItem="uJT-wt-NPf" firstAttribute="top" secondItem="lTd-Re-uT2" secondAttribute="top" constant="16" id="cua-lT-Dfk"/>
+                            <constraint firstItem="uJT-wt-NPf" firstAttribute="top" secondItem="lTd-Re-uT2" secondAttribute="top" id="cua-lT-Dfk"/>
                             <constraint firstItem="94E-Qq-nrD" firstAttribute="top" secondItem="uJT-wt-NPf" secondAttribute="bottom" id="iBr-mh-MrK"/>
                             <constraint firstItem="94E-Qq-nrD" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="t1W-v0-wY4"/>
                             <constraint firstItem="lTd-Re-uT2" firstAttribute="bottom" secondItem="94E-Qq-nrD" secondAttribute="bottom" id="vMP-DS-zd3"/>
@@ -641,7 +641,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lTd-Re-uT2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Teacher" image="Teacher" landscapeImage="Teacher" largeContentSizeImage="Teacher" id="Wa9-Y6-owv"/>
+                    <navigationItem key="navigationItem" title="Teacher" id="gb9-eT-3cL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="zSH-eG-UGz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="qee-g3-R6n"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="uJT-wt-NPf" id="7HB-8h-nRY"/>
                         <outlet property="schedule" destination="94E-Qq-nrD" id="F4D-NA-8r7"/>
@@ -650,16 +653,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akJ-2G-IBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4318.840579710145" y="275.89285714285711"/>
+            <point key="canvasLocation" x="5265" y="276"/>
         </scene>
         <!--Exams-->
         <scene sceneID="fqI-BH-aNa">
             <objects>
                 <tableViewController id="0Rd-eZ-bG4" customClass="SExamsTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zIv-0W-jzh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zIv-0W-jzh" customClass="SDStateTableView" customModule="SDStateTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="0Rd-eZ-bG4" id="QUc-Ag-xTP"/>
@@ -670,7 +673,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRq-60-abo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5228.985507246377" y="944.86607142857133"/>
+            <point key="canvasLocation" x="5257" y="944"/>
         </scene>
         <!--Settings-->
         <scene sceneID="eTL-g1-SJb">
@@ -982,7 +985,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                                                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1042,7 +1045,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg0-4G-Ehv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6300" y="-405"/>
+            <point key="canvasLocation" x="7438" y="-342"/>
         </scene>
         <!--Exams-->
         <scene sceneID="nrk-OU-VXH">
@@ -1050,7 +1053,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HUo-p3-goi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Exams" image="WeekView" landscapeImage="WeekView" largeContentSizeImage="WeekView" id="TCZ-EL-0im"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngr-nP-sWP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ngr-nP-sWP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1100,7 +1103,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4j-P6-vCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3384.8000000000002" y="-1280.5097451274364"/>
+            <point key="canvasLocation" x="5257" y="-1290"/>
+        </scene>
+        <!--Teacher-->
+        <scene sceneID="yB9-H9-7FY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HgQ-jr-wJp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Teacher" image="Teacher" landscapeImage="Teacher" largeContentSizeImage="Teacher" id="Wa9-Y6-owv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZEO-RN-nNS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="MainAccentColor"/>
+                        <color key="barTintColor" name="NavBarColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OnN-AB-iHi" kind="relationship" relationship="rootViewController" id="xJ2-2p-BMU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxB-GS-scp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4317.6000000000004" y="275.71214392803603"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
