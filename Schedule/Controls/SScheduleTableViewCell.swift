@@ -1,4 +1,5 @@
 import UIKit
+import CommonCrypto
 
 enum SCellKind {
     case student
@@ -17,10 +18,15 @@ final class SScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var subgroup: UILabel!
+    @IBOutlet weak var line: UIView!
     
     // MARK: - Public Methods
     
     func configure(with classData: SClass, cellKind: SCellKind) {
+        if let color = generateColor(for: classData.subject) {
+            line.backgroundColor = color
+        }
+        
         let bounds = STimeManager.shared.timetable[classData.number]!
         beginTime.text = bounds.0
         endTime.text = bounds.1
@@ -58,4 +64,34 @@ final class SScheduleTableViewCell: UITableViewCell {
         subgroup.isHidden = true
     }
     
+    func generateColor(for className: String) -> UIColor? {
+        let digest = MD5(className)
+        
+        let len = digest.count
+        if len >= 3 {
+            let r = CGFloat(digest[len - 1]) / 256.0
+            let g = CGFloat(digest[len - 2]) / 256.0
+            let b = CGFloat(digest[len - 3]) / 256.0
+            
+            let color = UIColor(red: r, green: g, blue: b, alpha: 1.0)
+            
+            return color
+        } else {
+            return nil
+        }
+    }
+    
+}
+
+func MD5(_ str: String) -> [UInt8] {
+    if let strData = str.data(using: String.Encoding.utf8) {
+        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+ 
+        _ = strData.withUnsafeBytes {
+            CC_MD5($0.baseAddress, UInt32(strData.count), &digest)
+        }
+
+        return digest
+    }
+    return [UInt8]()
 }
