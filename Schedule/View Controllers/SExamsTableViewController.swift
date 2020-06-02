@@ -25,16 +25,12 @@ class SExamsTableViewController: UITableViewController {
             message: NSLocalizedString("NoExamsSoon", comment: ""),
             buttonTitle: NSLocalizedString("Refresh", comment: ""),
             buttonConfig: { button in return }, retryAction: {
-                self.tableView.setContentOffset(
-                    CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
                 self.updateData()
             }))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if !firstSetupFinished {
-            tableView.setContentOffset(
-                CGPoint(x: 0, y: -refreshControl!.frame.size.height), animated: true)
             updateData()
         }
     }
@@ -57,9 +53,6 @@ class SExamsTableViewController: UITableViewController {
                             errorImage: nil, title: "Пока расписания нет",
                             message: "Экзамены не скоро", buttonTitle: "Обновить",
                             buttonConfig: { button in return }, retryAction: {
-                                self.tableView.setContentOffset(
-                                    CGPoint(x: 0, y: -self.refreshControl!.frame.size.height),
-                                    animated: true)
                                 self.updateData()
                         }))
                     }
