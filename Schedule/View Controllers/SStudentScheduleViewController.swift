@@ -39,9 +39,9 @@ class SStudentScheduleViewController: UIViewController {
         }
     }
     
-    var lastSelectedClass: SelectedClass? = nil
-    
+    private var lastSelectedClass: SelectedClass? = nil
     private lazy var calendarSelectionViewController = UINavigationController()
+    private let scheduleSource = SScheduleData(for: .student)
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -54,8 +54,8 @@ class SStudentScheduleViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.layoutIfNeeded()
         
-        SScheduleManager.shared.studentSchedule.userId = SDefaults.studentId
-        SScheduleManager.shared.studentSchedule.didFinishDataUpdate = { error in
+        scheduleSource.userId = SDefaults.studentId
+        scheduleSource.didFinishDataUpdate = { error in
             if let err = error {
                 debugPrint(err.localizedDescription)
             } else {
@@ -73,9 +73,9 @@ class SStudentScheduleViewController: UIViewController {
         }
         
         calendar.weekWasChanged = { calendar, newWeekOffset in
-            SScheduleManager.shared.studentSchedule.schedule.removeAll()
+            self.scheduleSource.schedule.removeAll()
             self.schedule.prepareForUpdate()
-            SScheduleManager.shared.studentSchedule.weekOffset = newWeekOffset
+            self.scheduleSource.weekOffset = newWeekOffset
         }
         
         schedule.dayWasChanged = { schedule, day in
@@ -83,7 +83,7 @@ class SStudentScheduleViewController: UIViewController {
         }
         
         schedule.weekWasChanged = { schedule, direction in
-            SScheduleManager.shared.studentSchedule.schedule.removeAll()
+            self.scheduleSource.schedule.removeAll()
             switch direction {
                 case .back:
                     self.calendar.weekOffset -= 1
@@ -94,7 +94,7 @@ class SStudentScheduleViewController: UIViewController {
             }
             
             schedule.prepareForUpdate()
-            SScheduleManager.shared.studentSchedule.weekOffset = self.calendar.weekOffset
+            self.scheduleSource.weekOffset = self.calendar.weekOffset
         }
         
         schedule.tableViewDataSource = self
@@ -123,7 +123,7 @@ class SStudentScheduleViewController: UIViewController {
     @objc private func onModalDismiss(_ notification: Notification) {
         if let result = notification.userInfo {
             SDefaults.studentId = (result as! [String : Int])["UserId"]
-            SScheduleManager.shared.studentSchedule.userId = SDefaults.studentId
+            scheduleSource.userId = SDefaults.studentId
             messageView.isHidden = true
             updateSchedule()
         }
@@ -131,7 +131,7 @@ class SStudentScheduleViewController: UIViewController {
     
     private func updateSchedule() {
         schedule.prepareForUpdate()
-        SScheduleManager.shared.studentSchedule.updateData()
+        scheduleSource.updateData()
     }
     
     private func chooseCalendar() {
@@ -148,7 +148,7 @@ class SStudentScheduleViewController: UIViewController {
         if segue.identifier ?? "" == "ClassDetailFromStudentSegue" {
             guard let lastSelectedClass = lastSelectedClass else { return }
             let classDetails = segue.destination as! SClassDetailsViewController
-            classDetails.classData = SScheduleManager.shared.studentSchedule.classData(number: lastSelectedClass.number, on: lastSelectedClass.day)
+            classDetails.classData = scheduleSource.classData(number: lastSelectedClass.number, on: lastSelectedClass.day)
             classDetails.userKind = .student
             
         } else if segue.identifier ?? "" == "SetupFromStudentSegue" {
@@ -170,14 +170,14 @@ extension SStudentScheduleViewController: UITableViewDataSource {
         if tableView.tag == 0 || tableView.tag == 7 {
             return 0
         } else {
-            let numberOfClasses = SScheduleManager.shared.studentSchedule.numberOfClasses(on: SWeekDay(rawValue: tableView.tag)!)
+            let numberOfClasses = scheduleSource.numberOfClasses(on: SWeekDay(rawValue: tableView.tag)!)
             return numberOfClasses
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: schedule.reuseIdentifier, for: indexPath) as! SScheduleTableViewCell
-        let classData = SScheduleManager.shared.studentSchedule.classData(number: indexPath.row, on: SWeekDay(rawValue: tableView.tag)!)!
+        let classData = scheduleSource.classData(number: indexPath.row, on: SWeekDay(rawValue: tableView.tag)!)!
         cell.configure(with: classData, cellKind: .student)
         return cell
     }
@@ -201,8 +201,8 @@ extension SStudentScheduleViewController: EKCalendarChooserDelegate {
     func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
         if let selectedCalendar = calendarChooser.selectedCalendars.first {
             do {
-                let schedule = SScheduleManager.shared.studentSchedule.schedule
-                let weekOffset = SScheduleManager.shared.studentSchedule.weekOffset
+                let schedule = scheduleSource.schedule
+                let weekOffset = scheduleSource.weekOffset
                 try SExportManager.shared.export(schedule, weekOffset: weekOffset, into: selectedCalendar)
             } catch let error {
                 print(error.localizedDescription)
