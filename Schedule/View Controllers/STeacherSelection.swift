@@ -11,7 +11,7 @@ final class STeacherSelectionTableViewController: SSearchableTableViewController
     
     @IBAction func onCancelButtonTap(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: Notification.Name("TeacherSetupModalDismiss"), object: nil, userInfo: nil)
         }
     }
     
@@ -124,7 +124,7 @@ final class STeacherSelectionTableViewController: SSearchableTableViewController
         }
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedTeacher!])
+            NotificationCenter.default.post(name: Notification.Name("TeacherSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedTeacher!])
         }
     }
     

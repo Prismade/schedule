@@ -55,7 +55,7 @@ class SStudentScheduleViewController: UIViewController {
         
         NotificationCenter.default.addObserver(
             self, selector: #selector(onModalDismiss(_:)),
-            name: Notification.Name("UserSetupModalDismiss"), object: nil)
+            name: Notification.Name("StudentSetupModalDismiss"), object: nil)
         
         scheduleSource.userId = SDefaults.studentId
         scheduleSource.didFinishDataUpdate = { error in

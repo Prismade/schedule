@@ -11,7 +11,7 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
     
     @IBAction func onFinishButtonTap(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: Notification.Name("StudentSetupModalDismiss"), object: nil, userInfo: nil)
         }
     }
     

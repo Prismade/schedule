@@ -615,27 +615,45 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94E-Qq-nrD" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-MK-49w" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uJT-wt-NPf" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="3De-hx-1Io"/>
+                            <constraint firstItem="ew5-MK-49w" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="7us-Zn-6zc"/>
                             <constraint firstItem="lTd-Re-uT2" firstAttribute="trailing" secondItem="uJT-wt-NPf" secondAttribute="trailing" id="Dhe-Gq-Zbs"/>
                             <constraint firstItem="uJT-wt-NPf" firstAttribute="top" secondItem="lTd-Re-uT2" secondAttribute="top" id="cua-lT-Dfk"/>
+                            <constraint firstItem="lTd-Re-uT2" firstAttribute="trailing" secondItem="ew5-MK-49w" secondAttribute="trailing" id="f7V-nk-NW4"/>
+                            <constraint firstItem="lTd-Re-uT2" firstAttribute="bottom" secondItem="ew5-MK-49w" secondAttribute="bottom" id="hcg-LE-aKC"/>
                             <constraint firstItem="94E-Qq-nrD" firstAttribute="top" secondItem="uJT-wt-NPf" secondAttribute="bottom" id="iBr-mh-MrK"/>
                             <constraint firstItem="94E-Qq-nrD" firstAttribute="leading" secondItem="lTd-Re-uT2" secondAttribute="leading" id="t1W-v0-wY4"/>
+                            <constraint firstItem="ew5-MK-49w" firstAttribute="top" secondItem="lTd-Re-uT2" secondAttribute="top" id="v9T-YQ-vbi"/>
                             <constraint firstItem="lTd-Re-uT2" firstAttribute="bottom" secondItem="94E-Qq-nrD" secondAttribute="bottom" id="vMP-DS-zd3"/>
                             <constraint firstItem="lTd-Re-uT2" firstAttribute="trailing" secondItem="94E-Qq-nrD" secondAttribute="trailing" id="voH-Jp-ZN7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lTd-Re-uT2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Teacher" id="gb9-eT-3cL">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="zSH-eG-UGz"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="qee-g3-R6n"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="zSH-eG-UGz">
+                            <connections>
+                                <action selector="calendarExportButtonTapped:" destination="OnN-AB-iHi" id="JcU-za-wrK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="qee-g3-R6n">
+                            <connections>
+                                <action selector="setupUserButtonTapped:" destination="OnN-AB-iHi" id="tn7-YY-qVe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="uJT-wt-NPf" id="7HB-8h-nRY"/>
+                        <outlet property="placeholder" destination="ew5-MK-49w" id="h9l-rr-Olo"/>
                         <outlet property="schedule" destination="94E-Qq-nrD" id="F4D-NA-8r7"/>
                         <segue destination="K5Q-HM-Tkg" kind="show" identifier="ClassDetailFromTeacherSegue" id="3nJ-X3-4cG"/>
+                        <segue destination="OuI-pv-vlF" kind="presentation" identifier="SetupFromTeacherSegue" id="aSf-vr-pId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akJ-2G-IBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1079,6 +1097,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OuI-pv-vlF" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GwS-8b-8ip"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QsL-ax-5Ik">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1115,7 +1134,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bTQ-gw-ZPF"/>
+        <segue reference="aSf-vr-pId"/>
+        <segue reference="3nJ-X3-4cG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CalendarPlus" width="30" height="30"/>
