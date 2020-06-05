@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="kQi-30-ZQ0" userLabel="SNibWeekView" customClass="SNibWeekView" customModule="Schedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="561" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-zN-pnz" userLabel="Day 1" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="eUl-O0-OHx" appends="YES" id="Kj1-vh-rQ0"/>
+                    </connections>
+                </view>
+                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-Df-mhk" userLabel="Day 2" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="93.5" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="VTu-YF-CsR" appends="YES" id="0jy-IA-vCP"/>
+                    </connections>
+                </view>
+                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUA-zX-CQt" userLabel="Day 3" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="187" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="2u3-cR-7ft" appends="YES" id="c4D-Ht-1ID"/>
+                    </connections>
+                </view>
+                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKI-b4-P3a" userLabel="Day 4" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="280.5" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="G8n-O2-VD8" appends="YES" id="hMs-WI-5Iq"/>
+                    </connections>
+                </view>
+                <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXM-xx-NGQ" userLabel="Day 5" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="374" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="e3C-bW-v3Z" appends="YES" id="eiM-BR-dTX"/>
+                    </connections>
+                </view>
+                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT3-5t-BbC" userLabel="Day 6" customClass="SDayView" customModule="Schedule" customModuleProvider="target">
+                    <rect key="frame" x="467.5" y="0.0" width="93.5" height="110"/>
+                    <gestureRecognizers/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="dayOff" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="bbU-UP-xPY" appends="YES" id="YRA-5M-NsQ"/>
+                    </connections>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="415-R0-Jvx"/>
+            <connections>
+                <outletCollection property="tapRecognizers" destination="eUl-O0-OHx" collectionClass="NSMutableArray" id="RoN-QQ-aHC"/>
+                <outletCollection property="tapRecognizers" destination="VTu-YF-CsR" collectionClass="NSMutableArray" id="rfX-42-3wi"/>
+                <outletCollection property="tapRecognizers" destination="2u3-cR-7ft" collectionClass="NSMutableArray" id="TCA-LZ-2N4"/>
+                <outletCollection property="tapRecognizers" destination="G8n-O2-VD8" collectionClass="NSMutableArray" id="7Bd-Fn-8rz"/>
+                <outletCollection property="tapRecognizers" destination="e3C-bW-v3Z" collectionClass="NSMutableArray" id="bFJ-Gd-K78"/>
+                <outletCollection property="tapRecognizers" destination="bbU-UP-xPY" collectionClass="NSMutableArray" id="3O3-gk-ac0"/>
+                <outletCollection property="days" destination="Td4-zN-pnz" collectionClass="NSMutableArray" id="ZIg-P4-WpF"/>
+                <outletCollection property="days" destination="BT8-Df-mhk" collectionClass="NSMutableArray" id="iLs-p7-hQf"/>
+                <outletCollection property="days" destination="pUA-zX-CQt" collectionClass="NSMutableArray" id="h2C-dC-wT4"/>
+                <outletCollection property="days" destination="iKI-b4-P3a" collectionClass="NSMutableArray" id="hmK-st-V88"/>
+                <outletCollection property="days" destination="WXM-xx-NGQ" collectionClass="NSMutableArray" id="8uF-6f-oum"/>
+                <outletCollection property="days" destination="sT3-5t-BbC" collectionClass="NSMutableArray" id="fty-cM-RHS"/>
+            </connections>
+            <point key="canvasLocation" x="116.66666666666667" y="-171.42857142857142"/>
+        </stackView>
+        <tapGestureRecognizer id="eUl-O0-OHx"/>
+        <tapGestureRecognizer id="VTu-YF-CsR"/>
+        <tapGestureRecognizer id="2u3-cR-7ft"/>
+        <tapGestureRecognizer id="G8n-O2-VD8"/>
+        <tapGestureRecognizer id="e3C-bW-v3Z"/>
+        <tapGestureRecognizer id="bbU-UP-xPY"/>
+    </objects>
+</document>

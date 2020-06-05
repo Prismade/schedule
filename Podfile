@@ -1,16 +1,15 @@
 platform :ios, '11.0'
 
-target 'schedule' do
-  # use_frameworks!
-  pod 'Alamofire', '~> 5.0.0-rc.3'
+target 'Schedule' do
+  use_frameworks!
+  
   pod 'SwiftSoup'
+  pod 'SDStateTableView'
+  pod 'AFCurvedArrowView'
+  pod 'ReachabilitySwift'
+  pod 'Alamofire', '~> 5.1'
   pod 'Kingfisher', '~> 5.0'
-
-  target 'scheduleTests' do
-    inherit! :search_paths
-  end
-
-  target 'scheduleUITests' do
-    inherit! :search_paths
-  end
+  
+  # For demonstrations
+  pod 'ShowTime'
 end
