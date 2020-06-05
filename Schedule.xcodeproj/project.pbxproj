@@ -55,6 +55,8 @@
 		247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */; };
 		24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */; };
 		24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0BD07247BF36C0000ED47 /* SDefaults.swift */; };
+		24B1DB04248A87E30068D15F /* SSchedulePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1DB03248A87E30068D15F /* SSchedulePlaceholder.swift */; };
+		24B1DB06248A88150068D15F /* SSchedulePlaceholder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B1DB05248A88150068D15F /* SSchedulePlaceholder.xib */; };
 		24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BF4B57245B35BE0048D6A5 /* SDayView.xib */; };
 		24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF4B59245B378A0048D6A5 /* SDayView.swift */; };
 		24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7FE90245C872E000CDA9E /* STimeManager.swift */; };
@@ -118,6 +120,8 @@
 		247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSettingsTableViewController.swift; sourceTree = "<group>"; };
 		24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheSettingsTableViewController.swift; sourceTree = "<group>"; };
 		24B0BD07247BF36C0000ED47 /* SDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDefaults.swift; sourceTree = "<group>"; };
+		24B1DB03248A87E30068D15F /* SSchedulePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSchedulePlaceholder.swift; sourceTree = "<group>"; };
+		24B1DB05248A88150068D15F /* SSchedulePlaceholder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSchedulePlaceholder.xib; sourceTree = "<group>"; };
 		24BF4B57245B35BE0048D6A5 /* SDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDayView.xib; sourceTree = "<group>"; };
 		24BF4B59245B378A0048D6A5 /* SDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDayView.swift; sourceTree = "<group>"; };
 		24E7FE90245C872E000CDA9E /* STimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STimeManager.swift; sourceTree = "<group>"; };
@@ -237,11 +241,13 @@
 				243B61B9245B71E900FD7455 /* SCalendarView.swift */,
 				2466640424607B740043BA4C /* SScheduleView.swift */,
 				24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */,
+				24B1DB03248A87E30068D15F /* SSchedulePlaceholder.swift */,
 				24BF4B57245B35BE0048D6A5 /* SDayView.xib */,
 				243B61B3245B581000FD7455 /* SWeekView.xib */,
 				246663FF246073D30043BA4C /* SCalendarView.xib */,
 				2466640624607B840043BA4C /* SScheduleView.xib */,
 				247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */,
+				24B1DB05248A88150068D15F /* SSchedulePlaceholder.xib */,
 				2424F233244FA14800C1D91C /* CalendarColors.xcassets */,
 			);
 			path = Controls;
@@ -331,6 +337,7 @@
 				242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */,
 				24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */,
 				246663FD246073D30043BA4C /* SCalendarView.xib in Resources */,
+				24B1DB06248A88150068D15F /* SSchedulePlaceholder.xib in Resources */,
 				2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */,
 				2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */,
 				247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */,
@@ -409,6 +416,7 @@
 				24567A5F24787EDB004BAD60 /* SClassDetailsViewController.swift in Sources */,
 				24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */,
 				24567A632478866B004BAD60 /* STeacherDetailsViewController.swift in Sources */,
+				24B1DB04248A87E30068D15F /* SSchedulePlaceholder.swift in Sources */,
 				24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */,
 				243B61B6245B599200FD7455 /* SWeekView.swift in Sources */,
 				24661C8B247EC3D9001AE48C /* STeacherSelection.swift in Sources */,

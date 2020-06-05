@@ -269,24 +269,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQt-7v-8VZ" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO" userLabel="Placeholder" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-z5-p0o">
-                                        <rect key="frame" x="153" y="276.5" width="69" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstItem="2a9-z5-p0o" firstAttribute="centerY" secondItem="DYe-cO-yIO" secondAttribute="centerY" id="jNJ-RP-way"/>
-                                    <constraint firstItem="2a9-z5-p0o" firstAttribute="centerX" secondItem="DYe-cO-yIO" secondAttribute="centerX" id="oQU-bZ-Nvx"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <gestureRecognizers/>
@@ -322,8 +310,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="PKZ-Pa-sw2" id="Gsi-ur-jMX"/>
-                        <outlet property="messageLabel" destination="2a9-z5-p0o" id="OkS-iB-Od1"/>
-                        <outlet property="messageView" destination="DYe-cO-yIO" id="QGz-cH-U5C"/>
+                        <outlet property="placeholder" destination="DYe-cO-yIO" id="QGz-cH-U5C"/>
                         <outlet property="schedule" destination="rQt-7v-8VZ" id="h2b-AC-n16"/>
                         <segue destination="K5Q-HM-Tkg" kind="show" identifier="ClassDetailFromStudentSegue" id="bTQ-gw-ZPF"/>
                         <segue destination="OuI-pv-vlF" kind="presentation" identifier="SetupFromStudentSegue" id="ywc-KR-mdt"/>

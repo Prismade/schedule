@@ -140,7 +140,7 @@ final class SScheduleView: UIView {
         for table in view.tableViews {
             guard table.tag != 0 && table.tag != 7 else { continue }
             table.reloadData()
-            table.setState(.loading(message: "Loading schedule"))
+            table.setState(.loading(message: NSLocalizedString("Loading", comment: "")))
         }
     }
     

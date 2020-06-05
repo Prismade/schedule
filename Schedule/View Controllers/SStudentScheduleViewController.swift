@@ -2,6 +2,7 @@ import UIKit
 import EventKit
 import EventKitUI
 import SDStateTableView
+import AFCurvedArrowView
 
 class SStudentScheduleViewController: UIViewController {
     
@@ -12,8 +13,7 @@ class SStudentScheduleViewController: UIViewController {
     
     @IBOutlet weak var calendar: SCalendarView!
     @IBOutlet weak var schedule: SScheduleView!
-    @IBOutlet weak var messageView: UIView!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var placeholder: SSchedulePlaceholder!
     
     @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SetupFromStudentSegue", sender: self)
@@ -32,7 +32,10 @@ class SStudentScheduleViewController: UIViewController {
         case .authorized:
             chooseCalendar()
         case .denied:
-            let alert = UIAlertController(title: "\(NSLocalizedString("noPerm", comment: ""))", message: "\(NSLocalizedString("noPermMsg", comment: ""))", preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "\(NSLocalizedString("noPerm", comment: ""))",
+                message: "\(NSLocalizedString("noPermMsg", comment: ""))",
+                preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
         default: return
@@ -50,9 +53,9 @@ class SStudentScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onModalDismiss(_:)), name: Notification.Name("UserSetupModalDismiss"), object: nil)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.layoutIfNeeded()
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(onModalDismiss(_:)),
+            name: Notification.Name("UserSetupModalDismiss"), object: nil)
         
         scheduleSource.userId = SDefaults.studentId
         scheduleSource.didFinishDataUpdate = { error in
@@ -73,7 +76,9 @@ class SStudentScheduleViewController: UIViewController {
         }
         
         calendar.weekWasChanged = { calendar, newWeekOffset in
-            self.scheduleSource.schedule.removeAll()
+            for day in self.scheduleSource.schedule {
+                day.classes.removeAll()
+            }
             self.schedule.prepareForUpdate()
             self.scheduleSource.weekOffset = newWeekOffset
         }
@@ -100,12 +105,14 @@ class SStudentScheduleViewController: UIViewController {
         schedule.tableViewDataSource = self
         schedule.tableViewDelegate = self
         
+        placeholder.message = NSLocalizedString("NeedGroup", comment: "")
         if SDefaults.studentId != nil {
-            messageView.isHidden = true
+            placeholder.isHidden = true
+            navigationController?.navigationBar.shadowImage = UIImage()
+            navigationController?.navigationBar.layoutIfNeeded()
             updateSchedule()
         } else {
-            messageView.isHidden = false
-            messageLabel.text = NSLocalizedString("NeedGroup", comment: "")
+            placeholder.isHidden = false
         }
     }
     
@@ -124,7 +131,9 @@ class SStudentScheduleViewController: UIViewController {
         if let result = notification.userInfo {
             SDefaults.studentId = (result as! [String : Int])["UserId"]
             scheduleSource.userId = SDefaults.studentId
-            messageView.isHidden = true
+            placeholder.isHidden = true
+            navigationController?.navigationBar.shadowImage = UIImage()
+            navigationController?.navigationBar.layoutIfNeeded()
             updateSchedule()
         }
     }
@@ -135,7 +144,10 @@ class SStudentScheduleViewController: UIViewController {
     }
     
     private func chooseCalendar() {
-        let ccvc = EKCalendarChooser(selectionStyle: .single, displayStyle: .writableCalendarsOnly, eventStore: SExportManager.shared.eventStore)
+        let ccvc = EKCalendarChooser(
+            selectionStyle: .single,
+            displayStyle: .writableCalendarsOnly,
+            eventStore: SExportManager.shared.eventStore)
         ccvc.delegate = self
         ccvc.showsDoneButton = true
         ccvc.showsCancelButton = true

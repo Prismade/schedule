@@ -3,7 +3,7 @@ import Alamofire
 
 final class SScheduleDay: Codable {
     let weekDay: SWeekDay
-    let classes: [SClass]
+    var classes: [SClass]
     
     init(weekDay: SWeekDay, classes: [SClass]) {
         self.weekDay = weekDay
