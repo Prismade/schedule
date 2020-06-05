@@ -107,10 +107,10 @@ final class SScheduleView: UIView {
             t.register(UINib(nibName: "SScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
         }
         
-        (view.subviews.first { $0.tag == 0 }! as! SDStateTableView).currentState =
-            .loading(message: "Loading schedule")
-        (view.subviews.first { $0.tag == 7 }! as! SDStateTableView).currentState =
-            .loading(message: "Loading schedule")
+        (view.subviews.first { $0.tag == 0 }! as! SDStateTableView).setState(
+            .loading(message: NSLocalizedString("Loading", comment: "")))
+        (view.subviews.first { $0.tag == 7 }! as! SDStateTableView).setState(
+            .loading(message: NSLocalizedString("Loading", comment: "")))
     }
     
     // Call this after parent viewcontroller's did layout subviews
@@ -168,14 +168,12 @@ final class SScheduleView: UIView {
             view.setContentOffset(CGPoint(
                 x: pageSize.width * CGFloat(shownDay.rawValue),
                 y: view.contentOffset.y), animated: false)
-            reloadData()
         } else if currentPhysicalPage == 7 {
             weekWasChanged?(self, .forward)
             shownDay = .monday
             view.setContentOffset(CGPoint(
                 x: pageSize.width * CGFloat(shownDay.rawValue),
                 y: view.contentOffset.y), animated: false)
-            reloadData()
         } else {
             shownDay = SWeekDay(rawValue: currentPhysicalPage)!
         }
@@ -189,7 +187,7 @@ final class SScheduleView: UIView {
 
 extension SScheduleView: UIScrollViewDelegate {
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard lastScrollDirection != .none else { return }
         recenterIfNecessary()
     }

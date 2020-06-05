@@ -124,7 +124,7 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
         }
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("UserSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedGroup!])
+            NotificationCenter.default.post(name: Notification.Name("StudentSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedGroup!])
         }
     }
     

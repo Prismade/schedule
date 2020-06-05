@@ -76,11 +76,7 @@ class SStudentScheduleViewController: UIViewController {
         }
         
         calendar.weekWasChanged = { calendar, newWeekOffset in
-            for day in self.scheduleSource.schedule {
-                day.classes.removeAll()
-            }
-            self.schedule.prepareForUpdate()
-            self.scheduleSource.weekOffset = newWeekOffset
+            self.updateSchedule(newWeekOffset: newWeekOffset)
         }
         
         schedule.dayWasChanged = { schedule, day in
@@ -98,8 +94,7 @@ class SStudentScheduleViewController: UIViewController {
                     self.calendar.selectedDay = .monday
             }
             
-            schedule.prepareForUpdate()
-            self.scheduleSource.weekOffset = self.calendar.weekOffset
+            self.updateSchedule(newWeekOffset: self.calendar.weekOffset)
         }
         
         schedule.tableViewDataSource = self
@@ -138,9 +133,17 @@ class SStudentScheduleViewController: UIViewController {
         }
     }
     
-    private func updateSchedule() {
+    private func updateSchedule(newWeekOffset: Int? = nil) {
+        for day in self.scheduleSource.schedule {
+            day.classes.removeAll()
+        }
         schedule.prepareForUpdate()
-        scheduleSource.updateData()
+        
+        if let weekOffset = newWeekOffset {
+            self.scheduleSource.weekOffset = weekOffset
+        } else {
+            scheduleSource.updateData()
+        }
     }
     
     private func chooseCalendar() {
