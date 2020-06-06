@@ -31,6 +31,8 @@ final class SDefaults {
     static let teacherCacheFilePrefixKey = "TeacherCacheFilePrefix"
     static let buildingCacheFilePrefixKey = "BuildingCacheFilePrefix"
     static let employeeCacheFilePrefixKey = "EmployeeCacheFilePrefix"
+    static let studentNameKey = "StudentName"
+    static let teacherNameKey = "TeacherName"
     
     static let defaults = UserDefaults.standard
     
@@ -83,6 +85,26 @@ final class SDefaults {
         get {
             let userKind = defaults.string(forKey: cachingUserKindKey)!
             return CacheUserKind(rawValue: userKind)!
+        }
+    }
+    
+    static var studentName: String? {
+        set {
+            defaults.set(newValue, forKey: studentNameKey)
+        }
+        
+        get {
+            return defaults.string(forKey: studentNameKey)
+        }
+    }
+    
+    static var teacherName: String? {
+        set {
+            defaults.set(newValue, forKey: teacherNameKey)
+        }
+        
+        get {
+            return defaults.string(forKey: teacherNameKey)
         }
     }
     

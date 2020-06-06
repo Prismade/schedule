@@ -58,6 +58,7 @@ class SStudentScheduleViewController: UIViewController {
             name: Notification.Name("StudentSetupModalDismiss"), object: nil)
         
         scheduleSource.userId = SDefaults.studentId
+        navigationItem.title = SDefaults.studentName
         scheduleSource.didFinishDataUpdate = { error in
             if let err = error {
                 debugPrint(err.localizedDescription)
@@ -124,8 +125,10 @@ class SStudentScheduleViewController: UIViewController {
     
     @objc private func onModalDismiss(_ notification: Notification) {
         if let result = notification.userInfo {
-            SDefaults.studentId = (result as! [String : Int])["UserId"]
+            SDefaults.studentId = ((result as! [String : Any])["UserId"] as! Int)
+            SDefaults.studentName = ((result as! [String : Any])["UserName"] as! String)
             scheduleSource.userId = SDefaults.studentId
+            navigationItem.title = SDefaults.studentName
             placeholder.isHidden = true
             navigationController?.navigationBar.shadowImage = UIImage()
             navigationController?.navigationBar.layoutIfNeeded()

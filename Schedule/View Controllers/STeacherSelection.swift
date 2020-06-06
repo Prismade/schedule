@@ -19,7 +19,7 @@ final class STeacherSelectionTableViewController: SSearchableTableViewController
     
     var division: Int!
     var department: Int!
-    var selectedTeacher: Int!
+    var selectedTeacher: STeacher!
     var needCancelButton: Bool!
     var data = [STeacher]()
     var filteredData = [STeacher]()
@@ -118,13 +118,13 @@ final class STeacherSelectionTableViewController: SSearchableTableViewController
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering {
-            selectedTeacher = filteredData[indexPath.row].id
+            selectedTeacher = filteredData[indexPath.row]
         } else {
-            selectedTeacher = data[indexPath.row].id
+            selectedTeacher = data[indexPath.row]
         }
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("TeacherSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedTeacher!])
+            NotificationCenter.default.post(name: Notification.Name("TeacherSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedTeacher.id, "UserName": self.selectedTeacher.name])
         }
     }
     

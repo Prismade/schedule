@@ -19,7 +19,7 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
     
     var division: Int!
     var course: Int!
-    var selectedGroup: Int!
+    var selectedGroup: SGroup!
     var needCancelButton = true
     var data = [SGroup]()
     var filteredData = [SGroup]()
@@ -118,13 +118,13 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering {
-            selectedGroup = filteredData[indexPath.row].id
+            selectedGroup = filteredData[indexPath.row]
         } else {
-            selectedGroup = data[indexPath.row].id
+            selectedGroup = data[indexPath.row]
         }
         
         navigationController?.dismiss(animated: true) {
-            NotificationCenter.default.post(name: Notification.Name("StudentSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedGroup!])
+            NotificationCenter.default.post(name: Notification.Name("StudentSetupModalDismiss"), object: nil, userInfo: ["UserId": self.selectedGroup.id, "UserName": self.selectedGroup.title])
         }
     }
     
