@@ -1,4 +1,5 @@
 import UIKit
+import PKHUD
 
 class SCacheSettingsTableViewController: UITableViewController {
     
@@ -115,8 +116,14 @@ class SCacheSettingsTableViewController: UITableViewController {
                     tableView.deselectRow(at: indexPath, animated: true)
                     do {
                         try SCacheManager.shared.clearCache()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                           HUD.flash(.success, delay: 1.0)
+                        }
                     } catch {
                         print(error.localizedDescription)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                           HUD.flash(.error, delay: 1.0)
+                        }
                     }
                 default: return
             }

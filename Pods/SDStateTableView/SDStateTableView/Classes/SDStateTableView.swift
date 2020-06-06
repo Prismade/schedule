@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 public enum SDStateTableViewState {
     case dataAvailable
     case loading(message: String)
@@ -136,7 +135,7 @@ public class SDStateTableView: UITableView {
     
     public var currentState: SDStateTableViewState = .unknown {
         didSet {
-            if case SDStateTableViewState.dataAvailable = self.currentState {
+            if case SDStateTableViewState.dataAvailable  = self.currentState {
                 isScrollEnabled = true
             } else {
                 // Data is available, let's decide according to the
