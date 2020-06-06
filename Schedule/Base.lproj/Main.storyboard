@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="bsb-IE-hNL" customClass="SDivisionSelectTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a6X-p3-zXh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -64,7 +64,7 @@
             <objects>
                 <tableViewController id="E5e-J5-aIs" customClass="SDepartmentSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uzd-T7-9cR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -113,7 +113,7 @@
             <objects>
                 <tableViewController id="n55-Uy-fWO" customClass="STeacherSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iz4-G8-CEX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -160,7 +160,7 @@
             <objects>
                 <tableViewController id="Fdw-mh-cc0" customClass="SCourseSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rWO-ga-aGi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -209,7 +209,7 @@
             <objects>
                 <tableViewController id="ZGX-WF-HPl" customClass="SGroupSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAM-1R-h38">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -256,7 +256,7 @@
             <objects>
                 <viewController id="nZw-Vi-CTv" customClass="SStudentScheduleViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bLL-TM-Sac">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-Pa-sw2" customClass="SCalendarView" customModule="Schedule" customModuleProvider="target">
@@ -269,7 +269,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQt-7v-8VZ" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO" userLabel="Placeholder" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO" userLabel="Placeholder" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -325,14 +325,14 @@
             <objects>
                 <viewController id="K5Q-HM-Tkg" customClass="SClassDetailsViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLa-8e-mow">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyE-Q0-vKs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNj-zq-FCa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="636"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aib-TZ-Gov">
                                                 <rect key="frame" x="15" y="35" width="345" height="36"/>
@@ -380,7 +380,7 @@
                                         <constraints>
                                             <constraint firstItem="4sW-cn-qRY" firstAttribute="trailing" secondItem="aib-TZ-Gov" secondAttribute="trailing" id="57n-1f-avO"/>
                                             <constraint firstItem="4sW-cn-qRY" firstAttribute="leading" secondItem="89I-Mz-bbp" secondAttribute="leading" id="5ZE-hR-k45"/>
-                                            <constraint firstAttribute="bottom" secondItem="Q99-PM-NVp" secondAttribute="bottom" constant="10" id="8kp-dR-bO8"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q99-PM-NVp" secondAttribute="bottom" constant="35" id="8kp-dR-bO8"/>
                                             <constraint firstItem="Q99-PM-NVp" firstAttribute="trailing" secondItem="aib-TZ-Gov" secondAttribute="trailing" id="C5i-i6-0HG"/>
                                             <constraint firstItem="hMs-Uy-zme" firstAttribute="top" secondItem="4sW-cn-qRY" secondAttribute="bottom" constant="10" id="DZB-NX-dmB"/>
                                             <constraint firstItem="89I-Mz-bbp" firstAttribute="leading" secondItem="vN3-bk-q2D" secondAttribute="leading" id="Fhw-hK-KoG"/>
@@ -444,7 +444,7 @@
             <objects>
                 <viewController id="l6p-6U-hOk" customClass="STeacherDetailsViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HrC-nX-dab">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="J0m-o9-hDa">
@@ -515,7 +515,7 @@
                                                 <color key="textColor" name="MainAccentColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiZ-zL-M58">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiZ-zL-M58" customClass="SCopyableLabel" customModule="Schedule" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="235" width="345" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -532,7 +532,7 @@
                                     <constraint firstItem="XHQ-O2-JiV" firstAttribute="trailing" secondItem="cwi-4a-KQe" secondAttribute="trailing" constant="15" id="esc-rj-PQn"/>
                                     <constraint firstItem="cwi-4a-KQe" firstAttribute="top" secondItem="pQB-Ha-2bI" secondAttribute="bottom" constant="35" id="qs3-qO-E2u"/>
                                     <constraint firstItem="cwi-4a-KQe" firstAttribute="leading" secondItem="XHQ-O2-JiV" secondAttribute="leading" constant="15" id="x6w-7m-7YQ"/>
-                                    <constraint firstItem="XHQ-O2-JiV" firstAttribute="bottom" secondItem="cwi-4a-KQe" secondAttribute="bottom" constant="10" id="ztA-dw-wmg"/>
+                                    <constraint firstItem="XHQ-O2-JiV" firstAttribute="bottom" secondItem="cwi-4a-KQe" secondAttribute="bottom" constant="35" id="ztA-dw-wmg"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="XHQ-O2-JiV"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="jO2-eu-Rij"/>
@@ -602,7 +602,7 @@
             <objects>
                 <viewController id="OnN-AB-iHi" customClass="STeacherScheduleViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cUV-MO-2r3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJT-wt-NPf" customClass="SCalendarView" customModule="Schedule" customModuleProvider="target">
@@ -615,7 +615,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94E-Qq-nrD" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="482"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-MK-49w" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ew5-MK-49w" customClass="SSchedulePlaceholder" customModule="Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -665,7 +665,7 @@
             <objects>
                 <tableViewController id="0Rd-eZ-bG4" customClass="SExamsTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zIv-0W-jzh" customClass="SDStateTableView" customModule="SDStateTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -685,7 +685,7 @@
             <objects>
                 <tableViewController id="fw1-Mg-9ru" customClass="SSettingsTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bac-ld-oq9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -790,7 +790,7 @@
             <objects>
                 <viewController id="pYm-7y-UtT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMF-BH-gb2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cP3-gy-3YS">
@@ -910,7 +910,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
             <objects>
                 <tableViewController id="lqO-jJ-guA" customClass="SCacheSettingsTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEX-js-QG2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1115,7 +1115,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         <scene sceneID="yB9-H9-7FY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HgQ-jr-wJp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Teacher" image="Teacher" landscapeImage="Teacher" largeContentSizeImage="Teacher" id="Wa9-Y6-owv"/>
+                    <tabBarItem key="tabBarItem" title="Teacher" image="teacher" landscapeImage="teacher" largeContentSizeImage="teacher" id="Wa9-Y6-owv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZEO-RN-nNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1144,8 +1144,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         <image name="MenuRounded" width="30" height="30"/>
         <image name="Settings" width="30" height="30"/>
         <image name="Student" width="30" height="30"/>
-        <image name="Teacher" width="30" height="30"/>
         <image name="WeekView" width="30" height="30"/>
+        <image name="teacher" width="30" height="30"/>
         <namedColor name="MainAccentColor">
             <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

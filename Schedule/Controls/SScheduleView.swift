@@ -187,7 +187,7 @@ final class SScheduleView: UIView {
 
 extension SScheduleView: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard lastScrollDirection != .none else { return }
         recenterIfNecessary()
     }
