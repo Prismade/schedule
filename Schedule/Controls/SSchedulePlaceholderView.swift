@@ -1,27 +1,27 @@
 import UIKit
 import AFCurvedArrowView
 
-final class SNibSchedulePlaceholder: UIView {
+final class SNibSchedulePlaceholderView: UIView {
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var arrow: AFCurvedArrowView!
     
-    static func loadFromNib() -> SNibSchedulePlaceholder {
+    static func loadFromNib() -> SNibSchedulePlaceholderView {
         let bundle = Bundle(for: self)
-        let nib = UINib(nibName: "SSchedulePlaceholder", bundle: bundle)
+        let nib = UINib(nibName: "SSchedulePlaceholderView", bundle: bundle)
         let allViewsFromNib = nib.instantiate(withOwner: nil, options: nil)
-        let schedulePlaceholder = allViewsFromNib.first! as! SNibSchedulePlaceholder
+        let schedulePlaceholder = allViewsFromNib.first! as! SNibSchedulePlaceholderView
         return schedulePlaceholder
     }
     
 }
 
 @IBDesignable
-final class SSchedulePlaceholder: UIView {
+final class SSchedulePlaceholderView: UIView {
     
     // MARK: - Public Properties
     
-    var view: SNibSchedulePlaceholder
+    var view: SNibSchedulePlaceholderView
     var didInstantiate: Bool = false
     var message: String = "Message" {
         didSet {
@@ -32,13 +32,13 @@ final class SSchedulePlaceholder: UIView {
     // MARK: - Initialization
     
     override init(frame: CGRect) {
-        view = SNibSchedulePlaceholder.loadFromNib()
+        view = SNibSchedulePlaceholderView.loadFromNib()
         super.init(frame: frame)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        view = SNibSchedulePlaceholder.loadFromNib()
+        view = SNibSchedulePlaceholderView.loadFromNib()
         super.init(coder: coder)
         commonInit()
     }

@@ -136,10 +136,6 @@ final class SDefaults {
             UserDefaults.standard.set("student", forKey: cachingUserKindKey)
         }
         
-        //        if UserDefaults.standard.object(forKey: "RequestInterval") == nil {
-        //            UserDefaults.standard.set(2, forKey: "RequestInterval")
-        //        }
-        
         if UserDefaults.standard.object(forKey: studentCacheFilePrefixKey) == nil {
             UserDefaults.standard.set("student", forKey: studentCacheFilePrefixKey)
         }

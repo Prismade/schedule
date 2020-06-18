@@ -1,27 +1,157 @@
 
-"r7A-Uz-JX1.title" = "Студент";
-"Wa9-Y6-owv.title" = "Преподаватель";
-"TCZ-EL-0im.title" = "Экзамены";
-"JgA-gZ-Ygx.title" = "Прочее";
-"YJm-c9-YuG.title" = "Прочее";
-"4SU-ZR-H8o.text" = "Выбрать пользователя";
-"Nas-7w-uD1.text" = "Выбор института и пр.";
-"Ktg-cR-eRe.text" = "Сохранение расписания";
-"QHj-5j-qmF.text" = "Экспорт в календарь";
-"7JS-m3-rJH.text" = "О приложении";
-"zqb-p1-aAa.title" = "О приложении";
-"nWD-fF-Owh.footerTitle" = "Включите, чтобы иметь доступ к расписанию без интернета";
-"vYr-kS-lKk.text" = "Включить сохранение";
-"9Qc-xd-ajV.text" = "Сохранять для пользователя";
-"SKn-ao-pYz.title" = "Расписание";
-"5Mi-s0-cgx.title" = "002";
-"tSV-P6-7f5.title" = "Экзамены";
-"lSq-4t-XKt.text" = "004";
-"OZt-bQ-V2j.text" = "Выберите группу в настройках";
-"ZBx-rn-A43.text" = "Расписание по-умолчанию";
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "0dy-KI-gM6"; */
+"0dy-KI-gM6.title" = "Закрыть";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "1UJ-CR-Sow"; */
+"1UJ-CR-Sow.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Student"; ObjectID = "2CM-QG-wmM"; */
 "2CM-QG-wmM.text" = "Студент";
-"fls-Dp-ptC.text" = "Выкл.";
-"Mgp-ba-s7u.title" = "Сохранение расписания";
-"fI9-Hw-FrH.text" = "Студент";
+
+/* Class = "UILabel"; text = "Teacher's name"; ObjectID = "4sW-cn-qRY"; */
+"4sW-cn-qRY.text" = "Teacher's name";
+
+/* Class = "UILabel"; text = "Rank"; ObjectID = "5LK-9Y-PBK"; */
+"5LK-9Y-PBK.text" = "Rank";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "5Mi-s0-cgx"; */
+"5Mi-s0-cgx.title" = "Item";
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "7Gn-yq-jdJ"; */
+"7Gn-yq-jdJ.text" = "Position";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "7JS-m3-rJH"; */
+"7JS-m3-rJH.text" = "О приложении";
+
+/* Class = "UILabel"; text = "location"; ObjectID = "89I-Mz-bbp"; */
+"89I-Mz-bbp.text" = "location";
+
+/* Class = "UILabel"; text = "Which user to keep cache for"; ObjectID = "9Qc-xd-ajV"; */
+"9Qc-xd-ajV.text" = "Для кого сохранять расписание";
+
+/* Class = "UILabel"; text = "Clear cache"; ObjectID = "FuD-aj-R9l"; */
 "FuD-aj-R9l.text" = "Очистить кэш";
+
+/* Class = "UILabel"; text = "Teacher's name"; ObjectID = "JLD-9p-Zya"; */
+"JLD-9p-Zya.text" = "Teacher's name";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "JNr-kv-OG0"; */
+"JNr-kv-OG0.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Other"; ObjectID = "JgA-gZ-Ygx"; */
+"JgA-gZ-Ygx.title" = "Прочее";
+
+/* Class = "UILabel"; text = "Caching"; ObjectID = "Ktg-cR-eRe"; */
+"Ktg-cR-eRe.text" = "Сохранение расписания";
+
+/* Class = "UINavigationItem"; title = "Cache settings"; ObjectID = "Mgp-ba-s7u"; */
+"Mgp-ba-s7u.title" = "Настройки сохранения";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "Pum-gY-PSp"; */
+"Pum-gY-PSp.text" = "Phone";
+
+/* Class = "UINavigationItem"; title = "Choose Division"; ObjectID = "Qew-xV-FWC"; */
+"Qew-xV-FWC.title" = "Выберите институт/факультет";
+
+/* Class = "UILabel"; text = "(special information)"; ObjectID = "QjA-pj-ry0"; */
+"QjA-pj-ry0.text" = "(special information)";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "RcL-tI-WB0"; */
+"RcL-tI-WB0.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Exams"; ObjectID = "TCZ-EL-0im"; */
+"TCZ-EL-0im.title" = "Экзамены";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "UTE-3F-uPC"; */
+"UTE-3F-uPC.title" = "Назад";
+
+/* Class = "UITabBarItem"; title = "Teacher"; ObjectID = "Wa9-Y6-owv"; */
+"Wa9-Y6-owv.title" = "Преподаватель";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Y7q-uT-YUW"; */
+"Y7q-uT-YUW.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "YJm-c9-YuG"; */
+"YJm-c9-YuG.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Default schedule"; ObjectID = "ZBx-rn-A43"; */
+"ZBx-rn-A43.text" = "Стандартное расписание";
+
+/* Class = "UILabel"; text = "Subject name"; ObjectID = "aib-TZ-Gov"; */
+"aib-TZ-Gov.text" = "Subject name";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "dEk-pg-E3r"; */
+"dEk-pg-E3r.title" = "Назад";
+
+/* Class = "UILabel"; text = "Student"; ObjectID = "fI9-Hw-FrH"; */
+"fI9-Hw-FrH.text" = "Студент";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "fTv-zg-Q62"; */
+"fTv-zg-Q62.text" = "Address";
+
+/* Class = "UILabel"; text = "Off"; ObjectID = "fls-Dp-ptC"; */
+"fls-Dp-ptC.text" = "Выкл";
+
+/* Class = "UINavigationItem"; title = "Teacher"; ObjectID = "gb9-eT-3cL"; */
+"gb9-eT-3cL.title" = "Преподаватель";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "gmm-bF-OOn"; */
+"gmm-bF-OOn.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Choose Group"; ObjectID = "gur-RA-cio"; */
+"gur-RA-cio.title" = "Выберите группу";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "hMs-Uy-zme"; */
+"hMs-Uy-zme.text" = "Time";
+
+/* Class = "UINavigationItem"; title = "Choose Teacher"; ObjectID = "hp0-VV-iKS"; */
+"hp0-VV-iKS.title" = "Выберите преподавателя";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "lzu-qw-MwS"; */
+"lzu-qw-MwS.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Choose Department"; ObjectID = "mMy-c5-9pq"; */
+"mMy-c5-9pq.title" = "Выберите кафедру";
+
+/* Class = "UILabel"; text = "Degree"; ObjectID = "mWH-Ma-z0o"; */
+"mWH-Ma-z0o.text" = "Degree";
+
+/* Class = "UITableViewSection"; footerTitle = "Turn on to have access to schedule without internet connection"; ObjectID = "nWD-fF-Owh"; */
+"nWD-fF-Owh.footerTitle" = "Включите, чтобы иметь доступ к расписанию без интернета";
+
+/* Class = "UINavigationItem"; title = "Teacher"; ObjectID = "obr-zz-JPX"; */
+"obr-zz-JPX.title" = "Преподаватель";
+
+/* Class = "UILabel"; text = "Contacts:"; ObjectID = "qZp-MX-rOv"; */
+"qZp-MX-rOv.text" = "Контакты:";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "qee-g3-R6n"; */
+"qee-g3-R6n.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Student"; ObjectID = "r7A-Uz-JX1"; */
+"r7A-Uz-JX1.title" = "Студент";
+
+/* Class = "UINavigationItem"; title = "Choose Course"; ObjectID = "rwQ-0f-7FR"; */
+"rwQ-0f-7FR.title" = "Выберите курс";
+
+/* Class = "UINavigationItem"; title = "Exams"; ObjectID = "tSV-P6-7f5"; */
+"tSV-P6-7f5.title" = "Экзамены";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "v3c-ZV-bIr"; */
+"v3c-ZV-bIr.title" = "Назад";
+
+/* Class = "UILabel"; text = "(class type)"; ObjectID = "vN3-bk-q2D"; */
+"vN3-bk-q2D.text" = "(class type)";
+
+/* Class = "UILabel"; text = "Enable caching"; ObjectID = "vYr-kS-lKk"; */
+"vYr-kS-lKk.text" = "Включить сохранение";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "yiZ-zL-M58"; */
+"yiZ-zL-M58.text" = "Email";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "zSH-eG-UGz"; */
+"zSH-eG-UGz.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "zqb-p1-aAa"; */
+"zqb-p1-aAa.title" = "О Приложении";
 

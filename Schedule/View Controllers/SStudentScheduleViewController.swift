@@ -13,7 +13,7 @@ class SStudentScheduleViewController: UIViewController {
     
     @IBOutlet weak var calendar: SCalendarView!
     @IBOutlet weak var schedule: SScheduleView!
-    @IBOutlet weak var placeholder: SSchedulePlaceholder!
+    @IBOutlet weak var placeholder: SSchedulePlaceholderView!
     
     @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SetupFromStudentSegue", sender: self)
@@ -21,24 +21,24 @@ class SStudentScheduleViewController: UIViewController {
     
     @IBAction func calendarExportButtonTapped(_ sender: UIBarButtonItem) {
         switch SExportManager.shared.authStatus {
-        case .notDetermined:
-            SExportManager.shared.requestPermission { [unowned self] authorized, error in
-                if authorized {
-                    DispatchQueue.main.async {
-                        self.chooseCalendar()
+            case .notDetermined:
+                SExportManager.shared.requestPermission { [unowned self] authorized, error in
+                    if authorized {
+                        DispatchQueue.main.async {
+                            self.chooseCalendar()
+                        }
                     }
-                }
             }
-        case .authorized:
-            chooseCalendar()
-        case .denied:
-            let alert = UIAlertController(
-                title: "\(NSLocalizedString("noPerm", comment: ""))",
-                message: "\(NSLocalizedString("noPermMsg", comment: ""))",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-        default: return
+            case .authorized:
+                chooseCalendar()
+            case .denied:
+                let alert = UIAlertController(
+                    title: "\(NSLocalizedString("noPerm", comment: ""))",
+                    message: "\(NSLocalizedString("noPermMsg", comment: ""))",
+                    preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alert, animated: true)
+            default: return
         }
     }
     
@@ -157,7 +157,7 @@ class SStudentScheduleViewController: UIViewController {
         ccvc.delegate = self
         ccvc.showsDoneButton = true
         ccvc.showsCancelButton = true
-
+        
         calendarSelectionViewController.pushViewController(ccvc, animated: false)
         present(calendarSelectionViewController, animated: true, completion: nil)
     }
@@ -171,7 +171,7 @@ class SStudentScheduleViewController: UIViewController {
             
         } else if segue.identifier ?? "" == "SetupFromStudentSegue" {
             let destination = segue.destination as! UINavigationController
-            let vc = destination.topViewController! as! SDivisionSelectTableViewController
+            let vc = destination.topViewController! as! SDivisionSelectionTableViewController
             vc.isTeacher = false
         }
     }

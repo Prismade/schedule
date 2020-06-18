@@ -13,7 +13,7 @@ class STeacherScheduleViewController: UIViewController {
     
     @IBOutlet weak var calendar: SCalendarView!
     @IBOutlet weak var schedule: SScheduleView!
-    @IBOutlet weak var placeholder: SSchedulePlaceholder!
+    @IBOutlet weak var placeholder: SSchedulePlaceholderView!
     
     @IBAction func setupUserButtonTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SetupFromTeacherSegue", sender: self)
@@ -171,7 +171,7 @@ class STeacherScheduleViewController: UIViewController {
             
         } else if segue.identifier ?? "" == "SetupFromTeacherSegue" {
             let destination = segue.destination as! UINavigationController
-            let vc = destination.topViewController! as! SDivisionSelectTableViewController
+            let vc = destination.topViewController! as! SDivisionSelectionTableViewController
             vc.isTeacher = true
         }
     }

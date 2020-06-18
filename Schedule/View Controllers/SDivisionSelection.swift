@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 
-final class SDivisionSelectTableViewController: SSearchableTableViewController {
+final class SDivisionSelectionTableViewController: SSearchableTableViewController {
     
     // MARK: - IBOutlets
     

@@ -1,3 +1,2 @@
 "CFBundleDisplayName" = "Расписание";
 "NSCalendarsUsageDescription" = "Для экспорта расписания в календарь необходимо разрешение для доступа к календарю";
-"CFBundleName" = "Schedule";

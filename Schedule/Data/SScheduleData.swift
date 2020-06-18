@@ -1,16 +1,6 @@
 import Foundation
 import Alamofire
 
-final class SScheduleDay: Codable {
-    let weekDay: SWeekDay
-    var classes: [SClass]
-    
-    init(weekDay: SWeekDay, classes: [SClass]) {
-        self.weekDay = weekDay
-        self.classes = classes
-    }
-}
-
 final class SScheduleData {
     
     enum UserKind {
@@ -122,22 +112,5 @@ final class SScheduleData {
             default: return
         }
     }
-    
-}
-
-final class SScheduleManager {
-    
-    // MARK: - Static Properties
-    
-    static let shared = SScheduleManager()
-    
-    // MARK: - Public properties
-    
-    var studentSchedule = SScheduleData(for: .student)
-    var teacherSchedule = SScheduleData(for: .teacher)
-    
-    // MARK: - Initialization
-    
-    private init() { }
     
 }

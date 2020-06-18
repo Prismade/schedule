@@ -1,7 +1,7 @@
 
 "Subgroup" = "подгруппа";
 "NoClasses" = "НЕТ ПАР";
-"ChillingTime" = "Время расслабиться";
+"ChillingTime" = "";
 "ChooseUser" = "Выберите пользователя";
 "ChooseUserDescription" = "Расписание для него будет открываться при запуске приложения";
 "Student" = "Студент";
@@ -19,6 +19,7 @@
 "NeedGroup" = "Выберите группу в настройках";
 "NeedTeacher" = "Выберите преподавателя в настройках";
 "NoExams" = "ПОКА РАСПИСАНИЯ НЕТ";
-"NoExamsSoon" = "Экзамены не скоро";
+"NoExamsSoon" = "";
 "Refresh" = "Обновить";
 "Loading" = "Загрузка";
+"searchPlaceholder" = "Поиск";
