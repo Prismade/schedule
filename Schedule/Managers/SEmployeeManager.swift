@@ -9,6 +9,7 @@ struct SEmMError: Error {
         case stringCreationFailure
         case domManipulationFailure(Error)
         case cacheWriteError(SCMError)
+        case noTeacherInfo
     }
     
     let kind: ErrorKind
@@ -60,7 +61,13 @@ final class SEmployeeManager {
                     
                     let document = try SwiftSoup.parse(htmlString)
                     
-                    let nameElement = try document.select("h1.center").first()!
+                    // nil here
+                    guard let nameElement = try document.select("h1.center").first() else {
+                        return .failure(
+                            .init(
+                                kind: .noTeacherInfo,
+                                localizedDescription: "There's no teacher info on the page"))
+                    }
                     name = try nameElement.text()
                     
                     let imgElement = try document.select("img.img-circle").first()!
