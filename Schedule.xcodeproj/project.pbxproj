@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1CE244F958000C1D91C /* AppDelegate.swift */; };
+		2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1D0244F958000C1D91C /* SceneDelegate.swift */; };
+		2424F1D6244F958000C1D91C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D4244F958000C1D91C /* Main.storyboard */; };
+		2424F1D8244F958400C1D91C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D7244F958400C1D91C /* Assets.xcassets */; };
+		2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */; };
+		2424F229244F9A6400C1D91C /* SCopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F228244F9A6400C1D91C /* SCopyableLabel.swift */; };
+		2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2424F231244F9EBB00C1D91C /* Localizable.strings */; };
+		2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F233244FA14800C1D91C /* CalendarColors.xcassets */; };
+		242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242D299F246CAC4600CBF87D /* Colors.xcassets */; };
+		242D29A2246CADD300CBF87D /* STeacherScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */; };
+		24335ED924648F0D00801B2A /* SApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335ED824648F0D00801B2A /* SApiManager.swift */; };
+		24335EE4246491BD00801B2A /* SBuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDA246491BD00801B2A /* SBuildingData.swift */; };
+		24335EE5246491BD00801B2A /* SCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDB246491BD00801B2A /* SCourse.swift */; };
+		24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDC246491BD00801B2A /* SCacheItem.swift */; };
+		24335EE7246491BD00801B2A /* STeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDD246491BD00801B2A /* STeacher.swift */; };
+		24335EE8246491BD00801B2A /* SEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDE246491BD00801B2A /* SEmployee.swift */; };
+		24335EE9246491BD00801B2A /* SExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDF246491BD00801B2A /* SExam.swift */; };
+		24335EEA246491BD00801B2A /* SGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE0246491BD00801B2A /* SGroup.swift */; };
+		24335EEB246491BD00801B2A /* SDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE1246491BD00801B2A /* SDivision.swift */; };
+		24335EEC246491BD00801B2A /* SClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE2246491BD00801B2A /* SClass.swift */; };
+		24335EED246491BD00801B2A /* SDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE3246491BD00801B2A /* SDepartment.swift */; };
+		24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */; };
+		243B61B4245B581000FD7455 /* SWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243B61B3245B581000FD7455 /* SWeekView.xib */; };
+		243B61B6245B599200FD7455 /* SWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243B61B5245B599200FD7455 /* SWeekView.swift */; };
+		243B61BA245B71E900FD7455 /* SCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243B61B9245B71E900FD7455 /* SCalendarView.swift */; };
+		24567A5F24787EDB004BAD60 /* SClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */; };
+		24567A6124788054004BAD60 /* SBuildingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A6024788054004BAD60 /* SBuildingsManager.swift */; };
+		24567A632478866B004BAD60 /* STeacherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */; };
+		24567A652478889C004BAD60 /* SEmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A642478889C004BAD60 /* SEmployeeManager.swift */; };
+		245E167B24536FE10078DAC4 /* SStudentScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */; };
+		24661C7F247E7DBD001AE48C /* SCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C7E247E7DBD001AE48C /* SCacheManager.swift */; };
+		24661C81247EBECA001AE48C /* SExamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */; };
+		24661C83247EC3C6001AE48C /* SCourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C82247EC3C6001AE48C /* SCourseSelection.swift */; };
+		24661C89247EC3D9001AE48C /* SGroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C84247EC3D9001AE48C /* SGroupSelection.swift */; };
+		24661C8A247EC3D9001AE48C /* SSearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C85247EC3D9001AE48C /* SSearchableTableViewController.swift */; };
+		24661C8B247EC3D9001AE48C /* STeacherSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C86247EC3D9001AE48C /* STeacherSelection.swift */; };
+		24661C8C247EC3D9001AE48C /* SDepartmentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */; };
+		24661C8D247EC3D9001AE48C /* SDivisionSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C88247EC3D9001AE48C /* SDivisionSelection.swift */; };
+		24661C8F2481271E001AE48C /* SExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C8E2481271E001AE48C /* SExportManager.swift */; };
+		24661C962481400C001AE48C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24661C982481400C001AE48C /* InfoPlist.strings */; };
+		246663FD246073D30043BA4C /* SCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246663FF246073D30043BA4C /* SCalendarView.xib */; };
+		2466640524607B740043BA4C /* SScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466640424607B740043BA4C /* SScheduleView.swift */; };
+		2466640724607B840043BA4C /* SScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2466640624607B840043BA4C /* SScheduleView.xib */; };
+		247492FA248E6A8100B4A847 /* SScheduleDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247492F9248E6A8100B4A847 /* SScheduleDay.swift */; };
+		247654E7246982E0003885D5 /* SScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247654E6246982E0003885D5 /* SScheduleData.swift */; };
+		247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */; };
+		247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */; };
+		24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */; };
+		24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0BD07247BF36C0000ED47 /* SDefaults.swift */; };
+		24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */; };
+		24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B1DB05248A88150068D15F /* SSchedulePlaceholderView.xib */; };
+		24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BF4B57245B35BE0048D6A5 /* SDayView.xib */; };
+		24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF4B59245B378A0048D6A5 /* SDayView.swift */; };
+		24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7FE90245C872E000CDA9E /* STimeManager.swift */; };
+		E878EA60F967E4D866637950 /* Pods_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2424F1CB244F958000C1D91C /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2424F1CE244F958000C1D91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2424F1D0244F958000C1D91C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2424F1D5244F958000C1D91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2424F1D7244F958400C1D91C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2424F1DA244F958400C1D91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2424F228244F9A6400C1D91C /* SCopyableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCopyableLabel.swift; sourceTree = "<group>"; };
+		2424F22C244F9E5B00C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		2424F230244F9EBB00C1D91C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2424F232244F9EC000C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2424F233244FA14800C1D91C /* CalendarColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CalendarColors.xcassets; sourceTree = "<group>"; };
+		242D299F246CAC4600CBF87D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STeacherScheduleViewController.swift; sourceTree = "<group>"; };
+		24335ED824648F0D00801B2A /* SApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SApiManager.swift; sourceTree = "<group>"; };
+		24335EDA246491BD00801B2A /* SBuildingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBuildingData.swift; sourceTree = "<group>"; };
+		24335EDB246491BD00801B2A /* SCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourse.swift; sourceTree = "<group>"; };
+		24335EDC246491BD00801B2A /* SCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCacheItem.swift; sourceTree = "<group>"; };
+		24335EDD246491BD00801B2A /* STeacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STeacher.swift; sourceTree = "<group>"; };
+		24335EDE246491BD00801B2A /* SEmployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEmployee.swift; sourceTree = "<group>"; };
+		24335EDF246491BD00801B2A /* SExam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SExam.swift; sourceTree = "<group>"; };
+		24335EE0246491BD00801B2A /* SGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGroup.swift; sourceTree = "<group>"; };
+		24335EE1246491BD00801B2A /* SDivision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDivision.swift; sourceTree = "<group>"; };
+		24335EE2246491BD00801B2A /* SClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SClass.swift; sourceTree = "<group>"; };
+		24335EE3246491BD00801B2A /* SDepartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDepartment.swift; sourceTree = "<group>"; };
+		24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		243B61B3245B581000FD7455 /* SWeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWeekView.xib; sourceTree = "<group>"; };
+		243B61B5245B599200FD7455 /* SWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWeekView.swift; sourceTree = "<group>"; };
+		243B61B9245B71E900FD7455 /* SCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCalendarView.swift; sourceTree = "<group>"; };
+		24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SClassDetailsViewController.swift; sourceTree = "<group>"; };
+		24567A6024788054004BAD60 /* SBuildingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBuildingsManager.swift; sourceTree = "<group>"; };
+		24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STeacherDetailsViewController.swift; sourceTree = "<group>"; };
+		24567A642478889C004BAD60 /* SEmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEmployeeManager.swift; sourceTree = "<group>"; };
+		245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SStudentScheduleViewController.swift; sourceTree = "<group>"; };
+		24661C7E247E7DBD001AE48C /* SCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheManager.swift; sourceTree = "<group>"; };
+		24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SExamsTableViewController.swift; sourceTree = "<group>"; };
+		24661C82247EC3C6001AE48C /* SCourseSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourseSelection.swift; sourceTree = "<group>"; };
+		24661C84247EC3D9001AE48C /* SGroupSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGroupSelection.swift; sourceTree = "<group>"; };
+		24661C85247EC3D9001AE48C /* SSearchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSearchableTableViewController.swift; sourceTree = "<group>"; };
+		24661C86247EC3D9001AE48C /* STeacherSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STeacherSelection.swift; sourceTree = "<group>"; };
+		24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDepartmentSelection.swift; sourceTree = "<group>"; };
+		24661C88247EC3D9001AE48C /* SDivisionSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDivisionSelection.swift; sourceTree = "<group>"; };
+		24661C8E2481271E001AE48C /* SExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SExportManager.swift; sourceTree = "<group>"; };
+		24661C972481400C001AE48C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24661C992481400D001AE48C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24661CA024814357001AE48C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		246663F9246072F20043BA4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		246663FE246073D30043BA4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SCalendarView.xib; sourceTree = "<group>"; };
+		24666401246073D80043BA4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SCalendarView.strings; sourceTree = "<group>"; };
+		24666403246073D80043BA4C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SCalendarView.strings; sourceTree = "<group>"; };
+		2466640424607B740043BA4C /* SScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SScheduleView.swift; sourceTree = "<group>"; };
+		2466640624607B840043BA4C /* SScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SScheduleView.xib; sourceTree = "<group>"; };
+		247492F9248E6A8100B4A847 /* SScheduleDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SScheduleDay.swift; sourceTree = "<group>"; };
+		247654E6246982E0003885D5 /* SScheduleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleData.swift; sourceTree = "<group>"; };
+		247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSettingsTableViewController.swift; sourceTree = "<group>"; };
+		24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheSettingsTableViewController.swift; sourceTree = "<group>"; };
+		24B0BD07247BF36C0000ED47 /* SDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDefaults.swift; sourceTree = "<group>"; };
+		24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSchedulePlaceholderView.swift; sourceTree = "<group>"; };
+		24B1DB05248A88150068D15F /* SSchedulePlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSchedulePlaceholderView.xib; sourceTree = "<group>"; };
+		24BF4B57245B35BE0048D6A5 /* SDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDayView.xib; sourceTree = "<group>"; };
+		24BF4B59245B378A0048D6A5 /* SDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDayView.swift; sourceTree = "<group>"; };
+		24E7FE90245C872E000CDA9E /* STimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STimeManager.swift; sourceTree = "<group>"; };
+		4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.release.xcconfig"; sourceTree = "<group>"; };
+		DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2424F1C8244F958000C1D91C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E878EA60F967E4D866637950 /* Pods_Schedule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2424F1C2244F958000C1D91C = {
+			isa = PBXGroup;
+			children = (
+				2424F1CD244F958000C1D91C /* Schedule */,
+				2424F1CC244F958000C1D91C /* Products */,
+				5E73E9A1F055A23FB2C9BA35 /* Pods */,
+				42D51C0C8A7C41BBC2D27AAF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2424F1CC244F958000C1D91C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2424F1CB244F958000C1D91C /* Schedule.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2424F1CD244F958000C1D91C /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				2424F1F6244F98F900C1D91C /* Data */,
+				2424F227244F9A3D00C1D91C /* Controls */,
+				2424F1F5244F98F200C1D91C /* Managers */,
+				2424F1E4244F979A00C1D91C /* View Controllers */,
+				2424F1CE244F958000C1D91C /* AppDelegate.swift */,
+				2424F1D0244F958000C1D91C /* SceneDelegate.swift */,
+				2424F1D4244F958000C1D91C /* Main.storyboard */,
+				2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */,
+				2424F1D7244F958400C1D91C /* Assets.xcassets */,
+				242D299F246CAC4600CBF87D /* Colors.xcassets */,
+				24661CA024814357001AE48C /* Info.plist */,
+				24661C982481400C001AE48C /* InfoPlist.strings */,
+				2424F231244F9EBB00C1D91C /* Localizable.strings */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		2424F1E4244F979A00C1D91C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */,
+				242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */,
+				24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */,
+				247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */,
+				24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */,
+				24661C85247EC3D9001AE48C /* SSearchableTableViewController.swift */,
+				24661C88247EC3D9001AE48C /* SDivisionSelection.swift */,
+				24661C82247EC3C6001AE48C /* SCourseSelection.swift */,
+				24661C84247EC3D9001AE48C /* SGroupSelection.swift */,
+				24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */,
+				24661C86247EC3D9001AE48C /* STeacherSelection.swift */,
+				24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */,
+				24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2424F1F5244F98F200C1D91C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				24B0BD07247BF36C0000ED47 /* SDefaults.swift */,
+				24E7FE90245C872E000CDA9E /* STimeManager.swift */,
+				24335ED824648F0D00801B2A /* SApiManager.swift */,
+				24567A6024788054004BAD60 /* SBuildingsManager.swift */,
+				24567A642478889C004BAD60 /* SEmployeeManager.swift */,
+				24661C7E247E7DBD001AE48C /* SCacheManager.swift */,
+				24661C8E2481271E001AE48C /* SExportManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2424F1F6244F98F900C1D91C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				24335EE1246491BD00801B2A /* SDivision.swift */,
+				24335EDB246491BD00801B2A /* SCourse.swift */,
+				24335EE0246491BD00801B2A /* SGroup.swift */,
+				24335EE3246491BD00801B2A /* SDepartment.swift */,
+				24335EDD246491BD00801B2A /* STeacher.swift */,
+				24335EDF246491BD00801B2A /* SExam.swift */,
+				24335EDE246491BD00801B2A /* SEmployee.swift */,
+				24335EE2246491BD00801B2A /* SClass.swift */,
+				247492F9248E6A8100B4A847 /* SScheduleDay.swift */,
+				24335EDA246491BD00801B2A /* SBuildingData.swift */,
+				247654E6246982E0003885D5 /* SScheduleData.swift */,
+				24335EDC246491BD00801B2A /* SCacheItem.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2424F227244F9A3D00C1D91C /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				2424F228244F9A6400C1D91C /* SCopyableLabel.swift */,
+				24BF4B59245B378A0048D6A5 /* SDayView.swift */,
+				243B61B5245B599200FD7455 /* SWeekView.swift */,
+				243B61B9245B71E900FD7455 /* SCalendarView.swift */,
+				2466640424607B740043BA4C /* SScheduleView.swift */,
+				24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */,
+				24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */,
+				24BF4B57245B35BE0048D6A5 /* SDayView.xib */,
+				243B61B3245B581000FD7455 /* SWeekView.xib */,
+				246663FF246073D30043BA4C /* SCalendarView.xib */,
+				2466640624607B840043BA4C /* SScheduleView.xib */,
+				247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */,
+				24B1DB05248A88150068D15F /* SSchedulePlaceholderView.xib */,
+				2424F233244FA14800C1D91C /* CalendarColors.xcassets */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		42D51C0C8A7C41BBC2D27AAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E73E9A1F055A23FB2C9BA35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */,
+				917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2424F1CA244F958000C1D91C /* Schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2424F1DF244F958400C1D91C /* Build configuration list for PBXNativeTarget "Schedule" */;
+			buildPhases = (
+				4985A44034BF60B23613FA9C /* [CP] Check Pods Manifest.lock */,
+				2424F1C7244F958000C1D91C /* Sources */,
+				2424F1C8244F958000C1D91C /* Frameworks */,
+				2424F1C9244F958000C1D91C /* Resources */,
+				5CF3F0392B0934B7DEACA8C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Schedule;
+			productName = Schedule;
+			productReference = 2424F1CB244F958000C1D91C /* Schedule.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2424F1C3244F958000C1D91C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Prismade;
+				TargetAttributes = {
+					2424F1CA244F958000C1D91C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2424F1C6244F958000C1D91C /* Build configuration list for PBXProject "Schedule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 2424F1C2244F958000C1D91C;
+			productRefGroup = 2424F1CC244F958000C1D91C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2424F1CA244F958000C1D91C /* Schedule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2424F1C9244F958000C1D91C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2466640724607B840043BA4C /* SScheduleView.xib in Resources */,
+				24661C962481400C001AE48C /* InfoPlist.strings in Resources */,
+				243B61B4245B581000FD7455 /* SWeekView.xib in Resources */,
+				242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */,
+				24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */,
+				246663FD246073D30043BA4C /* SCalendarView.xib in Resources */,
+				24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */,
+				2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */,
+				2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */,
+				247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */,
+				2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */,
+				2424F1D8244F958400C1D91C /* Assets.xcassets in Resources */,
+				2424F1D6244F958000C1D91C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4985A44034BF60B23613FA9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Schedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CF3F0392B0934B7DEACA8C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2424F1C7244F958000C1D91C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24661C8D247EC3D9001AE48C /* SDivisionSelection.swift in Sources */,
+				24335EE9246491BD00801B2A /* SExam.swift in Sources */,
+				24567A6124788054004BAD60 /* SBuildingsManager.swift in Sources */,
+				24661C83247EC3C6001AE48C /* SCourseSelection.swift in Sources */,
+				24335EEA246491BD00801B2A /* SGroup.swift in Sources */,
+				24661C7F247E7DBD001AE48C /* SCacheManager.swift in Sources */,
+				24661C8A247EC3D9001AE48C /* SSearchableTableViewController.swift in Sources */,
+				24335EEB246491BD00801B2A /* SDivision.swift in Sources */,
+				24335EE5246491BD00801B2A /* SCourse.swift in Sources */,
+				24661C8C247EC3D9001AE48C /* SDepartmentSelection.swift in Sources */,
+				2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */,
+				247492FA248E6A8100B4A847 /* SScheduleDay.swift in Sources */,
+				2424F229244F9A6400C1D91C /* SCopyableLabel.swift in Sources */,
+				24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */,
+				242D29A2246CADD300CBF87D /* STeacherScheduleViewController.swift in Sources */,
+				247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */,
+				24661C8F2481271E001AE48C /* SExportManager.swift in Sources */,
+				24335EED246491BD00801B2A /* SDepartment.swift in Sources */,
+				24567A5F24787EDB004BAD60 /* SClassDetailsViewController.swift in Sources */,
+				24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */,
+				24567A632478866B004BAD60 /* STeacherDetailsViewController.swift in Sources */,
+				24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */,
+				24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */,
+				243B61B6245B599200FD7455 /* SWeekView.swift in Sources */,
+				24661C8B247EC3D9001AE48C /* STeacherSelection.swift in Sources */,
+				24335EEC246491BD00801B2A /* SClass.swift in Sources */,
+				24661C81247EBECA001AE48C /* SExamsTableViewController.swift in Sources */,
+				24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */,
+				245E167B24536FE10078DAC4 /* SStudentScheduleViewController.swift in Sources */,
+				24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */,
+				2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */,
+				24661C89247EC3D9001AE48C /* SGroupSelection.swift in Sources */,
+				247654E7246982E0003885D5 /* SScheduleData.swift in Sources */,
+				24335ED924648F0D00801B2A /* SApiManager.swift in Sources */,
+				24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */,
+				243B61BA245B71E900FD7455 /* SCalendarView.swift in Sources */,
+				2466640524607B740043BA4C /* SScheduleView.swift in Sources */,
+				24335EE7246491BD00801B2A /* STeacher.swift in Sources */,
+				24335EE8246491BD00801B2A /* SEmployee.swift in Sources */,
+				24335EE4246491BD00801B2A /* SBuildingData.swift in Sources */,
+				24567A652478889C004BAD60 /* SEmployeeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2424F1D4244F958000C1D91C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2424F1D5244F958000C1D91C /* Base */,
+				2424F22C244F9E5B00C1D91C /* ru */,
+				246663F9246072F20043BA4C /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2424F1DA244F958400C1D91C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2424F231244F9EBB00C1D91C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2424F230244F9EBB00C1D91C /* en */,
+				2424F232244F9EC000C1D91C /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		24661C982481400C001AE48C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24661C972481400C001AE48C /* en */,
+				24661C992481400D001AE48C /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		246663FF246073D30043BA4C /* SCalendarView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				246663FE246073D30043BA4C /* Base */,
+				24666401246073D80043BA4C /* en */,
+				24666403246073D80043BA4C /* ru */,
+			);
+			name = SCalendarView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2424F1DD244F958400C1D91C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2424F1DE244F958400C1D91C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2424F1E0244F958400C1D91C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MZN9WUBPNG;
+				INFOPLIST_FILE = Schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.prismade.Schedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2424F1E1244F958400C1D91C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MZN9WUBPNG;
+				INFOPLIST_FILE = Schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.prismade.Schedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2424F1C6244F958000C1D91C /* Build configuration list for PBXProject "Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2424F1DD244F958400C1D91C /* Debug */,
+				2424F1DE244F958400C1D91C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2424F1DF244F958400C1D91C /* Build configuration list for PBXNativeTarget "Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2424F1E0244F958400C1D91C /* Debug */,
+				2424F1E1244F958400C1D91C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2424F1C3244F958000C1D91C /* Project object */;
+}

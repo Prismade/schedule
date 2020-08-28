@@ -1,26 +1,46 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
-  - Kingfisher (5.13.1):
-    - Kingfisher/Core (= 5.13.1)
-  - Kingfisher/Core (5.13.1)
-  - SwiftSoup (2.3.0)
+  - AFCurvedArrowView (1.0.1)
+  - Alamofire (5.1.0)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
+  - PKHUD (5.3.0)
+  - ReachabilitySwift (5.0.0)
+  - SDStateTableView (0.0.3)
+  - ShowTime (2.5.2)
+  - SwiftSoup (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.3)
+  - AFCurvedArrowView
+  - Alamofire (~> 5.1)
   - Kingfisher (~> 5.0)
+  - PKHUD (~> 5.0)
+  - ReachabilitySwift
+  - SDStateTableView
+  - ShowTime
   - SwiftSoup
 
 SPEC REPOS:
   trunk:
+    - AFCurvedArrowView
     - Alamofire
     - Kingfisher
+    - PKHUD
+    - ReachabilitySwift
+    - SDStateTableView
+    - ShowTime
     - SwiftSoup
 
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
-  Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
-  SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
+  AFCurvedArrowView: 5fa8fcc1f77f5428ab34d7a1c6696b88c3c20f40
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SDStateTableView: cb4dd2a3b6d31850a70e91c19dc79ab127a8e7c6
+  ShowTime: 5cb2c5314da2983cec44f27123a15473cf29306f
+  SwiftSoup: f97bc4e988c7729d6457f9642f974c617a6e2510
 
-PODFILE CHECKSUM: ad01bad5fad538920bb1fa0b5bd4dd99df5b3856
+PODFILE CHECKSUM: 6068750245d6ebb8a9012cdda4d04d31d629b94f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
