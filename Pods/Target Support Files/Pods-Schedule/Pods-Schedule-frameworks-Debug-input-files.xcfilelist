@@ -5,5 +5,4 @@ ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/SDStateTableView/SDStateTableView.framework
-${BUILT_PRODUCTS_DIR}/ShowTime/ShowTime.framework
 ${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework

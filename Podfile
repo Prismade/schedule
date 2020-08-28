@@ -12,5 +12,5 @@ target 'Schedule' do
   pod 'Kingfisher', '~> 5.0'
   
   # For demonstrations
-  pod 'ShowTime'
+  # pod 'ShowTime'
 end
