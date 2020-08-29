@@ -55,17 +55,17 @@ final class SApiManager {
     }
     
     @discardableResult
-    func getStudentSchedule(for group: Int, on weekOffset: Int, completion: @escaping (DataResponse<[SClass], AFError>) -> Void) -> Request  {
+    func getStudentSchedule(for group: Int, on weekOffset: Int, completion: @escaping (DataResponse<Data, AFError>) -> Void) -> Request  {
         let timeStamp: String = STimeManager.shared.getApiKey(for: weekOffset)
         let url = baseUrl + "//\(group)///\(timeStamp)/printschedule"
-        return session.request(url).responseDecodable(completionHandler: completion)
+        return session.request(url).responseData(completionHandler: completion)
     }
     
     @discardableResult
-    func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<[SClass], AFError>) -> Void) -> Request  {
+    func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<Data, AFError>) -> Void) -> Request  {
         let timeStamp: String = STimeManager.shared.getApiKey(for: weekOffset)
         let url = baseUrl + "/\(teacher)////\(timeStamp)/printschedule"
-        return session.request(url).responseDecodable(completionHandler: completion)
+        return session.request(url).responseData(completionHandler: completion)
     }
     
     @discardableResult

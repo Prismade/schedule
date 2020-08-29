@@ -1,5 +1,6 @@
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 final class SScheduleData {
     
@@ -67,10 +68,35 @@ final class SScheduleData {
                 return
             }
         }
-        let completionHandler: (DataResponse<[SClass], AFError>) -> Void =
+        let completionHandler: (DataResponse<Data, AFError>) -> Void =
         { [unowned self, needCaching] response in
             switch response.result {
-                case .success(let newSchedule): DispatchQueue.main.async {
+                case .success(let data): DispatchQueue.main.async {
+                    let jsonData = try? JSON(data: data)
+                    guard let json = jsonData else { return }
+                    
+                    var newSchedule = [SClass]()
+                    for (key, _): (String, JSON) in json {
+                        if Int(key) != nil {
+                            newSchedule.append(
+                                SClass(
+                                    cellId: json[key]["cell_id"].int,
+                                    groupId: json[key]["idGruop"].intValue,
+                                    subgroup: json[key]["NumberSubGruop"].intValue,
+                                    subject: json[key]["TitleSubject"].stringValue,
+                                    kind: json[key]["TypeLesson"].stringValue,
+                                    number: json[key]["NumberLesson"].intValue,
+                                    weekDay: json[key]["DayWeek"].intValue,
+                                    building: json[key]["Korpus"].stringValue,
+                                    room: json[key]["NumberRoom"].stringValue,
+                                    special: json[key]["special"].stringValue,
+                                    groupTitle: json[key]["title"].stringValue,
+                                    employeeId: json[key]["employee_id"].int,
+                                    patronymic: json[key]["SecondName"].stringValue,
+                                    firstName: json[key]["Name"].stringValue,
+                                    lastName: json[key]["Family"].stringValue))
+                        }
+                    }
                     self.schedule = (1...6).map { weekDay in
                         let classes = newSchedule.filter {
                             $0.weekDay == weekDay ? true : false
