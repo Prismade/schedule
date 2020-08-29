@@ -53,6 +53,28 @@ class SClass: Codable, Comparable {
         case lastName = "Family"
     }
     
+    init(cellId: Int?, groupId: Int, subgroup: Int,
+         subject: String, kind: String, number: Int,
+         weekDay: Int, building: String, room: String,
+         special: String, groupTitle: String, employeeId: Int?,
+         patronymic: String, firstName: String, lastName: String) {
+        self.cellId = cellId
+        self.groupId = groupId
+        self.subgroup = subgroup
+        self.subject = subject
+        self.kind = kind
+        self.number = number
+        self.weekDay = weekDay
+        self.building = building
+        self.room = room
+        self.special = special
+        self.groupTitle = groupTitle
+        self.employeeId = employeeId
+        self.patronymic = patronymic
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
