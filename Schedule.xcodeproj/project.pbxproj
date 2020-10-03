@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2416015A25290EE20096EBDC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015825290EE20096EBDC /* Settings.storyboard */; };
+		2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015D252912A70096EBDC /* AdditionalInfo.storyboard */; };
+		24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160161252913080096EBDC /* ExamsSchedule.storyboard */; };
+		24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160165252913870096EBDC /* TeacherSchedule.storyboard */; };
+		2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160169252913E00096EBDC /* StudentSchedule.storyboard */; };
+		2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416016D2529147A0096EBDC /* UserSetup.storyboard */; };
 		2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1CE244F958000C1D91C /* AppDelegate.swift */; };
 		2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1D0244F958000C1D91C /* SceneDelegate.swift */; };
 		2424F1D6244F958000C1D91C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D4244F958000C1D91C /* Main.storyboard */; };
@@ -65,6 +71,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2416015925290EE20096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		2416015E252912A70096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdditionalInfo.storyboard; sourceTree = "<group>"; };
+		24160162252913080096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExamsSchedule.storyboard; sourceTree = "<group>"; };
+		24160166252913870096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TeacherSchedule.storyboard; sourceTree = "<group>"; };
+		2416016A252913E00096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StudentSchedule.storyboard; sourceTree = "<group>"; };
+		2416016E2529147A0096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSetup.storyboard; sourceTree = "<group>"; };
 		2424F1CB244F958000C1D91C /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2424F1CE244F958000C1D91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2424F1D0244F958000C1D91C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +184,12 @@
 				2424F1CE244F958000C1D91C /* AppDelegate.swift */,
 				2424F1D0244F958000C1D91C /* SceneDelegate.swift */,
 				2424F1D4244F958000C1D91C /* Main.storyboard */,
+				2416016D2529147A0096EBDC /* UserSetup.storyboard */,
+				24160169252913E00096EBDC /* StudentSchedule.storyboard */,
+				24160165252913870096EBDC /* TeacherSchedule.storyboard */,
+				24160161252913080096EBDC /* ExamsSchedule.storyboard */,
+				2416015D252912A70096EBDC /* AdditionalInfo.storyboard */,
+				2416015825290EE20096EBDC /* Settings.storyboard */,
 				2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */,
 				2424F1D7244F958400C1D91C /* Assets.xcassets */,
 				242D299F246CAC4600CBF87D /* Colors.xcassets */,
@@ -302,7 +320,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Prismade;
 				TargetAttributes = {
 					2424F1CA244F958000C1D91C = {
@@ -335,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2466640724607B840043BA4C /* SScheduleView.xib in Resources */,
+				24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */,
 				24661C962481400C001AE48C /* InfoPlist.strings in Resources */,
 				243B61B4245B581000FD7455 /* SWeekView.xib in Resources */,
 				242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */,
@@ -342,11 +361,16 @@
 				246663FD246073D30043BA4C /* SCalendarView.xib in Resources */,
 				24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */,
 				2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */,
+				2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */,
 				2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */,
+				2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */,
+				24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */,
 				247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */,
+				2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */,
 				2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */,
 				2424F1D8244F958400C1D91C /* Assets.xcassets in Resources */,
 				2424F1D6244F958000C1D91C /* Main.storyboard in Resources */,
+				2416015A25290EE20096EBDC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +470,54 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2416015825290EE20096EBDC /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416015925290EE20096EBDC /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		2416015D252912A70096EBDC /* AdditionalInfo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416015E252912A70096EBDC /* Base */,
+			);
+			name = AdditionalInfo.storyboard;
+			sourceTree = "<group>";
+		};
+		24160161252913080096EBDC /* ExamsSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24160162252913080096EBDC /* Base */,
+			);
+			name = ExamsSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		24160165252913870096EBDC /* TeacherSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24160166252913870096EBDC /* Base */,
+			);
+			name = TeacherSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		24160169252913E00096EBDC /* StudentSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416016A252913E00096EBDC /* Base */,
+			);
+			name = StudentSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		2416016D2529147A0096EBDC /* UserSetup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416016E2529147A0096EBDC /* Base */,
+			);
+			name = UserSetup.storyboard;
+			sourceTree = "<group>";
+		};
 		2424F1D4244F958000C1D91C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -522,6 +594,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -546,7 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -583,6 +656,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -601,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -619,7 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,7 +714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
