@@ -29,7 +29,6 @@ class SSearchableTableViewController: UITableViewController, UISearchBarDelegate
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.placeholder = searchBarPlaceholder
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
