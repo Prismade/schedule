@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Student Schedule View Controller-->
+        <!--Student-->
         <scene sceneID="6ag-5G-K8h">
             <objects>
                 <viewController id="nZw-Vi-CTv" customClass="SStudentScheduleViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <constraint firstItem="SmF-G3-E8l" firstAttribute="trailing" secondItem="DYe-cO-yIO" secondAttribute="trailing" id="r3j-B4-EG5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WpD-z3-XBg">
+                    <navigationItem key="navigationItem" title="Student" id="WpD-z3-XBg">
                         <barButtonItem key="backBarButtonItem" id="SKn-ao-pYz"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="RcL-tI-WB0">
                             <color key="tintColor" name="MainAccentColor"/>
