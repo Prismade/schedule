@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "1UJ-CR-Sow"; */
+"1UJ-CR-Sow.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "JNr-kv-OG0"; */
+"JNr-kv-OG0.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Choose Division"; ObjectID = "Qew-xV-FWC"; */
+"Qew-xV-FWC.title" = "Choose Division";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "UTE-3F-uPC"; */
+"UTE-3F-uPC.title" = "Back";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Y7q-uT-YUW"; */
+"Y7q-uT-YUW.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "dEk-pg-E3r"; */
+"dEk-pg-E3r.title" = "Back";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "gmm-bF-OOn"; */
+"gmm-bF-OOn.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Choose Group"; ObjectID = "gur-RA-cio"; */
+"gur-RA-cio.title" = "Choose Group";
+
+/* Class = "UINavigationItem"; title = "Choose Teacher"; ObjectID = "hp0-VV-iKS"; */
+"hp0-VV-iKS.title" = "Choose Teacher";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "lzu-qw-MwS"; */
+"lzu-qw-MwS.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Choose Department"; ObjectID = "mMy-c5-9pq"; */
+"mMy-c5-9pq.title" = "Choose Department";
+
+/* Class = "UINavigationItem"; title = "Choose Course"; ObjectID = "rwQ-0f-7FR"; */
+"rwQ-0f-7FR.title" = "Choose Course";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "v3c-ZV-bIr"; */
+"v3c-ZV-bIr.title" = "Back";
