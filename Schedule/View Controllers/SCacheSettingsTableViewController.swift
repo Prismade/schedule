@@ -70,6 +70,10 @@ class SCacheSettingsTableViewController: UITableViewController {
                 case 0:
                     tableView.deselectRow(at: indexPath, animated: true)
                     
+                    /*
+                     * Due to bug in iOS 12.2 and later this code will produce
+                     * a constraint error.
+                     */
                     let actionSheets = UIAlertController(
                         title: NSLocalizedString("ChooseUser", comment: ""),
                         message: nil, preferredStyle: .actionSheet)
@@ -107,6 +111,8 @@ class SCacheSettingsTableViewController: UITableViewController {
                     actionSheets.addAction(cancelAction)
                     
                     present(actionSheets, animated: true, completion: nil)
+                    
+                    /* ======================================================= */
                 
                 default: return
             }
