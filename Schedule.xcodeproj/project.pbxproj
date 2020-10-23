@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2416015A25290EE20096EBDC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015825290EE20096EBDC /* Settings.storyboard */; };
+		2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015D252912A70096EBDC /* AdditionalInfo.storyboard */; };
+		24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160161252913080096EBDC /* ExamsSchedule.storyboard */; };
+		24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160165252913870096EBDC /* TeacherSchedule.storyboard */; };
+		2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160169252913E00096EBDC /* StudentSchedule.storyboard */; };
+		2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416016D2529147A0096EBDC /* UserSetup.storyboard */; };
 		2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1CE244F958000C1D91C /* AppDelegate.swift */; };
 		2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1D0244F958000C1D91C /* SceneDelegate.swift */; };
 		2424F1D6244F958000C1D91C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D4244F958000C1D91C /* Main.storyboard */; };
@@ -65,6 +71,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2416015925290EE20096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		2416015E252912A70096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdditionalInfo.storyboard; sourceTree = "<group>"; };
+		24160162252913080096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExamsSchedule.storyboard; sourceTree = "<group>"; };
+		24160166252913870096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TeacherSchedule.storyboard; sourceTree = "<group>"; };
+		2416016A252913E00096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StudentSchedule.storyboard; sourceTree = "<group>"; };
+		2416016E2529147A0096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSetup.storyboard; sourceTree = "<group>"; };
+		241601E1252922CB0096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		241601E3252922CC0096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		241601E6252923020096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UserSetup.strings; sourceTree = "<group>"; };
+		241601E8252923310096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/UserSetup.strings; sourceTree = "<group>"; };
+		241601EA252923C00096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StudentSchedule.strings; sourceTree = "<group>"; };
+		241601EC252923C20096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/StudentSchedule.strings; sourceTree = "<group>"; };
+		241601EE252923D30096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TeacherSchedule.strings; sourceTree = "<group>"; };
+		241601F0252924020096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TeacherSchedule.strings; sourceTree = "<group>"; };
+		241601F3252924730096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExamsSchedule.strings; sourceTree = "<group>"; };
+		241601F5252924A30096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ExamsSchedule.strings; sourceTree = "<group>"; };
+		241601F7252926CC0096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AdditionalInfo.strings; sourceTree = "<group>"; };
+		241601F9252926FB0096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AdditionalInfo.strings; sourceTree = "<group>"; };
+		241601FC25292FAB0096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		241601FE25292FDA0096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
 		2424F1CB244F958000C1D91C /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2424F1CE244F958000C1D91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2424F1D0244F958000C1D91C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +98,6 @@
 		2424F1D7244F958400C1D91C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2424F1DA244F958400C1D91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2424F228244F9A6400C1D91C /* SCopyableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCopyableLabel.swift; sourceTree = "<group>"; };
-		2424F22C244F9E5B00C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		2424F230244F9EBB00C1D91C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2424F232244F9EC000C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2424F233244FA14800C1D91C /* CalendarColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CalendarColors.xcassets; sourceTree = "<group>"; };
@@ -110,7 +135,6 @@
 		24661C972481400C001AE48C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24661C992481400D001AE48C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24661CA024814357001AE48C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		246663F9246072F20043BA4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		246663FE246073D30043BA4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SCalendarView.xib; sourceTree = "<group>"; };
 		24666401246073D80043BA4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SCalendarView.strings; sourceTree = "<group>"; };
 		24666403246073D80043BA4C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SCalendarView.strings; sourceTree = "<group>"; };
@@ -172,6 +196,12 @@
 				2424F1CE244F958000C1D91C /* AppDelegate.swift */,
 				2424F1D0244F958000C1D91C /* SceneDelegate.swift */,
 				2424F1D4244F958000C1D91C /* Main.storyboard */,
+				2416016D2529147A0096EBDC /* UserSetup.storyboard */,
+				24160169252913E00096EBDC /* StudentSchedule.storyboard */,
+				24160165252913870096EBDC /* TeacherSchedule.storyboard */,
+				24160161252913080096EBDC /* ExamsSchedule.storyboard */,
+				2416015D252912A70096EBDC /* AdditionalInfo.storyboard */,
+				2416015825290EE20096EBDC /* Settings.storyboard */,
 				2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */,
 				2424F1D7244F958400C1D91C /* Assets.xcassets */,
 				242D299F246CAC4600CBF87D /* Colors.xcassets */,
@@ -302,7 +332,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Prismade;
 				TargetAttributes = {
 					2424F1CA244F958000C1D91C = {
@@ -335,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2466640724607B840043BA4C /* SScheduleView.xib in Resources */,
+				24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */,
 				24661C962481400C001AE48C /* InfoPlist.strings in Resources */,
 				243B61B4245B581000FD7455 /* SWeekView.xib in Resources */,
 				242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */,
@@ -342,11 +373,16 @@
 				246663FD246073D30043BA4C /* SCalendarView.xib in Resources */,
 				24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */,
 				2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */,
+				2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */,
 				2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */,
+				2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */,
+				24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */,
 				247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */,
+				2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */,
 				2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */,
 				2424F1D8244F958400C1D91C /* Assets.xcassets in Resources */,
 				2424F1D6244F958000C1D91C /* Main.storyboard in Resources */,
+				2416015A25290EE20096EBDC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +482,72 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2416015825290EE20096EBDC /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416015925290EE20096EBDC /* Base */,
+				241601FC25292FAB0096EBDC /* en */,
+				241601FE25292FDA0096EBDC /* ru */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		2416015D252912A70096EBDC /* AdditionalInfo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416015E252912A70096EBDC /* Base */,
+				241601F7252926CC0096EBDC /* en */,
+				241601F9252926FB0096EBDC /* ru */,
+			);
+			name = AdditionalInfo.storyboard;
+			sourceTree = "<group>";
+		};
+		24160161252913080096EBDC /* ExamsSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24160162252913080096EBDC /* Base */,
+				241601F3252924730096EBDC /* en */,
+				241601F5252924A30096EBDC /* ru */,
+			);
+			name = ExamsSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		24160165252913870096EBDC /* TeacherSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24160166252913870096EBDC /* Base */,
+				241601EE252923D30096EBDC /* ru */,
+				241601F0252924020096EBDC /* en */,
+			);
+			name = TeacherSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		24160169252913E00096EBDC /* StudentSchedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416016A252913E00096EBDC /* Base */,
+				241601EA252923C00096EBDC /* en */,
+				241601EC252923C20096EBDC /* ru */,
+			);
+			name = StudentSchedule.storyboard;
+			sourceTree = "<group>";
+		};
+		2416016D2529147A0096EBDC /* UserSetup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2416016E2529147A0096EBDC /* Base */,
+				241601E6252923020096EBDC /* en */,
+				241601E8252923310096EBDC /* ru */,
+			);
+			name = UserSetup.storyboard;
+			sourceTree = "<group>";
+		};
 		2424F1D4244F958000C1D91C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2424F1D5244F958000C1D91C /* Base */,
-				2424F22C244F9E5B00C1D91C /* ru */,
-				246663F9246072F20043BA4C /* en */,
+				241601E1252922CB0096EBDC /* en */,
+				241601E3252922CC0096EBDC /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -522,6 +618,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -546,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -583,6 +680,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -601,7 +699,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -619,7 +717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,7 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZN9WUBPNG;
 				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

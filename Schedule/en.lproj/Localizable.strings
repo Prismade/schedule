@@ -1,11 +1,24 @@
-
 "Subgroup" = "subgroup";
 "NoClasses" = "NO CLASSES";
-"ChillingTime" = "It's time to chill";
+"ChillingTime" = "";
 "ChooseUser" = "Choose user";
-"ChooseUserDescription" = "This users's schedule will be shown on startup";
+"ChooseUserDescription" = "Schedule for this user will be opened on start";
 "Student" = "Student";
 "Teacher" = "Teacher";
+"ForAll" = "Everyone";
 "Cancel" = "Cancel";
 "On" = "On";
 "Off" = "Off";
+"NoContacts" = "No contacts";
+"Position" = "Positions: ";
+"Degree" = "Degree: ";
+"Rank" = "Rank: ";
+"noPerm" = "No permission";
+"noPermMsg" = "App requires permission to export data to calendar. Go to Settings and allow this app to work with calendar.";
+"NeedGroup" = "Choose group in settings";
+"NeedTeacher" = "Choose teacher in settings";
+"NoExams" = "NO SCHEDULE YET";
+"NoExamsSoon" = "";
+"Refresh" = "Refresh";
+"Loading" = "Lodaing";
+"searchPlaceholder" = "Search";

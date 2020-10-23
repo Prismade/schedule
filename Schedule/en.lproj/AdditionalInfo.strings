@@ -1,0 +1,48 @@
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "0dy-KI-gM6"; */
+"0dy-KI-gM6.title" = "Close";
+
+/* Class = "UILabel"; text = "Teacher's name"; ObjectID = "4sW-cn-qRY"; */
+"4sW-cn-qRY.text" = "Teacher's name";
+
+/* Class = "UILabel"; text = "Rank"; ObjectID = "5LK-9Y-PBK"; */
+"5LK-9Y-PBK.text" = "Rank";
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "7Gn-yq-jdJ"; */
+"7Gn-yq-jdJ.text" = "Position";
+
+/* Class = "UILabel"; text = "location"; ObjectID = "89I-Mz-bbp"; */
+"89I-Mz-bbp.text" = "location";
+
+/* Class = "UILabel"; text = "Teacher's name"; ObjectID = "JLD-9p-Zya"; */
+"JLD-9p-Zya.text" = "Teacher's name";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "Pum-gY-PSp"; */
+"Pum-gY-PSp.text" = "Phone";
+
+/* Class = "UILabel"; text = "(special information)"; ObjectID = "QjA-pj-ry0"; */
+"QjA-pj-ry0.text" = "(special information)";
+
+/* Class = "UILabel"; text = "Subject name"; ObjectID = "aib-TZ-Gov"; */
+"aib-TZ-Gov.text" = "Subject name";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "fTv-zg-Q62"; */
+"fTv-zg-Q62.text" = "Address";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "hMs-Uy-zme"; */
+"hMs-Uy-zme.text" = "Time";
+
+/* Class = "UILabel"; text = "Degree"; ObjectID = "mWH-Ma-z0o"; */
+"mWH-Ma-z0o.text" = "Degree";
+
+/* Class = "UINavigationItem"; title = "Teacher"; ObjectID = "obr-zz-JPX"; */
+"obr-zz-JPX.title" = "Teacher";
+
+/* Class = "UILabel"; text = "Contacts:"; ObjectID = "qZp-MX-rOv"; */
+"qZp-MX-rOv.text" = "Contacts:";
+
+/* Class = "UILabel"; text = "(class type)"; ObjectID = "vN3-bk-q2D"; */
+"vN3-bk-q2D.text" = "(class type)";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "yiZ-zL-M58"; */
+"yiZ-zL-M58.text" = "Email";
