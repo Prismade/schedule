@@ -3,7 +3,7 @@
 
 Allows to get access to classes schedule for students and teachers in a more convenient way.
 
-![Main screen](./Screenshots/MainScreen.png)
+<img src="./Screenshots/MainScreen.png" width=240/>
 
 - Convenient intuitive UI
 - Caching for needed type of schedule
@@ -12,8 +12,8 @@ Allows to get access to classes schedule for students and teachers in a more con
 - Map shows where the classes are taking place
 - Export to calendar
 
-This project uses _CocoaPods_ as a dependencies manager.
-Minimal iOS version supported: _11.0_
+This project uses [CocoaPods](https://cocoapods.org/) as a dependencies manager.
+Minimal iOS version supported: _12.0_
 
 ### Used dependencies:
 
@@ -24,3 +24,4 @@ Minimal iOS version supported: _11.0_
 - [PKHUD](https://github.com/pkluz/PKHUD) for displaying result of clearing cache
 - [Alamofire](https://github.com/Alamofire/Alamofire) for networking
 - [Kingfisher](https://github.com/onevcat/Kingfisher) for async image loading
+- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) for loading json responsesas dictionaries
