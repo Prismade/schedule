@@ -30,7 +30,7 @@ class STeacherDetailsViewController: UIViewController {
     // MARK: - Private Properties
     
     private var employee: SEmployee?
-    private let baseUrl = "http://oreluniver.ru"
+    private let baseUrl = "https://oreluniver.ru"
     
     // MARK: - Lifecycle
     
