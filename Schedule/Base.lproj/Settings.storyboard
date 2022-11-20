@@ -222,20 +222,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                             <tableViewSection footerTitle="Turn on to have access to schedule without internet connection" id="nWD-fF-Owh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EnableCachingCell" id="aLh-sa-z5g" customClass="SEnableCachingTableViewCell" customModule="Schedule" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="18" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLh-sa-z5g" id="d5h-iJ-69Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable caching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYr-kS-lKk">
-                                                    <rect key="frame" x="20" y="11" width="317" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="317" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-cm-KQt">
-                                                    <rect key="frame" x="345" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="345" y="6.5" width="51" height="31"/>
                                                     <color key="onTintColor" name="MainAccentColor"/>
                                                     <connections>
                                                         <action selector="switchChangedState:" destination="lqO-jJ-guA" eventType="valueChanged" id="T2P-6O-tUq"/>
@@ -257,7 +257,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                             <tableViewSection id="Ext-WS-VBd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClearCacheCell" textLabel="FuD-aj-R9l" style="IBUITableViewCellStyleDefault" id="qIV-JN-OaR">
-                                        <rect key="frame" x="0.0" y="125" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="125.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qIV-JN-OaR" id="O5F-zo-jzz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -294,7 +294,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
         <scene sceneID="HTo-Q3-2hD">
             <objects>
                 <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="D6F-ws-fXZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Other" image="MenuRounded" landscapeImage="MenuRounded" largeContentSizeImage="MenuRounded" id="JgA-gZ-Ygx"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="ellipsis" catalog="system" landscapeImage="ellipsis" largeContentSizeImage="ellipsis" id="JgA-gZ-Ygx"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO">
                         <color key="tintColor" name="MainAccentColor"/>
@@ -316,7 +316,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
     </scenes>
     <resources>
         <image name="Logo" width="60" height="60"/>
-        <image name="MenuRounded" width="30" height="30"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <namedColor name="MainAccentColor">
             <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
