@@ -1,10 +1,8 @@
 import UIKit
-import AFCurvedArrowView
 
 final class SNibSchedulePlaceholderView: UIView {
     
     @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var arrow: AFCurvedArrowView!
     
     static func loadFromNib() -> SNibSchedulePlaceholderView {
         let bundle = Bundle(for: self)
@@ -53,20 +51,6 @@ final class SSchedulePlaceholderView: UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
-        view.arrow.lineColor = UIColor(named: "DayOffTitleText")
-        view.arrow.lineWidth = 2.0
-        
-        guard let arrow = view.arrow else { return }
-        
-        arrow.arrowHeadHeight = 20.0
-        arrow.arrowHeadWidth = 10.0
-
-        arrow.arrowTail = CGPoint(x: 0.5, y: 1.0)
-        arrow.arrowHead = CGPoint(x: 0.95, y: 0.0)
-        arrow.controlPoint1 = CGPoint(x: 0.5, y: 0.5)
-        arrow.controlPoint2 = CGPoint(x: 1.0, y: 0.5)
-        arrow.curveType = .cubic
 
     }
     

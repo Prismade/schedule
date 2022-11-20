@@ -2,7 +2,6 @@ import UIKit
 import EventKit
 import EventKitUI
 import SDStateTableView
-import AFCurvedArrowView
 
 class STeacherScheduleViewController: UIViewController {
     
