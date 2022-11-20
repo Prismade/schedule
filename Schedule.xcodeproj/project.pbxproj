@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,12 @@
 		247654E7246982E0003885D5 /* SScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247654E6246982E0003885D5 /* SScheduleData.swift */; };
 		247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */; };
 		247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */; };
+		24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BCB292A0E4000E1B304 /* SwiftSoup */; };
+		24A38BCF292A10F300E1B304 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BCE292A10F300E1B304 /* Alamofire */; };
+		24A38BD2292A119700E1B304 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD1292A119700E1B304 /* PKHUD */; };
+		24A38BD5292A126400E1B304 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD4292A126400E1B304 /* Kingfisher */; };
+		24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD7292A12C000E1B304 /* SwiftyJSON */; };
+		24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BDC292A13FA00E1B304 /* SDStateTableView */; };
 		24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */; };
 		24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0BD07247BF36C0000ED47 /* SDefaults.swift */; };
 		24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */; };
@@ -67,7 +73,6 @@
 		24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BF4B57245B35BE0048D6A5 /* SDayView.xib */; };
 		24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF4B59245B378A0048D6A5 /* SDayView.swift */; };
 		24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7FE90245C872E000CDA9E /* STimeManager.swift */; };
-		E878EA60F967E4D866637950 /* Pods_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +149,7 @@
 		247654E6246982E0003885D5 /* SScheduleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleData.swift; sourceTree = "<group>"; };
 		247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSettingsTableViewController.swift; sourceTree = "<group>"; };
+		24A38BDA292A13AE00E1B304 /* SDStateTableView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDStateTableView; sourceTree = "<group>"; };
 		24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheSettingsTableViewController.swift; sourceTree = "<group>"; };
 		24B0BD07247BF36C0000ED47 /* SDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDefaults.swift; sourceTree = "<group>"; };
 		24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSchedulePlaceholderView.swift; sourceTree = "<group>"; };
@@ -151,9 +157,6 @@
 		24BF4B57245B35BE0048D6A5 /* SDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDayView.xib; sourceTree = "<group>"; };
 		24BF4B59245B378A0048D6A5 /* SDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDayView.swift; sourceTree = "<group>"; };
 		24E7FE90245C872E000CDA9E /* STimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STimeManager.swift; sourceTree = "<group>"; };
-		4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.release.xcconfig"; sourceTree = "<group>"; };
-		DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +164,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E878EA60F967E4D866637950 /* Pods_Schedule.framework in Frameworks */,
+				24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */,
+				24A38BCF292A10F300E1B304 /* Alamofire in Frameworks */,
+				24A38BD2292A119700E1B304 /* PKHUD in Frameworks */,
+				24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */,
+				24A38BD5292A126400E1B304 /* Kingfisher in Frameworks */,
+				24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				2424F1CD244F958000C1D91C /* Schedule */,
+				24A38BDA292A13AE00E1B304 /* SDStateTableView */,
 				2424F1CC244F958000C1D91C /* Products */,
-				5E73E9A1F055A23FB2C9BA35 /* Pods */,
-				42D51C0C8A7C41BBC2D27AAF /* Frameworks */,
+				24A38BDB292A13FA00E1B304 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,21 +294,11 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		42D51C0C8A7C41BBC2D27AAF /* Frameworks */ = {
+		24A38BDB292A13FA00E1B304 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C359B77CD49E37C13CCDD35 /* Pods_Schedule.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5E73E9A1F055A23FB2C9BA35 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */,
-				917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,17 +308,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2424F1DF244F958400C1D91C /* Build configuration list for PBXNativeTarget "Schedule" */;
 			buildPhases = (
-				4985A44034BF60B23613FA9C /* [CP] Check Pods Manifest.lock */,
 				2424F1C7244F958000C1D91C /* Sources */,
 				2424F1C8244F958000C1D91C /* Frameworks */,
 				2424F1C9244F958000C1D91C /* Resources */,
-				5CF3F0392B0934B7DEACA8C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Schedule;
+			packageProductDependencies = (
+				24A38BCB292A0E4000E1B304 /* SwiftSoup */,
+				24A38BCE292A10F300E1B304 /* Alamofire */,
+				24A38BD1292A119700E1B304 /* PKHUD */,
+				24A38BD4292A126400E1B304 /* Kingfisher */,
+				24A38BD7292A12C000E1B304 /* SwiftyJSON */,
+				24A38BDC292A13FA00E1B304 /* SDStateTableView */,
+			);
 			productName = Schedule;
 			productReference = 2424F1CB244F958000C1D91C /* Schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -350,6 +354,13 @@
 				ru,
 			);
 			mainGroup = 2424F1C2244F958000C1D91C;
+			packageReferences = (
+				24A38BCA292A0E4000E1B304 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				24A38BCD292A10F300E1B304 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */,
+				24A38BD3292A126400E1B304 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 2424F1CC244F958000C1D91C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,48 +398,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4985A44034BF60B23613FA9C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Schedule-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5CF3F0392B0934B7DEACA8C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2424F1C7244F958000C1D91C /* Sources */ = {
@@ -711,7 +680,6 @@
 		};
 		2424F1E0244F958400C1D91C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCFF65B59E2C3D0D4D6EB801 /* Pods-Schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -732,7 +700,6 @@
 		};
 		2424F1E1244F958400C1D91C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 917EA719B05A25F9A778BFBE /* Pods-Schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -773,6 +740,81 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24A38BCA292A0E4000E1B304 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		24A38BCD292A10F300E1B304 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		24A38BD3292A126400E1B304 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24A38BCB292A0E4000E1B304 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A38BCA292A0E4000E1B304 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		24A38BCE292A10F300E1B304 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A38BCD292A10F300E1B304 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		24A38BD1292A119700E1B304 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+		24A38BD4292A126400E1B304 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A38BD3292A126400E1B304 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		24A38BD7292A12C000E1B304 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		24A38BDC292A13FA00E1B304 /* SDStateTableView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDStateTableView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2424F1C3244F958000C1D91C /* Project object */;
 }

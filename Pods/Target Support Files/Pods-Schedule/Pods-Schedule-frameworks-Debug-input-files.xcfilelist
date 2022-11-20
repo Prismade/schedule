@@ -1,9 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-Schedule/Pods-Schedule-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AFCurvedArrowView/AFCurvedArrowView.framework
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
-${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
-${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
-${BUILT_PRODUCTS_DIR}/SDStateTableView/SDStateTableView.framework
-${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework
-${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

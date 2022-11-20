@@ -1,6 +1,0 @@
-framework module SDStateTableView {
-  umbrella header "SDStateTableView-umbrella.h"
-
-  export *
-  module * { export * }
-}
