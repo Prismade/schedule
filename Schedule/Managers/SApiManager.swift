@@ -83,13 +83,13 @@ final class SApiManager {
     
     @discardableResult
     func getBuildingsData(completion: @escaping (DataResponse<SBuildingData, AFError>) -> Void) -> Request {
-        let url = "http://oreluniver.ru/assets/js/buildings.json"
+        let url = "https://oreluniver.ru/assets/js/buildings.json"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
     
     @discardableResult
     func getEmployeeData(for id: Int, completion: @escaping (DataResponse<Data?, AFError>) -> Void) -> Request {
-        let url = "http://oreluniver.ru/employee/\(id)"
+        let url = "https://oreluniver.ru/employee/\(id)"
         return session.request(url).response(completionHandler: completion)
     }
     
