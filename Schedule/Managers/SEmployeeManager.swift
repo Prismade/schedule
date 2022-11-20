@@ -32,7 +32,7 @@ final class SEmployeeManager {
         if let data = SCacheManager.shared.retrieveEmployee(id: employeeId) {
             completion(.success(data))
         } else {
-          Task { [weak self] in
+          Task {
             do {
               let data = try await NetworkWorker().data(from: Oreluniver.employee(identifier: employeeId))
               let parsedData = parse(data, for: employeeId)
