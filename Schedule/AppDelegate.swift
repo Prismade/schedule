@@ -30,13 +30,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
         
-        if let tabBarController = window?.rootViewController as! UITabBarController? {
-            switch SDefaults.defaultUser {
-                case .student: tabBarController.selectedIndex = 0
-                case .teacher: tabBarController.selectedIndex = 1
-            }
-        }
-        
         return true
     }
     

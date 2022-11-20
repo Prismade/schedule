@@ -61,16 +61,8 @@ class SExamsTableViewController: UITableViewController {
                     print(error.localizedDescription)
             }
         }
-        
-        let userKind = SDefaults.defaultUser
-        switch userKind {
-            case .student:
-                guard let id = SDefaults.studentId else { return }
-                SApiManager.shared.getStudentExamsSchedule(for: id, completion: completionHandler)
-            case .teacher:
-                guard let id = SDefaults.teacherId else { return }
-                SApiManager.shared.getTeacherExamsSchedule(for: id, completion: completionHandler)
-        }
+        guard let id = SDefaults.studentId else { return }
+        SApiManager.shared.getStudentExamsSchedule(for: id, completion: completionHandler)
     }
     
     @objc func refresh(_ sender: UIRefreshControl) {
@@ -94,15 +86,7 @@ class SExamsTableViewController: UITableViewController {
             for: indexPath) as! SScheduleTableViewCell
         
         let data = examsData[indexPath.row]
-        let userKind = SDefaults.defaultUser
-        
-        switch userKind {
-            case .student:
-                cell.configure(with: data, cellKind: .student)
-            case .teacher:
-                cell.configure(with: data, cellKind: .teacher)
-        }
-        
+        cell.configure(with: data)
         return cell
     }
     
