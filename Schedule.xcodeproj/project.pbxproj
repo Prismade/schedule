@@ -21,7 +21,6 @@
 		2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2424F231244F9EBB00C1D91C /* Localizable.strings */; };
 		2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F233244FA14800C1D91C /* CalendarColors.xcassets */; };
 		242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242D299F246CAC4600CBF87D /* Colors.xcassets */; };
-		24335ED924648F0D00801B2A /* SApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335ED824648F0D00801B2A /* SApiManager.swift */; };
 		24335EE4246491BD00801B2A /* SBuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDA246491BD00801B2A /* SBuildingData.swift */; };
 		24335EE5246491BD00801B2A /* SCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDB246491BD00801B2A /* SCourse.swift */; };
 		24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDC246491BD00801B2A /* SCacheItem.swift */; };
@@ -64,8 +63,11 @@
 		24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0BD07247BF36C0000ED47 /* SDefaults.swift */; };
 		24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */; };
 		24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B1DB05248A88150068D15F /* SSchedulePlaceholderView.xib */; };
+		24B8DDAF292424C900824EF2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8DDAE292424C900824EF2 /* Endpoint.swift */; };
+		24B8DDB12924252B00824EF2 /* OreluniverEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8DDB02924252B00824EF2 /* OreluniverEndpoint.swift */; };
 		24BF4B58245B35BE0048D6A5 /* SDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BF4B57245B35BE0048D6A5 /* SDayView.xib */; };
 		24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF4B59245B378A0048D6A5 /* SDayView.swift */; };
+		24CC4C4D2924D3F70041910C /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC4C4C2924D3F70041910C /* NetworkWorker.swift */; };
 		24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7FE90245C872E000CDA9E /* STimeManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +100,6 @@
 		2424F232244F9EC000C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2424F233244FA14800C1D91C /* CalendarColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CalendarColors.xcassets; sourceTree = "<group>"; };
 		242D299F246CAC4600CBF87D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		24335ED824648F0D00801B2A /* SApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SApiManager.swift; sourceTree = "<group>"; };
 		24335EDA246491BD00801B2A /* SBuildingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBuildingData.swift; sourceTree = "<group>"; };
 		24335EDB246491BD00801B2A /* SCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourse.swift; sourceTree = "<group>"; };
 		24335EDC246491BD00801B2A /* SCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCacheItem.swift; sourceTree = "<group>"; };
@@ -140,8 +141,11 @@
 		24B0BD07247BF36C0000ED47 /* SDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDefaults.swift; sourceTree = "<group>"; };
 		24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSchedulePlaceholderView.swift; sourceTree = "<group>"; };
 		24B1DB05248A88150068D15F /* SSchedulePlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSchedulePlaceholderView.xib; sourceTree = "<group>"; };
+		24B8DDAE292424C900824EF2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		24B8DDB02924252B00824EF2 /* OreluniverEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OreluniverEndpoint.swift; sourceTree = "<group>"; };
 		24BF4B57245B35BE0048D6A5 /* SDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDayView.xib; sourceTree = "<group>"; };
 		24BF4B59245B378A0048D6A5 /* SDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDayView.swift; sourceTree = "<group>"; };
+		24CC4C4C2924D3F70041910C /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		24E7FE90245C872E000CDA9E /* STimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STimeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,9 +229,11 @@
 		2424F1F5244F98F200C1D91C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				24B8DDAE292424C900824EF2 /* Endpoint.swift */,
+				24B8DDB02924252B00824EF2 /* OreluniverEndpoint.swift */,
+				24CC4C4C2924D3F70041910C /* NetworkWorker.swift */,
 				24B0BD07247BF36C0000ED47 /* SDefaults.swift */,
 				24E7FE90245C872E000CDA9E /* STimeManager.swift */,
-				24335ED824648F0D00801B2A /* SApiManager.swift */,
 				24567A6024788054004BAD60 /* SBuildingsManager.swift */,
 				24567A642478889C004BAD60 /* SEmployeeManager.swift */,
 				24661C7E247E7DBD001AE48C /* SCacheManager.swift */,
@@ -389,6 +395,7 @@
 				24661C83247EC3C6001AE48C /* SCourseSelection.swift in Sources */,
 				24335EEA246491BD00801B2A /* SGroup.swift in Sources */,
 				24661C7F247E7DBD001AE48C /* SCacheManager.swift in Sources */,
+				24CC4C4D2924D3F70041910C /* NetworkWorker.swift in Sources */,
 				24661C8A247EC3D9001AE48C /* SSearchableTableViewController.swift in Sources */,
 				24335EEB246491BD00801B2A /* SDivision.swift in Sources */,
 				24335EE5246491BD00801B2A /* SCourse.swift in Sources */,
@@ -407,12 +414,13 @@
 				24335EEC246491BD00801B2A /* SClass.swift in Sources */,
 				24661C81247EBECA001AE48C /* SExamsTableViewController.swift in Sources */,
 				24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */,
+				24B8DDAF292424C900824EF2 /* Endpoint.swift in Sources */,
 				245E167B24536FE10078DAC4 /* SStudentScheduleViewController.swift in Sources */,
 				24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */,
 				2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */,
 				24661C89247EC3D9001AE48C /* SGroupSelection.swift in Sources */,
 				247654E7246982E0003885D5 /* SScheduleData.swift in Sources */,
-				24335ED924648F0D00801B2A /* SApiManager.swift in Sources */,
+				24B8DDB12924252B00824EF2 /* OreluniverEndpoint.swift in Sources */,
 				24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */,
 				243B61BA245B71E900FD7455 /* SCalendarView.swift in Sources */,
 				2466640524607B740043BA4C /* SScheduleView.swift in Sources */,
