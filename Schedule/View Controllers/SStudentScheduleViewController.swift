@@ -168,10 +168,6 @@ class SStudentScheduleViewController: UIViewController {
             classDetails.classData = scheduleSource.classData(number: lastSelectedClass.number, on: lastSelectedClass.day)
             classDetails.userKind = .student
             
-        } else if segue.identifier ?? "" == "SetupFromStudentSegue" {
-            let destination = segue.destination as! UINavigationController
-            let vc = destination.topViewController! as! SDivisionSelectionTableViewController
-            vc.isTeacher = false
         }
     }
     
@@ -195,7 +191,7 @@ extension SStudentScheduleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: schedule.reuseIdentifier, for: indexPath) as! SScheduleTableViewCell
         let classData = scheduleSource.classData(number: indexPath.row, on: SWeekDay(rawValue: tableView.tag)!)!
-        cell.configure(with: classData, cellKind: .student)
+        cell.configure(with: classData)
         return cell
     }
     

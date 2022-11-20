@@ -22,7 +22,6 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
     var completionHandler: ((DataResponse<[SDivision], AFError>) -> Void)!
     var selectedDivision: Int!
     var needCancelButton = true
-    var isTeacher = false
     
     // MARK: - Lifecycle
     
@@ -66,11 +65,7 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
     }
     
     override func updateData() {
-        if isTeacher {
-            SApiManager.shared.getTeacherDivisions(completion: completionHandler)
-        } else {
-            SApiManager.shared.getStudentDivisions(completion: completionHandler)
-        }
+        SApiManager.shared.getStudentDivisions(completion: completionHandler)
     }
     
     override func fillCell(_ cell: inout UITableViewCell, at indexPath: IndexPath) {
@@ -114,10 +109,6 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
             let destination = segue.destination as! SCourseSelectionTableViewController
             destination.division = selectedDivision
             destination.needCancelButton = needCancelButton
-        } else if segue.identifier ?? "" == "ToDepartmentSelection" {
-            let destination = segue.destination as! SDepartmentSelectionTableViewController
-            destination.division = selectedDivision
-            destination.needCancelButton = needCancelButton
         }
     }
     
@@ -139,13 +130,7 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
         } else {
             selectedDivision = data[indexPath.row].id
         }
-        
-        if isTeacher {
-            performSegue(withIdentifier: "ToDepartmentSelection", sender: self)
-        } else {
-            performSegue(withIdentifier: "ToCourseSelection", sender: self)
-        }
-        
+        performSegue(withIdentifier: "ToCourseSelection", sender: self)
     }
     
 }

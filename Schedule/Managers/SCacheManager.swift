@@ -13,11 +13,6 @@ struct SCMError: Error {
 
 final class SCacheManager {
     
-    enum CacheKind {
-        case student
-        case teacher
-    }
-    
     // MARK: - Static Properties
     
     static let shared = SCacheManager()
@@ -32,14 +27,9 @@ final class SCacheManager {
     
     // MARK: - Public Methods
     
-    func cacheSchedule(_ data: [SScheduleDay], weekOffset: Int, kind cacheKind: CacheKind) throws {
-        let fileName: String = {
-            switch cacheKind {
-                case .student: return SDefaults.filePrefix(for: .student)
-                case .teacher: return SDefaults.filePrefix(for: .teacher)
-            }
-        }()
-        guard let userId = cacheKind == .student ? SDefaults.studentId : SDefaults.teacherId else {
+    func cacheSchedule(_ data: [SScheduleDay], weekOffset: Int) throws {
+        let fileName = SDefaults.filePrefix(for: .student)
+        guard let userId = SDefaults.studentId else {
             throw SCMError(kind: .noUserId, localizedDescription: "No user ID specified")
         }
         
@@ -57,9 +47,9 @@ final class SCacheManager {
         }
     }
     
-    func retrieveSchedule(weekOffset: Int, for cacheKind: CacheKind) -> [SScheduleDay]? {
-        let fileName = SDefaults.filePrefix(for: cacheKind == .student ? .student : .teacher)
-        guard let userId = cacheKind == .student ? SDefaults.studentId : SDefaults.teacherId else {
+    func retrieveSchedule(weekOffset: Int) -> [SScheduleDay]? {
+        let fileName = SDefaults.filePrefix(for: .student)
+        guard let userId = SDefaults.studentId else {
             return nil
         }
         
@@ -85,7 +75,6 @@ final class SCacheManager {
     func clearCache() throws {
         let fileNamePrefixes = [
             SDefaults.filePrefix(for: .student),
-            SDefaults.filePrefix(for: .teacher),
             SDefaults.filePrefix(for: .building),
             SDefaults.filePrefix(for: .employee)
         ]

@@ -25,20 +25,8 @@ final class SApiManager {
     }
     
     @discardableResult
-    func getTeacherDivisions(completion: @escaping (DataResponse<[SDivision], AFError>) -> Void) -> Request {
-        let url = baseUrl + "/divisionlistforpreps"
-        return session.request(url).responseDecodable(completionHandler: completion)
-    }
-    
-    @discardableResult
     func getCourses(for division: Int, completion: @escaping (DataResponse<[SCourse], AFError>) -> Void) -> Request  {
         let url = baseUrl + "/\(division)/kurslist"
-        return session.request(url).responseDecodable(completionHandler: completion)
-    }
-    
-    @discardableResult
-    func getDepartments(for division: Int, completion: @escaping (DataResponse<[SDepartment], AFError>) -> Void) -> Request {
-        let url = baseUrl + "/\(division)/kaflist"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
     
@@ -50,12 +38,6 @@ final class SApiManager {
     }
     
     @discardableResult
-    func getTeachers(for department: Int, at division: Int, completion: @escaping (DataResponse<[STeacher], AFError>) -> Void) -> Request {
-        let url = baseUrl + "/\(department)/preplist"
-        return session.request(url).responseDecodable(completionHandler: completion)
-    }
-    
-    @discardableResult
     func getStudentSchedule(for group: Int, on weekOffset: Int, completion: @escaping (DataResponse<Data, AFError>) -> Void) -> Request  {
         let timeStamp: String = STimeManager.shared.getApiKey(for: weekOffset)
         let url = baseUrl + "//\(group)///\(timeStamp)/printschedule"
@@ -63,21 +45,8 @@ final class SApiManager {
     }
     
     @discardableResult
-    func getTeacherSchedule(for teacher: Int, on weekOffset: Int, completion: @escaping (DataResponse<Data, AFError>) -> Void) -> Request  {
-        let timeStamp: String = STimeManager.shared.getApiKey(for: weekOffset)
-        let url = baseUrl + "/\(teacher)////\(timeStamp)/printschedule"
-        return session.request(url).responseData(completionHandler: completion)
-    }
-    
-    @discardableResult
     func getStudentExamsSchedule(for group: Int, completion: @escaping (DataResponse<[SExam], AFError>) -> Void) -> Request {
         let url = baseUrl + "/\(group)////printexamschedule"
-        return session.request(url).responseDecodable(completionHandler: completion)
-    }
-    
-    @discardableResult
-    func getTeacherExamsSchedule(for teacher: Int, completion: @escaping (DataResponse<[SExam], AFError>) -> Void) -> Request {
-        let url = baseUrl + "//\(teacher)///printexamschedule"
         return session.request(url).responseDecodable(completionHandler: completion)
     }
     

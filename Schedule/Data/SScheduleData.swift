@@ -49,27 +49,16 @@ final class SScheduleData {
     func updateData(force: Bool = false) {
         guard let id = userId else { return }
         
-        let needCaching: Bool = {
-            switch userKind {
-                case .student:
-                    return SDefaults.cachingUserKind == .student || SDefaults.cachingUserKind == .both
-                case .teacher:
-                    return SDefaults.cachingUserKind == .teacher || SDefaults.cachingUserKind == .both
-                default: return false
-            }
-        }()
-        
-        if SDefaults.isCachingEnabled && force == false && needCaching {
+        if SDefaults.isCachingEnabled && force == false {
             if let cachedSchedule = SCacheManager.shared.retrieveSchedule(
-                weekOffset: weekOffset,
-                for: userKind == .student ? .student : .teacher) {
+                weekOffset: weekOffset) {
                 schedule = cachedSchedule
                 didFinishDataUpdate?(nil)
                 return
             }
         }
         let completionHandler: (DataResponse<Data, AFError>) -> Void =
-        { [unowned self, needCaching] response in
+        { [unowned self] response in
             switch response.result {
                 case .success(let data): DispatchQueue.main.async {
                     let jsonData = try? JSON(data: data)
@@ -104,12 +93,11 @@ final class SScheduleData {
                         return SScheduleDay(weekDay: SWeekDay(rawValue: weekDay)!, classes: classes)
                     }
                     
-                    if SDefaults.isCachingEnabled && needCaching && self.weekOffset >= 0 {
+                    if SDefaults.isCachingEnabled && self.weekOffset >= 0 {
                         do {
                             try SCacheManager.shared.cacheSchedule(
                                 self.schedule,
-                                weekOffset: self.weekOffset,
-                                kind: self.userKind == .student ? .student : .teacher)
+                                weekOffset: self.weekOffset)
                         } catch {
                             print(error.localizedDescription)
                         }
@@ -124,19 +112,10 @@ final class SScheduleData {
             }
         }
         
-        switch userKind {
-            case .student:
-                SApiManager.shared.getStudentSchedule(
-                    for: id,
-                    on: weekOffset,
-                    completion: completionHandler)
-            case .teacher:
-                SApiManager.shared.getTeacherSchedule(
-                    for: id,
-                    on: weekOffset,
-                    completion: completionHandler)
-            default: return
-        }
+        SApiManager.shared.getStudentSchedule(
+            for: id,
+            on: weekOffset,
+            completion: completionHandler)
     }
     
 }

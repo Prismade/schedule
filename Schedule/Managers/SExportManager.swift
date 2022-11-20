@@ -15,11 +15,6 @@ struct SEMError: Error {
 
 final class SExportManager {
     
-    enum UserKind {
-        case student
-        case teacher
-    }
-    
     // MARK: - Static Properties
     
     static let shared = SExportManager()

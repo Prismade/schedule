@@ -10,7 +10,6 @@
 		2416015A25290EE20096EBDC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015825290EE20096EBDC /* Settings.storyboard */; };
 		2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015D252912A70096EBDC /* AdditionalInfo.storyboard */; };
 		24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160161252913080096EBDC /* ExamsSchedule.storyboard */; };
-		24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160165252913870096EBDC /* TeacherSchedule.storyboard */; };
 		2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160169252913E00096EBDC /* StudentSchedule.storyboard */; };
 		2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416016D2529147A0096EBDC /* UserSetup.storyboard */; };
 		2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1CE244F958000C1D91C /* AppDelegate.swift */; };
@@ -22,18 +21,15 @@
 		2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2424F231244F9EBB00C1D91C /* Localizable.strings */; };
 		2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F233244FA14800C1D91C /* CalendarColors.xcassets */; };
 		242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242D299F246CAC4600CBF87D /* Colors.xcassets */; };
-		242D29A2246CADD300CBF87D /* STeacherScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */; };
 		24335ED924648F0D00801B2A /* SApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335ED824648F0D00801B2A /* SApiManager.swift */; };
 		24335EE4246491BD00801B2A /* SBuildingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDA246491BD00801B2A /* SBuildingData.swift */; };
 		24335EE5246491BD00801B2A /* SCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDB246491BD00801B2A /* SCourse.swift */; };
 		24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDC246491BD00801B2A /* SCacheItem.swift */; };
-		24335EE7246491BD00801B2A /* STeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDD246491BD00801B2A /* STeacher.swift */; };
 		24335EE8246491BD00801B2A /* SEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDE246491BD00801B2A /* SEmployee.swift */; };
 		24335EE9246491BD00801B2A /* SExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EDF246491BD00801B2A /* SExam.swift */; };
 		24335EEA246491BD00801B2A /* SGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE0246491BD00801B2A /* SGroup.swift */; };
 		24335EEB246491BD00801B2A /* SDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE1246491BD00801B2A /* SDivision.swift */; };
 		24335EEC246491BD00801B2A /* SClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE2246491BD00801B2A /* SClass.swift */; };
-		24335EED246491BD00801B2A /* SDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE3246491BD00801B2A /* SDepartment.swift */; };
 		24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */; };
 		243B61B4245B581000FD7455 /* SWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243B61B3245B581000FD7455 /* SWeekView.xib */; };
 		243B61B6245B599200FD7455 /* SWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243B61B5245B599200FD7455 /* SWeekView.swift */; };
@@ -48,8 +44,6 @@
 		24661C83247EC3C6001AE48C /* SCourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C82247EC3C6001AE48C /* SCourseSelection.swift */; };
 		24661C89247EC3D9001AE48C /* SGroupSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C84247EC3D9001AE48C /* SGroupSelection.swift */; };
 		24661C8A247EC3D9001AE48C /* SSearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C85247EC3D9001AE48C /* SSearchableTableViewController.swift */; };
-		24661C8B247EC3D9001AE48C /* STeacherSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C86247EC3D9001AE48C /* STeacherSelection.swift */; };
-		24661C8C247EC3D9001AE48C /* SDepartmentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */; };
 		24661C8D247EC3D9001AE48C /* SDivisionSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C88247EC3D9001AE48C /* SDivisionSelection.swift */; };
 		24661C8F2481271E001AE48C /* SExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C8E2481271E001AE48C /* SExportManager.swift */; };
 		24661C962481400C001AE48C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24661C982481400C001AE48C /* InfoPlist.strings */; };
@@ -79,7 +73,6 @@
 		2416015925290EE20096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		2416015E252912A70096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdditionalInfo.storyboard; sourceTree = "<group>"; };
 		24160162252913080096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExamsSchedule.storyboard; sourceTree = "<group>"; };
-		24160166252913870096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TeacherSchedule.storyboard; sourceTree = "<group>"; };
 		2416016A252913E00096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StudentSchedule.storyboard; sourceTree = "<group>"; };
 		2416016E2529147A0096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSetup.storyboard; sourceTree = "<group>"; };
 		241601E1252922CB0096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -88,8 +81,6 @@
 		241601E8252923310096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/UserSetup.strings; sourceTree = "<group>"; };
 		241601EA252923C00096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StudentSchedule.strings; sourceTree = "<group>"; };
 		241601EC252923C20096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/StudentSchedule.strings; sourceTree = "<group>"; };
-		241601EE252923D30096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TeacherSchedule.strings; sourceTree = "<group>"; };
-		241601F0252924020096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TeacherSchedule.strings; sourceTree = "<group>"; };
 		241601F3252924730096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExamsSchedule.strings; sourceTree = "<group>"; };
 		241601F5252924A30096EBDC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ExamsSchedule.strings; sourceTree = "<group>"; };
 		241601F7252926CC0096EBDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AdditionalInfo.strings; sourceTree = "<group>"; };
@@ -107,18 +98,15 @@
 		2424F232244F9EC000C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2424F233244FA14800C1D91C /* CalendarColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CalendarColors.xcassets; sourceTree = "<group>"; };
 		242D299F246CAC4600CBF87D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STeacherScheduleViewController.swift; sourceTree = "<group>"; };
 		24335ED824648F0D00801B2A /* SApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SApiManager.swift; sourceTree = "<group>"; };
 		24335EDA246491BD00801B2A /* SBuildingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBuildingData.swift; sourceTree = "<group>"; };
 		24335EDB246491BD00801B2A /* SCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourse.swift; sourceTree = "<group>"; };
 		24335EDC246491BD00801B2A /* SCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCacheItem.swift; sourceTree = "<group>"; };
-		24335EDD246491BD00801B2A /* STeacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STeacher.swift; sourceTree = "<group>"; };
 		24335EDE246491BD00801B2A /* SEmployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEmployee.swift; sourceTree = "<group>"; };
 		24335EDF246491BD00801B2A /* SExam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SExam.swift; sourceTree = "<group>"; };
 		24335EE0246491BD00801B2A /* SGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGroup.swift; sourceTree = "<group>"; };
 		24335EE1246491BD00801B2A /* SDivision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDivision.swift; sourceTree = "<group>"; };
 		24335EE2246491BD00801B2A /* SClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SClass.swift; sourceTree = "<group>"; };
-		24335EE3246491BD00801B2A /* SDepartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDepartment.swift; sourceTree = "<group>"; };
 		24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		243B61B3245B581000FD7455 /* SWeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWeekView.xib; sourceTree = "<group>"; };
 		243B61B5245B599200FD7455 /* SWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWeekView.swift; sourceTree = "<group>"; };
@@ -133,8 +121,6 @@
 		24661C82247EC3C6001AE48C /* SCourseSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourseSelection.swift; sourceTree = "<group>"; };
 		24661C84247EC3D9001AE48C /* SGroupSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGroupSelection.swift; sourceTree = "<group>"; };
 		24661C85247EC3D9001AE48C /* SSearchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSearchableTableViewController.swift; sourceTree = "<group>"; };
-		24661C86247EC3D9001AE48C /* STeacherSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STeacherSelection.swift; sourceTree = "<group>"; };
-		24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDepartmentSelection.swift; sourceTree = "<group>"; };
 		24661C88247EC3D9001AE48C /* SDivisionSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDivisionSelection.swift; sourceTree = "<group>"; };
 		24661C8E2481271E001AE48C /* SExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SExportManager.swift; sourceTree = "<group>"; };
 		24661C972481400C001AE48C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -206,7 +192,6 @@
 				2424F1D4244F958000C1D91C /* Main.storyboard */,
 				2416016D2529147A0096EBDC /* UserSetup.storyboard */,
 				24160169252913E00096EBDC /* StudentSchedule.storyboard */,
-				24160165252913870096EBDC /* TeacherSchedule.storyboard */,
 				24160161252913080096EBDC /* ExamsSchedule.storyboard */,
 				2416015D252912A70096EBDC /* AdditionalInfo.storyboard */,
 				2416015825290EE20096EBDC /* Settings.storyboard */,
@@ -224,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */,
-				242D29A1246CADD300CBF87D /* STeacherScheduleViewController.swift */,
 				24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */,
 				247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */,
 				24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */,
@@ -232,8 +216,6 @@
 				24661C88247EC3D9001AE48C /* SDivisionSelection.swift */,
 				24661C82247EC3C6001AE48C /* SCourseSelection.swift */,
 				24661C84247EC3D9001AE48C /* SGroupSelection.swift */,
-				24661C87247EC3D9001AE48C /* SDepartmentSelection.swift */,
-				24661C86247EC3D9001AE48C /* STeacherSelection.swift */,
 				24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */,
 				24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */,
 			);
@@ -260,8 +242,6 @@
 				24335EE1246491BD00801B2A /* SDivision.swift */,
 				24335EDB246491BD00801B2A /* SCourse.swift */,
 				24335EE0246491BD00801B2A /* SGroup.swift */,
-				24335EE3246491BD00801B2A /* SDepartment.swift */,
-				24335EDD246491BD00801B2A /* STeacher.swift */,
 				24335EDF246491BD00801B2A /* SExam.swift */,
 				24335EDE246491BD00801B2A /* SEmployee.swift */,
 				24335EE2246491BD00801B2A /* SClass.swift */,
@@ -376,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2466640724607B840043BA4C /* SScheduleView.xib in Resources */,
-				24160167252913870096EBDC /* TeacherSchedule.storyboard in Resources */,
 				24661C962481400C001AE48C /* InfoPlist.strings in Resources */,
 				243B61B4245B581000FD7455 /* SWeekView.xib in Resources */,
 				242D29A0246CAC4600CBF87D /* Colors.xcassets in Resources */,
@@ -413,22 +392,18 @@
 				24661C8A247EC3D9001AE48C /* SSearchableTableViewController.swift in Sources */,
 				24335EEB246491BD00801B2A /* SDivision.swift in Sources */,
 				24335EE5246491BD00801B2A /* SCourse.swift in Sources */,
-				24661C8C247EC3D9001AE48C /* SDepartmentSelection.swift in Sources */,
 				2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */,
 				247492FA248E6A8100B4A847 /* SScheduleDay.swift in Sources */,
 				2424F229244F9A6400C1D91C /* SCopyableLabel.swift in Sources */,
 				24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */,
-				242D29A2246CADD300CBF87D /* STeacherScheduleViewController.swift in Sources */,
 				247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */,
 				24661C8F2481271E001AE48C /* SExportManager.swift in Sources */,
-				24335EED246491BD00801B2A /* SDepartment.swift in Sources */,
 				24567A5F24787EDB004BAD60 /* SClassDetailsViewController.swift in Sources */,
 				24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */,
 				24567A632478866B004BAD60 /* STeacherDetailsViewController.swift in Sources */,
 				24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */,
 				24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */,
 				243B61B6245B599200FD7455 /* SWeekView.swift in Sources */,
-				24661C8B247EC3D9001AE48C /* STeacherSelection.swift in Sources */,
 				24335EEC246491BD00801B2A /* SClass.swift in Sources */,
 				24661C81247EBECA001AE48C /* SExamsTableViewController.swift in Sources */,
 				24335EE6246491BD00801B2A /* SCacheItem.swift in Sources */,
@@ -441,7 +416,6 @@
 				24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */,
 				243B61BA245B71E900FD7455 /* SCalendarView.swift in Sources */,
 				2466640524607B740043BA4C /* SScheduleView.swift in Sources */,
-				24335EE7246491BD00801B2A /* STeacher.swift in Sources */,
 				24335EE8246491BD00801B2A /* SEmployee.swift in Sources */,
 				24335EE4246491BD00801B2A /* SBuildingData.swift in Sources */,
 				24567A652478889C004BAD60 /* SEmployeeManager.swift in Sources */,
@@ -479,16 +453,6 @@
 				241601F5252924A30096EBDC /* ru */,
 			);
 			name = ExamsSchedule.storyboard;
-			sourceTree = "<group>";
-		};
-		24160165252913870096EBDC /* TeacherSchedule.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24160166252913870096EBDC /* Base */,
-				241601EE252923D30096EBDC /* ru */,
-				241601F0252924020096EBDC /* en */,
-			);
-			name = TeacherSchedule.storyboard;
 			sourceTree = "<group>";
 		};
 		24160169252913E00096EBDC /* StudentSchedule.storyboard */ = {
