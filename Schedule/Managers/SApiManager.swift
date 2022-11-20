@@ -10,7 +10,7 @@ final class SApiManager {
     // MARK: - Private Properties
     
     private let session = Alamofire.Session()
-    private let baseUrl = "http://oreluniver.ru/schedule"
+    private let baseUrl = "https://oreluniver.ru/schedule"
     
     // MARK: - Initializers
     
