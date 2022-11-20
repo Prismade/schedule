@@ -137,12 +137,3 @@ fileprivate extension Data {
     self.map { String(format: "%02hhx", $0) }.joined()
   }
 }
-
-fileprivate extension Date {
-  var rfc1123: String {
-    let formatter = DateFormatter()
-    formatter.timeZone = TimeZone(secondsFromGMT: 0)
-    formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
-    return formatter.string(from: self)
-  }
-}
