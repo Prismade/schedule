@@ -48,13 +48,10 @@ final class SScheduleData {
   func updateData(force: Bool = false) {
     guard let id = userId else { return }
     
-    if SDefaults.isCachingEnabled && force == false {
-      if let cachedSchedule = SCacheManager.shared.retrieveSchedule(
-        weekOffset: weekOffset) {
-        schedule = cachedSchedule
-        didFinishDataUpdate?(nil)
-        return
-      }
+    if force == false, let cachedSchedule = SCacheManager.shared.retrieveSchedule(weekOffset: weekOffset) {
+      schedule = cachedSchedule
+      didFinishDataUpdate?(nil)
+      return
     }
     
     Task {
@@ -92,7 +89,7 @@ final class SScheduleData {
           return SScheduleDay(weekDay: SWeekDay(rawValue: weekDay)!, classes: classes)
         }
         
-        if SDefaults.isCachingEnabled && weekOffset >= 0 {
+        if weekOffset >= 0 {
           do {
             try SCacheManager.shared.cacheSchedule(
               schedule,

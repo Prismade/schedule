@@ -10,7 +10,6 @@ final class SDefaults {
     // MARK: - Static Properties
     
     static let studentIdKey = "StudentId"
-    static let isCachingEnabledKey = "IsCachingEnabled"
     static let studentCacheFilePrefixKey = "StudentCacheFilePrefix"
     static let buildingCacheFilePrefixKey = "BuildingCacheFilePrefix"
     static let employeeCacheFilePrefixKey = "EmployeeCacheFilePrefix"
@@ -25,16 +24,6 @@ final class SDefaults {
         
         get {
             return defaults.object(forKey: studentIdKey) as? Int
-        }
-    }
-    
-    static var isCachingEnabled: Bool {
-        set {
-            defaults.set(newValue, forKey: isCachingEnabledKey)
-        }
-        
-        get {
-            return defaults.bool(forKey: isCachingEnabledKey)
         }
     }
     
@@ -62,10 +51,6 @@ final class SDefaults {
     }
     
     static func launchSetup() {
-        if UserDefaults.standard.object(forKey: isCachingEnabledKey) == nil {
-            UserDefaults.standard.set(false, forKey: isCachingEnabledKey)
-        }
-        
         if UserDefaults.standard.object(forKey: studentCacheFilePrefixKey) == nil {
             UserDefaults.standard.set("student", forKey: studentCacheFilePrefixKey)
         }
