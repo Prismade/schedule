@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 
 final class SDivisionSelectionTableViewController: SSearchableTableViewController {
     
@@ -19,10 +18,8 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
     
     var data = [SDivision]()
     var filteredData = [SDivision]()
-    var completionHandler: ((DataResponse<[SDivision], AFError>) -> Void)!
     var selectedDivision: Int!
     var needCancelButton = true
-    var isTeacher = false
     
     // MARK: - Lifecycle
     
@@ -33,25 +30,6 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
         
         if !needCancelButton {
             cancelButton.isEnabled = false
-        }
-        
-        /* Can crash if quickly open and close institute selection and the response comes after
-         the vc was closed. Maybe.
-        
-         Example log message:
-         Fatal error: Attempted to read an unowned reference but the object was already deallocated
-         2020-06-01 18:40:18.448155+0300 Schedule[12816:1007075] Fatal error: Attempted to read an
-         unowned reference but the object was already deallocated
-         */
-        completionHandler = { [unowned self] response in
-            switch response.result {
-                case .success(let resData): DispatchQueue.main.async {
-                    self.data = resData
-                    self.refreshControl?.endRefreshing()
-                    self.tableView.reloadData()
-                }
-                case .failure(let err): debugPrint(err.localizedDescription)
-            }
         }
         updateData()
     }
@@ -66,11 +44,19 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
     }
     
     override func updateData() {
-        if isTeacher {
-            SApiManager.shared.getTeacherDivisions(completion: completionHandler)
-        } else {
-            SApiManager.shared.getStudentDivisions(completion: completionHandler)
+      Task { [weak self] in
+        guard let self else { return }
+        do {
+          let divisions: [SDivision] = try await NetworkWorker().data(from: Oreluniver.divisions)
+          self.data = divisions
+          await MainActor.run {
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+          }
+        } catch {
+          print(error.localizedDescription)
         }
+      }
     }
     
     override func fillCell(_ cell: inout UITableViewCell, at indexPath: IndexPath) {
@@ -114,10 +100,6 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
             let destination = segue.destination as! SCourseSelectionTableViewController
             destination.division = selectedDivision
             destination.needCancelButton = needCancelButton
-        } else if segue.identifier ?? "" == "ToDepartmentSelection" {
-            let destination = segue.destination as! SDepartmentSelectionTableViewController
-            destination.division = selectedDivision
-            destination.needCancelButton = needCancelButton
         }
     }
     
@@ -139,13 +121,7 @@ final class SDivisionSelectionTableViewController: SSearchableTableViewControlle
         } else {
             selectedDivision = data[indexPath.row].id
         }
-        
-        if isTeacher {
-            performSegue(withIdentifier: "ToDepartmentSelection", sender: self)
-        } else {
-            performSegue(withIdentifier: "ToCourseSelection", sender: self)
-        }
-        
+        performSegue(withIdentifier: "ToCourseSelection", sender: self)
     }
     
 }

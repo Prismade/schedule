@@ -17,24 +17,22 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
+            appearance.shadowImage = UIImage()
+            appearance.shadowColor = .clear
             UITabBar.appearance().standardAppearance = appearance
             if #available(iOS 15.0, *) {
                 UITabBar.appearance().scrollEdgeAppearance = appearance
             }
         }
         
-        if #available(iOS 15, *) {
+        if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(named: "NavBarColor")
+            appearance.shadowImage = UIImage()
+            appearance.shadowColor = .clear
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
-        
-        if let tabBarController = window?.rootViewController as! UITabBarController? {
-            switch SDefaults.defaultUser {
-                case .student: tabBarController.selectedIndex = 0
-                case .teacher: tabBarController.selectedIndex = 1
-            }
         }
         
         return true

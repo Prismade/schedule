@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZx-SF-Am9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZx-SF-Am9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="nZw-Vi-CTv" customClass="SStudentScheduleViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bLL-TM-Sac">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-Pa-sw2" customClass="SCalendarView" customModule="Schedule" customModuleProvider="target">
@@ -26,10 +26,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQt-7v-8VZ" customClass="SScheduleView" customModule="Schedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="682"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="678"/>
                             </view>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-cO-yIO" userLabel="Placeholder" customClass="SSchedulePlaceholderView" customModule="Schedule" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -54,13 +54,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Student" id="WpD-z3-XBg">
                         <barButtonItem key="backBarButtonItem" id="SKn-ao-pYz"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="CalendarPlus" landscapeImage="CalendarPlus" largeContentSizeImage="CalendarPlus" id="RcL-tI-WB0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="calendar.badge.plus" catalog="system" landscapeImage="calendar.badge.plus" largeContentSizeImage="calendar.badge.plus" id="RcL-tI-WB0">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="calendarExportButtonTapped:" destination="nZw-Vi-CTv" id="6Qy-RY-DPK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Settings" landscapeImage="Settings" largeContentSizeImage="Settings" id="5Mi-s0-cgx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" landscapeImage="gear" largeContentSizeImage="gear" id="5Mi-s0-cgx">
                             <color key="tintColor" name="MainAccentColor"/>
                             <connections>
                                 <action selector="setupUserButtonTapped:" destination="nZw-Vi-CTv" id="7CO-x0-fy7"/>
@@ -83,14 +83,14 @@
         <scene sceneID="fl3-83-dfb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XZx-SF-Am9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Student" image="Student" landscapeImage="Student" largeContentSizeImage="Student" id="r7A-Uz-JX1"/>
+                    <tabBarItem key="tabBarItem" title="Student" image="person.fill" catalog="system" landscapeImage="person.fill" largeContentSizeImage="person.fill" id="r7A-Uz-JX1"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO">
                         <color key="tintColor" name="MainAccentColor"/>
                         <color key="barTintColor" name="NavBarColor"/>
                     </simulatedNavigationBarMetrics>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="K56-IB-asW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="MainAccentColor"/>
                         <color key="barTintColor" name="NavBarColor"/>
@@ -124,17 +124,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CalendarPlus" width="30" height="30"/>
-        <image name="Settings" width="30" height="30"/>
-        <image name="Student" width="30" height="30"/>
+        <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="MainAccentColor">
             <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="MainAccentColor">
-            <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="NavBarColor">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="NavBarColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

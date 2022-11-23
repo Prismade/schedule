@@ -32,7 +32,7 @@ final class SCopyableLabel: UILabel {
     
     override func copy(_ sender: Any?) {
         UIPasteboard.general.string = text
-        UIMenuController.shared.setMenuVisible(false, animated: true)
+        UIMenuController.shared.hideMenu(from: self)
     }
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
@@ -45,8 +45,8 @@ final class SCopyableLabel: UILabel {
         becomeFirstResponder()
         let menu = UIMenuController.shared
         if !menu.isMenuVisible {
-            menu.setTargetRect(bounds, in: self)
-            menu.setMenuVisible(true, animated: true)
+          let rect = self.textRect(forBounds: self.bounds, limitedToNumberOfLines: -1)
+          menu.showMenu(from: self, rect: rect)
         }
     }
     

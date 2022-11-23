@@ -1,10 +1,9 @@
 import Foundation
-import Alamofire
 import SwiftSoup
 
 struct SEmMError: Error {
     enum ErrorKind {
-        case requestFailure(AFError)
+        case requestFailure(Error)
         case emptyResponse
         case stringCreationFailure
         case domManipulationFailure(Error)
@@ -32,14 +31,19 @@ final class SEmployeeManager {
         if let data = SCacheManager.shared.retrieveEmployee(id: employeeId) {
             completion(.success(data))
         } else {
-            SApiManager.shared.getEmployeeData(for: employeeId) { response in
-                switch response.result {
-                case .success(let htmlData):
-                    completion(self.parse(htmlData, for: employeeId))
-                case .failure(let error):
-                    completion(.failure(SEmMError(kind: .requestFailure(error), localizedDescription: "Request failed")))
-                }
+          Task {
+            do {
+              let data = try await NetworkWorker().data(from: Oreluniver.employee(identifier: employeeId))
+              let parsedData = parse(data, for: employeeId)
+              await MainActor.run {
+                completion(parsedData)
+              }
+            } catch {
+              await MainActor.run {
+                completion(.failure(SEmMError(kind: .requestFailure(error), localizedDescription: "Request failed")))
+              }
             }
+          }
         }
     }
     

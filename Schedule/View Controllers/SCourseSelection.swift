@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 
 final class SCourseSelectionTableViewController: UITableViewController {
     
@@ -48,19 +47,19 @@ final class SCourseSelectionTableViewController: UITableViewController {
     }
     
     func updateData() {
-        SApiManager.shared.getCourses(for: division) { response in
-            switch response.result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        self.data = data
-                        self.refreshControl?.endRefreshing()
-                        self.tableView.reloadData()
-                }
-                case .failure(let error):
-                    debugPrint(error.localizedDescription)
-            }
-            
+      Task { [weak self] in
+        guard let self else { return }
+        do {
+          let courses: [SCourse] = try await NetworkWorker().data(from: Oreluniver.courses(division: division))
+          await MainActor.run {
+            self.data = courses
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+          }
+        } catch {
+          print(error.localizedDescription)
         }
+      }
     }
     
     // MARK: - Navigation

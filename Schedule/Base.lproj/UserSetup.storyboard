@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-pv-vlF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuI-pv-vlF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DivisionTableCell" textLabel="gmm-bF-OOn" style="IBUITableViewCellStyleDefault" id="Tu8-KU-fJ9">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tu8-KU-fJ9" id="IY2-Ol-RvS">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -51,108 +51,11 @@
                     <connections>
                         <outlet property="cancelButton" destination="EVi-yh-Fhb" id="7mA-5y-k4T"/>
                         <segue destination="Fdw-mh-cc0" kind="show" identifier="ToCourseSelection" id="0jp-2b-6cx"/>
-                        <segue destination="E5e-J5-aIs" kind="show" identifier="ToDepartmentSelection" id="OzE-tW-4VF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slk-gW-90k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6196" y="-1290"/>
-        </scene>
-        <!--Choose Department-->
-        <scene sceneID="JzU-vN-y6P">
-            <objects>
-                <tableViewController id="E5e-J5-aIs" customClass="SDepartmentSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uzd-T7-9cR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepartmentTableCell" textLabel="lzu-qw-MwS" style="IBUITableViewCellStyleDefault" id="b0y-hA-Nqc">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b0y-hA-Nqc" id="tuQ-Oc-EcC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lzu-qw-MwS">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="E5e-J5-aIs" id="hRJ-ry-tGc"/>
-                            <outlet property="delegate" destination="E5e-J5-aIs" id="UF5-dq-Tuh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Choose Department" id="mMy-c5-9pq">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="dEk-pg-E3r"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="bSW-Yx-T1q">
-                            <connections>
-                                <action selector="onCancelButtonTap:" destination="E5e-J5-aIs" id="vkj-ra-rSg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="bSW-Yx-T1q" id="ID0-93-SaO"/>
-                        <segue destination="n55-Uy-fWO" kind="show" identifier="ToTeacherSelection" id="hhR-3O-38b"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbn-Kx-Hgn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7137" y="-2055"/>
-        </scene>
-        <!--Choose Teacher-->
-        <scene sceneID="nPO-f2-hCm">
-            <objects>
-                <tableViewController id="n55-Uy-fWO" customClass="STeacherSelectionTableViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iz4-G8-CEX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherTableCell" textLabel="JNr-kv-OG0" style="IBUITableViewCellStyleDefault" id="sXX-uO-y5S">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sXX-uO-y5S" id="vKd-S4-Y7r">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JNr-kv-OG0">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="n55-Uy-fWO" id="304-4R-V4l"/>
-                            <outlet property="delegate" destination="n55-Uy-fWO" id="iN0-ca-mMP"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Choose Teacher" id="hp0-VV-iKS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="6tA-jT-RJL">
-                            <connections>
-                                <action selector="onCancelButtonTap:" destination="n55-Uy-fWO" id="V7R-cv-DDs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="6tA-jT-RJL" id="Ava-Ht-0Yf"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNS-DQ-lza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8057" y="-2055"/>
         </scene>
         <!--Choose Course-->
         <scene sceneID="zOw-cT-AFn">
@@ -164,7 +67,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseTableCell" textLabel="1UJ-CR-Sow" style="IBUITableViewCellStyleDefault" id="jBs-ve-WhV">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jBs-ve-WhV" id="L9g-E9-xHx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -213,7 +116,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableCell" textLabel="Y7q-uT-YUW" style="IBUITableViewCellStyleDefault" id="uYZ-GX-vu7">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYZ-GX-vu7" id="0z8-Tt-Pjq">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -257,7 +160,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="GwS-8b-8ip"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QsL-ax-5Ik">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

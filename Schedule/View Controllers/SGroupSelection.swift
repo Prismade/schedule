@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 
 final class SGroupSelectionTableViewController: SSearchableTableViewController {
     
@@ -23,23 +22,12 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
     var needCancelButton = true
     var data = [SGroup]()
     var filteredData = [SGroup]()
-    var completionHandler: ((DataResponse<[SGroup], AFError>) -> Void)!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reuseIdentifier = "DivisionTableCell"
-        completionHandler = { [unowned self] response in
-            switch response.result {
-                case .success(let resData): DispatchQueue.main.async {
-                    self.data = resData
-                    self.refreshControl?.endRefreshing()
-                    self.tableView.reloadData()
-                }
-                case .failure(let err): debugPrint(err.localizedDescription)
-            }
-        }
         
         if !needCancelButton {
             cancelButton.isEnabled = false
@@ -58,7 +46,19 @@ final class SGroupSelectionTableViewController: SSearchableTableViewController {
     }
     
     override func updateData() {
-        SApiManager.shared.getGroups(for: course, at: division, completion: completionHandler)
+      Task { [weak self] in
+        guard let self else { return }
+        do {
+          let groups: [SGroup] = try await NetworkWorker().data(from: Oreluniver.groups(division: division, course: course))
+          await MainActor.run {
+            self.data = groups
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+          }
+        } catch {
+          print(error.localizedDescription)
+        }
+      }
     }
     
     override func fillCell(_ cell: inout UITableViewCell, at indexPath: IndexPath) {
