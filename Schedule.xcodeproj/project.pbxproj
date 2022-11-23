@@ -54,7 +54,6 @@
 		247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */; };
 		247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */; };
 		24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BCB292A0E4000E1B304 /* SwiftSoup */; };
-		24A38BD2292A119700E1B304 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD1292A119700E1B304 /* PKHUD */; };
 		24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD7292A12C000E1B304 /* SwiftyJSON */; };
 		24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BDC292A13FA00E1B304 /* SDStateTableView */; };
 		24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */; };
@@ -153,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */,
-				24A38BD2292A119700E1B304 /* PKHUD in Frameworks */,
 				24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */,
 				24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */,
 			);
@@ -301,7 +299,6 @@
 			name = Schedule;
 			packageProductDependencies = (
 				24A38BCB292A0E4000E1B304 /* SwiftSoup */,
-				24A38BD1292A119700E1B304 /* PKHUD */,
 				24A38BD7292A12C000E1B304 /* SwiftyJSON */,
 				24A38BDC292A13FA00E1B304 /* SDStateTableView */,
 			);
@@ -336,7 +333,6 @@
 			mainGroup = 2424F1C2244F958000C1D91C;
 			packageReferences = (
 				24A38BCA292A0E4000E1B304 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
-				24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */,
 				24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 2424F1CC244F958000C1D91C /* Products */;
@@ -714,14 +710,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pkluz/PKHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -737,11 +725,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 24A38BCA292A0E4000E1B304 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
-		};
-		24A38BD1292A119700E1B304 /* PKHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 24A38BD0292A119700E1B304 /* XCRemoteSwiftPackageReference "PKHUD" */;
-			productName = PKHUD;
 		};
 		24A38BD7292A12C000E1B304 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
