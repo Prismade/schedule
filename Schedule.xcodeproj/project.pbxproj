@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24057F9B292E76CB00C4219A /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24057F9A292E76CB00C4219A /* WeekView.swift */; };
 		2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2416015D252912A70096EBDC /* AdditionalInfo.storyboard */; };
 		24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160161252913080096EBDC /* ExamsSchedule.storyboard */; };
 		2416016B252913E00096EBDC /* StudentSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24160169252913E00096EBDC /* StudentSchedule.storyboard */; };
@@ -29,7 +30,6 @@
 		24335EEC246491BD00801B2A /* SClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EE2246491BD00801B2A /* SClass.swift */; };
 		24335EF12464A69200801B2A /* SScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */; };
 		2436F737292E2E6100F56F14 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436F736292E2E6100F56F14 /* DayView.swift */; };
-		2436F739292E316400F56F14 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436F738292E316400F56F14 /* WeekView.swift */; };
 		2436F73B292E340F00F56F14 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436F73A292E340F00F56F14 /* CalendarView.swift */; };
 		24567A5F24787EDB004BAD60 /* SClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */; };
 		24567A6124788054004BAD60 /* SBuildingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A6024788054004BAD60 /* SBuildingsManager.swift */; };
@@ -62,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24057F9A292E76CB00C4219A /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		2416015E252912A70096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdditionalInfo.storyboard; sourceTree = "<group>"; };
 		24160162252913080096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExamsSchedule.storyboard; sourceTree = "<group>"; };
 		2416016A252913E00096EBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StudentSchedule.storyboard; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		24335EE2246491BD00801B2A /* SClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SClass.swift; sourceTree = "<group>"; };
 		24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		2436F736292E2E6100F56F14 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-		2436F738292E316400F56F14 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		2436F73A292E340F00F56F14 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		24567A5E24787EDB004BAD60 /* SClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SClassDetailsViewController.swift; sourceTree = "<group>"; };
 		24567A6024788054004BAD60 /* SBuildingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBuildingsManager.swift; sourceTree = "<group>"; };
@@ -173,7 +173,6 @@
 				24160169252913E00096EBDC /* StudentSchedule.storyboard */,
 				24160161252913080096EBDC /* ExamsSchedule.storyboard */,
 				2416015D252912A70096EBDC /* AdditionalInfo.storyboard */,
-				2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */,
 				2424F1D7244F958400C1D91C /* Assets.xcassets */,
 				242D299F246CAC4600CBF87D /* Colors.xcassets */,
 				24661CA024814357001AE48C /* Info.plist */,
@@ -236,7 +235,7 @@
 			children = (
 				2424F228244F9A6400C1D91C /* SCopyableLabel.swift */,
 				2436F736292E2E6100F56F14 /* DayView.swift */,
-				2436F738292E316400F56F14 /* WeekView.swift */,
+				24057F9A292E76CB00C4219A /* WeekView.swift */,
 				2436F73A292E340F00F56F14 /* CalendarView.swift */,
 				2466640424607B740043BA4C /* SScheduleView.swift */,
 				24335EEF2464A69200801B2A /* SScheduleTableViewCell.swift */,
@@ -367,6 +366,7 @@
 				2436F73B292E340F00F56F14 /* CalendarView.swift in Sources */,
 				24335EE5246491BD00801B2A /* SCourse.swift in Sources */,
 				2424F1CF244F958000C1D91C /* AppDelegate.swift in Sources */,
+				24057F9B292E76CB00C4219A /* WeekView.swift in Sources */,
 				247492FA248E6A8100B4A847 /* SScheduleDay.swift in Sources */,
 				2424F229244F9A6400C1D91C /* SCopyableLabel.swift in Sources */,
 				24E7FE91245C872E000CDA9E /* STimeManager.swift in Sources */,
