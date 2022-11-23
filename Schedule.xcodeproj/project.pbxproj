@@ -55,7 +55,6 @@
 		247C40F72473CFB80075EE9D /* SSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */; };
 		24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BCB292A0E4000E1B304 /* SwiftSoup */; };
 		24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BD7292A12C000E1B304 /* SwiftyJSON */; };
-		24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */ = {isa = PBXBuildFile; productRef = 24A38BDC292A13FA00E1B304 /* SDStateTableView */; };
 		24AC4E4A2473D58600934A51 /* SCacheSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */; };
 		24B0BD08247BF36C0000ED47 /* SDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0BD07247BF36C0000ED47 /* SDefaults.swift */; };
 		24B1DB04248A87E30068D15F /* SSchedulePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */; };
@@ -133,7 +132,6 @@
 		247654E6246982E0003885D5 /* SScheduleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SScheduleData.swift; sourceTree = "<group>"; };
 		247C40EC2472E6660075EE9D /* SScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		247C40F62473CFB80075EE9D /* SSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSettingsTableViewController.swift; sourceTree = "<group>"; };
-		24A38BDA292A13AE00E1B304 /* SDStateTableView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDStateTableView; sourceTree = "<group>"; };
 		24AC4E492473D58600934A51 /* SCacheSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheSettingsTableViewController.swift; sourceTree = "<group>"; };
 		24B0BD07247BF36C0000ED47 /* SDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDefaults.swift; sourceTree = "<group>"; };
 		24B1DB03248A87E30068D15F /* SSchedulePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSchedulePlaceholderView.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			files = (
 				24A38BD8292A12C000E1B304 /* SwiftyJSON in Frameworks */,
 				24A38BCC292A0E4000E1B304 /* SwiftSoup in Frameworks */,
-				24A38BDD292A13FA00E1B304 /* SDStateTableView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				2424F1CD244F958000C1D91C /* Schedule */,
-				24A38BDA292A13AE00E1B304 /* SDStateTableView */,
 				2424F1CC244F958000C1D91C /* Products */,
 				24A38BDB292A13FA00E1B304 /* Frameworks */,
 			);
@@ -300,7 +296,6 @@
 			packageProductDependencies = (
 				24A38BCB292A0E4000E1B304 /* SwiftSoup */,
 				24A38BD7292A12C000E1B304 /* SwiftyJSON */,
-				24A38BDC292A13FA00E1B304 /* SDStateTableView */,
 			);
 			productName = Schedule;
 			productReference = 2424F1CB244F958000C1D91C /* Schedule.app */;
@@ -730,10 +725,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 24A38BD6292A12C000E1B304 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		24A38BDC292A13FA00E1B304 /* SDStateTableView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDStateTableView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

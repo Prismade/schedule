@@ -1,7 +1,6 @@
 import UIKit
 import EventKit
 import EventKitUI
-import SDStateTableView
 
 class SStudentScheduleViewController: UIViewController {
     

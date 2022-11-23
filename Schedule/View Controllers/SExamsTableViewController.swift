@@ -1,5 +1,4 @@
 import UIKit
-import SDStateTableView
 
 class SExamsTableViewController: UITableViewController {
   
@@ -18,14 +17,6 @@ class SExamsTableViewController: UITableViewController {
                        forCellReuseIdentifier: reuseIdentifier)
     refreshControl = UIRefreshControl()
     refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-    
-    (self.tableView as! SDStateTableView).setState(.withButton(
-      errorImage: nil, title: NSLocalizedString("NoExams", comment: ""),
-      message: NSLocalizedString("NoExamsSoon", comment: ""),
-      buttonTitle: NSLocalizedString("Refresh", comment: ""),
-      buttonConfig: { button in return }, retryAction: {
-        self.updateData()
-      }))
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -48,14 +39,6 @@ class SExamsTableViewController: UITableViewController {
           self.refreshControl?.endRefreshing()
           if self.examsData.count > 0 {
             self.tableView.reloadData()
-            (self.tableView as? SDStateTableView)?.setState(.dataAvailable)
-          } else {
-            (self.tableView as? SDStateTableView)?.setState(.withButton(
-              errorImage: nil, title: "Пока расписания нет",
-              message: "Экзамены не скоро", buttonTitle: "Обновить",
-              buttonConfig: { button in return }, retryAction: {
-                self.updateData()
-              }))
           }
         }
       } catch {
