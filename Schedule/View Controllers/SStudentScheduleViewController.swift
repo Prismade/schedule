@@ -9,7 +9,7 @@ class SStudentScheduleViewController: UIViewController {
         let number: Int
     }
     
-    @IBOutlet weak var calendar: SCalendarView!
+    @IBOutlet weak var calendar: CalendarView!
     @IBOutlet weak var schedule: SScheduleView!
     @IBOutlet weak var placeholder: SSchedulePlaceholderView!
     
