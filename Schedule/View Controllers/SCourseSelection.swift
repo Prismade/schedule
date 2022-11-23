@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 
 final class SCourseSelectionTableViewController: UITableViewController {
     

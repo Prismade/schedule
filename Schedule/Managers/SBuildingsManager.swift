@@ -1,5 +1,4 @@
 import Foundation
-import Alamofire
 
 final class SBuildingsManager {
   

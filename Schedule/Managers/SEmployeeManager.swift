@@ -1,5 +1,4 @@
 import Foundation
-import Alamofire
 import SwiftSoup
 
 struct SEmMError: Error {

@@ -1,9 +1,8 @@
 import UIKit
-import SDStateTableView
 
 final class SNibScheduleView: UIScrollView {
     
-    @IBOutlet var tableViews: [SDStateTableView]!
+    @IBOutlet var tableViews: [UITableView]!
     
     static func loadFromNib() -> SNibScheduleView {
         let bundle = Bundle(for: self)
@@ -103,14 +102,14 @@ final class SScheduleView: UIView {
         view.delegate = self
         
         for table in view.subviews {
-            let t = table as! SDStateTableView
+            let t = table as! UITableView
             t.register(UINib(nibName: "SScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+            t.refreshControl = UIRefreshControl()
+            t.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         }
-        
-        (view.subviews.first { $0.tag == 0 }! as! SDStateTableView).setState(
-            .loading(message: NSLocalizedString("Loading", comment: "")))
-        (view.subviews.first { $0.tag == 7 }! as! SDStateTableView).setState(
-            .loading(message: NSLocalizedString("Loading", comment: "")))
+      
+      ((view.subviews.first { $0.tag == 0 }) as? UITableView)?.refreshControl?.beginRefreshing()
+      ((view.subviews.first { $0.tag == 7 }) as? UITableView)?.refreshControl?.beginRefreshing()
     }
     
     // Call this after parent viewcontroller's did layout subviews
@@ -140,22 +139,15 @@ final class SScheduleView: UIView {
         for table in view.tableViews {
             guard table.tag != 0 && table.tag != 7 else { continue }
             table.reloadData()
-            table.setState(.loading(message: NSLocalizedString("Loading", comment: "")))
+            table.refreshControl?.beginRefreshing()
         }
     }
     
     func reloadData() {
         for table in view.tableViews {
             guard table.tag != 0 && table.tag != 7 else { continue }
+            table.refreshControl?.endRefreshing()
             table.reloadData()
-            if table.numberOfRows(inSection: 0) == 0 {
-                table.setState(.withImage(
-                    image: nil,
-                    title: NSLocalizedString("NoClasses", comment: ""),
-                    message: NSLocalizedString("ChillingTime", comment: "")))
-            } else {
-                table.setState(.dataAvailable)
-            }
         }
     }
     
@@ -180,6 +172,11 @@ final class SScheduleView: UIView {
         
         dayWasChanged?(self, shownDay)
         previousPhysicalPage = currentPhysicalPage
+    }
+  
+    @objc
+    func refresh(_ sender: UIRefreshControl) {
+        sender.endRefreshing()
     }
 }
 
