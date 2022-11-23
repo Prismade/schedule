@@ -38,6 +38,7 @@
 		24567A632478866B004BAD60 /* STeacherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */; };
 		24567A652478889C004BAD60 /* SEmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24567A642478889C004BAD60 /* SEmployeeManager.swift */; };
 		245E167B24536FE10078DAC4 /* SStudentScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */; };
+		24612117292E230B009B2F6C /* UIColor+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24612116292E230B009B2F6C /* UIColor+Convenience.swift */; };
 		24661C7F247E7DBD001AE48C /* SCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C7E247E7DBD001AE48C /* SCacheManager.swift */; };
 		24661C81247EBECA001AE48C /* SExamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */; };
 		24661C83247EC3C6001AE48C /* SCourseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24661C82247EC3C6001AE48C /* SCourseSelection.swift */; };
@@ -113,6 +114,7 @@
 		24567A622478866B004BAD60 /* STeacherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STeacherDetailsViewController.swift; sourceTree = "<group>"; };
 		24567A642478889C004BAD60 /* SEmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEmployeeManager.swift; sourceTree = "<group>"; };
 		245E167A24536FE10078DAC4 /* SStudentScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SStudentScheduleViewController.swift; sourceTree = "<group>"; };
+		24612116292E230B009B2F6C /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
 		24661C7E247E7DBD001AE48C /* SCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCacheManager.swift; sourceTree = "<group>"; };
 		24661C80247EBEC9001AE48C /* SExamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SExamsTableViewController.swift; sourceTree = "<group>"; };
 		24661C82247EC3C6001AE48C /* SCourseSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCourseSelection.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				2424F227244F9A3D00C1D91C /* Controls */,
 				2424F1F5244F98F200C1D91C /* Managers */,
 				2424F1E4244F979A00C1D91C /* View Controllers */,
+				24612115292E22F9009B2F6C /* Utils */,
 				2424F1CE244F958000C1D91C /* AppDelegate.swift */,
 				2424F1D0244F958000C1D91C /* SceneDelegate.swift */,
 				2424F1D4244F958000C1D91C /* Main.storyboard */,
@@ -268,6 +271,14 @@
 				2424F233244FA14800C1D91C /* CalendarColors.xcassets */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		24612115292E22F9009B2F6C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				24612116292E230B009B2F6C /* UIColor+Convenience.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		24A38BDB292A13FA00E1B304 /* Frameworks */ = {
@@ -404,6 +415,7 @@
 				24661C89247EC3D9001AE48C /* SGroupSelection.swift in Sources */,
 				247654E7246982E0003885D5 /* SScheduleData.swift in Sources */,
 				24B8DDB12924252B00824EF2 /* OreluniverEndpoint.swift in Sources */,
+				24612117292E230B009B2F6C /* UIColor+Convenience.swift in Sources */,
 				24BF4B5A245B378A0048D6A5 /* SDayView.swift in Sources */,
 				243B61BA245B71E900FD7455 /* SCalendarView.swift in Sources */,
 				2466640524607B740043BA4C /* SScheduleView.swift in Sources */,
