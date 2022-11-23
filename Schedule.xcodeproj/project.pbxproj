@@ -15,7 +15,6 @@
 		2424F1D1244F958000C1D91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F1D0244F958000C1D91C /* SceneDelegate.swift */; };
 		2424F1D6244F958000C1D91C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D4244F958000C1D91C /* Main.storyboard */; };
 		2424F1D8244F958400C1D91C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D7244F958400C1D91C /* Assets.xcassets */; };
-		2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */; };
 		2424F229244F9A6400C1D91C /* SCopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424F228244F9A6400C1D91C /* SCopyableLabel.swift */; };
 		2424F22F244F9EBB00C1D91C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2424F231244F9EBB00C1D91C /* Localizable.strings */; };
 		2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2424F233244FA14800C1D91C /* CalendarColors.xcassets */; };
@@ -82,7 +81,6 @@
 		2424F1D0244F958000C1D91C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2424F1D5244F958000C1D91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2424F1D7244F958400C1D91C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2424F1DA244F958400C1D91C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2424F228244F9A6400C1D91C /* SCopyableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCopyableLabel.swift; sourceTree = "<group>"; };
 		2424F230244F9EBB00C1D91C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2424F232244F9EC000C1D91C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -339,7 +337,6 @@
 				24B1DB06248A88150068D15F /* SSchedulePlaceholderView.xib in Resources */,
 				2424F234244FA14800C1D91C /* CalendarColors.xcassets in Resources */,
 				2416016F2529147A0096EBDC /* UserSetup.storyboard in Resources */,
-				2424F1DB244F958400C1D91C /* LaunchScreen.storyboard in Resources */,
 				2416015F252912A70096EBDC /* AdditionalInfo.storyboard in Resources */,
 				24160163252913080096EBDC /* ExamsSchedule.storyboard in Resources */,
 				247C40ED2472E6670075EE9D /* SScheduleTableViewCell.xib in Resources */,
@@ -447,14 +444,6 @@
 				241601E3252922CC0096EBDC /* ru */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2424F1D9244F958400C1D91C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2424F1DA244F958400C1D91C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		2424F231244F9EBB00C1D91C /* Localizable.strings */ = {
