@@ -102,8 +102,6 @@ class SStudentScheduleViewController: UIViewController {
         placeholder.message = NSLocalizedString("NeedGroup", comment: "")
         if SDefaults.studentId != nil {
             placeholder.isHidden = true
-            navigationController?.navigationBar.shadowImage = UIImage()
-            navigationController?.navigationBar.layoutIfNeeded()
             updateSchedule()
         } else {
             placeholder.isHidden = false
@@ -128,8 +126,6 @@ class SStudentScheduleViewController: UIViewController {
             scheduleSource.userId = SDefaults.studentId
             navigationItem.title = SDefaults.studentName
             placeholder.isHidden = true
-            navigationController?.navigationBar.shadowImage = UIImage()
-            navigationController?.navigationBar.layoutIfNeeded()
             updateSchedule()
         }
     }
