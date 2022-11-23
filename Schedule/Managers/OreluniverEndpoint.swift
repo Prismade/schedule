@@ -16,6 +16,7 @@ enum Oreluniver {
   case exams(group: Int)
   case employee(identifier: Int)
   case buildings
+  case other(path: String)
   
   var methodString: String {
     switch self {
@@ -34,6 +35,8 @@ enum Oreluniver {
       return "/employee/\(identifier)"
     case .buildings:
       return "/assets/js/buildings.json"
+    case .other(let path):
+      return path
     }
   }
 }
