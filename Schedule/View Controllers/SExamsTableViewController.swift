@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 import SDStateTableView
 
 class SExamsTableViewController: UITableViewController {
