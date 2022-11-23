@@ -79,11 +79,10 @@
             </objects>
             <point key="canvasLocation" x="3400.0000000000005" y="-39.508928571428569"/>
         </scene>
-        <!--Student-->
+        <!--Navigation Controller-->
         <scene sceneID="fl3-83-dfb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XZx-SF-Am9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Student" image="person.fill" catalog="system" landscapeImage="person.fill" largeContentSizeImage="person.fill" id="r7A-Uz-JX1"/>
+                <navigationController storyboardIdentifier="StudentScheduleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="XZx-SF-Am9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO">
                         <color key="tintColor" name="MainAccentColor"/>
@@ -126,7 +125,6 @@
     <resources>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="MainAccentColor">
             <color red="0.38400000333786011" green="0.57300001382827759" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
