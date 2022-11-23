@@ -45,7 +45,8 @@ final class SCopyableLabel: UILabel {
         becomeFirstResponder()
         let menu = UIMenuController.shared
         if !menu.isMenuVisible {
-          menu.showMenu(from: self, rect: self.frame)
+          let rect = self.textRect(forBounds: self.bounds, limitedToNumberOfLines: -1)
+          menu.showMenu(from: self, rect: rect)
         }
     }
     
