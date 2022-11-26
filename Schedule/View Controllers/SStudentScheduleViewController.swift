@@ -11,7 +11,6 @@ class SStudentScheduleViewController: UIViewController {
   
   var calendar = CalendarView()
   var schedule = SScheduleView()
-  var placeholder = SSchedulePlaceholderView()
   
   @objc
   func setupUserButtonTapped(_ sender: UIBarButtonItem) {
@@ -70,15 +69,8 @@ class SStudentScheduleViewController: UIViewController {
     view.addSubview(calendar)
     schedule.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(schedule)
-    placeholder.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(placeholder)
     
     NSLayoutConstraint.activate([
-      placeholder.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      placeholder.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      placeholder.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      placeholder.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      
       calendar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       calendar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       calendar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -137,14 +129,6 @@ class SStudentScheduleViewController: UIViewController {
     
     schedule.tableViewDataSource = self
     schedule.tableViewDelegate = self
-    
-    placeholder.message = NSLocalizedString("NeedGroup", comment: "")
-    if SDefaults.studentId != nil {
-      placeholder.isHidden = true
-      updateSchedule()
-    } else {
-      placeholder.isHidden = false
-    }
   }
   
   override func viewDidLayoutSubviews() {
@@ -164,7 +148,6 @@ class SStudentScheduleViewController: UIViewController {
       SDefaults.studentName = ((result as! [String : Any])["UserName"] as! String)
       scheduleSource.userId = SDefaults.studentId
       navigationItem.title = SDefaults.studentName
-      placeholder.isHidden = true
       updateSchedule()
     }
   }
